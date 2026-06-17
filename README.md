@@ -11,7 +11,7 @@
 >
 > **빠른 점검만 원하면** 한 화면짜리 경량판 [`prompts/LARP_lite.md`](prompts/LARP_lite.md)(영어판 [`.en.md`](prompts/LARP_lite.en.md))을 쓰세요. 깊은 분석이 필요하거나 틀리면 안되는 일이나 복잡한 글은 위 전체판을 권합니다.
 >
-> **구조만 한눈에** 보고 싶으면(평가 없이 모든 주장·논거를 트리로) LARP-Map [`prompts/LARP_map.md`](prompts/LARP_map.md)을 쓰세요.
+> **구조만 한눈에** 보고 싶으면(평가 없이 모든 주장·논거를 트리로) LARP-Map [`prompts/LARP_map.md`](prompts/LARP_map.md)(영어판 [`prompts/LARP_map.en.md`](prompts/LARP_map.en.md))을 쓰세요.
 >
 > **깊이 들어갈 때(전체판 2차)**는 기준·점검 모듈 [`prompts/LARP_modules.md`](prompts/LARP_modules.md)도 꼭 필요합니다. 단독 도구가 아니라 전체판의 부속이며, 1차 논증 지도까지는 본문만으로 됩니다.
 
