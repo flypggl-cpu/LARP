@@ -13,7 +13,7 @@
 >
 > **구조만 한눈에** 보고 싶으면(평가 없이 모든 주장·논거를 트리로) LARP-Map [`prompts/LARP_map.md`](prompts/LARP_map.md)을 쓰세요.
 >
-> **깊이 들어갈 때(전체판 2차)**는 기준·점검 모듈 [`prompts/LARP_modules.md`](prompts/LARP_modules.md)도 본문과 함께 붙이세요 — 단독 도구가 아니라 전체판의 부속이며, 1차 논증 지도까지는 본문만으로 됩니다.
+> **깊이 들어갈 때(전체판 2차)**는 기준·점검 모듈 [`prompts/LARP_modules.md`](prompts/LARP_modules.md)도 꼭 필요합니다. 단독 도구가 아니라 전체판의 부속이며, 1차 논증 지도까지는 본문만으로 됩니다.
 
 ---
 
