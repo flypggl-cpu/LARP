@@ -7,7 +7,7 @@
 > Not a tool for winning arguments. A tool for looking at your own thinking and your opponent's with the very same eye.
 
 > ### ▶ How to use it now
-> **Copy the entire contents** of [`prompts/LARP.en.md`](prompts/LARP.en.md) & [`prompts/LARP_modules.en.md`](prompts/LARP_modules.en.md)(korean version [`prompts/LARP_modules.md`](prompts/LARP_modules.md)) and paste it into a chatbot (ChatGPT, Claude, etc.), then paste the text you want analyzed. That's it. (Nothing to install.)
+> **Copy the entire contents** of [`prompts/LARP.en.md`](prompts/LARP.en.md) & [`prompts/LARP_modules.en.md`](prompts/LARP_modules.en.md)) and paste it into a chatbot (ChatGPT, Claude, etc.), then paste the text you want analyzed. That's it. (Nothing to install.)
 >
 > **Just want a quick check?** Use the one-screen lightweight edition [`prompts/LARP_lite.en.md`](prompts/LARP_lite.en.md) ([한국어](prompts/LARP_lite.md)). For high-stakes, slow-feedback work or multi-layered text, use the full version above.
 >
