@@ -9,7 +9,7 @@
 > ### ▶ 바로 쓰는 법
 > [`prompts/LARP.md`](prompts/LARP.md)(영어판 [`LARP.en.md`](prompts/LARP.en.md))의 **내용을 전부 복사**해, ChatGPT·Claude 같은 챗봇에 붙여넣으세요. 이어서 분석할 글을 붙이면 끝입니다. (설치 필요 없음)
 >
-> **빠른 점검만 원하면** 한 화면짜리 경량판 [`prompts/LARP_lite.md`](prompts/LARP_lite.md)(영어판 [`.en.md`](prompts/LARP_lite.en.md))을 쓰세요. 깊은 분석이 필요하거나 틀리면 비싼 일이나 여러 층이 얽힌 글은 위 전체판을 권합니다.
+> **빠른 점검만 원하면** 한 화면짜리 경량판 [`prompts/LARP_lite.md`](prompts/LARP_lite.md)(영어판 [`.en.md`](prompts/LARP_lite.en.md))을 쓰세요. 깊은 분석이 필요하거나 틀리면 안되는 일이나 복잡한 글은 위 전체판을 권합니다.
 >
 > **구조만 한눈에** 보고 싶으면(평가 없이 모든 주장·논거를 트리로) LARP-Map [`prompts/LARP_map.md`](prompts/LARP_map.md)을 쓰세요.
 >
