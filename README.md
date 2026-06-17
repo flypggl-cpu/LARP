@@ -7,7 +7,7 @@
 > 상대를 이기는 도구가 아닙니다. 내 생각과 상대의 생각을, 똑같은 눈으로 들여다보는 도구입니다.
 
 > ### ▶ 바로 쓰는 법
-> [`prompts/LARP.md`](prompts/LARP.md)(영어판 [`LARP.en.md`](prompts/LARP.en.md))의 **내용을 전부 복사**해, ChatGPT·Claude 같은 챗봇에 붙여넣으세요. 이어서 분석할 글을 붙이면 끝입니다. (설치 필요 없음)
+> [`prompts/LARP.md`](prompts/LARP.md)(영어판 [`LARP.en.md`](prompts/LARP.en.md))과 [`prompts/LARP_modules.md`](prompts/LARP_modules.md)의 **내용을 전부 복사**해, ChatGPT·Claude 같은 챗봇에 붙여넣으세요. 이어서 분석할 글을 붙이면 끝입니다. (설치 필요 없음)
 >
 > **빠른 점검만 원하면** 한 화면짜리 경량판 [`prompts/LARP_lite.md`](prompts/LARP_lite.md)(영어판 [`.en.md`](prompts/LARP_lite.en.md))을 쓰세요. 깊은 분석이 필요하거나 틀리면 안되는 일이나 복잡한 글은 위 전체판을 권합니다.
 >
