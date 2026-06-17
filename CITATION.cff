@@ -1,0 +1,27 @@
+cff-version: 1.2.0
+message: "이 도구를 사용하거나 인용할 때는 아래 정보를 적어 주세요. / If you use or cite this tool, please cite it as below."
+title: "LARP — Layer-grounded Argument Reasoning Probe"
+abstract: >-
+  어떤 글이든 논증을 재구성해 숨은 전제·대체가설·빠진 증거를 한 장의 지도로 펼치고,
+  판정은 사람에게 돌려주는 LLM 메타 프롬프트. 내용 중립적이며 분야에 매이지 않는다.
+  A content-neutral, domain-general LLM meta-prompt that reconstructs any argument and
+  lays out its hidden premises, alternative explanations, and missing evidence as a single
+  map, while leaving the verdict to the human.
+type: software
+authors:
+  - name: "Sooyang Chae"
+url: "https://github.com/flypggl-cpu/LARP"
+repository-code: "https://github.com/flypggl-cpu/LARP"
+version: "v260617"
+date-released: "2026-06-17"
+license: CC-BY-NC-SA-4.0
+keywords:
+  - critical-thinking
+  - argument-analysis
+  - argumentation
+  - informal-logic
+  - epistemology
+  - philosophy-of-science
+  - legal-reasoning
+  - prompt
+  - llm
