@@ -10,7 +10,7 @@ LARP isn't a program — it's **one piece of text (a prompt).** Putting the cont
 - **For longer texts**, use a larger model that can read a lot at once.
 - Keep the first-pass and second-pass analysis **in the same conversation** so the labels (A1, W1, etc.) stay consistent.
 - **For the full version, paste the body and the criteria & check modules [`prompts/LARP_modules.en.md`](prompts/LARP_modules.en.md) together** and run the first and second pass. The first pass (argument map) works from the body alone, but the second-pass detailed analysis needs the modules.
-- **Choosing a mode:** *short, simple texts* → LARP-Lite for a quick check / *long or complex texts* → map the whole structure with LARP-Map ([`prompts/LARP_map.en.md`](prompts/LARP_map.en.md)) first, then analyze with the full version / structure-only → Map. (Lite misses things in long texts.)
+- **Choosing a mode (recommended order):** ① first map the whole structure with **LARP-Map** ([`prompts/LARP_map.en.md`](prompts/LARP_map.en.md)) → ② analyze deeply with the **full version + modules**. This is the recommended path for *long or complex (multi-claim) texts*. ③ Only for *short, simple texts*, use **LARP-Lite** for a quick check (a shortcut). (Lite misses things in long texts.)
 
 ## 2. What to put in
 
