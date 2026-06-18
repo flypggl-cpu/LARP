@@ -9,9 +9,9 @@
 > ### ▶ 바로 쓰는 법
 > [`prompts/LARP.md`](prompts/LARP.md)(영어판 [`LARP.en.md`](prompts/LARP.en.md))의 **내용을 전부 복사**해, ChatGPT·Claude 같은 챗봇에 붙여넣으세요. 이어서 분석할 글을 붙이면 끝입니다. (설치 필요 없음)
 >
-> **빠른 점검만 원하면** 한 화면짜리 경량판 [`prompts/LARP_lite.md`](prompts/LARP_lite.md)(영어판 [`.en.md`](prompts/LARP_lite.en.md))을 쓰세요. 결과가 늦게 오고 틀리면 비싼 일이나 여러 층이 얽힌 글은 위 전체판을 권합니다.
+> **짧고 단순한 글**(트윗·짧은 문단·한 주장)은 한 화면짜리 경량판 [`prompts/LARP_lite.md`](prompts/LARP_lite.md)(영어판 [`.en.md`](prompts/LARP_lite.en.md))으로 빠르게 점검하세요. *긴·복잡한 글엔 권하지 않습니다(아래 Map→전체판).*
 >
-> **구조만 한눈에** 보고 싶으면(평가 없이 모든 주장·논거를 트리로) LARP-Map [`prompts/LARP_map.md`](prompts/LARP_map.md)을 쓰세요.
+> **구조만 한눈에**(평가 없이 모든 주장·논거를 트리로) 보려면 LARP-Map [`prompts/LARP_map.md`](prompts/LARP_map.md). **길거나 복잡한 글은 이 Map으로 먼저 전수 도해한 뒤 전체판으로 분석하는 흐름을 권합니다.**
 >
 > **전체판을 쓸 땐** 본문 [`prompts/LARP.md`](prompts/LARP.md)과 기준·점검 모듈 [`prompts/LARP_modules.md`](prompts/LARP_modules.md)을 *함께* 붙인 뒤 1차·2차를 진행하세요. (1차 논증 지도는 본문만으로도 되지만, 2차 상세 분석엔 모듈이 필요하니 처음부터 둘 다 넣는 게 간편합니다.)
 
@@ -110,8 +110,8 @@ AI는 그럴듯한 글을 공짜로, 무한히 만듭니다. 그래서 새로운
 |---|---|
 | [`prompts/LARP.md`](prompts/LARP.md) | 도구 본체 — 전체판 (챗봇에 넣는 프롬프트) · [English](prompts/LARP.en.md) |
 | [`prompts/LARP_modules.md`](prompts/LARP_modules.md) | 기준·점검 모듈 — 2차 상세 분석 때 본문과 함께 투입 · [English](prompts/LARP_modules.en.md) |
-| [`prompts/LARP_lite.md`](prompts/LARP_lite.md) | 경량판 — 한 화면 빠른 점검 · [English](prompts/LARP_lite.en.md) |
-| [`prompts/LARP_map.md`](prompts/LARP_map.md) | LARP-Map — 평가 없이 모든 주장·논거를 트리로 (구조만 보기) · [English](prompts/LARP_map.en.md) |
+| [`prompts/LARP_lite.md`](prompts/LARP_lite.md) | 경량판 — **짧은 글 전용** 한 화면 빠른 점검 · [English](prompts/LARP_lite.en.md) |
+| [`prompts/LARP_map.md`](prompts/LARP_map.md) | LARP-Map — 평가 없이 모든 주장·논거를 트리로 (구조만 · 긴 글의 1차 도해) · [English](prompts/LARP_map.en.md) |
 | [`USAGE.md`](USAGE.md) | 사용법 — 쉽게 따라 하기 |
 | [`docs/introduction.md`](docs/introduction.md) | 소개 — 왜 이게 필요한가 |
 | [`examples/worked_example.md`](examples/worked_example.md) | 실제로 돌려 본 예시 (가상 사건) |

@@ -62,7 +62,7 @@ id, parent_id, level, role, type, text
 - Do not do deep analysis — layer tagging, the six questions, modules — that is the full LARP's job.
 
 After drawing, ask in one line:
-**"Which branch should we look at more deeply? (For a check, LARP-Lite; for deep analysis, the full LARP.)"**
+**"Which branch should we look at more deeply? (For long/complex texts, continue with the full LARP; LARP-Lite only for a quick check of a short text.)"**
 
 ---
 

@@ -10,7 +10,7 @@ abstract: >-
 type: software
 authors:
   - name: "Sooyang Chae"
-url: "https://github.com/flypggl-cpu"
+url: "https://github.com/flypggl-cpu/LARP"
 repository-code: "https://github.com/flypggl-cpu/LARP"
 version: "v260617"
 date-released: "2026-06-17"

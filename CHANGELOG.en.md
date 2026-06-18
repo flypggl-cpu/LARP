@@ -10,6 +10,7 @@ From real use (analyzing the Suwon High Court 2024-No-620 judgment), this fixes 
 - **Lite**: stage 3 (backward reconstruction) adds core-evidence atomization + actual content vs. arguer's reading; the output gains a "key evidence (actual content vs. arguer's reading)" item.
 - **Full body**: no new machinery. The pre-output self-check (§3.5-8) gains 2 items — prevent lumping / bundling statements with objective evidence, and if a key piece of evidence fits both hypotheses equally yet was drawn one-sided, register it as a diagnosticity-check candidate (a first-pass recovery flag, not a verdict → Group 5 · Modules K/G/M).
 - The criteria & check modules and the worked example are unchanged. An ACH verdict matrix / AI auto-judging of diagnosticity was not adopted (avoids flattening perception and crossing the clerk/judge boundary).
+- **Mode positioning clarified**: Lite is marked *for short, simple texts only*; for long or complex (multi-claim) texts, the recommended path is **LARP-Map (full structure) → full version** (reflected in README, USAGE, and the Map hand-off).
 
 ## v260617 (2026-06-17) — Collision-verification anchor · lite one-liner · new LARP-Map
 

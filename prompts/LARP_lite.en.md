@@ -1,7 +1,7 @@
 # LARP-Lite — Fast Argument Check (lightweight, v260618)
 
-> A one-screen, lightweight version for quick everyday checks.
-> For work where results come back slowly and a wrong call is costly (criminal, HR, due diligence, policy), or for multi-layered text, use the **full LARP**.
+> **For short, simple texts only** (a tweet, a short paragraph, a single claim). A one-screen quick check.
+> **For long or complex (multi-claim) texts**, Lite will miss things — first map the whole structure with **LARP-Map**, then analyze with the **full LARP**. Likewise for high-stakes, slow-feedback work (criminal, HR, due diligence, policy).
 
 ---
 
