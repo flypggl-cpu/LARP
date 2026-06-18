@@ -7,13 +7,9 @@
 > 상대를 이기는 도구가 아닙니다. 내 생각과 상대의 생각을, 똑같은 눈으로 들여다보는 도구입니다.
 
 > ### ▶ 바로 쓰는 법
-> [`prompts/LARP.md`](prompts/LARP.md)(영어판 [`LARP.en.md`](prompts/LARP.en.md))의 **내용을 전부 복사**해, ChatGPT·Claude 같은 챗봇에 붙여넣으세요. 이어서 분석할 글을 붙이면 끝입니다. (설치 필요 없음)
->
-> **짧고 단순한 글**(트윗·짧은 문단·한 주장)은 한 화면짜리 경량판 [`prompts/LARP_lite.md`](prompts/LARP_lite.md)(영어판 [`.en.md`](prompts/LARP_lite.en.md))으로 빠르게 점검하세요. *긴·복잡한 글엔 권하지 않습니다(아래 Map→전체판).*
->
+> [`prompts/LARP.md`](prompts/LARP.md)(영어판 [`LARP.en.md`](prompts/LARP.en.md))과  기준·점검 모듈 [`prompts/LARP_modules.md`](prompts/LARP_modules.md)의 **내용을 전부 복사**해, ChatGPT·Claude 같은 챗봇에 붙여넣으세요. 이어서 분석할 글을 붙이면 끝입니다. (설치 필요 없음)
 > **구조만 한눈에**(평가 없이 모든 주장·논거를 트리로) 보려면 LARP-Map [`prompts/LARP_map.md`](prompts/LARP_map.md). **길거나 복잡한 글은 이 Map으로 먼저 전수 도해한 뒤 전체판으로 분석하는 흐름을 권합니다.**
->
-> **전체판을 쓸 땐** 본문 [`prompts/LARP.md`](prompts/LARP.md)과 기준·점검 모듈 [`prompts/LARP_modules.md`](prompts/LARP_modules.md)을 *함께* 붙인 뒤 1차·2차를 진행하세요. (1차 논증 지도는 본문만으로도 되지만, 2차 상세 분석엔 모듈이 필요하니 처음부터 둘 다 넣는 게 간편합니다.)
+> **짧고 단순한 글**(트윗·짧은 문단·한 주장)은 한 화면짜리 경량판 [`prompts/LARP_lite.md`](prompts/LARP_lite.md)(영어판 [`.en.md`](prompts/LARP_lite.en.md))으로 빠르게 점검하세요. *긴·복잡한 글엔 권하지 않습니다.*
 
 ---
 
