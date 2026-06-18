@@ -11,7 +11,7 @@
 >
 > **구조만 한눈에**(평가 없이 모든 주장·논거를 트리로) 보려면 LARP-Map [`prompts/LARP_map.md`](prompts/LARP_map.md)(영어판[`prompts/LARP_map.en.md`](prompts/LARP_map.en.md))을 사용하세요.. **길거나 복잡한 글은 이 Map으로 먼저 전수 도해한 뒤 전체판으로 분석하는 흐름을 권합니다.**
 >
-> **짧고 단순한 글**(트윗·짧은 문단·한 주장)은 한 화면짜리 경량판 [`prompts/LARP_lite.md`](prompts/LARP_lite.md)(영어판 [`.en.md`](prompts/LARP_lite.en.md))으로 빠르게 점검하세요. *긴·복잡한 글엔 권하지 않습니다.*
+> **짧고 단순한 글**(트윗·짧은 문단·한 주장)은 한 화면짜리 경량판 [`prompts/LARP_lite.md`](prompts/LARP_lite.md)(영어판 [`prompts/LARP_lite.en.md`](prompts/LARP_lite.en.md))으로 빠르게 점검하세요. *긴·복잡한 글엔 권하지 않습니다.*
 
 ---
 
