@@ -2,6 +2,15 @@
 
 *[한국어](CHANGELOG.md) | English*
 
+## v260619 (2026-06-19) — Added LARP-Map long-document mode (for long-text omission)
+
+A countermeasure for the limit that drawing a long/complex text (large judgments, multi-stage arguments) *all at once* with the base Map makes omission happen silently. Adds a new mode file [`prompts/LARP_map_long.en.md`](prompts/LARP_map_long.en.md) (Korean [`.md`](prompts/LARP_map_long.md)). The existing tools/engine are unchanged, and it still does not evaluate or judge (that is the full LARP).
+
+- **Interactive progressive expansion**: expand stage by stage from the final conclusion through ground stages, with a user gate at each stage — "is this all? what shall we expand next?" Go deep on one conclusion at a time.
+- **Generalized vocabulary**: conclusion–ground are relative roles, grounds labelled by depth (stage 1, 2 …), terminal = evidence, and a single descent rule — *"is this ground itself further argued?"* — handles arbitrary-depth multi-stage arguments with no fixed layer names.
+- **Three anti-omission devices**: (1) enumerate all final conclusions at Step 0, then chunk by conclusion; (2) map while *exhausting* the text's cited source/material list (let the document force completeness); (3) a running tree + coverage ledger each turn that makes `[unexpanded]·[missing?]` visible. **Not a zero-omission guarantee** — the goal is to turn omission from *silent* into a *visible choice*.
+- **Positioning**: the base one-shot LARP-Map stays for short/medium texts. For long/complex texts the path is this long-document mode → full LARP (reflected in README, USAGE, and the base Map's note).
+
 ## v260618 (2026-06-18) — Evidence atomization · diagnosticity recovery (from real-judgment testing)
 
 From real use (analyzing the Suwon High Court 2024-No-620 judgment), this fixes a flaw where Lite/Map lumped *the actual content of atomic evidence* into "F's statement and the minutes, etc." No new machinery — it just makes visible, in the first pass, what was missing: (a) the actual content of evidence, (b) where that content diverges from the arguer's reading, and (c) hypothesis-discriminating power (diagnosticity). The verdict still stays with the human / the second pass.
