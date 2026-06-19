@@ -119,7 +119,7 @@ There's nothing to install. Putting one piece of text (the prompt) into a chatbo
 | [`docs/appendix_deep.en.md`](docs/appendix_deep.en.md) | Going deeper — the thinking underneath (optional) |
 | [`CHANGELOG.en.md`](CHANGELOG.en.md) | Version history |
 | [`verification/`](verification/) | Verification harness — version regression test (fixed cases + behavior rubric) |
-| [`tools/`](tools/) | Helper tools — deterministic coverage audit (reconcile the citation index by code to catch dropped evidence in long texts) · [docs](tools/coverage_audit.en.md) |
+| [`tools/`](tools/) | Helper tools — deterministic coverage audit (reconcile the citation index by code to catch dropped evidence in long texts) · [plain-language intro](tools/README.en.md) |
 
 > New here? Start with the [introduction](docs/introduction.en.md). The deep theory is gathered separately in the [appendix](docs/appendix_deep.en.md) — skip it if you just want to start using the tool.
 
