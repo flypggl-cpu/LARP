@@ -7,7 +7,7 @@
 > Not a tool for winning arguments. A tool for looking at your own thinking and your opponent's with the very same eye.
 
 > ### ▶ How to use it now (recommended order)
-> **1. Map the structure — LARP-Map** [`prompts/LARP_map.en.md`](prompts/LARP_map.en.md) ([한국어](prompts/LARP_map.md)): lays out every claim and ground as a tree, no evaluation. **For long or complex texts, map the whole structure here first.**
+> **1. Map the structure — LARP-Map** [`prompts/LARP_map.en.md`](prompts/LARP_map.en.md) ([한국어](prompts/LARP_map.md)): lays out every claim and ground as a tree, no evaluation. **For long or complex texts, map the whole structure here first.** — For *very long, complex* texts (large judgments, multi-stage arguments), use the interactive **long-document mode** [`prompts/LARP_map_long.en.md`](prompts/LARP_map_long.en.md) ([한국어](prompts/LARP_map_long.md)): expand stage by stage from the final conclusion, checking for omissions at each step.
 >
 > **2. Full version + modules — deep analysis**: paste the body [`prompts/LARP.en.md`](prompts/LARP.en.md) ([한국어](prompts/LARP.md)) and the criteria & check modules [`prompts/LARP_modules.en.md`](prompts/LARP_modules.en.md) *together*, then run the first and second pass. Paste it into a chatbot (ChatGPT, Claude, etc.) and add the text you want analyzed. (The first-pass map works from the body alone, but the second-pass detailed analysis needs the modules — so it's simplest to load both from the start. Nothing to install.)
 >
@@ -108,7 +108,8 @@ There's nothing to install. Putting one piece of text (the prompt) into a chatbo
 |---|---|
 | [`prompts/LARP.en.md`](prompts/LARP.en.md) | The tool itself — full version (the prompt you paste into a chatbot) |
 | [`prompts/LARP_modules.en.md`](prompts/LARP_modules.en.md) | Criteria & check modules — load with the body for second-pass detailed analysis |
-| [`prompts/LARP_map.en.md`](prompts/LARP_map.en.md) | LARP-Map — every claim/ground as a tree, no evaluation (structure only; first pass for long texts) |
+| [`prompts/LARP_map.en.md`](prompts/LARP_map.en.md) | LARP-Map — every claim/ground as a tree, no evaluation (structure only; one pass; short/medium texts) |
+| [`prompts/LARP_map_long.en.md`](prompts/LARP_map_long.en.md) | LARP-Map long-document mode — interactive progressive expansion (final conclusion → stages, omission check each turn · **long/complex texts only**) |
 | [`prompts/LARP_lite.en.md`](prompts/LARP_lite.en.md) | Lightweight edition — one-screen quick check, **short texts only** (a shortcut) |
 | [`USAGE.en.md`](USAGE.en.md) | How to use it — step by step |
 | [`docs/introduction.en.md`](docs/introduction.en.md) | Introduction — why this matters |
