@@ -46,7 +46,7 @@ Conclusion and ground are *relative roles* — the same proposition is a ground 
   - `Actual content` what it actually contains (briefly, in its own words where possible) `[content]`
   - `Arguer's reading` the meaning imputed; where it diverges from the content, separate them `[W·inferred]`
   - `Read otherwise` if it also reads another way, one minimal line `[competing]`
-- **Source-list traction:** at the evidence stage, first list the **sources/materials** the text cites (exhibit numbers in a judgment, citations in a paper, cited facts in an op-ed) and map while *exhausting* that list — let the *document*, not the user's memory, force completeness.
+- **Source-list traction:** at the evidence stage, first list the **sources/materials** the text cites (exhibit numbers in a judgment, citations in a paper, cited facts in an op-ed) and map while *exhausting* that list — let the *document*, not the user's memory, force completeness. *(Optional)* references carried by a marker can be **reconciled deterministically** against the tree with the helper script [`tools/larp_coverage_audit.py`](../tools/coverage_audit.en.md), driving silent omission to zero for cited references.
 - Gate: **"Is this evidence's actual content / reading right? Shall we look further at other readings?"**
 
 A *silent bridge* from ground to conclusion becomes a **hidden premise** `[W·implicit]` in place. A conclusion-level counter the text *itself raises* is `Counter ⚠ [competing]`.
