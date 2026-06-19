@@ -5,6 +5,7 @@
 > A helper that lifts the long-document mode's *anti-omission* from a **prompt instruction** to a **code reconciliation**.
 > It replaces the model's "happened to find it (LLM reading is lossy)" with **"did it exhaust the cited index (deterministic)."**
 > LARP isn't only for judgments, so the audit is generalized to work on **any document carrying a citation marker.**
+> 📖 New here? Start with the plain-language [README.en.md](README.en.md) (what it does · how to use it · why omissions happen). This file is the *detailed manual.*
 
 ---
 

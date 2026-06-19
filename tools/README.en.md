@@ -4,6 +4,8 @@
 
 This folder holds a helper that **catches evidence quietly going missing when you analyze a long text.** Here's the plain-language version first; the detailed manual is linked at the bottom.
 
+> **Mode-agnostic.** These tools aren't tied to one mode — they reconcile against the map/output of *any* mode: the base LARP-Map, the long-document mode, or the full LARP.
+
 ---
 
 ## Why omissions happen — start here
@@ -39,9 +41,10 @@ In one line: **it turns the AI's "happened to find it" into the machine's "did i
 
 > If you need the guarantee, use 1 or 2 (code). Path 3 is a *stand-in* for those who find code too hard.
 
-## Honest limits
+## Honest limits — and the complement
 
-- It only catches evidence that **carries a tag.** Evidence mentioned *by name only* (no number), or a master list not in the body, it cannot track.
+- **The code audit only *guarantees* evidence that carries a tag.** Evidence mentioned *by name only* (e.g. "Kim's written statement") the code cannot catch.
+  - **Complement:** for name-only evidence, scrape it separately with the [Independent Evidence Scan](evidence_scan_prompt.en.md) and reconcile against the tree — a procedure *separated from the tree that only enumerates evidence*, so recall is higher. But it's an *approximation (no guarantee)*, so the honest picture is **tagged = guaranteed by code / name-only = boosted by the scan**, used together. (Why can't "all evidence" be guaranteed by code? Because *what counts as one evidence item* is already interpretive — only the markers, whose boundaries the document drew, can be exhaustively counted by a machine.)
 - It is **not a verdict** on right or wrong. It doesn't ask whether the evidence is true or important — only whether *your map covered it or dropped it* (judgment stays with the human — the LARP principle).
 
 ---
@@ -53,6 +56,7 @@ In one line: **it turns the AI's "happened to find it" into the machine's "did i
 | [`coverage_audit.en.md`](coverage_audit.en.md) | Detailed manual — supported tag types, commands, workflow, limits |
 | [`larp_coverage_audit.py`](larp_coverage_audit.py) | The actual program (Python, no dependencies) |
 | [`coverage_audit_prompt.en.md`](coverage_audit_prompt.en.md) | A no-code chatbot approximation (no guarantee) |
+| [`evidence_scan_prompt.en.md`](evidence_scan_prompt.en.md) | Independent evidence scan — enumerates even *name-only* evidence (approximation, recall booster) |
 
 For the whole long-text workflow, see the [coverage-audit section in USAGE](../USAGE.en.md) and the [long-document mode](../prompts/LARP_map_long.en.md).
 

@@ -308,6 +308,8 @@ A check tacked on formally after the output is self-justification, not self-chec
    — if so, register it in the open-questions ledger as a candidate for a diagnosticity check (this is not a 'non-diagnostic' verdict, but a flag handed to the reviewer / 2nd-pass modules K/G/M).
 ```
 
+> For a *long text*, whether the first-pass map captured every cited or named piece of evidence can be cross-checked with the mode-agnostic helpers in [`tools/`](../tools/README.en.md) — the coverage audit (guaranteed for tagged evidence) and the independent evidence scan (recall booster for name-only evidence) reinforce items 7–8 above by code / a separate procedure.
+
 ---
 
 ## 4. Overall flow

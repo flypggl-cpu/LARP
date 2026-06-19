@@ -1,6 +1,7 @@
 # LARP-Map 누락 증거 검사 — 결정론적 (coverage audit, v260619)
 
 > 한글로는 **누락 증거 검사**, 영어 정식 명칭은 **coverage audit**입니다(이하 혼용).
+> 📖 처음이라면 쉬운 설명 [README.md](README.md)부터 보세요(무엇을·어떻게·왜 누락이 생기나). 이 문서는 *상세 사용서*입니다.
 
 *한국어 | [English](coverage_audit.en.md)*
 

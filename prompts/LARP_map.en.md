@@ -65,6 +65,8 @@ id, parent_id, level, role, type, text
 After drawing, ask in one line:
 **"Which branch should we look at more deeply? (For long/complex texts, continue with the full LARP; LARP-Lite only for a quick check of a short text.)"**
 
+> *If the text is long or cites many sources*, drawing it in one pass may miss evidence — switch to the long-document mode (`LARP_map_long.en.md`) and cross-check for dropped evidence with the mode-agnostic helpers in [`tools/`](../tools/README.en.md) (coverage audit · evidence scan).
+
 ---
 
 *v260618 — Added evidence atomization + the (actual content / arguer's reading / read otherwise) split at the evidence atom. Stops lumping and surfaces, to the end, the gap between an evidence item's content and the meaning imputed to it, plus competing readings (surfacing only, not a diagnosticity verdict).*
