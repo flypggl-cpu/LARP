@@ -7,7 +7,7 @@
 > 상대를 이기는 도구가 아닙니다. 내 생각과 상대의 생각을, 똑같은 눈으로 들여다보는 도구입니다.
 
 > ### ▶ 바로 쓰는 법 (권장 순서)
-> **1. 구조 도해 — LARP-Map** [`prompts/LARP_map.md`](prompts/LARP_map.md)(영어판 [`.en.md`](prompts/LARP_map.en.md)): 평가 없이 모든 주장·논거를 트리로 펼칩니다. **길거나 복잡한 글은 여기서 먼저 전수 도해**하세요. — *아주 길고 복잡한 글*(대형 판결문·다단계 논증)은 대화형 **긴 문서 모드** [`prompts/LARP_map_long.md`](prompts/LARP_map_long.md)(영어판 [`.en.md`](prompts/LARP_map_long.en.md))로, 최종 결론에서부터 한 단계씩 펼치며 매 단계 누락을 점검하세요.
+> **1. 구조 도해 — LARP-Map** [`prompts/LARP_map.md`](prompts/LARP_map.md)(영어판 [`.en.md`](prompts/LARP_map.en.md)): 평가 없이 모든 주장·논거를 트리로 펼칩니다. **길거나 복잡한 글은 여기서 먼저 전수 도해**하세요. — *아주 길고 복잡한 글*(대형 판결문·다단계 논증)은 대화형 **긴 문서 모드** [`prompts/LARP_map_long.md`](prompts/LARP_map_long.md)(영어판 [`.en.md`](prompts/LARP_map_long.en.md))로, 최종 결론에서부터 한 단계씩 펼치며 매 단계 누락을 점검하세요. *(선택)* 증거 누락을 코드로 점검하려면 결정론적 커버리지 감사 [`tools/`](tools/) — 사용법은 [USAGE §5.6](USAGE.md#56-긴-글의-증거-누락-점검--결정론적-커버리지-감사-선택).
 >
 > **2. 전체판 + 모듈 — 깊은 분석**: 본문 [`prompts/LARP.md`](prompts/LARP.md)(영어판 [`.en.md`](prompts/LARP.en.md))과 기준·점검 모듈 [`prompts/LARP_modules.md`](prompts/LARP_modules.md)을 *함께* 붙인 뒤 1차·2차를 진행하세요. 챗봇(ChatGPT·Claude 등)에 붙이고 분석할 글을 넣으면 끝입니다. (1차 논증 지도는 본문만으로도 되지만, 2차 상세 분석엔 모듈이 필요하니 처음부터 둘 다 넣는 게 간편합니다. 설치 필요 없음)
 >
