@@ -63,6 +63,8 @@ python larp_coverage_audit.py document.txt --tree tree.txt
 
 No dependencies (Python standard library only). The index is also written to `evidence_index.json`.
 
+> **Can't run code?** There is a chatbot *approximation* [`coverage_audit_prompt.en.md`](coverage_audit_prompt.en.md) — the AI reads it itself, so it has **no omission guarantee** (it falls back to "happened to find it"). If you need the guarantee but installing Python is the friction, run the script inside a *code-running chatbot* — that keeps the determinism with no local install.
+
 ## Worked example (Suwon High Court 2024No620, "total USD" issue)
 
 In this span the evidence cited by 순번 = **239 · 326 · 726**. Reconciling a tree that cited only 726 (the receipt):

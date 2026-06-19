@@ -1,4 +1,6 @@
-# LARP-Map 결정론적 커버리지 감사 (v260619)
+# LARP-Map 누락 증거 검사 — 결정론적 (coverage audit, v260619)
+
+> 한글로는 **누락 증거 검사**, 영어 정식 명칭은 **coverage audit**입니다(이하 혼용).
 
 *한국어 | [English](coverage_audit.en.md)*
 
@@ -42,7 +44,7 @@
 ## 운용 — 긴 문서 모드와 결합
 
 1. [긴 문서 모드](../prompts/LARP_map_long.md)의 **"출처·자료 견인"** 단계에서 트리가 참조를 *표지로* 인용하게 한다.
-2. 매 쟁점(최종 결론)을 마칠 때 그 구간에 이 감사를 돌린다.
+2. 매 쟁점(최종 결론)을 마칠 때 그 구간에 이 검사를 돌린다.
 3. `[누락?]` 키를 트리에 `[미확장]`/`[누락?]` 노드로 되먹여 coverage 장부를 갱신한다.
 4. 모든 키가 *다룸* 또는 *표시됨*이 될 때까지 반복 → 인용 참조 기준 무(無)침묵 누락.
 
@@ -63,6 +65,8 @@ python larp_coverage_audit.py document.txt --tree tree.txt
 
 의존성 없음(파이썬 표준 라이브러리만). 색인은 `evidence_index.json`으로도 저장된다.
 
+> **코드를 못 돌리는 환경?** 챗봇용 *근사* [`coverage_audit_prompt.md`](coverage_audit_prompt.md)가 있다 — AI가 직접 읽어 인용을 뽑으므로 **누락 보장은 없다**(코드판과 달리 "운 좋게 찾음"으로 되돌아감). 보장이 필요하면 위 코드판을 쓰되, 설치가 부담이면 *코드 실행되는 챗봇*에 스크립트를 올려 돌리면 설치 없이도 결정론을 유지한다.
+
 ## 실측 예 (수원고등법원 2024노620, "미화 총액" 쟁점)
 
 이 쟁점 구간에서 순번으로 인용된 증거 = **239 · 326 · 726** 셋. 726(영수증)만 인용한 트리를 대조하면:
@@ -78,7 +82,7 @@ python larp_coverage_audit.py document.txt --tree tree.txt
 
 ---
 
-*v260619 — 결정론적 커버리지 감사 신설(도메인 일반화). 인용 참조(표지) 한정으로 침묵의 누락을 0으로 만들기 위한 코드 대조. 동봉 스크립트: [`larp_coverage_audit.py`](larp_coverage_audit.py).*
+*v260619 — 결정론적 누락 증거 검사(coverage audit) 신설(도메인 일반화). 인용 참조(표지) 한정으로 침묵의 누락을 0으로 만들기 위한 코드 대조. 동봉 스크립트: [`larp_coverage_audit.py`](larp_coverage_audit.py).*
 
-*LARP-Map 결정론적 커버리지 감사 (Layer-grounded Argument Reasoning Probe) · 저작자 gocsy · CC BY-NC-SA 4.0*
+*LARP-Map 누락 증거 검사 / Coverage Audit (Layer-grounded Argument Reasoning Probe) · 저작자 gocsy · CC BY-NC-SA 4.0*
 *개인 방법론 프로젝트이며, 어느 기관의 공식 입장도 아닙니다.*
