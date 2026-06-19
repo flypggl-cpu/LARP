@@ -1,7 +1,8 @@
 # LARP-Map — Argument Structure Diagram (structure edition, v260618)
 
-> A tool that shows *all the claims and grounds* of a text as a multi-level tree at a glance. **It does not evaluate.**
+> A tool that shows *all the claims and grounds* of a text as a multi-level tree at a glance (short/medium texts, drawn in one pass). **It does not evaluate.**
 > To *check* for anomalous arguments use LARP-Lite (fast check); for deep analysis use the **full LARP**.
+> For *very long, complex* texts (large judgments, multi-stage arguments) the one-pass draw can't reach everything — use the **LARP-Map long-document mode** (`LARP_map_long.en.md`): it expands interactively, stage by stage from the final conclusion, checking for omissions each turn.
 
 ---
 
