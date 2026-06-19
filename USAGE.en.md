@@ -111,6 +111,8 @@ python tools/larp_coverage_audit.py document.txt --tree tree.txt
 
 It **auto-detects** the marker scheme — Korean evidence list (`순번 N`), numeric refs (`[12]`), common-law `Exhibit`, author-year `(Smith 2020)` — and any other marker can be given with `--pattern 'REGEX'` (e.g. footnotes `--pattern 'fn\.?\s*(\d+)'`). The full workflow and limits are in [tools/coverage_audit.en.md](tools/coverage_audit.en.md).
 
+**If Python is a hurdle:** ① run the script inside a code-running chatbot (ChatGPT Advanced Data Analysis, Claude, etc.) by uploading the script and document — determinism is kept with no install; ② to avoid code entirely, paste the chatbot *approximation* prompt [`tools/coverage_audit_prompt.en.md`](tools/coverage_audit_prompt.en.md) — but since the AI reads it itself, there is **no omission guarantee** (unlike the code edition).
+
 **Limits:** it cannot catch a reference made *by name only* (no marker) or a master list not in the body. And it is *not a verdict* on truth or diagnosticity — only a **coverage** mark (covered / missing).
 
 ## 6. FAQ

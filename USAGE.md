@@ -92,7 +92,9 @@ E1->A1          ← 특정 연결 지정
 
 → 구체적 예시: ["백신은 효과가 없다" 주장 검증](examples/claim_check_vaccine.md)
 
-## 5.6 긴 글의 증거 누락 점검 — 결정론적 커버리지 감사 (선택)
+## 5.6 긴 글의 누락 증거 검사 — 결정론적 (coverage audit, 선택)
+
+> 한글로는 **누락 증거 검사**, 영어 명칭은 **coverage audit**입니다.
 
 긴 문서 모드로 트리를 그려도, 모델이 수백 페이지에서 어떤 증거를 *못 찾아* 애초에 안 내놓는 누락은 프롬프트로는 막지 못합니다(LLM 읽기는 손실적). 이때 보조 스크립트 [`tools/larp_coverage_audit.py`](tools/larp_coverage_audit.py)가 *문서가 표지로 인용한* 참조를 코드로 전수 추출해 트리와 대조하고, 트리에 빠진 인용을 `[누락?]`로 짚어 줍니다 — **인용 참조에 한해 침묵의 누락 0**. (이 한 부분만 파이썬 실행이 필요하고, 나머지 LARP은 설치가 필요 없습니다.)
 
@@ -110,6 +112,8 @@ python tools/larp_coverage_audit.py document.txt --tree tree.txt
 ```
 
 표지 체계는 한국 증거목록(`순번 N`)·번호 참고문헌(`[12]`)·영미권 `Exhibit`·저자-연도 `(Smith 2020)`를 **자동 감지**하고, 그 밖의 표지는 `--pattern '정규식'`으로 지정합니다(예: 각주 `--pattern 'fn\.?\s*(\d+)'`). 운용 흐름과 한계는 [tools/coverage_audit.md](tools/coverage_audit.md)에 자세합니다.
+
+**파이썬이 부담되면:** ① 코드 실행되는 챗봇(ChatGPT Advanced Data Analysis, Claude 등)에 스크립트와 문서를 올려 돌리면 설치 없이도 결정론이 유지됩니다. ② 코드를 아예 안 쓰려면 챗봇용 *근사* 프롬프트 [`tools/coverage_audit_prompt.md`](tools/coverage_audit_prompt.md)를 붙여 쓸 수 있습니다 — 단 AI가 직접 읽어 뽑으므로 **누락 보장은 없습니다**(코드판과 다른 점).
 
 **한계:** 표지 없이 *이름으로만* 든 참조나 본문에 없는 별지 목록은 못 잡습니다. 그리고 이것은 진위·진단성 *판정이 아니라* "다뤘나/빠졌나"의 **커버리지 표시**일 뿐입니다.
 
