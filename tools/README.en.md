@@ -44,7 +44,7 @@ In one line: **it turns the AI's "happened to find it" into the machine's "did i
 ## Honest limits — and the complement
 
 - **The code audit only *guarantees* evidence that carries a tag.** Evidence mentioned *by name only* (e.g. "Kim's written statement") the code cannot catch.
-  - **Complement:** for name-only evidence, scrape it separately with the [Independent Evidence Scan](evidence_scan_prompt.en.md) and reconcile against the tree — a procedure *separated from the tree that only enumerates evidence*, so recall is higher. But it's an *approximation (no guarantee)*, so the honest picture is **tagged = guaranteed by code / name-only = boosted by the scan**, used together. (Why can't "all evidence" be guaranteed by code? Because *what counts as one evidence item* is already interpretive — only the markers, whose boundaries the document drew, can be exhaustively counted by a machine.)
+  - **Complement:** for name-only evidence, the unified chatbot prompt [`coverage_audit_prompt.en.md`](coverage_audit_prompt.en.md) sweeps it in via its *full scan* and reconciles against the tree. But it's an *approximation (no guarantee)*, so the honest picture is **tagged = guaranteed by code / name-only = boosted by the prompt**, used together. (Why can't "all evidence" be guaranteed by code? Because *what counts as one evidence item* is already interpretive — only the markers, whose boundaries the document drew, can be exhaustively counted by a machine.)
 - It is **not a verdict** on right or wrong. It doesn't ask whether the evidence is true or important — only whether *your map covered it or dropped it* (judgment stays with the human — the LARP principle).
 
 ---
@@ -55,8 +55,7 @@ In one line: **it turns the AI's "happened to find it" into the machine's "did i
 |---|---|
 | [`coverage_audit.en.md`](coverage_audit.en.md) | Detailed manual — supported tag types, commands, workflow, limits |
 | [`larp_coverage_audit.py`](larp_coverage_audit.py) | The actual program (Python, no dependencies) |
-| [`coverage_audit_prompt.en.md`](coverage_audit_prompt.en.md) | A no-code chatbot approximation (no guarantee) |
-| [`evidence_scan_prompt.en.md`](evidence_scan_prompt.en.md) | Independent evidence scan — enumerates even *name-only* evidence (approximation, recall booster) |
+| [`coverage_audit_prompt.en.md`](coverage_audit_prompt.en.md) | A no-code **unified** chatbot approximation — full evidence scan (incl. *name-only*) + tree reconcile (no guarantee) |
 
 For the whole long-text workflow, see the [coverage-audit section in USAGE](../USAGE.en.md) and the [long-document mode](../prompts/LARP_map_long.en.md).
 

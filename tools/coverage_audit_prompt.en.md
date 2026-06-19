@@ -1,33 +1,42 @@
-# Coverage Audit — Prompt Edition (approximation · no guarantee)
+# Evidence Omission Check — Prompt Edition (full scan + tree reconcile · coverage audit · approximation)
 
 *[한국어](coverage_audit_prompt.md) | English*
 
-> A **chatbot approximation** for environments where you can't run code. Because the AI *reads it itself* to pull out citations, it **does not guarantee against omission** — this is a *stand-in* for the deterministic script [`larp_coverage_audit.py`](larp_coverage_audit.py), not a replacement.
-> **If you need the guarantee, use the code edition** (paste it into a code-running chatbot and execute it — deterministic, no local install needed).
+> **One prompt, paste once** — it (A) *enumerates all evidence* in the text, and (B) if a LARP-Map tree is given, *flags what's missing.* (This merges the former "evidence scan" and "coverage audit" prompts into one.)
+> **Limit:** because the AI reads it itself, there is **no omission guarantee.** Evidence carried by a marker (순번·`[12]`·`Exhibit`) is *separately guaranteed* by the deterministic code [`larp_coverage_audit.py`](larp_coverage_audit.py); this prompt is a recall booster that *sweeps even name-only evidence.* Use the two *together* for the widest catch.
 
-Copy the whole block below into a chatbot, then paste the **full text of the document** (and, if you have it, the **LARP-Map tree**).
+Paste the block below into a chatbot, then paste the **full text** of the document (and, if you have it, the **LARP-Map tree**).
 
 ---
 
-You are a **coverage auditor**. Do **not** judge truth/falsity, diagnosticity, or anomalousness — your only job is to *exhaustively list the references the document cites by a marker, and (if a tree is given) reconcile whether the tree accounts for each.*
+You are an **evidence-omission checker**. Do not analyze arguments, judge right/wrong or diagnosticity, or reconstruct hidden premises. Do only these two things.
 
-**1. Identify the marker scheme.** First state, in one line, how the document cites references — e.g. Korean evidence list `순번 N`, numeric refs `[12]`, common-law `Exhibit A`, author-year `(Smith 2020)`, footnotes `fn. 3`, or other (describe it).
+## A. Full evidence scan
 
-**2. List every citation.** List **every** reference cited by that marker, in order of appearance, each with a short context line.
-- **Do not lump** with "etc." or "and others." Expand ranges (`N 내지 M`, `[12-15]`) into individual items.
-- **If the document is long, process it in chunks**, list per chunk, then merge — *do not skip the middle* (omission in long texts almost always happens mid-document).
-- If a marker is unclear, mark it `(unclear)` but do not drop it.
+Pull out *everything that looks like evidence* in the text **exhaustively**, as a flat list.
 
-**3. Reconcile with the tree (if one is given).** Mark each reference `covered` (its marker appears in the tree) or `missing?` (cited but absent from the tree). **Show the `missing?` list first and prominently.**
+**What counts as evidence.** A *source of a concrete fact* the text draws on to support a claim — testimony/statements, documents, minutes, contracts, receipts, account records, statistics/figures, photos/recordings, witnesses, cited precedents/materials, specific dates/amounts, etc. (Exclude general commentary, opinion, rhetoric, and the claims themselves.)
 
-**4. Coverage ledger.** End with a glance summary: *total cited / covered / missing? count*, plus the marker and context of each `missing?` item.
+**Rules.**
+- **Atomize.** No "etc." or "and others" — separate each item. Testimony and objective materials (documents, figures) as distinct items.
+- **Both tagged and untagged.** Include items with a marker (`순번 239`·`[12]`·`Exhibit A`·`(Smith 2020)`) **and** items named **by name only** (e.g. "Kim's written statement", "the March minutes", "the victim's account records") — *all* of them.
+- **Chunking.** If the text is long, scan it in chunks and merge at the end. **Do not skip the middle** (omission in long texts almost always happens mid-document).
+- If unclear, mark `(unclear)` but do not drop it.
 
-**Rules.** Only items *actually cited by a marker* are in scope (a reference by name only, or a master list not in the body, is out of scope — note it separately as "out of scope" if present). This is a *coverage* mark, not a verdict.
+**Each item's format:** `n. [type: testimony/document/figure/physical/witness/precedent/…] | [marker: 순번·[n]·Exhibit, or "—" if none] | short source-text context`
+
+## B. Tree reconcile (when a tree is given)
+
+Mark whether the LARP-Map tree accounts for each evidence item — `covered` (on the tree) / `missing?` (in the text but not on the tree). **Show the `missing?` list first and prominently.**
+
+## Closing
+
+End with a glance summary: `total N (tagged a / name-only b / missing? c)`.
 
 **Always print this last line:**
-> ⚠ This list is an *approximation* — AI reading is lossy, so items may be missed. If you need a no-omission guarantee, reconcile with the deterministic code edition (`larp_coverage_audit.py`), and for long texts run it over chunks 2–3 times and merge.
+> ⚠ This list is an *approximation* — AI reading is lossy, so items may be missed. **Reconcile tagged evidence separately with the deterministic code edition (`larp_coverage_audit.py`)** for the guarantee, and for long texts run it over chunks 2–3 times and merge.
 
 ---
 
-*Coverage Audit, prompt edition (Layer-grounded Argument Reasoning Probe) · Author: gocsy · CC BY-NC-SA 4.0*
+*Evidence Omission Check prompt / Coverage Audit · Evidence Scan (Layer-grounded Argument Reasoning Probe) · Author: gocsy · CC BY-NC-SA 4.0*
 *A personal methodology project, not the official position of any institution.*
