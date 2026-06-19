@@ -92,6 +92,27 @@ The order can run two ways: **(a)** deep-research first → analyze the result w
 
 → A concrete example: [checking the claim "vaccines don't work"](examples/claim_check_vaccine.en.md)
 
+## 5.6 Checking for dropped evidence in long texts — deterministic coverage audit (optional)
+
+Even after the long-document mode draws a tree, a prompt cannot prevent the omission where the model simply *fails to find* a piece of evidence buried across hundreds of pages (LLM reading is lossy). For that, the helper script [`tools/larp_coverage_audit.py`](tools/larp_coverage_audit.py) code-extracts every reference the document *cites by a marker* and reconciles it against the tree, flagging any cited item missing from the tree as `[missing?]` — **zero silent omission for cited references**. (Only this one part needs Python; the rest of LARP requires no install.)
+
+How to run:
+
+```bash
+# 1) extract the cited index only (marker scheme auto-detected)
+python tools/larp_coverage_audit.py document.txt
+
+# 2) scope to one issue's line range
+python tools/larp_coverage_audit.py document.txt --from 977 --to 1155
+
+# 3) reconcile against the tree — save the long-mode tree to a text file
+python tools/larp_coverage_audit.py document.txt --tree tree.txt
+```
+
+It **auto-detects** the marker scheme — Korean evidence list (`순번 N`), numeric refs (`[12]`), common-law `Exhibit`, author-year `(Smith 2020)` — and any other marker can be given with `--pattern 'REGEX'` (e.g. footnotes `--pattern 'fn\.?\s*(\d+)'`). The full workflow and limits are in [tools/coverage_audit.en.md](tools/coverage_audit.en.md).
+
+**Limits:** it cannot catch a reference made *by name only* (no marker) or a master list not in the body. And it is *not a verdict* on truth or diagnosticity — only a **coverage** mark (covered / missing).
+
 ## 6. FAQ
 
 **Q. Will the tool tell me "this document is wrong"?**
