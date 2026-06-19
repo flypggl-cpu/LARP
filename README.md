@@ -119,6 +119,7 @@ AI는 그럴듯한 글을 공짜로, 무한히 만듭니다. 그래서 새로운
 | [`docs/appendix_deep.md`](docs/appendix_deep.md) | 더 깊이 — 바탕에 깔린 생각 (원하는 분만) |
 | [`CHANGELOG.md`](CHANGELOG.md) | 버전 변경 이력 |
 | [`verification/`](verification/) | 검증 하네스 — 버전 회귀 테스트(고정 케이스 + 행동 루브릭) |
+| [`tools/`](tools/) | 보조 도구 — 결정론적 커버리지 감사(인용 색인을 코드로 대조해 긴 글의 증거 누락 점검) · [설명](tools/coverage_audit.md) |
 
 > 처음 오셨다면 [소개 글](docs/introduction.md)부터 읽는 걸 권합니다. 깊은 이론은 [부록](docs/appendix_deep.md)에 따로 모았으니, 당장 쓰고 싶으면 건너뛰어도 됩니다.
 
