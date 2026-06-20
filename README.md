@@ -7,6 +7,8 @@
 > 상대를 이기는 도구가 아닙니다. 내 생각과 상대의 생각을, 똑같은 눈으로 들여다보는 도구입니다.
 
 > ### ▶ 바로 쓰는 법 (권장 순서)
+> *처음이라면 → [**사용 안내: 어떤 도구를 언제**](docs/workflow.md)로 큰 그림(전체 흐름)을 먼저 잡으세요.*
+>
 > **1. 구조 도해 — LARP-Map** [`prompts/LARP_map.md`](prompts/LARP_map.md)(영어판 [`.en.md`](prompts/LARP_map.en.md)): 평가 없이 모든 주장·논거를 트리로 펼칩니다. **길거나 복잡한 글은 여기서 먼저 전수 도해**하세요. — *아주 길고 복잡한 글*(대형 판결문·다단계 논증)은 대화형 **긴 문서 모드** [`prompts/LARP_map_long.md`](prompts/LARP_map_long.md)(영어판 [`.en.md`](prompts/LARP_map_long.en.md))로, 최종 결론에서부터 한 단계씩 펼치며 매 단계 누락을 점검하세요. *(선택)* 증거 누락을 코드로 점검하려면 **누락 증거 검사**(coverage audit) [`tools/`](tools/) — 사용법은 [USAGE의 누락 증거 검사 절](USAGE.md).
 >
 > **2. 전체판 + 모듈 — 깊은 분석**: 본문 [`prompts/LARP.md`](prompts/LARP.md)(영어판 [`.en.md`](prompts/LARP.en.md))과 기준·점검 모듈 [`prompts/LARP_modules.md`](prompts/LARP_modules.md)을 *함께* 붙인 뒤 1차·2차를 진행하세요. 챗봇(ChatGPT·Claude 등)에 붙이고 분석할 글을 넣으면 끝입니다. (1차 논증 지도는 본문만으로도 되지만, 2차 상세 분석엔 모듈이 필요하니 처음부터 둘 다 넣는 게 간편합니다. 설치 필요 없음)
@@ -111,7 +113,8 @@ AI는 그럴듯한 글을 공짜로, 무한히 만듭니다. 그래서 새로운
 | [`prompts/LARP_map.md`](prompts/LARP_map.md) | LARP-Map — 평가 없이 모든 주장·논거를 트리로 (구조만 · 한 번에 그리기 · 짧은·중간 글) · [English](prompts/LARP_map.en.md) |
 | [`prompts/LARP_map_long.md`](prompts/LARP_map_long.md) | LARP-Map 긴 문서 모드 — 대화형 점진 확장(최종 결론→단계별, 매 턴 누락 점검 · **긴·복잡한 글 전용**) · [English](prompts/LARP_map_long.en.md) |
 | [`prompts/LARP_lite.md`](prompts/LARP_lite.md) | 경량판 — **짧은 글 전용** 한 화면 빠른 점검 (지름길) · [English](prompts/LARP_lite.en.md) |
-| [`USAGE.md`](USAGE.md) | 사용법 — 쉽게 따라 하기 |
+| [`docs/workflow.md`](docs/workflow.md) | 사용 안내 — **어떤 도구를 언제** (전체 흐름 길잡이) |
+| [`USAGE.md`](USAGE.md) | 사용법 — 쉽게 따라 하기 (세부 실행) |
 | [`docs/introduction.md`](docs/introduction.md) | 소개 — 왜 이게 필요한가 |
 | [`examples/worked_example.md`](examples/worked_example.md) | 실제로 돌려 본 예시 (가상 사건) |
 | [`examples/claim_check_vaccine.md`](examples/claim_check_vaccine.md) | 주장 검증 예시 — 딥리서치 → 분석 → 판단 ("백신 무용론") |
