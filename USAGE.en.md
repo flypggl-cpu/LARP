@@ -2,6 +2,8 @@
 
 *[한국어](USAGE.md) | English*
 
+> Want the big picture (which tool *when*) first? → [Usage Guide: which tool, when](docs/workflow.en.md). This document covers how to actually *run* those tools.
+
 ## 1. There's nothing to install
 
 LARP isn't a program — it's **one piece of text (a prompt).** Putting the contents of [`prompts/LARP.en.md`](prompts/LARP.en.md) into a chatbot is all there is to it.

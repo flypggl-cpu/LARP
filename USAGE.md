@@ -2,6 +2,8 @@
 
 *한국어 | [English](USAGE.en.md)*
 
+> 어떤 도구를 *언제* 쓰는지(전체 흐름)부터 잡고 싶다면 → [사용 안내: 어떤 도구를 언제](docs/workflow.md). 이 문서는 그 도구들을 *실제로 어떻게 돌리는지*를 다룹니다.
+
 ## 1. 설치는 없다
 
 LARP는 프로그램이 아니라 **글(프롬프트) 하나**입니다. [`prompts/LARP.md`](prompts/LARP.md)(영어판: [`LARP.en.md`](prompts/LARP.en.md))의 내용을 챗봇에 넣는 게 전부예요.
