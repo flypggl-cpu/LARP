@@ -32,7 +32,7 @@ The *[coverage audit](../tools/README.en.md)* pulls every piece of evidence the 
 *You* pick the load-bearing / suspicious grounds.
 
 **4. See those grounds' weak points.**
-The *[full LARP](../prompts/LARP.en.md)* points out — as *candidates* — whether the chosen ground holds up against contrary facts, whether it could be explained otherwise, whether the evidence fits both sides equally.
+The *[full LARP](../prompts/LARP.en.md)* points out — as *candidates* — whether the chosen ground holds up against contrary facts, whether it could be explained otherwise, whether the evidence fits both sides equally. — When there are several competing hypotheses and you want to *weigh them systematically*, use *[LARP-Weigh](../prompts/LARP_weigh.en.md)*: lay the evidence out as a neutral base, then compete it as (evidence × dimension × hypothesis) to structure *which hypothesis is least contradicted* (you make the call).
 
 **5. Get questions to check against outside sources.**
 It drafts *questions* to check whether the ground is supported or rebutted by outside sources (doctrine, precedent, statistics; for a paper, the cited works). You feed the results back with their sources attached.
@@ -47,6 +47,7 @@ It drafts *questions* to check whether the ground is supported or rebutted by ou
 - **[LARP-Map long-document mode](../prompts/LARP_map_long.en.md)** — to expand a long, complex text (tens to hundreds of pages) *layer by layer, together*.
 - **[Coverage audit](../tools/README.en.md)** — to check by code that *not one* cited piece of evidence was missed.
 - **[Full LARP](../prompts/LARP.en.md)** — to look deeply at a chosen ground's *weak points*.
+- **[LARP-Weigh](../prompts/LARP_weigh.en.md)** — when several competing hypotheses need to be *weighed systematically* against the evidence (evidence base → dimension competition → least-contradicted ranking).
 - **[LARP-Lite](../prompts/LARP_lite.en.md)** — to *quickly* check a short text.
 
 ---

@@ -110,6 +110,7 @@ There's nothing to install. Putting one piece of text (the prompt) into a chatbo
 |---|---|
 | [`prompts/LARP.en.md`](prompts/LARP.en.md) | The tool itself — full version (the prompt you paste into a chatbot) |
 | [`prompts/LARP_modules.en.md`](prompts/LARP_modules.en.md) | Criteria & check modules — load with the body for second-pass detailed analysis |
+| [`prompts/LARP_weigh.en.md`](prompts/LARP_weigh.en.md) | LARP-Weigh — evidence × hypothesis weighing: neutral evidence base → dimension-level competition; the human judges |
 | [`prompts/LARP_map.en.md`](prompts/LARP_map.en.md) | LARP-Map — every claim/ground as a tree, no evaluation (structure only; one pass; short/medium texts) |
 | [`prompts/LARP_map_long.en.md`](prompts/LARP_map_long.en.md) | LARP-Map long-document mode — interactive progressive expansion (final conclusion → stages, omission check each turn · **long/complex texts only**) |
 | [`prompts/LARP_lite.en.md`](prompts/LARP_lite.en.md) | Lightweight edition — one-screen quick check, **short texts only** (a shortcut) |
@@ -117,6 +118,7 @@ There's nothing to install. Putting one piece of text (the prompt) into a chatbo
 | [`USAGE.en.md`](USAGE.en.md) | How to use it — step by step (mechanics) |
 | [`docs/introduction.en.md`](docs/introduction.en.md) | Introduction — why this matters |
 | [`examples/worked_example.en.md`](examples/worked_example.en.md) | A worked example (fictional case) |
+| [`examples/larp_weigh_example.en.md`](examples/larp_weigh_example.en.md) | LARP-Weigh worked example — evidence × hypothesis weighing (crowdfunding) |
 | [`examples/claim_check_vaccine.en.md`](examples/claim_check_vaccine.en.md) | A claim-check example — deep research → analysis → decision ("vaccines don't work") |
 | [`docs/lineage.en.md`](docs/lineage.en.md) | Lineage (Walton·Toulmin·ACH·enthymeme·Popper) and how LARP differs from existing tools |
 | [`docs/appendix_deep.en.md`](docs/appendix_deep.en.md) | Going deeper — the thinking underneath (optional) |

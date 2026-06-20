@@ -2,6 +2,15 @@
 
 *[한국어](CHANGELOG.md) | English*
 
+## v260620 (2026-06-20) — Added LARP-Weigh (evidence × hypothesis evaluation, domain-general)
+
+Beyond the full version flagging weak points as *candidates*, this adds an evaluation aid [`prompts/LARP_weigh.en.md`](prompts/LARP_weigh.en.md) (Korean [`.md`](prompts/LARP_weigh.md)) that weighs competing hypotheses systematically at **(evidence × dimension × hypothesis)** resolution. It is a *domain-general* generalization of an internal criminal-investigation methodology (recording-DB → hypothesis-test), applicable to papers, policy, news, etc.
+
+- **Two-part structure (a safeguard)**: PART 1 records the evidence base *neutrally* (evidence → content → surface facts → **dimensions (18 probes)** → hypotheses as claims → questions) and stops; only in PART 2 does it compete. The separation keeps hypotheses from *pre-filtering* evidence extraction.
+- **Dimension-level competition + least-contradicted ranking**: competes the *dimensions* a piece of evidence establishes (not the evidence whole) against hypotheses, grading discriminating power. The *least-contradicted*, not the most-supported, hypothesis survives. Ambivalent dimensions don't count as support; negative/absence dimensions are evaluated actively; implicit necessary concomitants only on supported inference rules. Binary/frame guardrails.
+- **Boundary held**: the AI does **not** judge true/false/accept — structure and points only, the human decides (clerk/judge boundary). *Detecting* deep weak points is the full version's job; this tool *weighs evidence and hypotheses already laid out.*
+- Wired into the README structure table, the [usage guide](docs/workflow.en.md) (step 4 deepening) and tool list.
+
 ## v260619 (2026-06-19) — Added LARP-Map long-document mode (for long-text omission)
 
 A countermeasure for the limit that drawing a long/complex text (large judgments, multi-stage arguments) *all at once* with the base Map makes omission happen silently. Adds a new mode file [`prompts/LARP_map_long.en.md`](prompts/LARP_map_long.en.md) (Korean [`.md`](prompts/LARP_map_long.md)). The existing tools/engine are unchanged, and it still does not evaluate or judge (that is the full LARP).

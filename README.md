@@ -110,6 +110,7 @@ AI는 그럴듯한 글을 공짜로, 무한히 만듭니다. 그래서 새로운
 |---|---|
 | [`prompts/LARP.md`](prompts/LARP.md) | 도구 본체 — 전체판 (챗봇에 넣는 프롬프트) · [English](prompts/LARP.en.md) |
 | [`prompts/LARP_modules.md`](prompts/LARP_modules.md) | 기준·점검 모듈 — 2차 상세 분석 때 본문과 함께 투입 · [English](prompts/LARP_modules.en.md) |
+| [`prompts/LARP_weigh.md`](prompts/LARP_weigh.md) | LARP-Weigh — 증거×가설 저울질(경쟁가설 평가): 증거 베이스 → 차원 단위 경합, 판정은 사람 · [English](prompts/LARP_weigh.en.md) |
 | [`prompts/LARP_map.md`](prompts/LARP_map.md) | LARP-Map — 평가 없이 모든 주장·논거를 트리로 (구조만 · 한 번에 그리기 · 짧은·중간 글) · [English](prompts/LARP_map.en.md) |
 | [`prompts/LARP_map_long.md`](prompts/LARP_map_long.md) | LARP-Map 긴 문서 모드 — 대화형 점진 확장(최종 결론→단계별, 매 턴 누락 점검 · **긴·복잡한 글 전용**) · [English](prompts/LARP_map_long.en.md) |
 | [`prompts/LARP_lite.md`](prompts/LARP_lite.md) | 경량판 — **짧은 글 전용** 한 화면 빠른 점검 (지름길) · [English](prompts/LARP_lite.en.md) |
@@ -117,6 +118,7 @@ AI는 그럴듯한 글을 공짜로, 무한히 만듭니다. 그래서 새로운
 | [`USAGE.md`](USAGE.md) | 사용법 — 쉽게 따라 하기 (세부 실행) |
 | [`docs/introduction.md`](docs/introduction.md) | 소개 — 왜 이게 필요한가 |
 | [`examples/worked_example.md`](examples/worked_example.md) | 실제로 돌려 본 예시 (가상 사건) |
+| [`examples/larp_weigh_example.md`](examples/larp_weigh_example.md) | LARP-Weigh 워크드 예시 — 증거×가설 저울질 (크라우드펀딩) |
 | [`examples/claim_check_vaccine.md`](examples/claim_check_vaccine.md) | 주장 검증 예시 — 딥리서치 → 분석 → 판단 ("백신 무용론") |
 | [`docs/lineage.md`](docs/lineage.md) | 지적 계보(월튼·툴민·ACH·엔튀메메·포퍼)와 기존 도구와의 차이 |
 | [`docs/appendix_deep.md`](docs/appendix_deep.md) | 더 깊이 — 바탕에 깔린 생각 (원하는 분만) |
