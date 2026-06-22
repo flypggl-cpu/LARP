@@ -6,18 +6,20 @@
 
 > Not a tool for winning arguments. A tool for looking at your own thinking and your opponent's with the very same eye.
 
-> **▶ How to use it now** — **nothing to install:** copy a prompt file's contents into a chatbot (ChatGPT, Claude, etc.) and add the text you want analyzed. Pick by what you want to do. The tools only *lay out candidates*; the human judges.
+LARP is a set of prompts (plus one small code helper) that **reconstruct an argument and lay it out as a single map.** Beyond the claims, grounds, and evidence *written* in the text, it surfaces *what props the conclusion up unsaid* — hidden premises, alternative explanations, evidence that should be there but isn't. It doesn't judge; it marks *where to look* and hands the decision back to you. The tools below split that work by the text's length and depth.
 
-| What you want | Tool |
-|---|---|
-| Structure at a glance (short/medium texts) | [LARP-Map](prompts/LARP_map.en.md) |
-| Structure of a very long, complex text | [LARP-Map long-document mode](prompts/LARP_map_long.en.md) |
-| Check for dropped evidence in long texts *(optional · code)* | [coverage audit `tools/`](tools/) |
-| Deep analysis of a chosen ground's weak points | [full LARP](prompts/LARP.en.md) + [modules](prompts/LARP_modules.en.md) |
-| Weigh competing hypotheses | [LARP-Weigh](prompts/LARP_weigh.en.md) |
-| Quick check of a short text (shortcut) | [LARP-Lite](prompts/LARP_lite.en.md) |
+> **▶ How to use it now** — **nothing to install:** copy the prompt file's contents into a chatbot (ChatGPT, Claude, etc.) and add the text you want analyzed.
 
-> **Recommended flow (long argument):** ① map *conclusion → grounds → evidence* with **LARP-Map** (for very long texts the [long-document mode](prompts/LARP_map_long.en.md)) → ② check for dropped evidence with the **coverage audit** → ③ *you* pick the grounds to scrutinize → ④ evaluate weak points/hypotheses with the **full LARP** (or **LARP-Weigh** when there are several competing hypotheses) → ⑤ for anything needing outside checking, the tool drafts *questions* (feed the answers back with sources).
+| Tool | What it does | When (which text) |
+|---|---|---|
+| [LARP-Map](prompts/LARP_map.en.md) | lays out claims/grounds/evidence as a tree, *no evaluation* — structure only | to see structure first (short/medium texts) |
+| [LARP-Map long-document mode](prompts/LARP_map_long.en.md) | the same mapping, expanded *stage by stage, interactively* from the conclusion, checking omissions | very long, complex texts (judgments, papers) |
+| [full LARP](prompts/LARP.en.md) + [modules](prompts/LARP_modules.en.md) | finds hidden premises, the *split* between stated and real reasons, alternative explanations, missing evidence | to scrutinize a chosen ground deeply |
+| [LARP-Lite](prompts/LARP_lite.en.md) | a one-screen condensed version of the above | a quick check of a short text (shortcut) |
+| [LARP-Weigh](prompts/LARP_weigh.en.md) | weighs competing hypotheses against the evidence — which one is *least contradicted* | to decide "is it X or Y?" |
+| [coverage audit `tools/`](tools/) | code-extracts every cited piece of evidence and reconciles it against your map | checking dropped evidence in long texts *(optional · code)* |
+
+> **You don't run them all — pick what you need.** Often, mapping the structure with [LARP-Map](prompts/LARP_map.en.md) is enough. If a ground needs scrutiny, continue with the [full LARP](prompts/LARP.en.md); to decide between competing hypotheses, [LARP-Weigh](prompts/LARP_weigh.en.md). For very long texts, map with the [long-document mode](prompts/LARP_map_long.en.md), and add the [coverage audit](tools/) if you're worried about dropped evidence. For a short text, [LARP-Lite](prompts/LARP_lite.en.md) alone.
 >
 > Step-by-step mechanics (pasting, reading the 1st/2nd pass, FAQ) are in [USAGE](USAGE.en.md); "why it matters" is in the [introduction](docs/introduction.en.md). For the full version, paste the body and the [modules](prompts/LARP_modules.en.md) *together* and run both passes (for short, simple texts, Lite is the shortcut).
 
