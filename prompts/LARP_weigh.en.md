@@ -1,8 +1,8 @@
 # LARP-Weigh — Evidence × Hypothesis weighing (competing-hypotheses evaluation)
 
-> For any subject (a paper, policy, news, everyday argument): **lay the evidence out as a neutral base, then weigh it against competing hypotheses, dimension by dimension.**
-> Where the full LARP flags weak points as *candidates*, this tool competes them systematically at **(evidence × dimension × hypothesis)** resolution.
-> **The human decides — the AI only structures.** It does *not* declare which hypothesis is true or whether doubt is resolved.
+> For any subject (a paper, policy, news, everyday argument): **lay the evidence out in one place, then weigh it against the two (or more) rival explanations to see which it fits better.**
+> Where the full LARP *flags* the weak spots, this tool lines the evidence up *piece by piece* to show which explanation each piece favors.
+> **The human decides — the AI only organizes.** It does *not* declare which explanation is right or whether doubt is resolved.
 
 > This is an *evaluation* tool — strongest *after* you've laid out the structure with [LARP-Map](LARP_map.en.md) (or the [long-document mode](LARP_map_long.en.md)) and, for long texts, checked for missing evidence with the [`tools/`](../tools/README.en.md) coverage audit. For the whole flow, see [README's 'Which tool, when'](../README.en.md).
 > A concrete example: [LARP-Weigh worked example](../examples/larp_weigh_example.en.md).

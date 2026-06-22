@@ -1,7 +1,7 @@
 # LARP-Map Long-Document Mode — Interactive Progressive Expansion (structure edition, v260619)
 
-> A mode for *long, complex* texts (e.g. a large judgment, or any multi-stage argument), expanded **layer by layer, together with the user**, starting from the *final conclusion* and descending through ground stages.
-> For short / medium texts use the base **LARP-Map** (draw in one pass). This does not evaluate or check (that is the full LARP).
+> A mode for *long, complex* texts (a large court ruling, or an argument tangled across several stages): it opens the text **one step at a time, together with you**, starting from the *final conclusion* and following the reasons down.
+> For short / medium texts use the base **LARP-Map** (drawn in one pass). It doesn't judge right or wrong (that's the full LARP).
 
 ---
 
