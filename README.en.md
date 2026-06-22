@@ -12,12 +12,12 @@ LARP is a set of prompts (plus one small code helper) that **surface the doubtfu
 
 | Tool | What it does | When (which text) |
 |---|---|---|
-| **[full LARP](prompts/LARP.en.md)** + [modules](prompts/LARP_modules.en.md) | finds hidden premises, the *split* between stated and real reasons, alternative explanations, missing evidence — **the heart of the tool** | to scrutinize an argument deeply (core) |
-| **[LARP-Lite](prompts/LARP_lite.en.md)** | a one-screen condensed version of the above | a quick check of a short text |
-| [LARP-Map](prompts/LARP_map.en.md) | lays out claims/grounds/evidence as a tree, *no evaluation* — structure only | to see structure first (short/medium texts) |
-| [LARP-Map long-document mode](prompts/LARP_map_long.en.md) | the same mapping, expanded *stage by stage, interactively* from the conclusion, checking omissions | very long, complex texts (judgments, papers) |
-| [LARP-Weigh](prompts/LARP_weigh.en.md) | weighs competing hypotheses against the evidence — which one is *least contradicted* | to decide "is it X or Y?" |
-| [coverage audit `tools/`](tools/) | code-extracts every cited piece of evidence and reconciles it against your map | checking dropped evidence in long texts *(optional · code)* |
+| **[full LARP](prompts/LARP.en.md)** + [modules](prompts/LARP_modules.en.md) | shows what *unstated assumption* a claim is resting on, whether it could be explained another way, and whether any evidence that should be there is missing | to examine a claim closely (the main use) |
+| **[LARP-Lite](prompts/LARP_lite.en.md)** | the same check, fast, on *one screen* | a quick look at a short text |
+| [LARP-Map](prompts/LARP_map.en.md) | draws *how* a text's claims and their supporting reasons and evidence connect (it doesn't judge right or wrong) | to see how a text is put together (short/medium) |
+| [LARP-Map long-document mode](prompts/LARP_map_long.en.md) | for a very long text (like a court ruling), walks down from the conclusion *one step at a time*, checking nothing is missed | very long, complex texts (rulings, papers) |
+| [LARP-Weigh](prompts/LARP_weigh.en.md) | when there are two explanations ("fraud or a mistake?"), compares *which the evidence fits better* | to decide which of two explanations fits |
+| [coverage audit `tools/`](tools/) | pulls every cited piece of evidence *by code* so you can check you didn't miss any | making sure no evidence is missed in a long text *(optional · code)* |
 
 > **You don't run them all — just what you need.** The core is the [full LARP](prompts/LARP.en.md), which flags an argument's weak points, and its one-screen condensed [LARP-Lite](prompts/LARP_lite.en.md) — a short text needs only Lite; a text worth scrutinizing, the full version. To see the *structure* first, use [LARP-Map](prompts/LARP_map.en.md) (the [long-document mode](prompts/LARP_map_long.en.md) for very long texts); to decide between competing hypotheses, [LARP-Weigh](prompts/LARP_weigh.en.md); and add the [coverage audit](tools/) if you're worried about dropped evidence.
 >
@@ -103,22 +103,22 @@ See [USAGE.en.md](USAGE.en.md) for details.
 
 | File | Contents |
 |---|---|
-| [`prompts/LARP.en.md`](prompts/LARP.en.md) | The tool itself — full version (the prompt you paste into a chatbot) |
-| [`prompts/LARP_modules.en.md`](prompts/LARP_modules.en.md) | Criteria & check modules — load with the body for second-pass detailed analysis |
-| [`prompts/LARP_weigh.en.md`](prompts/LARP_weigh.en.md) | LARP-Weigh — evidence × hypothesis weighing: neutral evidence base → dimension-level competition; the human judges |
-| [`prompts/LARP_map.en.md`](prompts/LARP_map.en.md) | LARP-Map — every claim/ground as a tree, no evaluation (structure only; one pass; short/medium texts) |
-| [`prompts/LARP_map_long.en.md`](prompts/LARP_map_long.en.md) | LARP-Map long-document mode — interactive progressive expansion (final conclusion → stages, omission check each turn · **long/complex texts only**) |
-| [`prompts/LARP_lite.en.md`](prompts/LARP_lite.en.md) | Lightweight edition — one-screen quick check, **short texts only** (a shortcut) |
+| [`prompts/LARP.en.md`](prompts/LARP.en.md) | The tool itself — the full-version prompt you paste into a chatbot |
+| [`prompts/LARP_modules.en.md`](prompts/LARP_modules.en.md) | Extra criteria to paste alongside the body when going deep with the full version |
+| [`prompts/LARP_weigh.en.md`](prompts/LARP_weigh.en.md) | LARP-Weigh — compares two explanations against the evidence to see which fits better |
+| [`prompts/LARP_map.en.md`](prompts/LARP_map.en.md) | LARP-Map — draws how a text's claims, reasons, and evidence connect (short/medium texts) |
+| [`prompts/LARP_map_long.en.md`](prompts/LARP_map_long.en.md) | LARP-Map long-document mode — opens a very long text step by step, checking nothing's missed (**long texts only**) |
+| [`prompts/LARP_lite.en.md`](prompts/LARP_lite.en.md) | Lightweight edition — a one-screen quick check of a **short text** |
 | [`USAGE.en.md`](USAGE.en.md) | How to use it — step by step (pasting, reading the 1st/2nd pass, FAQ) |
 | [`docs/introduction.en.md`](docs/introduction.en.md) | Introduction — why this matters |
 | [`examples/worked_example.en.md`](examples/worked_example.en.md) | A worked example (fictional case) |
-| [`examples/larp_weigh_example.en.md`](examples/larp_weigh_example.en.md) | LARP-Weigh worked example — evidence × hypothesis weighing (crowdfunding) |
+| [`examples/larp_weigh_example.en.md`](examples/larp_weigh_example.en.md) | LARP-Weigh example — weighing two explanations against the evidence (crowdfunding) |
 | [`examples/claim_check_vaccine.en.md`](examples/claim_check_vaccine.en.md) | A claim-check example — deep research → analysis → decision ("vaccines don't work") |
 | [`docs/lineage.en.md`](docs/lineage.en.md) | Lineage (Walton·Toulmin·ACH·enthymeme·Popper) and how LARP differs from existing tools |
 | [`docs/appendix_deep.en.md`](docs/appendix_deep.en.md) | Going deeper — the thinking underneath (optional) |
 | [`CHANGELOG.en.md`](CHANGELOG.en.md) | Version history |
 | [`verification/`](verification/) | Verification harness — version regression test (fixed cases + behavior rubric) |
-| [`tools/`](tools/) | Helper tools — deterministic coverage audit (reconcile the citation index by code to catch dropped evidence in long texts) · [plain-language intro](tools/README.en.md) |
+| [`tools/`](tools/) | **coverage audit** — pulls every cited piece of evidence by code so you can check none was missed in a long text · [plain-language intro](tools/README.en.md) |
 
 > New here? Start with the [introduction](docs/introduction.en.md). The deep theory is gathered separately in the [appendix](docs/appendix_deep.en.md) — skip it if you just want to start using the tool.
 

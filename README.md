@@ -6,18 +6,18 @@
 
 > 상대를 이기는 도구가 아닙니다. 내 생각과 상대의 생각을, 똑같은 눈으로 들여다보는 도구입니다.
 
-LARP는 어떤 글의 **논증에서 미심쩍은 곳 — 숨은 전제, 겉이유와 실제이유의 *갈림*, 다른 설명, 있어야 하는데 빠진 증거 — 을 끄집어내 보여 주는** 프롬프트 모음입니다(작은 코드 도구 하나 포함). 결론이 *적히지 않은 무엇 위에 서 있는지*를 드러내되, 판정은 하지 않고 *따져볼 자리*만 짚어 판단은 사람에게 돌려줍니다. 깊이 따지는 **전체판**과 한 화면 **Lite**가 핵심이고, 글의 *구조*를 한눈에 보는 **Map**(아주 긴 글은 긴 문서 모드)과 보조 도구들이 그 일을 거듭니다.
+LARP는 어떤 글의 **논증에서 미심쩍은 데를 짚어 주는** 프롬프트 모음입니다(작은 코드 도구 하나 포함). 말로는 안 했지만 결론이 *몰래 깔고 있는 가정*, 내세운 이유와 *실제 이유가 다른 곳*, 달리 설명할 길, 있어야 하는데 *빠진 증거* — 이런 것들을 끄집어내 보여 줍니다. 옳다·그르다 판정은 하지 않고 "여기를 보라"고 자리만 짚어, 판단은 사람 몫으로 남깁니다. 깊이 따지는 **전체판**과 그 한 화면 축약인 **Lite**가 핵심이고, 글의 *짜임새*를 한눈에 보는 **Map**(아주 긴 글은 긴 문서 모드)과 보조 도구들이 거듭니다.
 
 > **▶ 바로 쓰는 법** — **설치 없이**, 쓰려는 도구의 프롬프트 파일 내용을 복사해 챗봇(ChatGPT·Claude 등)에 붙이고 분석할 글을 이어 넣으면 됩니다.
 
 | 도구 | 무엇을 하나 | 언제 (어떤 글) |
 |---|---|---|
-| **[전체판 LARP](prompts/LARP.md)** + [모듈](prompts/LARP_modules.md) | 숨은 전제·*겉이유와 실제이유의 갈림*·다른 설명·빠진 증거를 짚어 **약점을 분석**한다 — 이 도구의 본령 | 논증을 깊이 따질 때 (핵심) |
-| **[LARP-Lite](prompts/LARP_lite.md)** | 위 분석의 *한 화면 축약판* | 짧은 글을 빠르게 점검 |
-| [LARP-Map](prompts/LARP_map.md) | 주장·논거·증거를 *평가 없이* 트리(지도)로 펼친다 — 구조만 | 구조부터 보고 싶을 때 (짧은·중간 글) |
-| [LARP-Map 긴 문서 모드](prompts/LARP_map_long.md) | 같은 구조 도해를 결론부터 *한 단계씩 대화형*으로, 누락을 점검하며 | 아주 길고 복잡한 글 (판결문·논문 등) |
-| [LARP-Weigh](prompts/LARP_weigh.md) | 경쟁가설을 증거와 *저울질* — 어느 가설이 가장 적게 모순되는지 구조화 | "이거냐 저거냐"를 가릴 때 |
-| [누락 증거 검사 `tools/`](tools/) | 문서가 인용한 증거를 *코드로 전수* 뽑아 내 지도가 빠뜨린 게 없는지 대조 | 긴 글의 증거 빠짐 점검 *(선택·코드)* |
+| **[전체판 LARP](prompts/LARP.md)** + [모듈](prompts/LARP_modules.md) | 어떤 주장이 *말 안 한 가정* 위에 서 있는지, 달리 설명할 길은 없는지, 있어야 할 증거가 빠지진 않았는지 꼼꼼히 짚어 준다 | 한 주장을 깊이 따질 때 (핵심) |
+| **[LARP-Lite](prompts/LARP_lite.md)** | 위 점검을 *한 화면으로* 빠르게 | 짧은 글을 빠르게 볼 때 |
+| [LARP-Map](prompts/LARP_map.md) | 글의 주장과 그것을 받치는 근거·증거가 어떻게 이어지는지 *그림으로* 정리해 준다 (옳고 그름은 따지지 않음) | 글의 짜임새부터 한눈에 보고 싶을 때 (짧은·중간 글) |
+| [LARP-Map 긴 문서 모드](prompts/LARP_map_long.md) | 판결문처럼 아주 긴 글을 결론에서부터 *한 단계씩 함께* 짚어 가며 빠진 데가 없는지 본다 | 아주 길고 복잡한 글 (판결문·논문 등) |
+| [LARP-Weigh](prompts/LARP_weigh.md) | "사기냐 실수냐"처럼 설명이 둘로 갈릴 때, *증거가 어느 쪽에 더 맞는지* 나란히 비교해 준다 | 두 설명 중 어느 쪽인지 가릴 때 |
+| [누락 증거 검사 `tools/`](tools/) | 긴 글이 인용한 증거를 *코드로 빠짐없이* 추려, 내가 놓친 게 없는지 대조해 준다 | 긴 글에서 빠뜨린 증거 확인 *(선택·코드)* |
 
 > **다 쓰는 게 아니라, 필요한 것만.** 핵심은 논증의 약점을 짚는 [전체판 LARP](prompts/LARP.md)과 그 한 화면 축약인 [LARP-Lite](prompts/LARP_lite.md)입니다 — 짧은 글은 Lite 하나로 끝, 깊이 따질 글은 전체판으로. 글의 *구조*부터 보고 싶으면 [LARP-Map](prompts/LARP_map.md)으로(아주 긴 글은 [긴 문서 모드](prompts/LARP_map_long.md)), "이거냐 저거냐" 경쟁가설을 가려야 하면 [LARP-Weigh](prompts/LARP_weigh.md), 증거 빠짐이 걱정되면 [누락 증거 검사](tools/)를 곁들이면 됩니다.
 >
@@ -103,22 +103,22 @@ AI는 그럴듯한 글을 공짜로, 무한히 만듭니다. 그래서 새로운
 
 | 파일 | 내용 |
 |---|---|
-| [`prompts/LARP.md`](prompts/LARP.md) | 도구 본체 — 전체판 (챗봇에 넣는 프롬프트) · [English](prompts/LARP.en.md) |
-| [`prompts/LARP_modules.md`](prompts/LARP_modules.md) | 기준·점검 모듈 — 2차 상세 분석 때 본문과 함께 투입 · [English](prompts/LARP_modules.en.md) |
-| [`prompts/LARP_weigh.md`](prompts/LARP_weigh.md) | LARP-Weigh — 증거×가설 저울질(경쟁가설 평가): 증거 베이스 → 차원 단위 경합, 판정은 사람 · [English](prompts/LARP_weigh.en.md) |
-| [`prompts/LARP_map.md`](prompts/LARP_map.md) | LARP-Map — 평가 없이 모든 주장·논거를 트리로 (구조만 · 한 번에 그리기 · 짧은·중간 글) · [English](prompts/LARP_map.en.md) |
-| [`prompts/LARP_map_long.md`](prompts/LARP_map_long.md) | LARP-Map 긴 문서 모드 — 대화형 점진 확장(최종 결론→단계별, 매 턴 누락 점검 · **긴·복잡한 글 전용**) · [English](prompts/LARP_map_long.en.md) |
-| [`prompts/LARP_lite.md`](prompts/LARP_lite.md) | 경량판 — **짧은 글 전용** 한 화면 빠른 점검 (지름길) · [English](prompts/LARP_lite.en.md) |
+| [`prompts/LARP.md`](prompts/LARP.md) | 도구 본체 — 전체판 프롬프트(챗봇에 붙여 넣는 글) · [English](prompts/LARP.en.md) |
+| [`prompts/LARP_modules.md`](prompts/LARP_modules.md) | 전체판으로 깊이 볼 때 본문과 함께 붙이는 보조 기준 · [English](prompts/LARP_modules.en.md) |
+| [`prompts/LARP_weigh.md`](prompts/LARP_weigh.md) | LARP-Weigh — 두 가지 설명을 증거와 견줘 어느 쪽이 더 맞는지 따져 보는 도구 · [English](prompts/LARP_weigh.en.md) |
+| [`prompts/LARP_map.md`](prompts/LARP_map.md) | LARP-Map — 글의 짜임새(주장·근거·증거의 연결)를 그림으로 그려 줌(짧은·중간 글) · [English](prompts/LARP_map.en.md) |
+| [`prompts/LARP_map_long.md`](prompts/LARP_map_long.md) | LARP-Map 긴 문서 모드 — 아주 긴 글을 단계별로 함께 펼치며 빠진 곳을 점검(**긴 글 전용**) · [English](prompts/LARP_map_long.en.md) |
+| [`prompts/LARP_lite.md`](prompts/LARP_lite.md) | 경량판 — **짧은 글**을 한 화면으로 빠르게 점검 · [English](prompts/LARP_lite.en.md) |
 | [`USAGE.md`](USAGE.md) | 사용법 — 쉽게 따라 하기 (붙여넣기·1차/2차 읽는 법·FAQ) |
 | [`docs/introduction.md`](docs/introduction.md) | 소개 — 왜 이게 필요한가 |
 | [`examples/worked_example.md`](examples/worked_example.md) | 실제로 돌려 본 예시 (가상 사건) |
-| [`examples/larp_weigh_example.md`](examples/larp_weigh_example.md) | LARP-Weigh 워크드 예시 — 증거×가설 저울질 (크라우드펀딩) |
+| [`examples/larp_weigh_example.md`](examples/larp_weigh_example.md) | LARP-Weigh 예시 — 두 설명을 증거로 견줘 본 사례 (크라우드펀딩) |
 | [`examples/claim_check_vaccine.md`](examples/claim_check_vaccine.md) | 주장 검증 예시 — 딥리서치 → 분석 → 판단 ("백신 무용론") |
 | [`docs/lineage.md`](docs/lineage.md) | 지적 계보(월튼·툴민·ACH·엔튀메메·포퍼)와 기존 도구와의 차이 |
 | [`docs/appendix_deep.md`](docs/appendix_deep.md) | 더 깊이 — 바탕에 깔린 생각 (원하는 분만) |
 | [`CHANGELOG.md`](CHANGELOG.md) | 버전 변경 이력 |
 | [`verification/`](verification/) | 검증 하네스 — 버전 회귀 테스트(고정 케이스 + 행동 루브릭) |
-| [`tools/`](tools/) | 보조 도구 — **누락 증거 검사**(coverage audit): 인용 색인을 코드로 대조해 긴 글의 빠진 증거를 점검 · [쉬운 설명](tools/README.md) |
+| [`tools/`](tools/) | **누락 증거 검사** — 긴 글이 인용한 증거를 코드로 추려, 내가 빠뜨린 게 없는지 대조 · [쉬운 설명](tools/README.md) |
 
 > 처음 오셨다면 [소개 글](docs/introduction.md)부터 읽는 걸 권합니다. 깊은 이론은 [부록](docs/appendix_deep.md)에 따로 모았으니, 당장 쓰고 싶으면 건너뛰어도 됩니다.
 
