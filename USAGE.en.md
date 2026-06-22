@@ -2,7 +2,7 @@
 
 *[한국어](USAGE.md) | English*
 
-> Want the big picture (which tool *when*) first? → [Usage Guide: which tool, when](docs/workflow.en.md). This document covers how to actually *run* those tools.
+> *Which tool, when* (the big-picture flow) is in [README's 'Which tool, when'](README.en.md). This document covers how to actually *run* those tools (pasting, reading the 1st/2nd pass, FAQ).
 
 ## 1. There's nothing to install
 
@@ -12,8 +12,7 @@ LARP isn't a program — it's **one piece of text (a prompt).** Putting the cont
 - **For longer texts**, use a larger model that can read a lot at once.
 - Keep the first-pass and second-pass analysis **in the same conversation** so the labels (A1, W1, etc.) stay consistent.
 - **For the full version, paste the body and the criteria & check modules [`prompts/LARP_modules.en.md`](prompts/LARP_modules.en.md) together** and run the first and second pass. The first pass (argument map) works from the body alone, but the second-pass detailed analysis needs the modules.
-- **Choosing a mode (recommended order):** ① first map the whole structure with **LARP-Map** ([`prompts/LARP_map.en.md`](prompts/LARP_map.en.md)) → ② analyze deeply with the **full version + modules**. This is the recommended path for *long or complex (multi-claim) texts*. ③ Only for *short, simple texts*, use **LARP-Lite** for a quick check (a shortcut). (Lite misses things in long texts.)
-  - For *very long, complex* texts (large judgments, multi-stage arguments), the base Map can't draw it all in one pass. Use the **LARP-Map long-document mode** ([`prompts/LARP_map_long.en.md`](prompts/LARP_map_long.en.md)) — it expands interactively, stage by stage from the final conclusion, and each turn a running tree + coverage ledger makes *unexpanded branches and possibly-missing areas* visible (not a zero-omission guarantee). When done, continue with ②.
+- **Which tool, when** (short text → Lite, structure → Map, long text → long-document mode, deep analysis → full version, competing hypotheses → Weigh) is laid out in [README's 'Which tool, when'](README.en.md). Below is *how to run* them.
 
 ## 2. What to put in
 
