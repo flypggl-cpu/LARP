@@ -6,20 +6,20 @@
 
 > Not a tool for winning arguments. A tool for looking at your own thinking and your opponent's with the very same eye.
 
-LARP is a set of prompts (plus one small code helper) that **reconstruct an argument and lay it out as a single map.** Beyond the claims, grounds, and evidence *written* in the text, it surfaces *what props the conclusion up unsaid* — hidden premises, alternative explanations, evidence that should be there but isn't. It doesn't judge; it marks *where to look* and hands the decision back to you. The tools below split that work by the text's length and depth.
+LARP is a set of prompts (plus one small code helper) that **surface the doubtful spots in an argument — hidden premises, the *split* between stated and real reasons, alternative explanations, evidence that should be there but isn't.** It reveals *what unsaid thing a conclusion is standing on*, but it doesn't judge — it marks *where to look* and hands the decision back to you. The **full LARP** (deep) and one-screen **Lite** are the core; **Map** (and the long-document mode for very long texts) just shows the structure, and a few helper tools round it out.
 
 > **▶ How to use it now** — **nothing to install:** copy the prompt file's contents into a chatbot (ChatGPT, Claude, etc.) and add the text you want analyzed.
 
 | Tool | What it does | When (which text) |
 |---|---|---|
+| **[full LARP](prompts/LARP.en.md)** + [modules](prompts/LARP_modules.en.md) | finds hidden premises, the *split* between stated and real reasons, alternative explanations, missing evidence — **the heart of the tool** | to scrutinize an argument deeply (core) |
+| **[LARP-Lite](prompts/LARP_lite.en.md)** | a one-screen condensed version of the above | a quick check of a short text |
 | [LARP-Map](prompts/LARP_map.en.md) | lays out claims/grounds/evidence as a tree, *no evaluation* — structure only | to see structure first (short/medium texts) |
 | [LARP-Map long-document mode](prompts/LARP_map_long.en.md) | the same mapping, expanded *stage by stage, interactively* from the conclusion, checking omissions | very long, complex texts (judgments, papers) |
-| [full LARP](prompts/LARP.en.md) + [modules](prompts/LARP_modules.en.md) | finds hidden premises, the *split* between stated and real reasons, alternative explanations, missing evidence | to scrutinize a chosen ground deeply |
-| [LARP-Lite](prompts/LARP_lite.en.md) | a one-screen condensed version of the above | a quick check of a short text (shortcut) |
 | [LARP-Weigh](prompts/LARP_weigh.en.md) | weighs competing hypotheses against the evidence — which one is *least contradicted* | to decide "is it X or Y?" |
 | [coverage audit `tools/`](tools/) | code-extracts every cited piece of evidence and reconciles it against your map | checking dropped evidence in long texts *(optional · code)* |
 
-> **You don't run them all — pick what you need.** Often, mapping the structure with [LARP-Map](prompts/LARP_map.en.md) is enough. If a ground needs scrutiny, continue with the [full LARP](prompts/LARP.en.md); to decide between competing hypotheses, [LARP-Weigh](prompts/LARP_weigh.en.md). For very long texts, map with the [long-document mode](prompts/LARP_map_long.en.md), and add the [coverage audit](tools/) if you're worried about dropped evidence. For a short text, [LARP-Lite](prompts/LARP_lite.en.md) alone.
+> **You don't run them all — just what you need.** The core is the [full LARP](prompts/LARP.en.md), which flags an argument's weak points, and its one-screen condensed [LARP-Lite](prompts/LARP_lite.en.md) — a short text needs only Lite; a text worth scrutinizing, the full version. To see the *structure* first, use [LARP-Map](prompts/LARP_map.en.md) (the [long-document mode](prompts/LARP_map_long.en.md) for very long texts); to decide between competing hypotheses, [LARP-Weigh](prompts/LARP_weigh.en.md); and add the [coverage audit](tools/) if you're worried about dropped evidence.
 >
 > Step-by-step mechanics (pasting, reading the 1st/2nd pass, FAQ) are in [USAGE](USAGE.en.md); "why it matters" is in the [introduction](docs/introduction.en.md). For the full version, paste the body and the [modules](prompts/LARP_modules.en.md) *together* and run both passes (for short, simple texts, Lite is the shortcut).
 
