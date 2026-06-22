@@ -1,8 +1,8 @@
-# LARP (Layer-grounded Argument Reasoning Probe) — A Tool for Laying Out Arguments
+# LARP (Layer-grounded Argument Reasoning Probe) — A Tool for Surfacing What an Argument Rests On
 
 *[한국어](README.md) | English*
 
-**A new literacy for an age when fluent text is free — the eye that tells "sounds right" from "is right."**
+**In an age awash in plausible text, the eye that tells "sounds right" from "is right" — it reveals the *hidden premises* and *missing evidence* a conclusion leans on.**
 
 > Not a tool for winning arguments. A tool for looking at your own thinking and your opponent's with the very same eye.
 
@@ -29,7 +29,7 @@ LARP is a set of prompts (plus one small code helper) that **surface the doubtfu
 
 AI can now produce plausible-sounding text without limit. Sounding smooth doesn't make something true — yet we keep letting things slide because "it reads well, so it must be right."
 
-LARP takes any piece of writing — your claim or your opponent's, a news article or a report — and **lays out its logic as a single map.** Not just what the text says, but **what it leaves unsaid and hidden.** Then it hands judgment back to you.
+LARP takes any piece of writing — your claim or your opponent's, a news article or a report — and **surfaces the hidden premises its argument silently leans on, and the evidence that should be there but isn't** — including where the *stated* reason and the *real* working reason diverge. (Laying the *structure* out as a single map is just one way to do that.) It doesn't judge; it hands the decision back to you.
 
 This tool is not for outsourcing your thinking to AI. It is for **returning your easily-clouded judgment to human hands.**
 
