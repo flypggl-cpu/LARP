@@ -4,7 +4,7 @@
 > 전체판 LARP이 약점을 *후보로* 짚는다면, 이 도구는 그 약점을 **(증거 × 차원 × 가설)** 해상도로 체계적으로 경합시킵니다.
 > **판정은 사람이 합니다 — AI는 구조화만.** 어느 가설이 참인지, 의심이 해소됐는지 *단정하지 않습니다*.
 
-> 이건 평가 도구라 — 먼저 [LARP-Map](LARP_map.md)(또는 [긴 문서 모드](LARP_map_long.md))으로 구조를 펼치고, 긴 글이면 [`tools/`](../tools/README.md) 누락 증거 검사로 증거 빠짐을 점검한 *뒤*에 쓰면 가장 강합니다. 전체 흐름은 [사용 안내](../docs/workflow.md) 참고.
+> 이건 평가 도구라 — 먼저 [LARP-Map](LARP_map.md)(또는 [긴 문서 모드](LARP_map_long.md))으로 구조를 펼치고, 긴 글이면 [`tools/`](../tools/README.md) 누락 증거 검사로 증거 빠짐을 점검한 *뒤*에 쓰면 가장 강합니다. 전체 흐름은 [README의 '어떤 도구를, 언제'](../README.md) 참고.
 > 구체적 예시: [LARP-Weigh 워크드 예시](../examples/larp_weigh_example.md).
 
 ---
