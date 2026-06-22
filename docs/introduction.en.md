@@ -66,9 +66,9 @@ So this tool doesn't switch AI off — it **turns AI against its own grain.** No
 
 ## 4. LARP (Layer-grounded Argument Reasoning Probe) — the tool that turns this idea into a procedure
 
-LARP turns the idea above into an actual procedure. Feed in a news article, a report, any piece of writing, and the tool takes its argument apart and draws it as **a single map.** The map shows not just what's written (conclusions, claims, evidence) but, in dotted lines, what isn't: the hidden premises that silently bridge gaps, the alternative explanations never raised, the evidence that should exist if those alternatives were true but is missing, and an opinion on whether the whole document leans toward its conclusion.
+LARP turns the idea above into an actual procedure. Feed in a news article, a report, any piece of writing, and the tool **surfaces what its argument silently leans on** — the hidden premises that bridge the gaps, the point where the *stated* reason and the *real* working reason diverge, the alternative explanations never raised, the evidence that should exist if the claim were true but is missing, and the question never asked. (Laying the *structure* out as a single map is just one way to see these; the point is to reveal *what the conclusion is standing on*.)
 
-After drawing the map, the tool **stops.** Where to dig deeper is the human's call. It analyzes only the spots you point to, and whatever doubt remains is left as a list: "what to check, how, and what it would mean if confirmed." **The machine lays everything out to the end; the judgment stays the human's to the end.**
+Having laid this out, the tool **stops.** Where to dig deeper is the human's call. It analyzes only the spots you point to, and whatever doubt remains is left as a list: "what to check, how, and what it would mean if confirmed." **The machine lays everything out to the end; the judgment stays the human's to the end.**
 
 ---
 
