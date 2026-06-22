@@ -6,14 +6,22 @@
 
 > 상대를 이기는 도구가 아닙니다. 내 생각과 상대의 생각을, 똑같은 눈으로 들여다보는 도구입니다.
 
-> ### ▶ 바로 쓰는 법 (권장 순서)
-> *처음이라면 → [**사용 안내: 어떤 도구를 언제**](docs/workflow.md)로 큰 그림(전체 흐름)을 먼저 잡으세요.*
->
-> **1. 구조 도해 — LARP-Map** [`prompts/LARP_map.md`](prompts/LARP_map.md)(영어판 [`.en.md`](prompts/LARP_map.en.md)): 평가 없이 모든 주장·논거를 트리로 펼칩니다. **길거나 복잡한 글은 여기서 먼저 전수 도해**하세요. — *아주 길고 복잡한 글*(대형 판결문·다단계 논증)은 대화형 **긴 문서 모드** [`prompts/LARP_map_long.md`](prompts/LARP_map_long.md)(영어판 [`.en.md`](prompts/LARP_map_long.en.md))로, 최종 결론에서부터 한 단계씩 펼치며 매 단계 누락을 점검하세요. *(선택)* 증거 누락을 코드로 점검하려면 **누락 증거 검사**(coverage audit) [`tools/`](tools/) — 사용법은 [USAGE의 누락 증거 검사 절](USAGE.md).
->
-> **2. 전체판 + 모듈 — 깊은 분석**: 본문 [`prompts/LARP.md`](prompts/LARP.md)(영어판 [`.en.md`](prompts/LARP.en.md))과 기준·점검 모듈 [`prompts/LARP_modules.md`](prompts/LARP_modules.md)을 *함께* 붙인 뒤 1차·2차를 진행하세요. 챗봇(ChatGPT·Claude 등)에 붙이고 분석할 글을 넣으면 끝입니다. (1차 논증 지도는 본문만으로도 되지만, 2차 상세 분석엔 모듈이 필요하니 처음부터 둘 다 넣는 게 간편합니다. 설치 필요 없음)
->
-> **3. 경량판(Lite) — 짧은 글 지름길** [`prompts/LARP_lite.md`](prompts/LARP_lite.md)(영어판 [`.en.md`](prompts/LARP_lite.en.md)): **짧고 단순한 글**(트윗·짧은 문단·한 주장)만 한 화면으로 빠르게 점검합니다. *긴·복잡한 글엔 권하지 않습니다 — 위 1·2를 쓰세요.*
+## ▶ 어떤 도구를, 언제 (바로 쓰는 법)
+
+무엇을 하고 싶은지에 따라 고르세요. **설치 없이**, 프롬프트 파일의 내용을 복사해 챗봇(ChatGPT·Claude 등)에 붙이고 분석할 글을 이어 넣으면 됩니다. 도구는 *후보만* 펼쳐 보이고, 판단은 사람이 합니다.
+
+| 하고 싶은 것 | 도구 |
+|---|---|
+| 짧은 글 빠른 점검 | [LARP-Lite](prompts/LARP_lite.md) |
+| 구조만 한눈에 (짧은·중간 글) | [LARP-Map](prompts/LARP_map.md) |
+| 아주 길고 복잡한 글의 구조 | [LARP-Map 긴 문서 모드](prompts/LARP_map_long.md) |
+| 긴 글의 빠진 증거 점검 *(선택·코드)* | [누락 증거 검사 `tools/`](tools/) |
+| 고른 논거의 약점 깊이 분석 | [전체판 LARP](prompts/LARP.md) + [모듈](prompts/LARP_modules.md) |
+| 경쟁가설 저울질 | [LARP-Weigh](prompts/LARP_weigh.md) |
+
+**긴 논증을 제대로 보는 흐름(권장):** ① **LARP-Map**(아주 길면 [긴 문서 모드](prompts/LARP_map_long.md))으로 *결론→논거→증거*를 층층이 도해 → ② **누락 증거 검사**로 빠진 증거 점검 → ③ 따져볼 논거를 *당신이* 고름 → ④ **전체판 LARP**(경쟁가설이 여럿이면 **LARP-Weigh**)으로 약점·가설 평가 → ⑤ 외부 확인이 필요한 곳은 도구가 *질문*을 만들어 줌(출처 달아 되넣기).
+
+> 실제 실행법(붙여넣기·1차/2차 읽는 법·FAQ)은 [USAGE](USAGE.md)에, "왜 필요한가"는 [소개](docs/introduction.md)에 있습니다. 전체판을 쓸 땐 본문과 [모듈](prompts/LARP_modules.md)을 *함께* 붙여 1·2차를 진행하세요(짧고 단순한 글은 Lite가 지름길).
 
 ---
 
@@ -91,19 +99,6 @@ AI는 그럴듯한 글을 공짜로, 무한히 만듭니다. 그래서 새로운
 
 ---
 
-## 바로 시작하기
-
-1. [`prompts/LARP.md`](prompts/LARP.md) 파일의 내용을 통째로 복사합니다.
-2. 챗봇(Claude, ChatGPT 등)에 붙여넣고, 이어서 분석할 글을 붙입니다.
-3. 도구가 그려 준 지도를 보고, 더 파고들 곳을 지정합니다. (예: `A1, W1`)
-4. 자세한 분석을 받습니다. 바깥에서 확인이 필요한 부분은 도구가 "이렇게 찾아보세요"라는 질문까지 만들어 줍니다.
-
-설치할 프로그램은 없습니다. 글(프롬프트) 하나를 챗봇에 넣는 게 전부입니다.
-
-> 팁: 본문이 길어서(약 1,250줄), 긴 글을 분석할 때는 **컨텍스트가 큰 모델**을 권합니다. **전체판은 본문과 기준·점검 모듈 [`prompts/LARP_modules.md`](prompts/LARP_modules.md)을 함께 붙여** 1차·2차를 진행하세요(1차 논증 지도는 본문만으로도 되지만, 2차 상세 분석엔 모듈이 필요합니다). 그리고 도구가 1차에서 안 멈추고 끝까지 가 버리면, 첫 메시지에 **"1차만 하고 멈춰"**를 덧붙이면 됩니다.
-
----
-
 ## 저장소 구성
 
 | 파일 | 내용 |
@@ -114,8 +109,7 @@ AI는 그럴듯한 글을 공짜로, 무한히 만듭니다. 그래서 새로운
 | [`prompts/LARP_map.md`](prompts/LARP_map.md) | LARP-Map — 평가 없이 모든 주장·논거를 트리로 (구조만 · 한 번에 그리기 · 짧은·중간 글) · [English](prompts/LARP_map.en.md) |
 | [`prompts/LARP_map_long.md`](prompts/LARP_map_long.md) | LARP-Map 긴 문서 모드 — 대화형 점진 확장(최종 결론→단계별, 매 턴 누락 점검 · **긴·복잡한 글 전용**) · [English](prompts/LARP_map_long.en.md) |
 | [`prompts/LARP_lite.md`](prompts/LARP_lite.md) | 경량판 — **짧은 글 전용** 한 화면 빠른 점검 (지름길) · [English](prompts/LARP_lite.en.md) |
-| [`docs/workflow.md`](docs/workflow.md) | 사용 안내 — **어떤 도구를 언제** (전체 흐름 길잡이) |
-| [`USAGE.md`](USAGE.md) | 사용법 — 쉽게 따라 하기 (세부 실행) |
+| [`USAGE.md`](USAGE.md) | 사용법 — 쉽게 따라 하기 (붙여넣기·1차/2차 읽는 법·FAQ) |
 | [`docs/introduction.md`](docs/introduction.md) | 소개 — 왜 이게 필요한가 |
 | [`examples/worked_example.md`](examples/worked_example.md) | 실제로 돌려 본 예시 (가상 사건) |
 | [`examples/larp_weigh_example.md`](examples/larp_weigh_example.md) | LARP-Weigh 워크드 예시 — 증거×가설 저울질 (크라우드펀딩) |

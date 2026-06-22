@@ -6,14 +6,22 @@
 
 > Not a tool for winning arguments. A tool for looking at your own thinking and your opponent's with the very same eye.
 
-> ### ▶ How to use it now (recommended order)
-> *New here? → start with the [**Usage Guide: which tool, when**](docs/workflow.en.md) for the big-picture flow.*
->
-> **1. Map the structure — LARP-Map** [`prompts/LARP_map.en.md`](prompts/LARP_map.en.md) ([한국어](prompts/LARP_map.md)): lays out every claim and ground as a tree, no evaluation. **For long or complex texts, map the whole structure here first.** — For *very long, complex* texts (large judgments, multi-stage arguments), use the interactive **long-document mode** [`prompts/LARP_map_long.en.md`](prompts/LARP_map_long.en.md) ([한국어](prompts/LARP_map_long.md)): expand stage by stage from the final conclusion, checking for omissions at each step. *(Optional)* to check for dropped evidence by code, use the deterministic coverage audit [`tools/`](tools/) — how to run it is in [USAGE §5.6](USAGE.en.md#56-checking-for-dropped-evidence-in-long-texts--deterministic-coverage-audit-optional).
->
-> **2. Full version + modules — deep analysis**: paste the body [`prompts/LARP.en.md`](prompts/LARP.en.md) ([한국어](prompts/LARP.md)) and the criteria & check modules [`prompts/LARP_modules.en.md`](prompts/LARP_modules.en.md) *together*, then run the first and second pass. Paste it into a chatbot (ChatGPT, Claude, etc.) and add the text you want analyzed. (The first-pass map works from the body alone, but the second-pass detailed analysis needs the modules — so it's simplest to load both from the start. Nothing to install.)
->
-> **3. Lightweight edition (Lite) — a shortcut for short texts** [`prompts/LARP_lite.en.md`](prompts/LARP_lite.en.md) ([한국어](prompts/LARP_lite.md)): a one-screen quick check for **short, simple texts only** (a tweet, a short paragraph, a single claim). *Not recommended for long/complex texts — use 1 and 2 above.*
+## ▶ Which tool, when (how to use it now)
+
+Pick by what you want to do. **Nothing to install** — copy a prompt file's contents into a chatbot (ChatGPT, Claude, etc.) and add the text you want analyzed. The tools only *lay out candidates*; the human judges.
+
+| What you want | Tool |
+|---|---|
+| Quick check of a short text | [LARP-Lite](prompts/LARP_lite.en.md) |
+| Structure at a glance (short/medium texts) | [LARP-Map](prompts/LARP_map.en.md) |
+| Structure of a very long, complex text | [LARP-Map long-document mode](prompts/LARP_map_long.en.md) |
+| Check for dropped evidence in long texts *(optional · code)* | [coverage audit `tools/`](tools/) |
+| Deep analysis of a chosen ground's weak points | [full LARP](prompts/LARP.en.md) + [modules](prompts/LARP_modules.en.md) |
+| Weigh competing hypotheses | [LARP-Weigh](prompts/LARP_weigh.en.md) |
+
+**Recommended flow for a long argument:** ① map *conclusion → grounds → evidence* with **LARP-Map** (for long texts the [long-document mode](prompts/LARP_map_long.en.md)) → ② check for dropped evidence with the **coverage audit** → ③ *you* pick the grounds to scrutinize → ④ evaluate weak points/hypotheses with the **full LARP** (or **LARP-Weigh** when there are several competing hypotheses) → ⑤ for anything needing outside checking, the tool drafts *questions* (feed the answers back with sources).
+
+> Step-by-step mechanics (pasting, reading the 1st/2nd pass, FAQ) are in [USAGE](USAGE.en.md); "why it matters" is in the [introduction](docs/introduction.en.md). For the full version, paste the body and the [modules](prompts/LARP_modules.en.md) *together* and run both passes (for short, simple texts, Lite is the shortcut).
 
 ---
 
@@ -91,19 +99,6 @@ See [USAGE.en.md](USAGE.en.md) for details.
 
 ---
 
-## Quick start
-
-1. Copy the entire contents of [`prompts/LARP.en.md`](prompts/LARP.en.md).
-2. Paste it into a chatbot (Claude, ChatGPT, etc.), then paste the text you want analyzed.
-3. Look at the map it draws and point to where you want to dig deeper (e.g. `A1, W1`).
-4. Get the detailed analysis. For anything that needs outside checking, the tool even writes the "go look this up" questions for you.
-
-There's nothing to install. Putting one piece of text (the prompt) into a chatbot is all it takes.
-
-> Tip: the body is long (~1,250 lines), so for longer documents use a **model with a large context window**. **For the full version, paste the body and the criteria & check modules [`prompts/LARP_modules.en.md`](prompts/LARP_modules.en.md) together** and run the first and second pass (the first-pass argument map works from the body alone, but the second pass needs the modules). And if the tool runs straight through instead of stopping after the first pass, just add **"do the first pass only, then stop"** to your first message.
-
----
-
 ## What's in this repository
 
 | File | Contents |
@@ -114,8 +109,7 @@ There's nothing to install. Putting one piece of text (the prompt) into a chatbo
 | [`prompts/LARP_map.en.md`](prompts/LARP_map.en.md) | LARP-Map — every claim/ground as a tree, no evaluation (structure only; one pass; short/medium texts) |
 | [`prompts/LARP_map_long.en.md`](prompts/LARP_map_long.en.md) | LARP-Map long-document mode — interactive progressive expansion (final conclusion → stages, omission check each turn · **long/complex texts only**) |
 | [`prompts/LARP_lite.en.md`](prompts/LARP_lite.en.md) | Lightweight edition — one-screen quick check, **short texts only** (a shortcut) |
-| [`docs/workflow.en.md`](docs/workflow.en.md) | Usage guide — **which tool, when** (the big-picture flow) |
-| [`USAGE.en.md`](USAGE.en.md) | How to use it — step by step (mechanics) |
+| [`USAGE.en.md`](USAGE.en.md) | How to use it — step by step (pasting, reading the 1st/2nd pass, FAQ) |
 | [`docs/introduction.en.md`](docs/introduction.en.md) | Introduction — why this matters |
 | [`examples/worked_example.en.md`](examples/worked_example.en.md) | A worked example (fictional case) |
 | [`examples/larp_weigh_example.en.md`](examples/larp_weigh_example.en.md) | LARP-Weigh worked example — evidence × hypothesis weighing (crowdfunding) |
