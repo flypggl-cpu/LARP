@@ -1,4 +1,4 @@
-# LARP: Layer-grounded Argument Reasoning Probe (AIVA-L-CALM v260618)
+# LARP: Layer-grounded Argument Reasoning Probe (AIVA-L-CALM v260628)
 
 *[한국어](LARP.md) | English*
 
@@ -187,6 +187,8 @@ Do not flag without a quote.
 Do not invent facts, raw material, or figures not in the document to fill blanks.
 If absent, mark "material not provided" or "no basis in the document."
 A summary or paraphrase is not a quote. Carry over the original wording verbatim, then analyze how it was interpreted and arranged.
+Attach a locator (page·line·paragraph·evidence-list number, or whatever unit the document provides) to every source quote so it can be verified.
+Every factual claim about the document must be either (a) a verifiable source quote carrying a locator, or (b) explicitly marked as the tool's reconstruction/inference (W·implicit, etc.) — a bare assertion dressed up as a quote, with no tag, is prohibited. Mark redacted or blank quotations as 'no basis in the document (quote gap)'; do not invent content.
 ```
 
 ### 3) For externally-checked modules, generate a "research query" and complete verification by re-feeding the result
@@ -312,6 +314,49 @@ A check tacked on formally after the output is self-justification, not self-chec
 
 ---
 
+## 3.6 Pass-1 execution run-card (fixed order — follow this order; print [done] at each step)
+
+It compresses the sprawling spec onto one screen. The body below is the detailed reference; execution follows this order.
+
+```text
+Gate 1 (length): if the document exceeds one screen (~15 pages), no single pass.
+  → First unfold it with LARP-Map long-document mode ('from the conclusion, one step at a time'), then enter §5.
+1. Object-perception & propositionalization (§5~6)   → [done: N claims + each verdict orientation]
+2. Layer–argument bridge (§6.5)                      → [done: N issues]
+3. Candidate extraction + per-candidate minimal reconstruction block·6 questions (§7) → [done: N candidates, ★ M]
+4. For each ★-path evidence, an 'evidence diagnosticity card' (§7.8) — none skipped → [done: K ★ evidence atomized]
+5. Update the evidence ledger (§7.9) — one row per cited item → [done: L rows]
+6. Three signals (§7.7) → Mermaid (§7.6) → self-check result (§3.5-8, printed per ★ evidence)
+   → end with the user-designation wait line and STOP that turn.
+Gate 2 (stop): do not run modules after 6. Stopping is the end of Pass 1.
+Gate 3 (symmetry·quotation): for each ★ claim, visibly print one line of the defense's (rival's) strongest rebuttal (§7.3), and mark any redacted/blank quotation as 'no basis in the document (quote gap)' rather than inventing it (§3.5-2). If either is missing, treat that ★ as incomplete and fix before proceeding.
+Gate 4 (verification layer): until the Pass-1 output passes the verification layer (LARP-Verify, §3.7) — quote-source comparison, coverage comparison, omission-hunt 2nd pass — mark it 'unverified'. Do not use unverified output as a settled ground.
+Rule: a step without a [done] mark counts as 'not performed' (no partial output).
+```
+
+\---
+
+## 3.7 Verification layer (LARP-Verify) — before a human trusts the Pass-1 output
+
+The two residual risks in the Pass-1 output (① silent omission, ② disguised hallucination) cannot be stopped by the model's self-discipline — they need verification running from outside. Only output that has passed the following is marked 'verified'.
+
+```text
+a. Quote-source comparison (code): tools/larp_quote_audit.py — deterministically check that each
+   source quote the tool presented actually exists in the source. Mismatch → 'possible hallucination'
+   flag. (blocks disguised hallucination)
+b. Coverage comparison (code): tools/larp_coverage_audit.py — check that every cited piece of
+   evidence made it into the evidence ledger (§7.9). Missing items → 'omission candidate'.
+   (blocks mechanical omission)
+c. Omission hunt, 2nd pass (separate model): LARP_verify.md — a fresh pass, not anchored on the
+   first analysis, that outputs only what was NOT raised: weak links, evidence, rebuttals, asymmetry.
+   (blocks semantic omission)
+Order: Pass-1 analysis → a·b (code) → c (2nd pass) → human. Output before verification is unverified.
+```
+
+The verification layer does not *remove* hallucination or omission — it makes them *visible* so a human can filter them. The principle that final judgment belongs to the human is unchanged.
+
+\---
+
 ## 4. Overall flow
 
 Execute in two passes (execution-control rules are §3.5).
@@ -372,6 +417,7 @@ Operating discipline:
 Diagnosis (tagging) stage: attach every lens a datum passes. Do not force one, but do not attach a tag with no pivot.
 Synthesis stage: overlap is free only in diagnosis. Do not sum the "same source" caught on several lenses as independent corroboration (Group 5 · Module P). Even if a datum is caught on several lenses, count it once as evidence.
 Module selection: shift error → check Family A (Module M); over-bundling → Family B; circularity·conclusion-first → Family C.
+Pass-1 load control: in Pass 1, tag each candidate with the operating set only (fact·evidence·perception·practice·name·meaning·time). The remaining lenses (sameness·legal-normative·emotion·residual) and full 9-row precise tagging are filled only when they actually pivot in the case, or for ★-designated nodes in Pass 2 (prevents overload / under-decomposition).
 The layer-precedence diagnosis in §7 uses, as an operating set, the subset of these lenses that pivots most often in fraud/embezzlement (fact·evidence·perception·practice·action·name·meaning·timing). The declared set (all of the below) and the operating set are not a contradiction but a subset relation.
 ```
 
@@ -724,6 +770,38 @@ Always attach to the opinion: what must be confirmed to resolve this suspicion
 ```
 
 ---
+
+## 7.8 Evidence diagnosticity card (mandatory for each ★-path evidence)
+
+Principle: **consistency (fit) ≠ diagnosticity (discriminating power)**. If a piece of evidence fits the adopted hypothesis and the competing hypothesis *equally*, it is non-diagnostic — do not use it as a core ground; raise a flag only. For each ★-path (top-5) evidence, write the following at the atomic level (no "…etc"; do not bundle testimonial and non-testimonial objective evidence into one node).
+
+```text
+- Actual content: source quote. If one source carries entries in both directions, split into atoms ① ② (e.g., minutes).
+- Citer·reading: who (court/prosecution/defense) imputed what meaning.
+  If both sides cite the same source by different lines, flag 'selective use of evidence (group 6)'.
+- Read otherwise: at least one line of competing reading.
+- Source·independence: first-hand (direct) / downstream hearsay (heard from whom) / non-testimonial objective.
+  If common-source, mark them grouped; do not sum as independent corroboration (no double-counting, group 5·Module P).
+- Diagnosticity: discriminates / partly non-diagnostic / non-diagnostic (+ which hypothesis it tilts toward).
+- Originality·admissibility flag: quote gap·originality dispute·hearsay·illegally obtained → do not conclude;
+  register a record-confirmation instruction in the ledger (check admissibility↔probative-value confusion, group 1).
+```
+
+Non-★ evidence gets no card — only one ledger row in §7.9 (load control).
+
+\---
+
+## 7.9 Evidence ledger (single ledger — one row for every cited piece of evidence, none omitted)
+
+Do not drop a single piece of evidence the document cites or mentions; put each on its own row. ★ evidence is expanded as a §7.8 card, and the same source is counted as weight only once.
+
+```text
+| EvID | Atomic content (gist) | Source (first-hand/downstream/objective) | Common-source group | Hypothesis it fits | Diagnosticity | Originality flag |
+```
+
+Coverage self-check (mandatory): after writing the ledger, scan again for items the document cited ('evidence-list number N'·witness name·document name, etc.), reconcile against the ledger so nothing is missing, and add any missing item as an 'omission candidate' before proceeding (reinforces §3.5-8 items 7·8). (Optional) running the same reconciliation in code cross-checks the model's lossy reading.
+
+\---
 
 ## 8. Stage 4: Anomalous-argument selection criteria — symptom index
 
@@ -1187,6 +1265,8 @@ At the end, you must organize in the following order.
 5. The examinable claim (including the orientation of judgment)
 6. The layer–argument bridge table
 7. Per-candidate minimal reconstruction blocks (forward · backward · contrast · competing · six questions)
+7-1. Evidence diagnosticity cards for the ★ path (§7.8)
+7-2. Evidence ledger (§7.9) — one row per cited item
 8. Decomposition skeleton (glance view) — for each claim: conclusion/claim ← explicit grounds / hidden grounds (W) / layer issues (L) as a short nested list. After seeing the detailed reconstruction blocks (7), this is a compressed summary that lets one grasp the whole argument structure at a glance again. It is a rearrangement of the contents of earlier items (7·9), not new analysis. **Include every extracted claim, not just ★ candidates** (completeness first) — ★ only marks priority.
 9. Anomalous-argument selection result and group tagging (modules not run)
 10. Full-argument Mermaid map (incl. W·L·V·split)
@@ -1260,6 +1340,8 @@ Perform the whole analysis under the following sentence.
 The **worked example (a crowdfunding non-delivery case)** showing the format and depth of an analysis is in the separate file **"LARP Worked Example"** ([worked_example.en.md](../examples/worked_example.en.md)). It is a reference showing how the output format, vertical blocks, two-pass execution, research queries, and open-questions ledger work together on a single case. In a real analysis, quote only source text that actually exists in the input material.
 
 ---
+
+*v260628 — Execution fixing & per-evidence evaluation strengthened: added §3.6 'Pass-1 execution run-card' (fixed order·per-step [done] gates·length gate 1·stop gate 2·symmetry/quote gate 3·verification gate 4); §7.8 'evidence diagnosticity card' (consistency≠diagnosticity; per ★ evidence: actual content/citer·reading/read-otherwise/source·independence/diagnosticity/originality; two-directional atomization for minutes-type evidence); §7.9 'evidence ledger' (one row per cited item + coverage self-check); §5.2 Pass-1 load control (operating set by default); §3.5-2 quote-locator·tag rule; §3.7 verification-layer (LARP-Verify) definition; plus a separate LARP_verify.md (omission-hunt 2nd pass) and tools/larp_quote_audit.py (quote-source comparison). No new engine — it lifts the scattered §3.5-8 #7·#8·modules K/P/N·Map atomization into mandatory Pass-1 steps. Applied & verified: Suwon High Court 2024No620 (inter-Korean remittance), minutes-lumping correction.*
 
 *v260618 — Evidence atomization & diagnosticity recall: two items added to the pre-output self-check (§3.5-8). (7) Check that key evidence was not lumped ("…etc") and that testimonial vs. non-testimonial objective evidence was not bundled, and that each item's actual content was distinguished from its imputed meaning. (8) If a key item appears to fit both hypotheses equally, register it in the ledger as a diagnosticity-check candidate (a 1st-pass recall flag, not a verdict). No new module or procedure — a null-scan that routes to existing §6·§7.1·group 5·modules K/G/M. Pairs with the evidence atomization in Map·Lite v260618.*
 
