@@ -65,6 +65,8 @@ For a "this or that" text, you get a table matching the evidence (rows) against 
 
 In a word — read by *which side it points to*, not *whether it merely sounds consistent*.
 
+> Also check the **completeness status** at the head of the table — *all evidence included* or *coverage unconfirmed (provisional)*. **An evaluation with missing evidence is provisional** (one missing item, if it discriminates, can flip the conclusion). If unconfirmed, first check that all evidence is in via §5.3.
+
 ### (5) Opinion on the whole text (three signals)
 At the end, an opinion on the whole text — e.g., "if all three signals (unstated assumptions tilting one way · leaning on fits-both evidence · built so no material could shake it) point the same way, the text may have fixed its conclusion before gathering evidence."
 
