@@ -2,6 +2,11 @@
 """
 LARP Evidence-Matrix Audit  ·  증거×가설 행렬 감사 (진단성·독립성·공백)
 =====================================================================
+EN — Structural audit of the evidence × hypothesis matrix: derives diagnosticity from the
+readings, collapses common-source (no double-counting), tallies per-hypothesis V gaps, and
+flags non-diagnostic-as-core. No verdict. Usage:
+  python larp_matrix_audit.py matrix.json   (exit 0 = no warning, 1 = non-diagnostic-as-core or unfilled required gap)
+
 §7.8 카드 / §7.9 대장을 ACH식 '증거×가설' 행렬로 일급화한 뒤, 그 행렬을
 구조적으로 점검한다. 핵심 정의:
 

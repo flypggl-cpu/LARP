@@ -2,6 +2,11 @@
 """
 LARP Quote Provenance Audit  ·  인용 원문대조 (검증 층 '가')
 ============================================================
+EN — Deterministically checks that every sentence the analysis presents as a 'source
+quote' actually exists in the source (catches disguised hallucination). Usage:
+  python larp_quote_audit.py --source src.txt --analysis pass1.md
+  (exit 0 = all quotes found, 1 = a mismatch = possible hallucination)
+
 Companion to larp_coverage_audit.py / larp_card_audit.py.
 
   coverage  → 인용된 증거가 분석에 다 들어왔나 (omission, 누락)

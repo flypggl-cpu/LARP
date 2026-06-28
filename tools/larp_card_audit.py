@@ -2,6 +2,10 @@
 """
 LARP Card & Ledger Completeness Audit  ·  증거 진단성 카드·증거 대장 완전성 감사
 ===============================================================================
+EN — Checks the §7.8 cards / §7.9 ledger for blank cells, lumping ('…etc'),
+diagnosticity-label typos, and missing card fields. Usage:
+  python larp_card_audit.py analysis.md [--stars N]   (exit 0 = complete, 1 = needs fixing)
+
 Companion to larp_coverage_audit.py.
 
   larp_coverage_audit.py  →  "문서가 인용한 증거가 대장/트리에 모두 들어왔나"

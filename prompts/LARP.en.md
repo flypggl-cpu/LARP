@@ -358,6 +358,28 @@ The verification layer does not *remove* hallucination or omission — it makes 
 
 \---
 
+## 3.8 Write for the reader — lead with a plain-language summary
+
+Whoever uses this tool is trying to *understand a complex text and spot anomalous arguments at the same time*. So the output is produced for the *reader*, not in the *order of the method's stages*. Every output (1st and 2nd pass) begins with a **plain-language summary**.
+
+```text
+Plain-summary rules:
+- At the very top, with no codes (E1·W1·group 5) and no jargon (if a term is unavoidable, gloss it in
+  plain words once in parentheses), in everyday language and 'the document's own words', 4–6 sentences.
+- Answer: ① what is this text's conclusion  ② what assumption does it silently lean on (in plain words)
+  ③ does the decisive-looking evidence actually discriminate, or does it fit any explanation
+  ④ what actually discriminates, and how solid is it  ⑤ what should be there but is missing
+- 'Finding first, the working later.' Cards, ledger, matrix, map, group tags go after the summary as 'grounds / detail'.
+- Don't use a term without a gloss: diagnosticity→'the power to tell which side', non-diagnostic→'fits both,
+  so it doesn't decide', warrant/hidden premise→'an unstated assumption', layer-shift→'covering one layer's
+  question with another layer's answer', etc.
+- Don't fill the human summary with node codes — codes are for the detail, the map, and verification.
+```
+
+The detail after the summary (blocks, ledger, matrix, map) stays as is, for verification and accumulation — but it is *grounds the reader opens if they want*, not the result they read first.
+
+\---
+
 ## 4. Overall flow
 
 Execute in two passes (execution-control rules are §3.5).
@@ -1279,6 +1301,7 @@ At the end, you must organize in the following order.
 
 ```text
 [First-pass output]
+0. **Plain-language summary (read this first — no codes, no jargon)**: the conclusion · the hidden assumption (plain words) · does the decisive-looking evidence really discriminate · what actually discriminates and how solid · what's missing
 1. The object now seen and the attached name
 2. Summary of the object-formation conditions
 3. The usefulness here and the dividing point there
@@ -1297,6 +1320,7 @@ At the end, you must organize in the following order.
 13. The user-designation waiting sentence — this is the end of the first pass; the items below are output in the second pass after user designation
 
 [Second-pass output]
+13-A. **Plain-language 2nd-pass summary (read first — no codes, no jargon)**: what changed and what remains
 14. Detailed analysis of the selected arguments (module results)
 15. Excluded arguments and the reasons for exclusion
 16. Re-adjustment of the object-name and judgment strength (grade + decisive reason + breaking condition)
@@ -1341,6 +1365,7 @@ The following is a re-confirmation of the core prohibitions scattered through th
 - Disclose not only the selected arguments but the reasons for exclusion. Do not analyze in detail an argument that was not selected.
 - Do not auto-run all modules. Do not run detailed modules before user designation after outputting the Mermaid map (exception when the user skips/immediately designates, §7.6).
 - Do not skip the pre-output self-check (§3.5-8).
+- Begin every output with a *plain-language summary* (§3.8). Do not use a term without a gloss, and do not fill the human summary with codes (E1·group N).
 ```
 
 ---
