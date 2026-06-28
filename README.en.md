@@ -122,7 +122,7 @@ See [USAGE.en.md](USAGE.en.md) for details.
 | [`docs/appendix_deep.en.md`](docs/appendix_deep.en.md) | Going deeper — the thinking underneath (optional) |
 | [`CHANGELOG.en.md`](CHANGELOG.en.md) | Version history |
 | [`verification/`](verification/) | Verification harness — version regression test (fixed cases + behavior rubric) |
-| [`tools/`](tools/) | **verification-layer code** — three deterministic checks (coverage·card·quote) over the first-pass output: omission · hallucination · completeness · [plain-language intro](tools/README.en.md) |
+| [`tools/`](tools/) | **verification-layer code** — three code checks over the first-pass output: *dropped evidence · invented quotes · lumping* · [plain-language intro](tools/README.en.md) |
 
 > New here? Start with the [introduction](docs/introduction.en.md). The deep theory is gathered separately in the [appendix](docs/appendix_deep.en.md) — skip it if you just want to start using the tool.
 
