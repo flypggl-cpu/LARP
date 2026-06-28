@@ -824,6 +824,8 @@ Do not drop a single piece of evidence the document cites or mentions; put each 
 
 Coverage self-check (mandatory): after writing the ledger, scan again for items the document cited ('evidence-list number N'·witness name·document name, etc.), reconcile against the ledger so nothing is missing, and add any missing item as an 'omission candidate' before proceeding (reinforces §3.5-8 items 7·8). (Optional) running the same reconciliation in code cross-checks the model's lossy reading.
 
+This ledger is the **evidence database** — the evidence × hypothesis evaluation (§7.10) holds *only on top of it*. So listing *every* tag-cited (evidence-list number)·witness·document item is a precondition of the evaluation, and its completeness cannot be guaranteed by the model's reading — confirm it with the coverage comparison (§3.7).
+
 \---
 
 ## 7.10 Evidence × hypothesis matrix (when there are competing hypotheses — synthesis view)
@@ -840,6 +842,7 @@ When the ★ path has competing hypotheses (H1·H2…), lay the §7.8 cards / §
 - Per-hypothesis synthesis (no score): ⟨independent diagnostic support (discriminates + independent) /
   non-diagnostic·dependent support (no weight) / missing evidence V⟩.
 - No verdict: the matrix shows only the structure of support and the gaps. Which hypothesis holds is for the human.
+- Completeness status (mandatory): at the head of the matrix, mark 'all M evidence-database items included / coverage unconfirmed (provisional)'. **A hypothesis evaluation with missing evidence cannot be trusted** — if one missing item is diagnostic the conclusion can flip, so the matrix is *provisional* until the database's completeness is confirmed (or the missing items are shown to be non-diagnostic).
 ```
 
 Optionally emit the same matrix as JSON (format: `tools/larp_matrix_schema.md`); the verification layer's `tools/larp_matrix_audit.py` then checks non-diagnostic-as-core, double-counting, and V gaps in code. (If LARP-Weigh is the dedicated edition for weighing just two explanations, this matrix brings that logic inside the full version.)
