@@ -326,6 +326,7 @@ Gate 1 (length): if the document exceeds one screen (~15 pages), no single pass.
 3. Candidate extraction + per-candidate minimal reconstruction block·6 questions (§7) → [done: N candidates, ★ M]
 4. For each ★-path evidence, an 'evidence diagnosticity card' (§7.8) — none skipped → [done: K ★ evidence atomized]
 5. Update the evidence ledger (§7.9) — one row per cited item → [done: L rows]
+5b. (if there are competing hypotheses) evidence × hypothesis matrix (§7.10) — a rearrangement of cards/ledger → [done: matrix H cols × E rows]
 6. Three signals (§7.7) → Mermaid (§7.6) → self-check result (§3.5-8, printed per ★ evidence)
    → end with the user-designation wait line and STOP that turn.
 Gate 2 (stop): do not run modules after 6. Stopping is the end of Pass 1.
@@ -803,6 +804,26 @@ Coverage self-check (mandatory): after writing the ledger, scan again for items 
 
 \---
 
+## 7.10 Evidence × hypothesis matrix (when there are competing hypotheses — synthesis view)
+
+When the ★ path has competing hypotheses (H1·H2…), lay the §7.8 cards / §7.9 ledger out once more as an **evidence × hypothesis matrix**. This is not new analysis but a *rearrangement of the cards/ledger already filled* — a view to see, at a glance, discriminating power rather than mere consistency (the non-diagnostic signal of §7.7 shows up here as structure).
+
+```text
+- Rows = ★·core evidence (§7.9), columns = the competing hypotheses. Cell = the hypothesis
+  relation per reading: + fits / − cuts against / 0 neutral. If one source splits by reading, ± (e.g., minutes).
+- Derive diagnosticity: '+' to two or more hypotheses → non-diagnostic / '+' to one only and reading-robust
+  → discriminates / '+' only under some reading → partly.
+- Independence is a separate axis: even if it discriminates, downstream hearsay or common-source is not
+  independent corroboration (no double-counting).
+- Per-hypothesis synthesis (no score): ⟨independent diagnostic support (discriminates + independent) /
+  non-diagnostic·dependent support (no weight) / missing evidence V⟩.
+- No verdict: the matrix shows only the structure of support and the gaps. Which hypothesis holds is for the human.
+```
+
+Optionally emit the same matrix as JSON (format: `tools/larp_matrix_schema.md`); the verification layer's `tools/larp_matrix_audit.py` then checks non-diagnostic-as-core, double-counting, and V gaps in code. (If LARP-Weigh is the dedicated edition for weighing just two explanations, this matrix brings that logic inside the full version.)
+
+\---
+
 ## 8. Stage 4: Anomalous-argument selection criteria — symptom index
 
 The 10 groups are not a selection checklist but **an index for naming symptoms.** Selection already happened in the stage-7 six-question screen and the contrast (the split). The role of this index is to (a) attach a precise symptom name to a caught difference so it can be communicated and accumulated, and (b) route it to a module.
@@ -1267,6 +1288,7 @@ At the end, you must organize in the following order.
 7. Per-candidate minimal reconstruction blocks (forward · backward · contrast · competing · six questions)
 7-1. Evidence diagnosticity cards for the ★ path (§7.8)
 7-2. Evidence ledger (§7.9) — one row per cited item
+7-3. Evidence × hypothesis matrix (§7.10, when there are competing hypotheses)
 8. Decomposition skeleton (glance view) — for each claim: conclusion/claim ← explicit grounds / hidden grounds (W) / layer issues (L) as a short nested list. After seeing the detailed reconstruction blocks (7), this is a compressed summary that lets one grasp the whole argument structure at a glance again. It is a rearrangement of the contents of earlier items (7·9), not new analysis. **Include every extracted claim, not just ★ candidates** (completeness first) — ★ only marks priority.
 9. Anomalous-argument selection result and group tagging (modules not run)
 10. Full-argument Mermaid map (incl. W·L·V·split)
@@ -1341,7 +1363,7 @@ The **worked example (a crowdfunding non-delivery case)** showing the format and
 
 ---
 
-*v260628 — Execution fixing & per-evidence evaluation strengthened: added §3.6 'Pass-1 execution run-card' (fixed order·per-step [done] gates·length gate 1·stop gate 2·symmetry/quote gate 3·verification gate 4); §7.8 'evidence diagnosticity card' (consistency≠diagnosticity; per ★ evidence: actual content/citer·reading/read-otherwise/source·independence/diagnosticity/originality; two-directional atomization for minutes-type evidence); §7.9 'evidence ledger' (one row per cited item + coverage self-check); §5.2 Pass-1 load control (operating set by default); §3.5-2 quote-locator·tag rule; §3.7 verification-layer (LARP-Verify) definition; plus a separate LARP_verify.md (omission-hunt 2nd pass) and tools/larp_quote_audit.py (quote-source comparison). No new engine — it lifts the scattered §3.5-8 #7·#8·modules K/P/N·Map atomization into mandatory Pass-1 steps. Applied & verified: Suwon High Court 2024No620 (inter-Korean remittance), minutes-lumping correction.*
+*v260628 — Execution fixing & per-evidence evaluation strengthened: added §3.6 'Pass-1 execution run-card' (fixed order·per-step [done] gates·length gate 1·stop gate 2·symmetry/quote gate 3·verification gate 4); §7.8 'evidence diagnosticity card' (consistency≠diagnosticity; per ★ evidence: actual content/citer·reading/read-otherwise/source·independence/diagnosticity/originality; two-directional atomization for minutes-type evidence); §7.9 'evidence ledger' (one row per cited item + coverage self-check); §5.2 Pass-1 load control (operating set by default); §3.5-2 quote-locator·tag rule; §3.7 verification-layer (LARP-Verify) definition; plus a separate LARP_verify.md (omission-hunt 2nd pass) and tools/larp_quote_audit.py (quote-source comparison). Plus §7.10 evidence × hypothesis matrix (a synthesis view of §7.8/§7.9 when there are competing hypotheses; a default full-version output, verified by tools/larp_matrix_audit.py). No new engine — it lifts the scattered §3.5-8 #7·#8·modules K/P/N·Map atomization into mandatory Pass-1 steps. Applied & verified: Suwon High Court 2024No620 (inter-Korean remittance), minutes-lumping correction.*
 
 *v260618 — Evidence atomization & diagnosticity recall: two items added to the pre-output self-check (§3.5-8). (7) Check that key evidence was not lumped ("…etc") and that testimonial vs. non-testimonial objective evidence was not bundled, and that each item's actual content was distinguished from its imputed meaning. (8) If a key item appears to fit both hypotheses equally, register it in the ledger as a diagnosticity-check candidate (a 1st-pass recall flag, not a verdict). No new module or procedure — a null-scan that routes to existing §6·§7.1·group 5·modules K/G/M. Pairs with the evidence atomization in Map·Lite v260618.*
 

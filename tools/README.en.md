@@ -8,15 +8,16 @@ This folder is the **code part of the full LARP's verification layer (LARP.md §
 
 ---
 
-## Three checks — blocking two residual risks
+## Four checks — blocking the residual risks
 
-The full LARP's Pass-1 output leaves two risks a human cannot filter even while looking at it — **silent omission** (evidence/weak points never raised) and **disguised hallucination** (invented sentences that look like source quotes). The three scripts here are the code part of that verification layer; without relying on model discipline, they make the risks *visible* deterministically.
+The full LARP's Pass-1 output leaves two risks a human cannot filter even while looking at it — **silent omission** (evidence/weak points never raised) and **disguised hallucination** (invented sentences that look like source quotes). The four scripts here are the code part of that verification layer; without relying on model discipline, they make the risks *visible* deterministically.
 
 | Script | Blocks | One line |
 |---|---|---|
 | `larp_coverage_audit.py` | mechanical omission | did every tag-cited piece of evidence make it onto the map/ledger |
 | `larp_card_audit.py` | lumping · blanks | was the evidence evaluated in the §7.8 cards / §7.9 ledger, atomized and complete |
 | `larp_quote_audit.py` | disguised hallucination | does a sentence presented as a 'source quote' actually exist in the source |
+| `larp_matrix_audit.py` | non-diagnostic · double-counting | in the evidence × hypothesis matrix (§7.10): is non-diagnostic evidence used as a core ground · common-source duplication · hypothesis gaps |
 
 Semantic omission (tag-less weak points/rebuttals) can't be fully caught by code, so use it together with the separate model pass [`LARP_verify.en.md`](../prompts/LARP_verify.en.md) (omission hunt). For the full order, see the ['verification layer' section in USAGE](../USAGE.en.md).
 
@@ -73,6 +74,8 @@ In one line: **it turns the AI's "happened to find it" into the machine's "did i
 | [`larp_coverage_audit.py`](larp_coverage_audit.py) | Omission check — cited tags ↔ map/ledger reconcile (Python, no dependencies) |
 | [`larp_card_audit.py`](larp_card_audit.py) | Completeness check — blanks·lumping·non-diagnostic·missing fields in §7.8 cards / §7.9 ledger |
 | [`larp_quote_audit.py`](larp_quote_audit.py) | Hallucination check — does a 'source quote' actually exist in the source (deterministic) |
+| [`larp_matrix_audit.py`](larp_matrix_audit.py) | Matrix check — structural audit of the evidence × hypothesis matrix (§7.10): diagnosticity, independence, hypothesis gaps (no verdict) |
+| [`larp_matrix_schema.md`](larp_matrix_schema.md) | JSON schema for the evidence × hypothesis matrix + diagnosticity-derivation rules |
 | [`coverage_audit_prompt.en.md`](coverage_audit_prompt.en.md) | A no-code **unified** chatbot approximation — full evidence scan (incl. *name-only*) + tree reconcile (no guarantee) |
 
 For the whole long-text workflow, see the [coverage-audit section in USAGE](../USAGE.en.md) and the [long-document mode](../prompts/LARP_map_long.en.md).

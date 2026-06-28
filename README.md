@@ -95,6 +95,8 @@ AI는 그럴듯한 글을 공짜로, 무한히 만듭니다. 그래서 새로운
 
 **멈추는 것이 핵심입니다.** 기계는 따질 거리를 끝까지 펼쳐 놓고, "여기가 핵심이다, 이걸 믿겠다"는 판단은 사람이 합니다. 그 책임도 사람의 몫입니다.
 
+> **큰 사건은 쟁점별로.** 판결문처럼 길고 죄목이 여럿인 글은 한 번에 다 넣지 마세요. 쟁점(죄목)을 하나씩 나눠 돌린 뒤 합칩니다 — 한 번의 실행이 *모든 증거·모든 가설*을 펼치지는 않습니다(그건 사람도 못 합니다). 도구는 쟁점마다 핵심을 집중해 펼치고 *빠짐을 눈에 보이게* 만들 뿐입니다. 절차는 [USAGE 2.5](USAGE.md).
+
 자세한 사용법은 [USAGE.md](USAGE.md)를 보세요.
 
 ---
@@ -109,7 +111,9 @@ AI는 그럴듯한 글을 공짜로, 무한히 만듭니다. 그래서 새로운
 | [`prompts/LARP_map.md`](prompts/LARP_map.md) | LARP-Map — 글의 짜임새(주장·근거·증거의 연결)를 그림으로 그려 줌(짧은·중간 글) · [English](prompts/LARP_map.en.md) |
 | [`prompts/LARP_map_long.md`](prompts/LARP_map_long.md) | LARP-Map 긴 문서 모드 — 아주 긴 글을 단계별로 함께 펼치며 빠진 곳을 점검(**긴 글 전용**) · [English](prompts/LARP_map_long.en.md) |
 | [`prompts/LARP_lite.md`](prompts/LARP_lite.md) | 경량판 — **짧은 글**을 한 화면으로 빠르게 점검 · [English](prompts/LARP_lite.en.md) |
-| [`USAGE.md`](USAGE.md) | 사용법 — 쉽게 따라 하기 (붙여넣기·1차/2차 읽는 법·FAQ) |
+| [`prompts/LARP_verify.md`](prompts/LARP_verify.md) | 검증 층 — 첫 분석이 *놓친* 약점·증거를 별도 모델이 사냥하는 2차 패스 · [English](prompts/LARP_verify.en.md) |
+| [`USAGE.md`](USAGE.md) | **전체판 사용법** — 따라 하기 + 모든 출력(대장·행렬·V·3신호) 읽는 법·2차·검증 층·FAQ |
+| [`USAGE_lite.md`](USAGE_lite.md) | **라이트 사용법** — 짧은 글 빠른 점검(붙여넣기 한 판) |
 | [`docs/introduction.md`](docs/introduction.md) | 소개 — 왜 이게 필요한가 |
 | [`examples/worked_example.md`](examples/worked_example.md) | 실제로 돌려 본 예시 (가상 사건) |
 | [`examples/larp_weigh_example.md`](examples/larp_weigh_example.md) | LARP-Weigh 예시 — 두 설명을 증거로 견줘 본 사례 (크라우드펀딩) |
@@ -118,7 +122,7 @@ AI는 그럴듯한 글을 공짜로, 무한히 만듭니다. 그래서 새로운
 | [`docs/appendix_deep.md`](docs/appendix_deep.md) | 더 깊이 — 바탕에 깔린 생각 (원하는 분만) |
 | [`CHANGELOG.md`](CHANGELOG.md) | 버전 변경 이력 |
 | [`verification/`](verification/) | 검증 하네스 — 버전 회귀 테스트(고정 케이스 + 행동 루브릭) |
-| [`tools/`](tools/) | **누락 증거 검사** — 긴 글이 인용한 증거를 코드로 추려, 내가 빠뜨린 게 없는지 대조 · [쉬운 설명](tools/README.md) |
+| [`tools/`](tools/) | **검증 층 코드** — 누락·환각·완전성 세 검사(coverage·card·quote)로 1차 출력을 결정론으로 점검 · [쉬운 설명](tools/README.md) |
 
 > 처음 오셨다면 [소개 글](docs/introduction.md)부터 읽는 걸 권합니다. 깊은 이론은 [부록](docs/appendix_deep.md)에 따로 모았으니, 당장 쓰고 싶으면 건너뛰어도 됩니다.
 

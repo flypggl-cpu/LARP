@@ -95,6 +95,8 @@ It also gives an opinion on whether the whole document is tilted toward its conc
 
 **Stopping is the whole point.** The machine lays out everything worth questioning; the human decides "this is the key, this I'll believe." And the responsibility stays with the human.
 
+> **Large cases, issue by issue.** Don't paste a long, multi-charge document (like a judgment) all at once. Split it into single issues (charges), run them one at a time, then stitch — a single run does *not* unfold *all* evidence and *all* hypotheses (no human could either). The tool focuses on each issue's core and makes *omissions visible*. Procedure: [USAGE §2.5](USAGE.en.md).
+
 See [USAGE.en.md](USAGE.en.md) for details.
 
 ---
@@ -109,7 +111,9 @@ See [USAGE.en.md](USAGE.en.md) for details.
 | [`prompts/LARP_map.en.md`](prompts/LARP_map.en.md) | LARP-Map — draws how a text's claims, reasons, and evidence connect (short/medium texts) |
 | [`prompts/LARP_map_long.en.md`](prompts/LARP_map_long.en.md) | LARP-Map long-document mode — opens a very long text step by step, checking nothing's missed (**long texts only**) |
 | [`prompts/LARP_lite.en.md`](prompts/LARP_lite.en.md) | Lightweight edition — a one-screen quick check of a **short text** |
-| [`USAGE.en.md`](USAGE.en.md) | How to use it — step by step (pasting, reading the 1st/2nd pass, FAQ) |
+| [`prompts/LARP_verify.en.md`](prompts/LARP_verify.en.md) | Verification layer — an omission-hunt 2nd pass where a separate model finds what the first analysis *missed* |
+| [`USAGE.en.md`](USAGE.en.md) | **Full-version guide** — walkthrough + reading every output (ledger·matrix·V·three signals)·2nd pass·verification layer·FAQ |
+| [`USAGE_lite.en.md`](USAGE_lite.en.md) | **Lite guide** — a quick check of a short text (one paste-and-go) |
 | [`docs/introduction.en.md`](docs/introduction.en.md) | Introduction — why this matters |
 | [`examples/worked_example.en.md`](examples/worked_example.en.md) | A worked example (fictional case) |
 | [`examples/larp_weigh_example.en.md`](examples/larp_weigh_example.en.md) | LARP-Weigh example — weighing two explanations against the evidence (crowdfunding) |
@@ -118,7 +122,7 @@ See [USAGE.en.md](USAGE.en.md) for details.
 | [`docs/appendix_deep.en.md`](docs/appendix_deep.en.md) | Going deeper — the thinking underneath (optional) |
 | [`CHANGELOG.en.md`](CHANGELOG.en.md) | Version history |
 | [`verification/`](verification/) | Verification harness — version regression test (fixed cases + behavior rubric) |
-| [`tools/`](tools/) | **coverage audit** — pulls every cited piece of evidence by code so you can check none was missed in a long text · [plain-language intro](tools/README.en.md) |
+| [`tools/`](tools/) | **verification-layer code** — three deterministic checks (coverage·card·quote) over the first-pass output: omission · hallucination · completeness · [plain-language intro](tools/README.en.md) |
 
 > New here? Start with the [introduction](docs/introduction.en.md). The deep theory is gathered separately in the [appendix](docs/appendix_deep.en.md) — skip it if you just want to start using the tool.
 
