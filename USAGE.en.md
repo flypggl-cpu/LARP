@@ -52,21 +52,21 @@ A short reconstruction block per argument. Three things first:
 | V | evidence that should exist but is absent |
 | ★ | most important to the conclusion (only these go to the 2nd pass unless you pick others) |
 
-### (3) Evidence ledger
-Every cited or mentioned piece of evidence, *none dropped*, one per row. Columns — *source* (first-hand / downstream hearsay / objective), *common-source group* (same origin counted once), *diagnosticity* (see (4)), *originality* (originality/admissibility dispute). If the tool flagged "cited but not addressed," those **omission candidates** appear here too — *what's missing* shows up right here.
+### (3) Evidence list (the tool calls it the "ledger")
+Every cited or mentioned piece of evidence appears, *none dropped*, one per row. Each row shows — *where it came from* (something the person said themselves / something heard secondhand / objective material like a document), *grouped by same source* (one person's words counted once), *whether it can tell which side* (see (4)), and *whether its authenticity is disputed*. If the tool flagged "cited but not addressed," those *left-out candidates* show here too — what's missing is visible at a glance.
 
-### (4) Evidence × hypothesis matrix (when there are competing hypotheses)
-For a "this or that" text, you get an evidence (rows) × hypothesis (columns) table.
+### (4) Evidence-explanation table (when it splits into two explanations; the tool calls it the "matrix")
+For a "this or that" text, you get a table matching the evidence (rows) against the explanations (columns).
 
-- Cell: `+` fits / `−` cuts against / `0` irrelevant / `±` splits by reading.
-- **Non-diagnostic** = one piece *fits several hypotheses* (e.g., "money was paid" fits any explanation) → weak as a core ground.
-- **Independent diagnostic support** = evidence that *actually discriminates* (fits one side only) and is *not common-source or hearsay*. Whether the conclusion has this is the crux.
-- **Missing evidence (V)** = should exist if that hypothesis is true, but isn't there. See which hypothesis the holes cluster around.
+- Cell: `+` fits that explanation / `−` goes against / `0` irrelevant / `±` splits by reading.
+- **Fits-both evidence** = it fits any explanation, so it *can't tell which side* (e.g., "money was sent" fits any story). The tool calls this "non-diagnostic" — weak as a core ground.
+- **Evidence that decides on its own** = fits one explanation only, and its source doesn't overlap with other evidence (and isn't secondhand). Whether the conclusion has this is the crux.
+- **Missing evidence (V)** = should exist if that explanation is true, but isn't in the material. See which explanation the holes cluster around.
 
-In a word — read by *discriminating power (diagnosticity)*, not *mere consistency*.
+In a word — read by *which side it points to*, not *whether it merely sounds consistent*.
 
-### (5) Document-level opinion (three signals)
-At the end, an opinion on the whole document — e.g., "if all three signals (a tilt of implicit premises, reliance on non-diagnostic evidence, an unfalsifiable structure) point one way, the text may have fixed its conclusion before gathering evidence."
+### (5) Opinion on the whole text (three signals)
+At the end, an opinion on the whole text — e.g., "if all three signals (unstated assumptions tilting one way · leaning on fits-both evidence · built so no material could shake it) point the same way, the text may have fixed its conclusion before gathering evidence."
 
 → Then the tool stops and asks "where shall we look deeper?" (**§3**).
 
@@ -96,7 +96,7 @@ The full version is built for long, complex texts in the first place — but a s
 1. **Pick one issue.** Cut by charge/issue (e.g., "bribery: relatedness to office," "remittance: was it a substitute payment") and put in only that reasoning section.
 2. **(If very long) unfold the structure first.** Use [LARP-Map long-document mode](prompts/LARP_map_long.en.md) to unfold it *from the conclusion, one step at a time.*
 3. **Run that issue through the full version, per §1.** You get the evidence ledger and, if there are competing hypotheses, the evidence × hypothesis matrix.
-4. **The gaps are already flagged in the result.** The tool itself points out *missing evidence (V)* and *omission candidates* — you don't have to run anything extra to see "what's missing."
+4. **The gaps are already flagged in the result.** The tool itself points out *missing evidence (V)* and *left-out candidates* — you don't have to run anything extra to see "what's missing."
 5. **Next issue, then stitch.** A human stitches cross-issue links (one fact used as a ground for two charges, etc.) at the end.
 
 **"All evidence and all hypotheses in one run" is not what the tool promises** — no human can do that either. Completeness comes not from a *single run* but from the *issue-by-issue procedure.*
