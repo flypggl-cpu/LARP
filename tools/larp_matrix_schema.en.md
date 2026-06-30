@@ -91,3 +91,6 @@ python tools/larp_matrix_audit.py matrix.json
 - **The human/model fills:** each cell's +/−/0 *under each reading* — the irreducible judgment layer. The code does not judge for you; it only mirrors that judgment as structure.
 
 *This format is the data form of §7.8/§7.9 and part of the verification layer. The matrix is a mirror, not a scoreboard.*
+
+*LARP Evidence × Hypothesis Matrix schema (Layer-grounded Argument Reasoning Probe) · Author: CHAE Sooyang · CC BY-NC-SA 4.0*
+*A personal methodology project, not the official position of any institution.*

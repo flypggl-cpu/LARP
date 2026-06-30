@@ -1,4 +1,10 @@
 # -*- coding: utf-8 -*-
+#
+# Author: CHAE Sooyang (저작자 채수양)
+# License: CC BY-NC-SA 4.0  (Attribution-NonCommercial-ShareAlike)
+# A personal methodology project, not the official position of any institution.
+# 개인 방법론 프로젝트이며, 어느 기관의 공식 입장도 아닙니다.
+#
 """
 LARP Card & Ledger Completeness Audit  ·  증거 진단성 카드·증거 대장 완전성 감사
 ===============================================================================

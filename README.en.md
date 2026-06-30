@@ -122,7 +122,12 @@ See [USAGE.en.md](USAGE.en.md) for details.
 | [`docs/appendix_deep.en.md`](docs/appendix_deep.en.md) | Going deeper — the thinking underneath (optional) |
 | [`CHANGELOG.en.md`](CHANGELOG.en.md) | Version history |
 | [`verification/`](verification/) | Verification harness — version regression test (fixed cases + behavior rubric) |
-| [`tools/`](tools/) | **verification-layer code** — three code checks over the first-pass output: *dropped evidence · invented quotes · lumping* · [plain-language intro](tools/README.en.md) |
+| [`tools/`](tools/) | **helper tools (advanced · verification)** — code checks over the analysis. The tools below · [plain-language intro](tools/README.en.md) |
+| [`tools/larp_coverage_audit.py`](tools/larp_coverage_audit.py) | coverage audit — pulls every cited piece of evidence so you can check none was missed in a long text |
+| [`tools/larp_quote_audit.py`](tools/larp_quote_audit.py) | quote audit — checks that sentences the analysis presents as "source quotes" really exist in the source (catches invented quotes) |
+| [`tools/larp_card_audit.py`](tools/larp_card_audit.py) | card/ledger audit — checks the evidence tables for blanks, lumping, and typos |
+| [`tools/larp_matrix_audit.py`](tools/larp_matrix_audit.py) | evidence × hypothesis matrix audit — same-source double-counting, non-diagnostic-as-core, empty cells |
+| [`tools/larp_matrix_schema.en.md`](tools/larp_matrix_schema.en.md) | the matrix's data format and how to fill it · [한국어](tools/larp_matrix_schema.md) |
 
 > New here? Start with the [introduction](docs/introduction.en.md). The deep theory is gathered separately in the [appendix](docs/appendix_deep.en.md) — skip it if you just want to start using the tool.
 

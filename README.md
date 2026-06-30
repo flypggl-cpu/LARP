@@ -122,7 +122,12 @@ AI는 그럴듯한 글을 공짜로, 무한히 만듭니다. 그래서 새로운
 | [`docs/appendix_deep.md`](docs/appendix_deep.md) | 더 깊이 — 바탕에 깔린 생각 (원하는 분만) |
 | [`CHANGELOG.md`](CHANGELOG.md) | 버전 변경 이력 |
 | [`verification/`](verification/) | 검증 하네스 — 버전 회귀 테스트(고정 케이스 + 행동 루브릭) |
-| [`tools/`](tools/) | **검증 층 코드** — *빠뜨린 증거·지어낸 인용·뭉뚱그림* 세 가지를 코드로 점검 · [쉬운 설명](tools/README.md) |
+| [`tools/`](tools/) | **보조 도구(고급·검증용)** — 분석 결과를 코드로 점검. 아래가 그 도구들 · [쉬운 설명](tools/README.md) |
+| [`tools/larp_coverage_audit.py`](tools/larp_coverage_audit.py) | 누락 증거 검사 — 긴 글이 인용한 증거를 빠짐없이 추려, 내가 놓친 게 없는지 대조 |
+| [`tools/larp_quote_audit.py`](tools/larp_quote_audit.py) | 인용 대조 — 분석이 '원문 인용'이라 든 문장이 실제 원문에 있는지 확인(지어낸 인용 적발) |
+| [`tools/larp_card_audit.py`](tools/larp_card_audit.py) | 카드·대장 점검 — 증거 정리표에 빈칸·뭉뚱그림·오타가 없는지 |
+| [`tools/larp_matrix_audit.py`](tools/larp_matrix_audit.py) | 증거×가설 표 점검 — 같은 출처 중복, 양쪽에 다 맞는 증거를 핵심으로 쓴 곳, 빈 칸 |
+| [`tools/larp_matrix_schema.md`](tools/larp_matrix_schema.md) | 증거×가설 표의 데이터 형식·작성 규칙 · [English](tools/larp_matrix_schema.en.md) |
 
 > 처음 오셨다면 [소개 글](docs/introduction.md)부터 읽는 걸 권합니다. 깊은 이론은 [부록](docs/appendix_deep.md)에 따로 모았으니, 당장 쓰고 싶으면 건너뛰어도 됩니다.
 
