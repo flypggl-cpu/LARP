@@ -214,3 +214,6 @@ These three are not a runtime gate but *design hints* for deciding whether to ad
 That said, the "contestability" criterion also operates at runtime in the body's §7.3 backward reconstruction (★ the duty to note a rival position in one line for each candidate).
 
 *Split out and created in v260616. Source: the §8 detail table, §10 situation table, and §13.2 list of the LARP v260614 body. Moved without changing content.*
+
+*LARP criteria & check modules (Layer-grounded Argument Reasoning Probe) · Author: CHAE Sooyang · CC BY-NC-SA 4.0*
+*A personal methodology project, not the official position of any institution.*
