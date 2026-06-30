@@ -34,4 +34,4 @@
 
 *왜 별도 패스인가: 모델의 사각은 같은 패스 안에서 "네 사각도 보라"로는 안 보인다. 닻 내리지 않은 새 눈만 '안 올라온 것'을 본다. 이 패스는 누락을 *없애지* 못하고 *보이게* 한다 — 그래서 사람이 거를 수 있다.*
 
-*LARP-Verify (Layer-grounded Argument Reasoning Probe, 검증 층) · 저작자 gocsy · CC BY-NC-SA 4.0 · 개인 방법론 프로젝트이며 어느 기관의 공식 입장도 아닙니다.*
+*LARP-Verify (Layer-grounded Argument Reasoning Probe, 검증 층) · 저작자 채수양 · CC BY-NC-SA 4.0 · 개인 방법론 프로젝트이며 어느 기관의 공식 입장도 아닙니다.*

@@ -83,5 +83,5 @@ In this span the evidence cited by 순번 = **239 · 326 · 726**. Reconciling a
 
 *v260619 — New deterministic coverage audit (domain-generalized). A code reconciliation that drives silent omission to zero for cited references (by marker). Bundled script: [`larp_coverage_audit.py`](larp_coverage_audit.py).*
 
-*LARP-Map Deterministic Coverage Audit (Layer-grounded Argument Reasoning Probe) · Author: gocsy · CC BY-NC-SA 4.0*
+*LARP-Map Deterministic Coverage Audit (Layer-grounded Argument Reasoning Probe) · Author: CHAE Sooyang · CC BY-NC-SA 4.0*
 *A personal methodology project, not the official position of any institution.*

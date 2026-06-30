@@ -56,5 +56,5 @@ After drawing, ask in one line:
 
 ---
 
-*LARP-Map (Layer-grounded Argument Reasoning Probe), structure edition · Author: gocsy · CC BY-NC-SA 4.0*
+*LARP-Map (Layer-grounded Argument Reasoning Probe), structure edition · Author: CHAE Sooyang · CC BY-NC-SA 4.0*
 *A personal methodology project, not the official position of any institution.*

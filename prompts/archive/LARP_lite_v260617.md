@@ -35,5 +35,5 @@
 
 ---
 
-*LARP(Layer-grounded Argument Reasoning Probe) 경량판 · 저작자 gocsy · CC BY-NC-SA 4.0*
+*LARP(Layer-grounded Argument Reasoning Probe) 경량판 · 저작자 채수양 · CC BY-NC-SA 4.0*
 *개인 방법론 프로젝트이며, 어느 기관의 공식 입장도 아닙니다.*

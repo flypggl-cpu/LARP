@@ -71,5 +71,5 @@ id, parent_id, level, 역할, 유형, 텍스트
 
 *v260618 — 증거 원자화 + 원자 증거의 (실제 내용 / 주장자 해석 / 달리 읽으면) 분리 추가. 뭉뚱그림을 막고, 증거 내용과 부여된 의미의 어긋남·경쟁 읽기를 끝까지 드러낸다(드러내기일 뿐, 진단성 판정 아님).*
 
-*LARP-Map (Layer-grounded Argument Reasoning Probe) 구조판 · 저작자 gocsy · CC BY-NC-SA 4.0*
+*LARP-Map (Layer-grounded Argument Reasoning Probe) 구조판 · 저작자 채수양 · CC BY-NC-SA 4.0*
 *개인 방법론 프로젝트이며, 어느 기관의 공식 입장도 아닙니다.*

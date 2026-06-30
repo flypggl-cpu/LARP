@@ -71,5 +71,5 @@ After drawing, ask in one line:
 
 *v260618 — Added evidence atomization + the (actual content / arguer's reading / read otherwise) split at the evidence atom. Stops lumping and surfaces, to the end, the gap between an evidence item's content and the meaning imputed to it, plus competing readings (surfacing only, not a diagnosticity verdict).*
 
-*LARP-Map (Layer-grounded Argument Reasoning Probe), structure edition · Author: gocsy · CC BY-NC-SA 4.0*
+*LARP-Map (Layer-grounded Argument Reasoning Probe), structure edition · Author: CHAE Sooyang · CC BY-NC-SA 4.0*
 *A personal methodology project, not the official position of any institution.*

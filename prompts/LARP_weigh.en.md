@@ -87,5 +87,5 @@ Evidence-base tables (E·EC·F·D·H·Q) → (stop·confirm) → hypothesis tree
 
 ---
 
-*LARP-Weigh (Layer-grounded Argument Reasoning Probe) · Author: gocsy · CC BY-NC-SA 4.0*
+*LARP-Weigh (Layer-grounded Argument Reasoning Probe) · Author: CHAE Sooyang · CC BY-NC-SA 4.0*
 *A personal methodology project, not the official position of any institution. This tool does not replace judgment.*

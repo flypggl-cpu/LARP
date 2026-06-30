@@ -87,5 +87,5 @@ B: 반대 가설이 참이면, 이 차원이 나타날 가능성은?
 
 ---
 
-*LARP-Weigh (Layer-grounded Argument Reasoning Probe) · 저작자 gocsy · CC BY-NC-SA 4.0*
+*LARP-Weigh (Layer-grounded Argument Reasoning Probe) · 저작자 채수양 · CC BY-NC-SA 4.0*
 *개인 방법론 프로젝트이며, 어느 기관의 공식 입장도 아닙니다. 이 도구는 판정을 대신하지 않습니다.*

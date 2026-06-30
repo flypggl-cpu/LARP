@@ -85,5 +85,5 @@ python larp_coverage_audit.py document.txt --tree tree.txt
 
 *v260619 — 결정론적 누락 증거 검사(coverage audit) 신설(도메인 일반화). 인용 참조(표지) 한정으로 침묵의 누락을 0으로 만들기 위한 코드 대조. 동봉 스크립트: [`larp_coverage_audit.py`](larp_coverage_audit.py).*
 
-*LARP-Map 누락 증거 검사 / Coverage Audit (Layer-grounded Argument Reasoning Probe) · 저작자 gocsy · CC BY-NC-SA 4.0*
+*LARP-Map 누락 증거 검사 / Coverage Audit (Layer-grounded Argument Reasoning Probe) · 저작자 채수양 · CC BY-NC-SA 4.0*
 *개인 방법론 프로젝트이며, 어느 기관의 공식 입장도 아닙니다.*

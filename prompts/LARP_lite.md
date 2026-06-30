@@ -38,5 +38,5 @@
 
 *v260618 — 떠받치는 주장의 핵심 증거에 원자화 + (실제 내용 vs 주장자 해석, 달리 읽으면) 분리를 적용(뭉뚱그림 방지).*
 
-*LARP(Layer-grounded Argument Reasoning Probe) 경량판 · 저작자 gocsy · CC BY-NC-SA 4.0*
+*LARP(Layer-grounded Argument Reasoning Probe) 경량판 · 저작자 채수양 · CC BY-NC-SA 4.0*
 *개인 방법론 프로젝트이며, 어느 기관의 공식 입장도 아닙니다.*

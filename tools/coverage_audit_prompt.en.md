@@ -38,5 +38,5 @@ End with a glance summary: `total N (tagged a / name-only b / missing? c)`.
 
 ---
 
-*Evidence Omission Check prompt / Coverage Audit · Evidence Scan (Layer-grounded Argument Reasoning Probe) · Author: gocsy · CC BY-NC-SA 4.0*
+*Evidence Omission Check prompt / Coverage Audit · Evidence Scan (Layer-grounded Argument Reasoning Probe) · Author: CHAE Sooyang · CC BY-NC-SA 4.0*
 *A personal methodology project, not the official position of any institution.*

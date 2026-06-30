@@ -80,4 +80,4 @@ In one line: **it turns the AI's "happened to find it" into the machine's "did i
 
 For the whole long-text workflow, see the [coverage-audit section in USAGE](../USAGE.en.md) and the [long-document mode](../prompts/LARP_map_long.en.md).
 
-*Author: gocsy · CC BY-NC-SA 4.0 · A personal methodology project, not the official position of any institution.*
+*Author: CHAE Sooyang · CC BY-NC-SA 4.0 · A personal methodology project, not the official position of any institution.*

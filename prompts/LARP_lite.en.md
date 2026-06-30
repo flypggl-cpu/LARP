@@ -38,5 +38,5 @@ Then **stop.** Do not render a verdict. Ask:
 
 *v260618 — Applied evidence atomization + the (actual content vs arguer's reading, read otherwise) split to the load-bearing claim's key evidence (stops lumping).*
 
-*LARP (Layer-grounded Argument Reasoning Probe), lightweight edition · Author: gocsy · CC BY-NC-SA 4.0*
+*LARP (Layer-grounded Argument Reasoning Probe), lightweight edition · Author: CHAE Sooyang · CC BY-NC-SA 4.0*
 *A personal methodology project, not the official position of any institution.*

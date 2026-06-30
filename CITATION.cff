@@ -9,7 +9,7 @@ abstract: >-
   map, while leaving the verdict to the human.
 type: software
 authors:
-  - name: "Sooyang Chae"
+  - name: "CHAE Sooyang"
 url: "https://github.com/flypggl-cpu/LARP"
 repository-code: "https://github.com/flypggl-cpu/LARP"
 version: "v260617"

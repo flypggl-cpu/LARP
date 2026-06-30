@@ -38,5 +38,5 @@
 
 ---
 
-*증거 누락 점검 프롬프트 / Coverage Audit · Evidence Scan (Layer-grounded Argument Reasoning Probe) · 저작자 gocsy · CC BY-NC-SA 4.0*
+*증거 누락 점검 프롬프트 / Coverage Audit · Evidence Scan (Layer-grounded Argument Reasoning Probe) · 저작자 채수양 · CC BY-NC-SA 4.0*
 *개인 방법론 프로젝트이며, 어느 기관의 공식 입장도 아닙니다.*

@@ -101,5 +101,5 @@ Final conclusion ─ We should adopt this policy                    [confirmed]
 
 *v260619 — LARP-Map long-document mode. Expand progressively from the final conclusion through ground stages, confirming completeness with a user gate at each stage. Generalized vocabulary (conclusion–ground relativity, stage-1·2… grounds, terminal = evidence, the "is it further argued?" descent rule) so it applies to any multi-stage argument. Three anti-omission devices: (1) enumerate all final conclusions in Step 0, then chunk by conclusion; (2) traction completeness via the source/material list; (3) a running tree + coverage ledger making unexpanded / possibly-missing visible each turn. Not a zero-omission guarantee — the goal is to turn omission into a visible choice. The base one-shot Map remains for short / medium texts.*
 
-*LARP-Map Long-Document Mode (Layer-grounded Argument Reasoning Probe), structure edition · Author: gocsy · CC BY-NC-SA 4.0*
+*LARP-Map Long-Document Mode (Layer-grounded Argument Reasoning Probe), structure edition · Author: CHAE Sooyang · CC BY-NC-SA 4.0*
 *A personal methodology project, not the official position of any institution.*

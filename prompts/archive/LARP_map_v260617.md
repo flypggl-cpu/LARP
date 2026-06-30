@@ -56,5 +56,5 @@ id, parent_id, level, 역할, 유형, 텍스트
 
 ---
 
-*LARP-Map (Layer-grounded Argument Reasoning Probe) 구조판 · 저작자 gocsy · CC BY-NC-SA 4.0*
+*LARP-Map (Layer-grounded Argument Reasoning Probe) 구조판 · 저작자 채수양 · CC BY-NC-SA 4.0*
 *개인 방법론 프로젝트이며, 어느 기관의 공식 입장도 아닙니다.*

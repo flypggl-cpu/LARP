@@ -34,4 +34,4 @@ Then **stop.** Do not rule; hand these to the human as **candidates to merge int
 
 *Why a separate pass: a model's blind spot is invisible from inside the same pass when told "watch your blind spot too." Only a fresh eye, un-anchored, sees what was not raised. This pass does not *remove* omission — it makes it *visible* so a human can filter it.*
 
-*LARP-Verify (Layer-grounded Argument Reasoning Probe, verification layer) · author gocsy · CC BY-NC-SA 4.0 · a personal methodology project, not the official position of any institution.*
+*LARP-Verify (Layer-grounded Argument Reasoning Probe, verification layer) · author CHAE Sooyang · CC BY-NC-SA 4.0 · a personal methodology project, not the official position of any institution.*

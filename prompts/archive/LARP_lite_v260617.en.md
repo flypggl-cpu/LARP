@@ -35,5 +35,5 @@ Then **stop.** Do not render a verdict. Ask:
 
 ---
 
-*LARP (Layer-grounded Argument Reasoning Probe), lightweight edition · Author: gocsy · CC BY-NC-SA 4.0*
+*LARP (Layer-grounded Argument Reasoning Probe), lightweight edition · Author: CHAE Sooyang · CC BY-NC-SA 4.0*
 *A personal methodology project, not the official position of any institution.*
