@@ -23,6 +23,16 @@ Seen this way, LARP is less an *invention* than an *arrangement*. And that is no
 
 ---
 
+## 1-1. The Socratic meaning of the tool
+
+Trace the lineage further back and the great-grandfather of these devices is Socrates. The enthymeme (restoring the omitted premise) comes from Aristotle, but the *spirit of the move* — drawing out the premises from the interlocutor's own mouth (or one's own) and putting them up for examination, asking rather than asserting doctrine, and often stopping at aporia (honest impasse) — is Socrates's elenchus (cross-examination) and maieutics (midwifery). The ethic of self-examination ("the unexamined life is not worth living") and the no-verdict humility that leaves only the place to be examined instead of ruling on right and wrong both come from here.
+
+But LARP inherits Socrates *corrected*, not intact. The two things that made the elenchus dangerous in Athens — the asymmetry that concentrates power in the questioner (the thin line between truth-seeking and eristic point-scoring), and the un-scalability that degrades into leading questions without a living sage — LARP neutralizes with **symmetry** (the same questions to everyone alike, including one's own claim) and **tooling** (a procedure usable with no Socrates). In that sense LARP is not merely "similar to" the Socratic method but a **de-personalized, symmetrized** version of it — an elenchus with the questioner's ego and power removed.
+
+The divergences, stated honestly: Socrates aimed at a *bottom* (the Forms), whereas LARP, holding that criteria have no bottom, hands the verdict to the human (foundationalism vs. Popperian fallibilism). Socrates dug at the definition of a concept ("what is justice?"); LARP digs at the grounds and evidence of a concrete document. The object and the destination differ — but the spirit, self-examination and no-verdict humility, carries straight through.
+
+---
+
 ## 2. How it differs from existing formal tools
 
 Those traditions are already implemented as excellent tools. LARP does not replace them; it fills the gap they leave open.
