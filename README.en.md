@@ -67,17 +67,17 @@ And this isn't only a personal problem. In the US, in Korea, anywhere — when f
 
 ## What it shows you
 
-Feed in a document and the tool draws a map of its logic. The map shows two kinds of things together.
+Feed in a document and the tool first gives a *plain-language summary* (everyday prose, no jargon), then lays the argument out as an **indented-tree map**. The map shows two kinds of things together.
 
 **What's written in the text**
 - Conclusions, claims, evidence
 
-**What's NOT written but is still holding the conclusion up** (shown as dotted lines)
+**What's NOT written but is still holding the conclusion up** (surfaced by reconstruction — tagged separately in the tree)
 - Hidden premises — assumptions that quietly bridge the gap
 - Alternative explanations — other ways to read the same facts (e.g. "not fraud, but a failed attempt to juggle debts")
 - Missing evidence — things that should exist if the claim were true, but aren't in the record
 
-It also gives an opinion on whether the whole document is tilted toward its conclusion from the start.
+It also gives a list of every cited or mentioned piece of evidence, and an opinion on whether the whole document is tilted toward its conclusion from the start.
 
 ---
 
