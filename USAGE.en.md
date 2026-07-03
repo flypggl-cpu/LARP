@@ -60,9 +60,9 @@ A short reconstruction block per argument. Three things first:
 | Symbol | Meaning |
 |---|---|
 | C / A / E | conclusion / claim / evidence (written in the text) |
-| W | hidden premise (not written; dashed) |
-| L | the condition that made it look this way (dashed) |
-| H | alternative explanation (rival hypothesis) (dashed) |
+| W | hidden premise (not written; reconstructed) |
+| L | the condition that made it look this way (not written; reconstructed) |
+| H | alternative explanation (rival hypothesis) (not written; reconstructed) |
 | V | evidence that should exist but is absent |
 | ★ | most important to the conclusion (only these go to the 2nd pass unless you pick others) |
 
