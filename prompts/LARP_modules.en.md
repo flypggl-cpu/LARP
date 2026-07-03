@@ -1,4 +1,4 @@
-# LARP Criteria & Check Modules (v260712)
+# LARP Criteria & Check Modules (v260713)
 
 *A pluggable module file split out from the main body "LARP v260616."*
 *The body keeps the decomposition engine, the six-question screen, and a one-line index of the 10 symptom groups only. Load this file alongside the body when you need the detailed definitions, review questions, routing, and criminal check axes for each symptom.*
@@ -240,6 +240,21 @@ The example column of layers (fact · meaning · standard · evidence · legal e
 
 The standpoint row has a different standing — it is not a parallel axis but a meta-axis that allocates the closing direction of the other degrees of freedom.
 
+[Argument-type entry point — using Walton's argumentation schemes only as the doorway into the ledger]
+
+Walton's argumentation schemes hold that the critical questions to ask differ by the *type* of ground. We do not transplant the whole list of schemes (non-MECE, violating the four requirements, over-designed) — instead we use type only as an entry point into the degrees-of-freedom ledger: identify a ground's type first and the degrees of freedom that type calls for are fixed, so the six questions and the ledger check latch onto that spot automatically. The types are not a closed list but open, with the following as seeds.
+
+|Argument type (Walton-scheme family)|Completion degrees of freedom it calls first|
+|-|-|
+|Argument from sign — "this trace is present, therefore so"|range (does it reach that proposition) · exclusion strength (does it also arise from other causes)|
+|Expert / authority opinion|transmission·source (whose word is it) · generation context|
+|Cause-to-effect argument|tense (does the cause precede the effect) · range|
+|Argument from analogy|criterion (is the comparison class legitimate)|
+|Argument from consistency / agreement|transmission·source (is it not a common source) · proof level|
+|Argument from lack of evidence (absence)|exclusion strength (the five conditions for judging absence) · burden of proof|
+
+Operation: for every ★-path ground and core rebuttal, identify "what is the type" in one line and check the degrees of freedom the table assigns as the priority. If a type outside the table appears, register it as a new-row candidate in the ledger (the residual-registration rule). Real measurement: in one judgment, pinning down the cost of a "promise" utterance was an argument from sign and the mutual corroboration of statements was an argument from consistency, but with no type identification each was interrogated ad hoc — with an entry point the degrees of freedom latch on automatically.
+
 [The two-part grammar of insufficient / improper — the form of flag this ledger gives]
 
 ```text
@@ -304,6 +319,8 @@ For a rebuttal selected as surface-level, attach the B-1 test (reconstruct the s
 *v260702 — Added "rebuttal-surfaceness" to Group 6; created the E "judgment (appellate) profile" (a product of real-measured verification on a judgment).*
 *v260704 — Forced the E-3 scoring targets to all Gate-0 rebuttal seeds (to prevent the recurring omission of rebuttals seen in the turn-based test).*
 *v260706 — Created the "registration criteria" section (parent-layer + four requirements); registered strawman-narrowing rebuttal and conclusion-premised rebuttal in Group 6 (sibling symptoms of the exclusion-strength degree of freedom, from real measurement on a judgment); reconnected the B-1 test in E-3.*
+*v260713 — Created the "argument-type entry point" section: Walton's argumentation schemes adopted not as a transplanted list but as the doorway into the completion-degrees-of-freedom ledger (identify type → the degrees of freedom that type calls for are looked up automatically). Six scheme seeds (sign · expert opinion · cause · analogy · consistency · absence) mapped to the degrees of freedom each calls first, an open list (a type outside the table is registered as a residual). Lineage: Walton's critical questions + argumentation schemes. Transplanting the whole set of schemes is rejected (non-MECE · four requirements · over-designed).*
+
 *v260712 — Created the "two-layer structure of the layer concept" section: the distinction between the formation-condition axis (§5.2) and the completion-degrees-of-freedom axis, the 9-row completion-degrees-of-freedom ledger (an open list — with real-measured triggers), the two-part grammar of insufficient/improper (an unclosed degree of freedom = insufficient, a wrong closure = improper — the ground for exhaustive reconciliation in selection), the residual-registration rule (an anomaly outside the ledger is registered as a new degree-of-freedom candidate — making incompleteness a detection device). The standpoint row's meta-axis standing is stated.*
 
 *LARP criteria & check modules (Layer-grounded Argument Reasoning Probe) · Author: CHAE Sooyang · CC BY-NC-SA 4.0*

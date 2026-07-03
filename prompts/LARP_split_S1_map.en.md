@@ -1,4 +1,4 @@
-# LARP split edition S1 — Scene 1: preprocessing and the map (this-stage instruction) [synced to integrated v260712]
+# LARP split edition S1 — Scene 1: preprocessing and the map (this-stage instruction) [synced to integrated v260713]
 
 *[한국어](LARP_split_S1_map.md) | English*
 

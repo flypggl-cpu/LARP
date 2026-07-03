@@ -1,4 +1,4 @@
-# LARP split edition S2 — Scenes 2–3: diagram and selection (this-stage instruction) [synced to integrated v260712]
+# LARP split edition S2 — Scenes 2–3: diagram and selection (this-stage instruction) [synced to integrated v260713]
 
 *[한국어](LARP_split_S2_select.md) | English*
 
