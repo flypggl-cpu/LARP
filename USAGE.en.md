@@ -124,12 +124,11 @@ The full version is built for long, complex texts in the first place — but a s
 §1–§4 are usually enough. The below is only for when you want *extra certainty.*
 
 ### 5.1 When one text can't settle it (outside checking, e.g. deep research)
-For things a single text can't answer — e.g. "is this really the correct precedent / law?", "does the quote match the original?" — the tool doesn't guess; it writes you **a question you can copy and look up.** Two kinds:
+For things a single text can't answer (e.g. "is this really the correct precedent / law?", "does the quote match the original?"), the tool doesn't guess — it hands them off as check questions. How:
 
-- **Things you can look up online / with a deep-research AI** → a copy-paste search query.
-- **Things only your own materials can answer** (the original document, the record) → it points to "check this exact part yourself."
-
-Re-paste the answer **with its source** and the tool folds it in (an answer with no source is not accepted as fact).
+1. **Copy the question the tool wrote.** For things findable online it comes as a *search query for a deep-research AI*; for things only your own materials hold, as a *"check this exact part yourself."*
+2. **Look it up.** Paste the first kind into a deep-research AI; for the second, open the original document / record yourself.
+3. **Paste the answer back with its source.** The tool then folds it in (an answer with no source is not accepted as fact).
 
 ### 5.2 Deciding whether to accept a single claim (deep research + LARP)
 When a news/social-media claim is doubtful: ① gather the grounds with deep research → ② put the claim + material into LARP to see hidden premises and missing evidence → ③ run the *follow-up questions* the tool generates back through deep research → ④ you decide whether to accept. Either order works — (a) deep research→LARP, or (b) LARP→deep research.
