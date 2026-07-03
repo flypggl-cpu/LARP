@@ -66,15 +66,15 @@ No dependencies (Python standard library only). The index is also written to `ev
 
 > **Can't run code?** There is a chatbot *approximation* [`coverage_audit_prompt.en.md`](coverage_audit_prompt.en.md) — the AI reads it itself, so it has **no omission guarantee** (it falls back to "happened to find it"). If you need the guarantee but installing Python is the friction, run the script inside a *code-running chatbot* — that keeps the determinism with no local install.
 
-## Worked example (Suwon High Court 2024No620, "total USD" issue)
+## Worked example (a judgment, "a total amount" issue)
 
 In this span the evidence cited by 순번 = **239 · 326 · 726**. Reconciling a tree that cited only 726 (the receipt):
 
 ```
 [audit] covered by tree: ['순번 726 ...']
 [audit] ★ omission candidates (cited but absent from tree): ['순번 239 ...', '순번 326 ...']
-  순번 239 | missing? | …testified (2023GoHap815 evidence-list no. 239)…
-  순번 326 | missing? | …LD's written statement (2023GoHap185 no. 326)…
+  순번 239 | missing? | …testified (evidence-list no. 239)…
+  순번 326 | missing? | …LD's written statement (no. 326)…
 ```
 
 → the dropped LD statement (326) and hearsay testimony (239) are caught **by code**, not by the model's judgment. The same approach applies to a paper (a missing `[15]`) or a contract dispute (a missing `Exhibit B`).

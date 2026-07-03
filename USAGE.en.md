@@ -16,6 +16,9 @@
 3. **Paste the text to analyze.** In the next message, paste the *full original text* (not a summary — the tool pulls the argument from the original wording). A one-line hint helps, e.g., "check whether this text's conclusion holds." (For more precision, add the 〈What to include〉 template below.)
 4. **The first-pass analysis appears, then it stops.** The tool outputs a *plain-language summary → logic map → evidence ledger*, then **stops**. How to read it is in **§2**. (If it doesn't stop, add the line "do only the first pass, then stop.")
 5. **Pick where to go deeper → 2nd pass → you judge.** Write the spots to dig into (e.g., `A1`, `W1`) and it analyzes only those (syntax in **§3**). Just say "continue" and it takes only the core (★) on its own. The tool only *marks* "this looks suspicious"; whether to accept it is up to you.
+6. **(Optional) "write it up as a report."** The earlier output is a record of *the order it was inspected in*, which is hard to read. Ask for a report at the end and it rewrites everything into *the reader's order of understanding* — ① what this document says → ② the argument's load (the 2–3 points the conclusion actually rests on) → ③ where it is solid → ④ where it is risky (if it collapses, what collapses with it) → ⑤ a conditional map (what happens if what is confirmed) → ⑥ the judgment that is the human's part. It invents no new facts (only what touched the earlier analysis) and still renders no verdict.
+
+> **For a very long document (a court ruling, etc.) — two advanced options.** (1) Before analysis, run [Gate 0](prompts/LARP_gate0.md) first — a mechanical sweep of watermarks, page numbers, *redaction/citation gaps*, and evidence tags gives you a *checklist* to reconcile the later analysis against (in a code-running environment, [`tools/larp_gate0.py`](tools/larp_gate0.py) is more accurate). (2) In a small-context environment where a huge prompt breaks (NotebookLM, etc.), feed the **split edition** in stages — [S0 common](prompts/LARP_split_S0_common.md) + [S1 map](prompts/LARP_split_S1_map.md) to draw the structure only, then, after you pick a scope, S0 + [S2 select](prompts/LARP_split_S2_select.md) + modules to go deep on just that part. *(These files are Korean-only for now.)*
 
 > **Don't paste a long judgment whole.** If there are several charges/issues, run it *issue by issue* → **§4**.
 
@@ -31,6 +34,8 @@
 ---
 
 ## 2. Reading the result — what the first pass produces
+
+> **Note — the tool moves in "scenes."** ① **Scene 1 (map)**: it draws the conclusion/ground skeleton and *stops* (= step 4 above, §2 below). → you pick a scope → ② **Scene 3 (selection)**: it flags only the anomalous arguments in that part (= step 5, the 2nd pass). In between, an optional *Scene 2 (diagram)* can just show the reconstruction. → if you want, **Scene 4 (report)** gives the final document in reading order (step 6). "1st pass / 2nd pass" is just an easy name for this scene flow.
 
 **A *plain-language summary* (everyday prose, no codes or jargon) comes first — read that first.** It states, in plain words: this text's conclusion, the assumption it silently leans on, whether the decisive-looking evidence really discriminates, what actually discriminates, and what's missing. Below is how to read the *detail* that follows it.
 
@@ -95,7 +100,7 @@ The 2nd pass also leads with a *plain-language summary* (what changed, what rema
 
 The full version is built for long, complex texts in the first place — but a single judgment has several charges and hundreds of pieces of evidence, so **pasting it whole means neither the tool nor a person can hold it all** (the AI drops the middle of a long text; the tool is built to focus on the *load-bearing claim + the top few*). So run it **issue (charge) by issue.**
 
-1. **Pick one issue.** Cut by charge/issue (e.g., "bribery: relatedness to office," "remittance: was it a substitute payment") and put in only that reasoning section.
+1. **Pick one issue.** Cut by charge/issue (e.g., "bribery: relatedness to office," "a fund: was it a substitute payment") and put in only that reasoning section.
 2. **(If very long) unfold the structure first.** Use [LARP-Map long-document mode](prompts/LARP_map_long.en.md) to unfold it *from the conclusion, one step at a time.*
 3. **Run that issue through the full version, per §1.** You get the evidence ledger and, if there are competing hypotheses, the evidence × hypothesis matrix.
 4. **The gaps are already flagged in the result.** The tool itself points out *missing evidence (V)* and *left-out candidates* — you don't have to run anything extra to see "what's missing."

@@ -1,4 +1,4 @@
-# LARP Criteria & Check Modules (v260616)
+# LARP Criteria & Check Modules (v260712)
 
 *A pluggable module file split out from the main body "LARP v260616."*
 *The body keeps the decomposition engine, the six-question screen, and a one-line index of the 10 symptom groups only. Load this file alongside the body when you need the detailed definitions, review questions, routing, and criminal check axes for each symptom.*
@@ -77,6 +77,9 @@ Selection already happened in the body's stage-7 six-question screen; this table
 |Confusing defeater types|Fails to distinguish a circumstance that directly rebuts the conclusion from one that cuts the inference chain|Does the unfavorable circumstance rebut the conclusion, or undercut the link from evidence to conclusion?|
 |Unfalsifiable structure|Reinforced with post-hoc auxiliary hypotheses so the conclusion survives any data|Does any data that could falsify this conclusion exist in principle? Hasn't denial or silence itself been converted into incriminating circumstance?|
 |Violation of simplicity|The adopted hypothesis requires more unproven assumptions than the alternative yet is preferred|Were the two hypotheses' counts of unproven assumptions compared? Was the simpler explanation rejected on justified grounds?|
+|Rebuttal-surfaceness|An alternative hypothesis/contrary circumstance was examined and rebutted, but the rebuttal ground stays at surface description — a short rule-of-thumb, an absence argument ("no material," "none submitted"), a hard-to-accept declaration|Does the rebuttal ground reach an independently confirmable fact/material? If an absence argument, does it pass the 5-condition absence test? Is a demand of the same strength applied to the adopted hypothesis? (operating procedure: E-3 in this file)|
+|Strawman-narrowing rebuttal|The alternative hypothesis is reconstructed in a narrowed, exclusive-motive version ("solely," "only for") and only that strong version is rebutted — the possibility of coexisting motives is left unexamined|Is what was rebutted the hypothesis the party actually argued, or a narrowed version? Was the coexistence hypothesis (two motives together) examined separately?|
+|Conclusion-premised rebuttal|The ground for rebutting the alternative is a counterfactual that presupposes the fact-in-issue as true ("if X had not existed, … would not have either" — X's existence is the very issue)|Does the counterfactual's premise contain the fact-in-issue? Does the rebuttal still hold with that premise removed? (pair with Group 10 conclusion-precedence)|
 
 #### Group 7. Subjective inference & timing
 
@@ -213,7 +216,95 @@ A good layer = **a competing degree of freedom in completing the argument.** An 
 These three are not a runtime gate but *design hints* for deciding whether to add a new candidate dimension.
 That said, the "contestability" criterion also operates at runtime in the body's §7.3 backward reconstruction (★ the duty to note a rival position in one line for each candidate).
 
+## Two-layer structure of the layer concept — the formation-condition axis and the completion-degrees-of-freedom axis
+
+The example column of layers (fact · meaning · standard · evidence · legal element · appraisal · action · timing …) carries two different kinds of dimension. Distinguishing them makes the grammar of flagging anomalous arguments clear.
+
+**Formation-condition axis — what the claim is *about*.** The layers of conditions that make up the object (fact, emotion, action, legal element, etc.). The body's §5.2 object-formation condition table handles this, and which layer does the work differs by document type. An open list.
+
+**Completion-degrees-of-freedom axis — *how* the claim is fixed.** The open questions an argument must close to reach its conclusion. This is where the implicit premises supplied by a standpoint live — a standpoint does not change the object; it supplies which way the degrees of freedom are closed.
+
+[Completion-degrees-of-freedom ledger — an open list. Growth follows the registration criteria below.]
+
+|Degree of freedom (open question)|Error group of wrong closure|Trigger (operating device)|
+|-|-|-|
+|Meaning-fixing — what does this word/document mean|interpretation foreclosure, name–condition confusion|promote interpretive dispute · display duty|
+|Tense — at what point in time does the claim attach|after→before diversion, present→past diversion|the orientation of judgment|
+|Transmission/source — whose words, at how many removes|summary-level confusion, common-source double-counting|the summary-level three tags · common-source bundling|
+|Reach — up to which proposition the evidence reaches|execution⇢nominal illusion, non-diagnostic emphasis|the report's load re-weighing (layer distinction)|
+|Exclusion strength — how far must a rival explanation be closed|rebuttal-surfaceness · strawman-narrowing rebuttal · conclusion-premised rebuttal|exhaustive scoring of rebuttal seeds (E-3)|
+|Standard — what is the comparison group for "same / anomalous"|arbitrary reference class, inconsistent standard|Module N reference-class row|
+|Generation context — why does this evidence exist|uncritical acceptance of a self-serving document, deception|note the generation context · diagnosticity–credibility coupling|
+|Proof level — factual likelihood and legal proof are different layers|misreading the degree of proof, jumping straight to a layer|Module N per-layer likelihood|
+|Standpoint — which position supplies these warrants|frame foreclosure, warrant concealment|two-way reading of standpoint · three signals|
+
+The standpoint row has a different standing — it is not a parallel axis but a meta-axis that allocates the closing direction of the other degrees of freedom.
+
+[The two-part grammar of insufficient / improper — the form of flag this ledger gives]
+
+```text
+Insufficient = a degree of freedom is not closed.
+  "This ground reached the conclusion without closing [degree of freedom X] — what would it take to close it?"
+Improper = a degree of freedom is wrongly closed.
+  "This ground closed [degree of freedom X] in [direction Y], but the ground for that closure is not recorded /
+   is asymmetric with another closure."
+In selection, the relevant degrees of freedom can be checked exhaustively for each ground — a symptom list cannot answer "did I see them all," but the degrees-of-freedom ledger gives a reconciliation (a generalization of what the rebuttal seeds do for rebuttal scoring).
+```
+
+[Residual-registration rule — the ledger's incompleteness as a detection device]
+
+If a residual appears that seems anomalous but catches on none of the nine degrees of freedom, do not force it into an existing row — register it as a **new degree-of-freedom candidate** in the open-questions ledger. The ledger was identified from this judgment sample, so it is expected that other document types (causal direction, quantification, generalization scope, etc.) will spawn new rows — that is the path by which the ledger self-corrects as samples grow.
+
+---
+
+## Registration criteria — the parent-layer lineage test + the four requirements of a useful layer
+
+A new symptom/rule is registered in this file only after passing the two tests below. It is the device that prevents building a failure-specific machine every time a failure is seen (checklist bloat), and is the criteria-side counterpart of the §1-0 test.
+
+1. Lineage test (the parent layer in one line): state in one line which open degree of freedom (layer) this symptom is a wrong-closure form of. Once stated, unfold the other closures of the same degree of freedom (sibling symptoms) together — an empirical patch catches only what was seen, but a layer derivation generates even the unseen forms.
+2. Quality test (the four requirements of a useful layer, appendix §2): formation condition / evidence to check / a way to show it wrong / the action required. If even one of the four is empty, the symptom is a comfort, not a viewpoint, so do not register it.
+
+Registration example (derived retroactively): the parent layer of rebuttal-surfaceness · strawman-narrowing rebuttal · conclusion-premised rebuttal is "at what strength must a rival explanation be closed" (the exclusion-strength degree of freedom), and the three are different wrong-closures of that degree of freedom. The summary-level three tags correspond to the transmission layer (whose words you hear it as); the generation-context and interpretive-dispute rules correspond to the error group of the name/meaning layer (the meaning-fixing degree of freedom).
+
+---
+
+## E. Judgment (appellate) profile — a document-type profile
+
+A profile to load together with the body when applying it to a judgment, especially an appellate judgment. It is an instance of the criteria-swap interface (above), and the body (decomposition engine · six questions · modules) is unchanged.
+
+**E-1. Bundling the same source (first-instance / present-instance double narration).** An appellate judgment narrates the same evidence twice — (a) as a summary of the first-instance judgment and (b) as present-instance reinforcement. In the ledger, bundle the first-instance and present-instance citation of the same statement/document as a common source and count the weight only once. But separate as its own atom any part where the content changed between the first and present instance (addition, correction, retreat) — the change itself is material for a credibility assessment.
+
+**E-2. The summary-level three tags (mandatory alongside the source column in §7.9).**
+
+```text
+Verbatim record: a part transcribed in quotation marks with a transcript/deposition page number. The target of quote-source comparison (Module A · verification layer).
+Author (court) summary: "stated that …", "to the effect that …" — the court's paraphrase, not the original statement.
+  Do not re-cite an expression at this level as if it were the original statement. The gap between paraphrase and original statement is itself Module A's check target.
+Admissibility-excluded / limited citation: a part the court noted as inadmissible and cited only for a limited purpose (confirming a change in statement, etc.). Do not promote it to a ground for the fact-in-issue (Group 1 admissibility·probative-value confusion).
+```
+
+**E-3. The strength of a rebuttal argument (the operating procedure for Group 6 "rebuttal-surfaceness").** A judgment is a document that itself cites and rebuts alternative hypotheses, so "alternative hypothesis unexamined" is superficially rare. The anomaly is in the *quality* of the rebuttal ground. **The scoring targets are all Gate-0 ⑤ rebuttal seeds within the scope — do not substitute an AI-curated "main rebuttals" list (the listing itself creates funnel loss).** When you meet a rebuttal sentence, typify its ground.
+
+```text
+㉮ presenting independent fact/material / ㉯ a short rule-of-thumb ("by rule of thumb it is unpersuasive")
+㉰ absence argument ("there is no material worth noting," "none was submitted") / ㉱ hard-to-accept declaration ("not readily acceptable")
+If a rebuttal is completed by ㉯–㉱ alone, select it as rebuttal-surfaceness.
+For the absence-argument type, check the five conditions of absence judgment and the allocation of the burden of proof (Group 8) together.
+But if that alternative hypothesis is the defense's affirmative claim, a certain demand for substantiation can be legitimate, so the axis of judgment is symmetry: is the same-strength demand applied to the grounds on the adopted-hypothesis side too?
+For a rebuttal selected as surface-level, attach the B-1 test (reconstruct the strongest position) — keep the selection only if it is still surface-level even after building the arguer's (the court's) strongest reconstruction (appendix §3: the point where forward/backward reconstruction split is the strongest signal). Sibling symptoms of the same degree of freedom — strawman-narrowing rebuttal and conclusion-premised rebuttal — are also checked when scoring rebuttal seeds exhaustively.
+```
+
+**E-4. Reflecting the redaction (de-identification) duty.** A citation gap detected by the Gate-0 scan is entered in the ledger/card as "no ground in the document (citation gap)," and confirming the actual content of that evidence is registered in the open-questions ledger as a record-check instruction. What is de-identified in a published judgment is often institutional documents and personal-information parts — which may be exactly the evidence the court weights as objective reinforcement — so whether the citation gap is handled governs the top-level evidence evaluation.
+
+**E-5. Location marker.** Use the judgment's own page numbers as the canonical anchor (body §3.5-2, the Gate-0 anchor index).
+
+---
+
 *Split out and created in v260616. Source: the §8 detail table, §10 situation table, and §13.2 list of the LARP v260614 body. Moved without changing content.*
+*v260702 — Added "rebuttal-surfaceness" to Group 6; created the E "judgment (appellate) profile" (a product of real-measured verification on a judgment).*
+*v260704 — Forced the E-3 scoring targets to all Gate-0 rebuttal seeds (to prevent the recurring omission of rebuttals seen in the turn-based test).*
+*v260706 — Created the "registration criteria" section (parent-layer + four requirements); registered strawman-narrowing rebuttal and conclusion-premised rebuttal in Group 6 (sibling symptoms of the exclusion-strength degree of freedom, from real measurement on a judgment); reconnected the B-1 test in E-3.*
+*v260712 — Created the "two-layer structure of the layer concept" section: the distinction between the formation-condition axis (§5.2) and the completion-degrees-of-freedom axis, the 9-row completion-degrees-of-freedom ledger (an open list — with real-measured triggers), the two-part grammar of insufficient/improper (an unclosed degree of freedom = insufficient, a wrong closure = improper — the ground for exhaustive reconciliation in selection), the residual-registration rule (an anomaly outside the ledger is registered as a new degree-of-freedom candidate — making incompleteness a detection device). The standpoint row's meta-axis standing is stated.*
 
 *LARP criteria & check modules (Layer-grounded Argument Reasoning Probe) · Author: CHAE Sooyang · CC BY-NC-SA 4.0*
 *A personal methodology project, not the official position of any institution.*

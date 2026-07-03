@@ -112,6 +112,8 @@ AI는 그럴듯한 글을 공짜로, 무한히 만듭니다. 그래서 새로운
 | [`prompts/LARP_map_long.md`](prompts/LARP_map_long.md) | LARP-Map 긴 문서 모드 — 아주 긴 글을 단계별로 함께 펼치며 빠진 곳을 점검(**긴 글 전용**) · [English](prompts/LARP_map_long.en.md) |
 | [`prompts/LARP_lite.md`](prompts/LARP_lite.md) | 경량판 — **짧은 글**을 한 화면으로 빠르게 점검 · [English](prompts/LARP_lite.en.md) |
 | [`prompts/LARP_verify.md`](prompts/LARP_verify.md) | 검증 층 — 첫 분석이 *놓친* 약점·증거를 별도 모델이 사냥하는 2차 패스 · [English](prompts/LARP_verify.en.md) |
+| [`prompts/LARP_gate0.md`](prompts/LARP_gate0.md) | 게이트0 — 분석 *전* 기계적 전처리(인용 공백·증거 시드 등), 코드 미실행 환경용 수동판 · *(한국어)* |
+| `prompts/LARP_split_*` | **분할판** — 컨텍스트가 작은 환경(NotebookLM 등)에서 전체판을 단계로 나눠 투입: [S0 공통규율](prompts/LARP_split_S0_common.md) · [S1 지도](prompts/LARP_split_S1_map.md) · [S2 선별](prompts/LARP_split_S2_select.md) · *(한국어)* |
 | [`USAGE.md`](USAGE.md) | **전체판 사용법** — 따라 하기 + 모든 출력(대장·행렬·V·3신호) 읽는 법·2차·검증 층·FAQ |
 | [`USAGE_lite.md`](USAGE_lite.md) | **라이트 사용법** — 짧은 글 빠른 점검(붙여넣기 한 판) |
 | [`docs/introduction.md`](docs/introduction.md) | 소개 — 왜 이게 필요한가 |
@@ -123,6 +125,7 @@ AI는 그럴듯한 글을 공짜로, 무한히 만듭니다. 그래서 새로운
 | [`CHANGELOG.md`](CHANGELOG.md) | 버전 변경 이력 |
 | [`verification/`](verification/) | 검증 하네스 — 버전 회귀 테스트(고정 케이스 + 행동 루브릭) |
 | [`tools/`](tools/) | **보조 도구(고급·검증용)** — 분석 결과를 코드로 점검. 아래가 그 도구들 · [쉬운 설명](tools/README.md) |
+| [`tools/larp_gate0.py`](tools/larp_gate0.py) | 게이트0 코드 — 분석 *전* 워터마크 제거·쪽 앵커·인용 공백 스캔·증거 시드 추출 |
 | [`tools/larp_coverage_audit.py`](tools/larp_coverage_audit.py) | 누락 증거 검사 — 긴 글이 인용한 증거를 빠짐없이 추려, 내가 놓친 게 없는지 대조 |
 | [`tools/larp_quote_audit.py`](tools/larp_quote_audit.py) | 인용 대조 — 분석이 '원문 인용'이라 든 문장이 실제 원문에 있는지 확인(지어낸 인용 적발) |
 | [`tools/larp_card_audit.py`](tools/larp_card_audit.py) | 카드·대장 점검 — 증거 정리표에 빈칸·뭉뚱그림·오타가 없는지 |

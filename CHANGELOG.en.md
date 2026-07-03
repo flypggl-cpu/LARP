@@ -2,6 +2,16 @@
 
 *[한국어](CHANGELOG.md) | English*
 
+## v260702–v260712 (2026-07) — Full-version overhaul (from re-testing on a real judgment)
+
+A series of revisions to the **full version** (`prompts/LARP.md`) and its **modules** (`prompts/LARP_modules.md`), driven by re-running the tool on a long real judgment. The decomposition engine, the six questions, and the module questions are unchanged throughout; what changed is the *execution structure* and several completeness safeguards. *(The English full version is not yet updated — `LARP.en.md` remains at v260628. The Korean CHANGELOG has the full per-version detail.)*
+
+- **Gate 0 preprocessing** — a deterministic pre-analysis pass ([`tools/larp_gate0.py`](tools/larp_gate0.py); manual no-code edition [`prompts/LARP_gate0.md`](prompts/LARP_gate0.md)): strip watermarks, anchor the document's own page numbers, **scan redaction / citation gaps**, seed the evidence list, flag date anomalies. (A redacted document is the ideal condition for disguised hallucination — the model reads across a blank as if continuous — so this defense is code, not an instruction.)
+- **Three-scene pipeline + split edition** — reversed the pipeline to *map → user picks a scope → full depth on that scope only*. Added a **split edition** ([`prompts/LARP_split_S0_common.md`](prompts/LARP_split_S0_common.md) · [S1](prompts/LARP_split_S1_map.md) · [S2](prompts/LARP_split_S2_select.md)) for small-context environments (NotebookLM-like): jumping straight to flaw-flagging is blocked not by an instruction but by *not loading the file* that holds the symptom index.
+- **Scene 4 "report" stage** — rewrites the analysis into the reader's order of understanding (load-bearing points folded into one paragraph, symmetric narration, collapse-chain, closing conditional map). No verdict.
+- **Confirmation-bias joint audit (v260711)** — audited the five joints where bias enters (collection–interpretation–scoring–synthesis–adverse-evidence defense) against existing methods; adopted three closures (diagnosticity stated in *comparative* form, diagnosticity-credibility coupling, Module O's new-prediction requirement for rescue hypotheses), rejected three with reasons (ACH score-summing = crossing the clerk/judge line; numeric Bayes; Wigmore charts).
+- **Layer double-stratification (v260712)** — separated the "what a claim is about" axis from the **"completion degrees-of-freedom"** axis (a 9-row ledger: meaning-fixing · tense · transmission/source · reach · exclusion strength · standard · generation context · proof level · standpoint), giving a per-ground *exhaustive* cross-check rather than a symptom checklist. An open (not closed-MECE) ledger that self-corrects as samples grow.
+
 ## v260620 (2026-06-20) — Added LARP-Weigh (evidence × hypothesis evaluation, domain-general)
 
 Beyond the full version flagging weak points as *candidates*, this adds an evaluation aid [`prompts/LARP_weigh.en.md`](prompts/LARP_weigh.en.md) (Korean [`.md`](prompts/LARP_weigh.md)) that weighs competing hypotheses systematically at **(evidence × dimension × hypothesis)** resolution. It is a *domain-general* generalization of an internal criminal-investigation methodology (recording-DB → hypothesis-test), applicable to papers, policy, news, etc.
@@ -26,7 +36,7 @@ A countermeasure for the limit that drawing a long/complex text (large judgments
 
 ## v260618 (2026-06-18) — Evidence atomization · diagnosticity recovery (from real-judgment testing)
 
-From real use (analyzing the Suwon High Court 2024-No-620 judgment), this fixes a flaw where Lite/Map lumped *the actual content of atomic evidence* into "F's statement and the minutes, etc." No new machinery — it just makes visible, in the first pass, what was missing: (a) the actual content of evidence, (b) where that content diverges from the arguer's reading, and (c) hypothesis-discriminating power (diagnosticity). The verdict still stays with the human / the second pass.
+From real use (analyzing a judgment), this fixes a flaw where Lite/Map lumped *the actual content of atomic evidence* into "F's statement and the minutes, etc." No new machinery — it just makes visible, in the first pass, what was missing: (a) the actual content of evidence, (b) where that content diverges from the arguer's reading, and (c) hypothesis-discriminating power (diagnosticity). The verdict still stays with the human / the second pass.
 
 - **Map**: evidence atomization (no "etc." lumping, statements separated from objective evidence, independent nodes) + a three-line split per atomic item — `actual content [content] / arguer's reading [W·inferred] / read otherwise [competing]`. Diagnosticity shows up *in the structure* via the presence/absence of a `[competing]` branch (no AI verdict on diagnosticity).
 - **Lite**: stage 3 (backward reconstruction) adds core-evidence atomization + actual content vs. arguer's reading; the output gains a "key evidence (actual content vs. arguer's reading)" item.

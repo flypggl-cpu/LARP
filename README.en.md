@@ -112,6 +112,8 @@ See [USAGE.en.md](USAGE.en.md) for details.
 | [`prompts/LARP_map_long.en.md`](prompts/LARP_map_long.en.md) | LARP-Map long-document mode — opens a very long text step by step, checking nothing's missed (**long texts only**) |
 | [`prompts/LARP_lite.en.md`](prompts/LARP_lite.en.md) | Lightweight edition — a one-screen quick check of a **short text** |
 | [`prompts/LARP_verify.en.md`](prompts/LARP_verify.en.md) | Verification layer — an omission-hunt 2nd pass where a separate model finds what the first analysis *missed* |
+| [`prompts/LARP_gate0.md`](prompts/LARP_gate0.md) | Gate 0 — mechanical preprocessing *before* analysis (redaction gaps, evidence seeds), manual edition for no-code environments · *(Korean)* |
+| `prompts/LARP_split_*` | **Split edition** — feed the full version in stages in a small-context environment (NotebookLM, etc.): [S0 common](prompts/LARP_split_S0_common.md) · [S1 map](prompts/LARP_split_S1_map.md) · [S2 select](prompts/LARP_split_S2_select.md) · *(Korean)* |
 | [`USAGE.en.md`](USAGE.en.md) | **Full-version guide** — walkthrough + reading every output (ledger·matrix·V·three signals)·2nd pass·verification layer·FAQ |
 | [`USAGE_lite.en.md`](USAGE_lite.en.md) | **Lite guide** — a quick check of a short text (one paste-and-go) |
 | [`docs/introduction.en.md`](docs/introduction.en.md) | Introduction — why this matters |
@@ -123,6 +125,7 @@ See [USAGE.en.md](USAGE.en.md) for details.
 | [`CHANGELOG.en.md`](CHANGELOG.en.md) | Version history |
 | [`verification/`](verification/) | Verification harness — version regression test (fixed cases + behavior rubric) |
 | [`tools/`](tools/) | **helper tools (advanced · verification)** — code checks over the analysis. The tools below · [plain-language intro](tools/README.en.md) |
+| [`tools/larp_gate0.py`](tools/larp_gate0.py) | Gate 0 code — *before* analysis: strips watermarks, anchors page numbers, scans redaction gaps, seeds the evidence list |
 | [`tools/larp_coverage_audit.py`](tools/larp_coverage_audit.py) | coverage audit — pulls every cited piece of evidence so you can check none was missed in a long text |
 | [`tools/larp_quote_audit.py`](tools/larp_quote_audit.py) | quote audit — checks that sentences the analysis presents as "source quotes" really exist in the source (catches invented quotes) |
 | [`tools/larp_card_audit.py`](tools/larp_card_audit.py) | card/ledger audit — checks the evidence tables for blanks, lumping, and typos |
