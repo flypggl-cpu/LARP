@@ -105,15 +105,15 @@ The 2nd pass also leads with a *plain-language summary* (what changed, what rema
 
 ---
 
-## 4. Large cases (long judgments), issue by issue
+## 4. Long multi-issue documents (judgments, papers, reports), issue by issue
 
-The full version is built for long, complex texts in the first place — but a single judgment has several charges and hundreds of pieces of evidence, so **pasting it whole means neither the tool nor a person can hold it all** (the AI drops the middle of a long text; the tool is built to focus on the *load-bearing claim + the top few*). So run it **issue (charge) by issue.**
+The full version is built for long, complex texts in the first place — but a single long document has several issues and hundreds of pieces of evidence (a judgment's several charges, a paper's several claims/chapters, a report's several conclusions), so **pasting it whole means neither the tool nor a person can hold it all** (the AI drops the middle of a long text; the tool is built to focus on the *load-bearing claim + the top few*). So run it **issue by issue.**
 
-1. **Pick one issue.** Cut by charge/issue (e.g., "bribery: relatedness to office," "a fund: was it a substitute payment") and put in only that reasoning section.
+1. **Pick one issue.** Cut by issue (for a judgment, "bribery: relatedness to office," "a fund: was it a substitute payment"; for a paper, "the causal claim in ch. 3," "core hypothesis A") and put in only that reasoning section.
 2. **(If very long) unfold the structure first.** Use [LARP-Map long-document mode](prompts/LARP_map_long.en.md) to unfold it *from the conclusion, one step at a time.*
 3. **Run that issue through the full version, per §1.** You get the evidence ledger and, if there are competing hypotheses, the evidence × hypothesis matrix.
 4. **The gaps are already flagged in the result.** The tool itself points out *missing evidence (V)* and *left-out candidates* — you don't have to run anything extra to see "what's missing."
-5. **Next issue, then stitch.** A human stitches cross-issue links (one fact used as a ground for two charges, etc.) at the end.
+5. **Next issue, then stitch.** A human stitches cross-issue links (one fact used as a ground for two issues, etc.) at the end.
 
 **"All evidence and all hypotheses in one run" is not what the tool promises** — no human can do that either. Completeness comes not from a *single run* but from the *issue-by-issue procedure.*
 
