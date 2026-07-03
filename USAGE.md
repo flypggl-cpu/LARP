@@ -8,7 +8,7 @@
 
 ---
 
-## 1. 실행하기 — 5단계
+## 1. 실행하기 — 6단계
 
 1. **챗봇을 엽니다.** chatgpt.com이나 claude.ai에서 새 대화를 엽니다(무료로도 됩니다).
 2. **프롬프트를 붙입니다.** [`prompts/LARP.md`](prompts/LARP.md) 내용을 *통째로* 복사해 첫 메시지로 붙입니다(길어도 괜찮습니다). 2차까지 갈 거면 [`prompts/LARP_modules.md`](prompts/LARP_modules.md)도 *이어서 함께* 붙입니다.

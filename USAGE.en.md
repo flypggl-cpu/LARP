@@ -8,7 +8,7 @@
 
 ---
 
-## 1. Running it — 5 steps
+## 1. Running it — 6 steps
 
 1. **Open a chatbot.** Start a new conversation at chatgpt.com or claude.ai (the free tier works).
 2. **Paste the prompt.** Copy the *entire* contents of [`prompts/LARP.en.md`](prompts/LARP.en.md) and paste it as your first message (it's long — that's fine). If you'll go to the 2nd pass, paste [`prompts/LARP_modules.en.md`](prompts/LARP_modules.en.md) right after it.
