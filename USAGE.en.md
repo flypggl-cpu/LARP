@@ -18,7 +18,16 @@
 5. **Pick where to go deeper → 2nd pass → you judge.** Write the spots to dig into (e.g., `A1`, `W1`) and it analyzes only those (syntax in **§3**). Just say "continue" and it takes only the core (★) on its own. The tool only *marks* "this looks suspicious"; whether to accept it is up to you.
 6. **(Optional) "write it up as a report."** The earlier output is a record of *the order it was inspected in*, which is hard to read. Ask for a report at the end and it rewrites everything into *the reader's order of understanding* — ① what this document says → ② the argument's load (the 2–3 points the conclusion actually rests on) → ③ where it is solid → ④ where it is risky (if it collapses, what collapses with it) → ⑤ a conditional map (what happens if what is confirmed) → ⑥ the judgment that is the human's part. It invents no new facts (only what touched the earlier analysis) and still renders no verdict.
 
-> **For a very long document (a court ruling, etc.) — two advanced options.** (1) Before analysis, run [Gate 0](prompts/LARP_gate0.md) first — a mechanical sweep of watermarks, page numbers, *redaction/citation gaps*, and evidence tags gives you a *checklist* to reconcile the later analysis against (in a code-running environment, [`tools/larp_gate0.py`](tools/larp_gate0.py) is more accurate). (2) In a small-context environment where a huge prompt breaks (NotebookLM, etc.), feed the **split edition** in stages — [S0 common](prompts/LARP_split_S0_common.md) + [S1 map](prompts/LARP_split_S1_map.md) to draw the structure only, then, after you pick a scope, S0 + [S2 select](prompts/LARP_split_S2_select.md) + modules to go deep on just that part. *(These files are Korean-only for now.)*
+> **For a very long document (a court ruling, etc.) — advanced: Gate-0 preprocessing.** Before analysis, run [Gate 0](prompts/LARP_gate0.en.md) first — a mechanical sweep of watermarks, page numbers, *redaction/citation gaps*, and evidence tags gives you a *checklist* to reconcile the later analysis against (in a code-running environment, [`tools/larp_gate0.py`](tools/larp_gate0.py) is more accurate).
+
+> **Advanced: how to run the split edition (for a small-context environment where a huge prompt breaks — NotebookLM, etc.).** The key is *which file to load at which stage.*
+>
+> 1. **Map stage:** load [S0 common](prompts/LARP_split_S0_common.en.md) + [S1 map](prompts/LARP_split_S1_map.en.md) as sources (plus [Gate 0](prompts/LARP_gate0.en.md) in a code environment). → paste the document → it draws the *structure map* only and **stops.**
+> 2. **Pick a scope:** looking at the map, choose one conclusion/issue to examine.
+> 3. **Deep stage:** **keep S0 loaded** (don't turn it off) and *add* [S2 select](prompts/LARP_split_S2_select.en.md) and the [criteria & check modules](prompts/LARP_modules.en.md). → say "review the anomalous arguments of [scope]" → it goes deep on just that part.
+> 4. Leave the map and Gate-0 result from step 1 in place — they become the *carry-over packet* for the next stage.
+>
+> (In a roomy environment where you can paste everything at once, use the integrated [`LARP.en.md`](prompts/LARP.en.md) instead — the split edition is only for environments that *force* you to cut it up.)
 
 > **Don't paste a long judgment whole.** If there are several charges/issues, run it *issue by issue* → **§4**.
 
