@@ -91,7 +91,7 @@ It also gives an opinion on whether the whole document is tilted toward its conc
 
 **Stopping is the whole point.** The machine lays out everything worth questioning; the human decides "this is the key, this I'll believe." And the responsibility stays with the human.
 
-> **Large cases, issue by issue.** Don't paste a long, multi-charge document (like a judgment) all at once. Split it into single issues (charges), run them one at a time, then stitch — a single run does *not* unfold *all* evidence and *all* hypotheses (no human could either). The tool focuses on each issue's core and makes *omissions visible*. Procedure: [USAGE §2.5](USAGE.en.md).
+> **Long multi-issue documents, issue by issue.** Don't paste a long document with several issues (a judgment, a paper, a long report) all at once. Split it into single issues (a claim, a charge), run them one at a time, then stitch — a single run does *not* unfold *all* evidence and *all* hypotheses (no human could either). The tool focuses on each issue's core and makes *omissions visible*. Procedure: [USAGE §4](USAGE.en.md).
 
 See [USAGE.en.md](USAGE.en.md) for details.
 
