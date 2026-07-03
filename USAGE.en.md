@@ -123,15 +123,21 @@ The full version is built for long, complex texts in the first place — but a s
 
 §1–§4 are usually enough. The below is only for when you want *extra certainty.*
 
-### 5.1 When one text can't settle it (outside checking, e.g. deep research)
-For things a single text can't answer (e.g. "is this really the correct precedent / law?", "does the quote match the original?"), the tool doesn't guess — it hands them off as check questions. How:
+### 5.1 When a point needs outside checking — how to get the deep-research question
+Where a single text can't answer (e.g. is a cited precedent real, does a quote match the original, a V-marked missing piece), the tool doesn't guess — it **writes the check question itself.** How to get it:
 
-1. **Copy the question the tool wrote.** For things findable online it comes as a *search query for a deep-research AI*; for things only your own materials hold, as a *"check this exact part yourself."*
-2. **Look it up.** Paste the first kind into a deep-research AI; for the second, open the original document / record yourself.
-3. **Paste the answer back with its source.** The tool then folds it in (an answer with no source is not accepted as fact).
+1. **Just run the analysis.** When a point needs confirming, the tool attaches a question right there — you don't have to ask. (If it doesn't, add one line: "turn the points that need checking into deep-research questions.")
+2. **They come in two kinds.** *Public-source* (law, precedent, statistics) comes as **a finished query you copy straight into a deep-research AI**; *case-record* (quote-matching, accounts, timelines) can't be fetched, so it comes as **"check this part of your own materials."**
+3. **Paste the answer back with its source.** The tool then folds it in (no source = not accepted as fact).
 
-### 5.2 Deciding whether to accept a single claim (deep research + LARP)
-When a news/social-media claim is doubtful: ① gather the grounds with deep research → ② put the claim + material into LARP to see hidden premises and missing evidence → ③ run the *follow-up questions* the tool generates back through deep research → ④ you decide whether to accept. Either order works — (a) deep research→LARP, or (b) LARP→deep research.
+### 5.2 When you must first assemble what the claim even is — how to get the gathering question
+For a scattered claim with no source text (a news/social-media claim), you can have **LARP write the gathering question before you go hunting.** How to get it:
+
+1. **Give it the claim instead of a document and say "there's no source — gather the grounds first."** The tool produces a deep-research query that collects the claim's *strongest* form together with *authoritative rebuttals* (with safeguards against strawmanning and low-quality sources).
+2. **Paste that query into a deep-research AI to retrieve the material.** The retrieved material becomes the "target" and enters normal analysis.
+3. **From there, as in §1.** See the hidden premises and missing evidence, run the tool's follow-up check questions (§5.1) through deep research, and you decide whether to accept.
+
+Either order works — deep research→LARP or LARP→deep research.
 → Example: [checking the claim "vaccines don't work"](examples/claim_check_vaccine.en.md)
 
 ### 5.3 Catching dropped evidence and made-up quotes with code — the verification layer (optional)
