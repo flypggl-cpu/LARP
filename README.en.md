@@ -6,7 +6,7 @@
 
 > Not a tool for winning arguments. A tool for looking at your own thinking and your opponent's with the very same eye.
 
-LARP is a set of prompts (plus one small code helper) that **surface the doubtful spots in an argument — hidden premises, the *split* between stated and real reasons, alternative explanations, evidence that should be there but isn't.** It reveals *what unsaid thing a conclusion is standing on*, but it doesn't judge — it marks *where to look* and hands the decision back to you. The **full LARP** (deep) and one-screen **Lite** are the core; **Map** (and the long-document mode for very long texts) just shows the structure, and a few helper tools round it out.
+LARP is a set of prompts (plus one small code helper) that **surface the doubtful spots in an argument — hidden premises, the *split* between stated and real reasons, alternative explanations, evidence that should be there but isn't.** It reveals *what unsaid thing a conclusion is standing on*, but it doesn't judge — it marks *where to look* and hands the decision back to you. **For which tool to use when, see the table just below.**
 
 > **▶ How to use it now** — **nothing to install:** copy the prompt file's contents into a chatbot (ChatGPT, Claude, etc.) and add the text you want analyzed.
 
@@ -33,6 +33,16 @@ LARP takes any piece of writing — your claim or your opponent's, a news articl
 
 This tool is not for outsourcing your thinking to AI. It is for **returning your easily-clouded judgment to human hands.**
 
+AI produces plausible text for free, without limit — and that created new problems.
+
+- **"Well-written = correct" no longer holds.** Smoothness is free now, so trusting something because it reads well is dangerous.
+- **AI tries to take your side.** Ask it to "defend my view" and it builds a beautiful defense — hardening your blind spot. This tool does the opposite: it shows you *what your view is standing on.*
+- **AI is confidently wrong.** It sounds just as authoritative whether or not it has grounds. So "confident and well-written" is no longer evidence of being grounded.
+- **Producing got cheap; checking didn't.** Claims pour out at AI speed while human scrutiny stays slow. Meet the flood at AI speed — but keep the judgment human.
+- **What's scarce now isn't information, it's judgment.** When AI makes almost everything abundant, the one thing left is choosing what matters and being willing to be wrong.
+
+In one line: **it turns the "smoothness" AI floods us with into a mirror that reflects you back.** If smoothness is what's now cheap, the skill to grow is the eye that sees beneath it. (→ More in the [introduction](docs/introduction.en.md).)
+
 ---
 
 ## Why it's needed
@@ -52,20 +62,6 @@ That's exactly what LARP does: **it pulls out the sentence that was secretly bui
 Why does this matter? As long as a hidden premise stays hidden, we mistake our own conclusion for reality itself. You can't get rid of all premises — but once you **bring them into the open**, reality can finally push back on a wrong idea and correct you. So the real divide isn't "biased or unbiased" but **"are my premises hidden (and so uncorrectable), or shown (and so correctable)?"** It matters most where results come back slowly — trials, investments, policy — because there a wrong premise hardens before reality ever corrects it.
 
 And this isn't only a personal problem. In the US, in Korea, anywhere — when fake news and "fake analysis" run rampant and claims built so no evidence can shake them (creationism, Holocaust denial) fill the public square, a society loses the shared standard of "what counts as grounds." Democracy depends on different views meeting and being reconciled in front of the same facts; once that common floor is gone, debate turns into the shouting of rival camps. So this is a problem of knowing *and* a problem of democracy. That's exactly why this tool puts **the same questions to everyone equally**, regardless of side — not to strike one camp, but so that everyone stands on the same floor.
-
----
-
-## AI writes everything now — so why this tool?
-
-AI produces plausible text for free, without limit. That created new problems.
-
-- **"Well-written = correct" no longer holds.** Smoothness is free now, so trusting something because it reads well is dangerous.
-- **AI tries to take your side.** Ask it to "defend my view" and it builds a beautiful defense — hardening your blind spot. This tool does the opposite: it shows you *what your view is standing on.*
-- **AI is confidently wrong.** It sounds just as authoritative whether or not it has grounds. So "confident and well-written" is no longer evidence of being grounded.
-- **Producing got cheap; checking didn't.** Claims pour out at AI speed while human scrutiny stays slow. Meet the flood at AI speed — but keep the judgment human.
-- **What's scarce now isn't information, it's judgment.** When AI makes almost everything abundant, the one thing left is choosing what matters and being willing to be wrong.
-
-In one line: **it turns the "smoothness" AI floods us with into a mirror that reflects you back.** If smoothness is what's now cheap, the skill to grow is the eye that sees beneath it. (→ More in the [introduction](docs/introduction.en.md).)
 
 ---
 
@@ -112,8 +108,8 @@ See [USAGE.en.md](USAGE.en.md) for details.
 | [`prompts/LARP_map_long.en.md`](prompts/LARP_map_long.en.md) | LARP-Map long-document mode — opens a very long text step by step, checking nothing's missed (**long texts only**) |
 | [`prompts/LARP_lite.en.md`](prompts/LARP_lite.en.md) | Lightweight edition — a one-screen quick check of a **short text** |
 | [`prompts/LARP_verify.en.md`](prompts/LARP_verify.en.md) | Verification layer — an omission-hunt 2nd pass where a separate model finds what the first analysis *missed* |
-| [`prompts/LARP_gate0.md`](prompts/LARP_gate0.md) | Gate 0 — mechanical preprocessing *before* analysis (redaction gaps, evidence seeds), manual edition for no-code environments · *(Korean)* |
-| `prompts/LARP_split_*` | **Split edition** — feed the full version in stages in a small-context environment (NotebookLM, etc.): [S0 common](prompts/LARP_split_S0_common.md) · [S1 map](prompts/LARP_split_S1_map.md) · [S2 select](prompts/LARP_split_S2_select.md) · *(Korean)* |
+| [`prompts/LARP_gate0.en.md`](prompts/LARP_gate0.en.md) | Gate 0 — mechanical preprocessing *before* analysis (redaction gaps, evidence seeds), manual edition for no-code environments |
+| `prompts/LARP_split_*` | **Split edition** — feed the full version in stages in a small-context environment (NotebookLM, etc.): [S0 common](prompts/LARP_split_S0_common.en.md) · [S1 map](prompts/LARP_split_S1_map.en.md) · [S2 select](prompts/LARP_split_S2_select.en.md) (English S0·S2 point to the corresponding sections of LARP.en.md) |
 | [`USAGE.en.md`](USAGE.en.md) | **Full-version guide** — walkthrough + reading every output (ledger·matrix·V·three signals)·2nd pass·verification layer·FAQ |
 | [`USAGE_lite.en.md`](USAGE_lite.en.md) | **Lite guide** — a quick check of a short text (one paste-and-go) |
 | [`docs/introduction.en.md`](docs/introduction.en.md) | Introduction — why this matters |
