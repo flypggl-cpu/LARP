@@ -123,14 +123,19 @@ The full version is built for long, complex texts in the first place — but a s
 
 §1–§4 are usually enough. The below is only for when you want *extra certainty.*
 
-### 5.1 When outside checking is needed
-For things one text can't settle (precedent, comparing against originals), the tool doesn't conclude — it generates **a question you can copy and look up**: a *deep-research query* for searchable things, or a *"check this part of the record" instruction* for case-record things. Re-paste the result **with its source** and the tool folds it in (results without a source aren't accepted as fact).
+### 5.1 When one text can't settle it (outside checking, e.g. deep research)
+For things a single text can't answer — e.g. "is this really the correct precedent / law?", "does the quote match the original?" — the tool doesn't guess; it writes you **a question you can copy and look up.** Two kinds:
+
+- **Things you can look up online / with a deep-research AI** → a copy-paste search query.
+- **Things only your own materials can answer** (the original document, the record) → it points to "check this exact part yourself."
+
+Re-paste the answer **with its source** and the tool folds it in (an answer with no source is not accepted as fact).
 
 ### 5.2 Deciding whether to accept a single claim (deep research + LARP)
 When a news/social-media claim is doubtful: ① gather the grounds with deep research → ② put the claim + material into LARP to see hidden premises and missing evidence → ③ run the *follow-up questions* the tool generates back through deep research → ④ you decide whether to accept. Either order works — (a) deep research→LARP, or (b) LARP→deep research.
 → Example: [checking the claim "vaccines don't work"](examples/claim_check_vaccine.en.md)
 
-### 5.3 Checking omission and hallucination in code — the verification layer (optional)
+### 5.3 Catching dropped evidence and made-up quotes with code — the verification layer (optional)
 The analysis itself already surfaces *missing-evidence and omission candidates*, so that's usually enough. But when **a miss would be costly**, check from outside the two risks a model can't catch alone (*silent omission*, *invented quotes dressed as source quotes*).
 
 Save the first-pass output to a text file, then:
