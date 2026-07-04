@@ -22,10 +22,12 @@
 
 > **Advanced: how to run the split edition (for a small-context environment where a huge prompt breaks — NotebookLM, etc.).** The key is *which file to load at which stage.*
 >
-> 1. **Map stage:** load [S0 common](prompts/LARP_split_S0_common.en.md) + [S1 map](prompts/LARP_split_S1_map.en.md) as sources (plus [Gate 0](prompts/LARP_gate0.en.md) in a code environment). → paste the document → it draws the *structure map* only and **stops.**
+> 1. **Map stage:** load [S0 common](prompts/LARP_split_S0_common.en.md) + [S1 map](prompts/LARP_split_S1_map.en.md) as sources, and run [Gate 0](prompts/LARP_gate0.en.md) preprocessing first ([`tools/larp_gate0.py`](tools/larp_gate0.py) in a code environment, otherwise Gate 0's manual five-sweep — not code-only). → paste the document → it draws the *structure map* only and **stops.** *It deliberately flags no problems at this stage* — the selection criteria (the symptom index, the six questions) aren't loaded yet, and that is the point of the split.
 > 2. **Pick a scope:** looking at the map, choose one conclusion/issue to examine.
 > 3. **Deep stage:** **keep S0 loaded** (don't turn it off) and *add* [S2 select](prompts/LARP_split_S2_select.en.md) and the [criteria & check modules](prompts/LARP_modules.en.md). → say "review the anomalous arguments of [scope]" → it goes deep on just that part.
 > 4. Leave the map and Gate-0 result from step 1 in place — they become the *carry-over packet* for the next stage.
+>
+> **Note (English).** The English `S0 common` and `S2 select` are *thin pointers* — each lists which sections of [`LARP.en.md`](prompts/LARP.en.md) to load (only `S1 map` is a full cut). So on the English side, load those listed sections into your sources as the file instructs.
 >
 > (In a roomy environment where you can paste everything at once, use the integrated [`LARP.en.md`](prompts/LARP.en.md) instead — the split edition is only for environments that *force* you to cut it up.)
 
