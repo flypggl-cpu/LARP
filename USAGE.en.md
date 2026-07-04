@@ -123,7 +123,7 @@ The full version is built for long, complex texts in the first place — but a s
 
 ## 5. For more certainty — optional features
 
-§1–§4 are usually enough. The below is only for when you want *extra certainty.*
+§1–§4 are usually enough. The below is only for when you want *extra certainty.* In particular — **turning each ground it surfaces into a question you can paste straight into deep research is one of this tool's core uses** (§5.1 for verification · §5.2 for acquisition). It doesn't stop at naming the hidden premise; it hands you *what to check* — the answer and the verdict still stay with you.
 
 ### 5.1 When a point needs outside checking — how to get the deep-research question
 Where a single text can't answer (e.g. is a cited precedent real, does a quote match the original, a V-marked missing piece), the tool doesn't guess — it **writes the check question itself.** How to get it:
