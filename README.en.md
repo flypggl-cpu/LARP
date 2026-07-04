@@ -83,6 +83,8 @@ Feed in a document and the tool first gives a *plain-language summary* (everyday
 
 It also gives a list of every cited or mentioned piece of evidence, and an opinion on whether the whole document is tilted toward its conclusion from the start.
 
+Above all — **for each ground that needs checking, it writes you a deep-research question you can paste straight into a search.** It doesn't stop at exposing the hidden premise; it hands you *where to dig* as well. (The tool writes the question; the answer and the verdict stay with deep research and with you.)
+
 ---
 
 ## How to use it (3 steps)
