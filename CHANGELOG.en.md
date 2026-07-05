@@ -2,6 +2,14 @@
 
 *[한국어](CHANGELOG.md) | English*
 
+## v260714 (2026-07-05) — Lite: capacity-transfer reinforcement (turning a flag into understanding)
+
+A revision of **LARP-Lite** from the angle of *cultivating and spreading the skill*. The analytic apparatus is unchanged; what's strengthened is making the reader understand *why* a flagged point is a problem. (Full version and modules unchanged; only Lite is at v260714.)
+
+- **Mandatory "if false, why it collapses" line** on the key hidden premise (*if this premise isn't true — a concrete counter-case — the conclusion doesn't follow*), pairing *what* was flagged with *why* it matters (a Lite-sized version of the full version's Scene-4 "where it is risky").
+- **A nudge to double-check for further premises** — Lite surfaces only the most salient one, so it prompts a second look for others (mitigating misses).
+- **Plain-languaged preamble with technical terms kept in parentheses** (reconstruction · collision · post-hoc immunization · layer) — plain wording aids a lay reader's understanding and imitation, while the parenthetical terms keep the concept anchor and the precision for subtler cases.
+
 ## v260702–v260713 (2026-07) — Full-version overhaul (from re-testing on a real judgment)
 
 A series of revisions to the **full version** (`prompts/LARP.md`) and its **modules** (`prompts/LARP_modules.md`), driven by re-running the tool on a long real judgment. The decomposition engine, the six questions, and the module questions are unchanged throughout; what changed is the *execution structure* and several completeness safeguards. *(The English full version and modules are now translated through v260713. The Korean CHANGELOG has the full per-version detail.)*
