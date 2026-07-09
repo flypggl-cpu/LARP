@@ -1,4 +1,4 @@
-# LARP-Map Long-Document Mode — Interactive Progressive Expansion (structure edition, v260619)
+# LARP-Map Long-Document Mode — Interactive Progressive Expansion (structure edition, v260710b)
 
 > A mode for *long, complex* texts (a large court ruling, or an argument tangled across several stages): it opens the text **one step at a time, together with you**, starting from the *final conclusion* and following the reasons down.
 > For short / medium texts use the base **LARP-Map** (drawn in one pass). It doesn't judge right or wrong (that's the full LARP).
@@ -30,7 +30,7 @@ Conclusion and ground are *relative roles* — the same proposition is a ground 
 
 **Step 0 — Enumerate all final conclusions (the basis for chunking).**
 - Do not draw yet. First extract a **list** of *every* final conclusion the text disputes. Where possible follow the text's own **table of contents / structure** to prevent gaps.
-- Ask the user: **"Is this every final conclusion? Anything missing? Which one shall we expand first?"** → pick *one*. (Go deep on one at a time — no global breadth.)
+- Ask the user: **"These are the questions this text disputes. Which one are you curious about? Pick a number, or just say it in your own words — 'I want to know whether he really ordered it' — and I'll find the matching issue and confirm. (If you see something missing from the list, tell me.)"** → pick *one*. (Go deep on one at a time — no global breadth.)
 
 **Stage-1 grounds.**
 - Attach all grounds that directly support the chosen final conclusion `[explicit]`.
@@ -94,12 +94,30 @@ Final conclusion ─ We should adopt this policy                    [confirmed]
 - Do not do deep analysis — layer tagging, the six questions, modules (that is the full LARP's job).
 - **Do not declare a stage complete before the user confirms "that's all."** Leave un-expanded branches as `[unexpanded]` so omission stays *visible*.
 
-**Closing (when the user stops):** output the final running tree + coverage ledger (including unexpanded / possibly-missing), and in one line:
+**Evidence ledger — the closing artifact per issue.** When an issue (chain) is fully expanded, **rearrange the tree's terminal evidence into a table** and output it alongside. This is a mechanical rearrangement of what was already found, not new analysis — if an evidence item missing from the tree surfaces during rearrangement, first attach it to the tree marked `[added]`, then move it into a row.
+
+```text
+Row format (one evidence item = one row; unknown cells = (unclear)):
+| ID | page | evidence (tag or name) | actual content (gist, in its own words) | used-by (which ground it supports) |
+| disputed (do the parties contest its meaning) | discriminating power (does it fit only the adopted
+  explanation, or the rival too — an answer to a question, not a verdict) |
+| notes (redacted quote · notation anomaly · admissibility caveat) |
+
+At the end of the ledger, always:
+- Rows-per-page table — the human's verification device: a page with zero or unusually few rows is
+  where a human opens the source and catches a loss.
+- Unused-evidence list — row IDs present in the ledger but cited by no ground in the tree. This is
+  exposure, not deletion: evidence the text cites but never uses in its argument is itself a point of review.
+```
+
+This ledger is the mode's answer to the evidence-adjudication question — *can every piece of evidence evaluate the conclusion (hypothesis)?* The tree shows the grain of the argument; the ledger shows the exhaustiveness of the evidence.
+
+**Closing (when the user stops):** output the final running tree + evidence ledger + coverage ledger (including unexpanded / possibly-missing), and in one line:
 **"The remaining unexpanded / possibly-missing areas are ___ . Expand further, or continue with the full LARP for deep analysis?"**
 
 ---
 
-*v260619 — LARP-Map long-document mode. Expand progressively from the final conclusion through ground stages, confirming completeness with a user gate at each stage. Generalized vocabulary (conclusion–ground relativity, stage-1·2… grounds, terminal = evidence, the "is it further argued?" descent rule) so it applies to any multi-stage argument. Three anti-omission devices: (1) enumerate all final conclusions in Step 0, then chunk by conclusion; (2) traction completeness via the source/material list; (3) a running tree + coverage ledger making unexpanded / possibly-missing visible each turn. Not a zero-omission guarantee — the goal is to turn omission into a visible choice. The base one-shot Map remains for short / medium texts.*
+*v260710b — adds the evidence ledger as the closing artifact per issue (measured basis: building the ledger *first* lowered a small model's recall (91% vs 97% tree-first at issue level) — the ledger is an output artifact, not a generation order; mechanical rearrangement from the tree yields evidence exhaustiveness, rows-per-page verification, and unused-evidence exposure at no loss risk). v260619 text follows: LARP-Map long-document mode. Expand progressively from the final conclusion through ground stages, confirming completeness with a user gate at each stage. Generalized vocabulary (conclusion–ground relativity, stage-1·2… grounds, terminal = evidence, the "is it further argued?" descent rule) so it applies to any multi-stage argument. Three anti-omission devices: (1) enumerate all final conclusions in Step 0, then chunk by conclusion; (2) traction completeness via the source/material list; (3) a running tree + coverage ledger making unexpanded / possibly-missing visible each turn. Not a zero-omission guarantee — the goal is to turn omission into a visible choice. The base one-shot Map remains for short / medium texts.*
 
 *LARP-Map Long-Document Mode (Layer-grounded Argument Reasoning Probe), structure edition · Author: CHAE Sooyang · CC BY-NC-SA 4.0*
 *A personal methodology project, not the official position of any institution.*
