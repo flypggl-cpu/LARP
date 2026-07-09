@@ -1,4 +1,4 @@
-# LARP: Layer-grounded Argument Reasoning Probe (AIVA-L-CALM v260713)
+# LARP: Layer-grounded Argument Reasoning Probe (AIVA-L-CALM v260715)
 
 *[한국어](LARP.md) | English*
 
@@ -359,6 +359,12 @@ It compresses the sprawling spec onto one screen. The body below is the detailed
 ```text
 Gate 1 (length): if the document exceeds one screen (~15 pages), no single pass.
   → First unfold it with LARP-Map long-document mode ('from the conclusion, one step at a time'), then enter §5.
+  → Build the map and ledger by sequentially exhausting ~10-page segments (by the document's own
+    page numbers) — reading the whole text and then drawing from memory in one pass is forbidden
+    (measured to be where the middle gets lost). Evidence cited only by name (lectures, remarks,
+    interviews, press releases, memos, official letters, minutes, correspondence, immigration
+    records, fact-inquiry replies, in-court testimony) is the most common loss — register it in
+    the ledger on first appearance.
 1. Object-perception & propositionalization (§5~6)   → [done: N claims + each verdict orientation]
 2. Layer–argument bridge (§6.5)                      → [done: N issues]
 3. Candidate extraction + per-candidate minimal reconstruction block·6 questions (§7) → [done: N candidates, ★ M]
@@ -389,10 +395,14 @@ b. Coverage comparison (code): tools/larp_coverage_audit.py — check that every
 c. Omission hunt, 2nd pass (separate model): LARP_verify.md — a fresh pass, not anchored on the
    first analysis, that outputs only what was NOT raised: weak links, evidence, rebuttals, asymmetry.
    (blocks semantic omission)
-Order: Pass-1 analysis → a·b (code) → c (2nd pass) → human. Output before verification is unverified.
+Order: Pass-1 analysis → a·b (code) → repair pass → c (2nd pass) → human. Output before verification is unverified.
+Repair pass: omission/hallucination candidates detected by a·b are fed back into the analysis pass
+   and repaired before handing to the human; re-run the comparison after repair.
 ```
 
 The verification layer does not *remove* hallucination or omission — it makes them *visible* so a human can filter them. The principle that final judgment belongs to the human is unchanged.
+
+**Reconciliation counts are canonical only when produced by code.** A model's self-reported "seeds n/n exhausted" can be feigned exhaustion (measured: a small model reported 52/54 while actually mapping 26/54). Do not use self-tallied counts as reconciliation numbers before they pass the code checks (a·b).
 
 \---
 
