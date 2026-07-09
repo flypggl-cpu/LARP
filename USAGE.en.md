@@ -159,6 +159,26 @@ Then an **omission hunt** — in a *new window / different model*, give [`prompt
 
 The verification layer doesn't *remove* the risks — it makes them *visible.* The final judgment is the human's.
 
+### 5.4 Which model, and how far to run — measured guidance (2026-07, a 57-page ruling scope)
+
+We built an answer key on a real court ruling and measured "did it catch everything" per model/procedure combination (details: `verification/cases/case4_2024no620_loop/`).
+
+| Setup | Recall |
+|---|---|
+| Small (Haiku-class) model + prompt only | 56% |
+| Small + code seeds as input (gate 0) | 86% |
+| Small + code check → repair pass | 89% |
+| Above + separate-model omission hunt | 95.6% |
+| Mid (Sonnet-class) model + prompt only | 96% |
+
+Practical guidance:
+
+- **Model tier**: mid (Sonnet-class) is the practical floor for mapping and omission hunting; use a higher tier (Opus-class) for anomaly screening and close reading. Small models only for helper roles like running the repair pass.
+- **Tier does not replace the verification layer.** No tier reports its own omissions, and a self-tallied "seeds n/n exhausted" cannot be trusted (measured: reported 52/54, actually 26/54). Reconciliation counts are canonical only from code.
+- **How far to run depends on how much you'll rely on the result**: skimming → code check + repair pass (near-zero cost; effectively the default). Results used for decisions or documents → add the separate-model omission hunt. Skipped layers leave the output marked 'unverified' (Gate 4).
+- Even with every layer, residual omission remains (measured ~4% — untagged, semantic). That layer is the human's share.
+
+
 ---
 
 ## 6. FAQ
