@@ -9,6 +9,13 @@
 LARP is a set of prompts (plus one small code helper) that **surface the doubtful spots in an argument — hidden premises, the *split* between stated and real reasons, alternative explanations, evidence that should be there but isn't.** It reveals *what unsaid thing a conclusion is standing on*, but it doesn't judge — it marks *where to look* and hands the decision back to you. **For which tool to use when, see the table just below.**
 
 > **▶ How to use it now** — **nothing to install:** copy the prompt file's contents into a chatbot (ChatGPT, Claude, etc.) and add the text you want analyzed.
+>
+> **First time? Pick just one file.**
+> - **"Find the anomalous arguments too"** (most cases) → [`prompts/LARP.en.md`](prompts/LARP.en.md) — for a long document the tool shows the issue list first and stops; point at what you're curious about in your own words.
+> - Just want the structure drawn quickly → short text [`prompts/LARP_map.en.md`](prompts/LARP_map.en.md) / long text [`prompts/LARP_map_long.en.md`](prompts/LARP_map_long.en.md)
+> - A 5-minute taste → [`prompts/LARP_lite.en.md`](prompts/LARP_lite.en.md)
+> - The other files are supporting parts — you don't need to know them at first.
+> - One check before pasting: if the text keeps its page marks (like `- 12 -`), you'll also get "open page N" guidance.
 
 | Tool | What it does | When (which text) |
 |---|---|---|

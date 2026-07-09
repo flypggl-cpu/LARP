@@ -2,25 +2,53 @@
 
 *[한국어](CHANGELOG.md) | English*
 
-## v260714 (2026-07-05) — Lite: capacity-transfer reinforcement (turning a flag into understanding)
+## v260710c (2026-07-10) — User touchpoints: if the user can't understand it, it has failed
 
-A revision of **LARP-Lite** from the angle of *cultivating and spreading the skill*. The analytic apparatus is unchanged; what's strengthened is making the reader understand *why* a flagged point is a problem. (Full version and modules unchanged; only Lite is at v260714.)
+Analysis devices unchanged. This edition fixes only the four points where the tool speaks to the user — standard: "if the user can't understand it, it has failed."
+
+- **Plain-language designation** (LARP.md §3.5-1 · map wait-line, map_long step 0): the user can designate what to analyze in their own words ("is there actually any basis for the part where he allegedly ordered it?") instead of node IDs. The tool links to the matching argument and confirms — "I understood it as ___ — is that right?" — before proceeding (mislink guard).
+- **Map wait-line rewritten**: "Please designate a node ID…" → "Just say 'proceed' and I'll dig into the ★ 5 / or point at what you're curious about in your own words." IDs demoted to a parenthetical option.
+- **Page-mark check** (LARP.md §2): if the pasted text lost its page marks (`- 12 -`), the first reply says "no page anchors — I can't point you to pages" up front — blocking the silent anchor-less failure.
+- **README entrance decision tree**: six lines that let a first-time user pick one file (usually LARP.md).
+
+## v260710b (2026-07-10) — Long-document mode: the evidence ledger as the closing artifact per issue
+
+A map_long-only edition. Adds an evidence ledger — answering the evidence-adjudication question ("can every piece of evidence evaluate the hypothesis?") — as the closing artifact when an issue is fully expanded.
+
+- **The ledger is an output artifact, not a generation order**: making the model build the ledger *first* lowered small-model recall (91% vs 97% tree-first at issue level — table-writing consumes the output budget). Expand the tree first, then mechanically rearrange terminal evidence — no loss risk.
+- **Row format**: page · actual content · used-by · disputed · discriminating power (an answer to a question, not a verdict) · notes (redacted quote / notation anomaly / admissibility caveat).
+- **Two human-verification devices**: a rows-per-page table (a zero-row page = where a human opens the source), and an unused-evidence list (exposing evidence cited but never used in the argument).
+- Also measured: **issue-level designation + a single prompt** gets even a small model to ~97% (vs 56% for the whole scope at once) — if you want to skip the verification layer, designate the scope. Record: `verification/cases/case4_2024no620_loop/`.
+
+## v260710 (2026-07-10) — Loss measured: reconciliation counts are canonical only from code
+
+An edition grounded in measurement: we built a gold set on a real ruling (Suwon High Court 2024no620, the 57-page North-Korea-remittance scope) and ran an execute→score→revise loop with small models. Minimal edits to the main document (LARP.md) only — family documents and tools unchanged.
+
+- **Reconciliation counts are canonical only from code** (§3.7): a model's self-reported "seeds n/n exhausted" can be feigned exhaustion (measured: reported 52/54, actually mapped 26/54). No self-tallied counts before the code checks (a·b).
+- **Repair pass** (§3.7 order): omission/hallucination candidates detected by the code checks are fed back into the analysis pass and repaired before reaching the human (measured: recall 86→89%).
+- **Sequential segment exhaustion** (§3.6 Gate 1): build maps/ledgers for long documents by exhausting ~10-page segments — "read all, then draw from memory" is forbidden (the measured site of lost-middle).
+- **Name-only evidence registration** (§3.6 Gate 0 ③ in the Korean edition; Gate 1 note in English): explicit type list for untagged evidence (lectures, remarks, official letters, minutes …) + register on first appearance — the most common loss type.
+- Measurement assets: `verification/cases/case4_2024no620_loop/` (182-item gold set; loop record: small model alone 56% → code-seeds + repair + omission-hunt pipeline 95.6%; the residual is the human's share).
+
+## v260705 (2026-07-05) — Lite: capacity-transfer reinforcement (turning a flag into understanding)
+
+A revision of **LARP-Lite** from the angle of *cultivating and spreading the skill*. The analytic apparatus is unchanged; what's strengthened is making the reader understand *why* a flagged point is a problem. (Full version and modules unchanged; only Lite is at v260705.)
 
 - **Mandatory "if false, why it collapses" line** on the key hidden premise (*if this premise isn't true — a concrete counter-case — the conclusion doesn't follow*), pairing *what* was flagged with *why* it matters (a Lite-sized version of the full version's Scene-4 "where it is risky").
 - **A nudge to double-check for further premises** — Lite surfaces only the most salient one, so it prompts a second look for others (mitigating misses).
 - **Plain-languaged preamble with technical terms kept in parentheses** (reconstruction · collision · post-hoc immunization · layer) — plain wording aids a lay reader's understanding and imitation, while the parenthetical terms keep the concept anchor and the precision for subtler cases.
 
-## v260702–v260713 (2026-07) — Full-version overhaul (from re-testing on a real judgment)
+## v260702a–v260703g (2026-07) — Full-version overhaul (from re-testing on a real judgment)
 
-A series of revisions to the **full version** (`prompts/LARP.md`) and its **modules** (`prompts/LARP_modules.md`), driven by re-running the tool on a long real judgment. The decomposition engine, the six questions, and the module questions are unchanged throughout; what changed is the *execution structure* and several completeness safeguards. *(The English full version and modules are now translated through v260713. The Korean CHANGELOG has the full per-version detail.)*
+A series of revisions to the **full version** (`prompts/LARP.md`) and its **modules** (`prompts/LARP_modules.md`), driven by re-running the tool on a long real judgment. The decomposition engine, the six questions, and the module questions are unchanged throughout; what changed is the *execution structure* and several completeness safeguards. *(The English full version and modules are now translated through v260703g. The Korean CHANGELOG has the full per-version detail.)*
 
-- **Argument-type entry point (v260713)** — clarifies the Walton lineage: rather than transplanting the whole list of argumentation schemes (rejected as non-MECE / over-designed), a ground's *type* is used only as the doorway into the completion-degrees-of-freedom ledger. Identify the type (sign · expert opinion · cause · analogy · consistency · absence) in one line and the degrees of freedom that type calls for are looked up automatically. An open list — a type outside the table is registered as a residual. The body's analytic apparatus is unchanged; only "identify the type first" is added to the interrogation order (§3.10).
+- **Argument-type entry point (v260703g)** — clarifies the Walton lineage: rather than transplanting the whole list of argumentation schemes (rejected as non-MECE / over-designed), a ground's *type* is used only as the doorway into the completion-degrees-of-freedom ledger. Identify the type (sign · expert opinion · cause · analogy · consistency · absence) in one line and the degrees of freedom that type calls for are looked up automatically. An open list — a type outside the table is registered as a residual. The body's analytic apparatus is unchanged; only "identify the type first" is added to the interrogation order (§3.10).
 
 - **Gate 0 preprocessing** — a deterministic pre-analysis pass ([`tools/larp_gate0.py`](tools/larp_gate0.py); manual no-code edition [`prompts/LARP_gate0.md`](prompts/LARP_gate0.md)): strip watermarks, anchor the document's own page numbers, **scan redaction / citation gaps**, seed the evidence list, flag date anomalies. (A redacted document is the ideal condition for disguised hallucination — the model reads across a blank as if continuous — so this defense is code, not an instruction.)
 - **Three-scene pipeline + split edition** — reversed the pipeline to *map → user picks a scope → full depth on that scope only*. Added a **split edition** ([`prompts/LARP_split_S0_common.md`](prompts/LARP_split_S0_common.md) · [S1](prompts/LARP_split_S1_map.md) · [S2](prompts/LARP_split_S2_select.md)) for small-context environments (NotebookLM-like): jumping straight to flaw-flagging is blocked not by an instruction but by *not loading the file* that holds the symptom index.
 - **Scene 4 "report" stage** — rewrites the analysis into the reader's order of understanding (load-bearing points folded into one paragraph, symmetric narration, collapse-chain, closing conditional map). No verdict.
-- **Confirmation-bias joint audit (v260711)** — audited the five joints where bias enters (collection–interpretation–scoring–synthesis–adverse-evidence defense) against existing methods; adopted three closures (diagnosticity stated in *comparative* form, diagnosticity-credibility coupling, Module O's new-prediction requirement for rescue hypotheses), rejected three with reasons (ACH score-summing = crossing the clerk/judge line; numeric Bayes; Wigmore charts).
-- **Layer double-stratification (v260712)** — separated the "what a claim is about" axis from the **"completion degrees-of-freedom"** axis (a 9-row ledger: meaning-fixing · tense · transmission/source · reach · exclusion strength · standard · generation context · proof level · standpoint), giving a per-ground *exhaustive* cross-check rather than a symptom checklist. An open (not closed-MECE) ledger that self-corrects as samples grow.
+- **Confirmation-bias joint audit (v260703e)** — audited the five joints where bias enters (collection–interpretation–scoring–synthesis–adverse-evidence defense) against existing methods; adopted three closures (diagnosticity stated in *comparative* form, diagnosticity-credibility coupling, Module O's new-prediction requirement for rescue hypotheses), rejected three with reasons (ACH score-summing = crossing the clerk/judge line; numeric Bayes; Wigmore charts).
+- **Layer double-stratification (v260703f)** — separated the "what a claim is about" axis from the **"completion degrees-of-freedom"** axis (a 9-row ledger: meaning-fixing · tense · transmission/source · reach · exclusion strength · standard · generation context · proof level · standpoint), giving a per-ground *exhaustive* cross-check rather than a symptom checklist. An open (not closed-MECE) ledger that self-corrects as samples grow.
 
 ## v260620 (2026-06-20) — Added LARP-Weigh (evidence × hypothesis evaluation, domain-general)
 
