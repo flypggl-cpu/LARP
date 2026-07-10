@@ -2,6 +2,14 @@
 
 *[한국어](CHANGELOG.md) | English*
 
+## v260710h — 2026-07-11 — tools: added a quantitative-validity audit (closed-form statistics)
+
+Prompt and modules unchanged; addition to `tools/` only. Adds to the verification layer a deterministic audit slice that catches *anomalies inside the numbers* — coding, slice by slice, the one gap that neither deep research nor the existing apparatus filled for papers / statistical documents (the internal validity of quantitative inference).
+
+- **`tools/larp_stat_audit.py`** (pure Python, no dependencies, special functions built in — scipy not required): recompute-and-compare reported p·t·χ²·CI, multiple-comparison survival (Bonferroni·BH), meta-analysis heterogeneity (Q·I²·τ²) and Egger funnel asymmetry, GRIM (can integer data yield that mean), impossible values (|r|>1, negative variance, p>1) and p-value reporting errors. Runs with no install in a code-running chatbot; exit code 1 on any inconsistency.
+- **Keeps the no-verdict boundary**: checks only the *internal consistency and reproducibility* of reported numbers; does not judge the science — truth, causation, study design. A missing reproduction input stays `cannot_verify` (not reproducible = a finding). Model sensitivity, causal identification, and Bayesian criticism are delegated to specialized tools / a statistician.
+- Input schema & extraction discipline: `tools/larp_stat_schema.md`(·en), registered in tools/README. Same family of deterministic audit as `coverage_audit` and `quote_audit` ("structure by code, judgment by the human").
+
 ## v260710g — 2026-07-10
 
 - `prompts/LARP.md`·`LARP.en.md`: §7.8–7.10 restructured as an **evidence→hypothesis database (E·M·P·H)**. Pass 1's standard output is now declared to be the DB, not prose —
