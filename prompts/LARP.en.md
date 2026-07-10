@@ -365,7 +365,10 @@ It compresses the sprawling spec onto one screen. The body below is the detailed
 
 ```text
 Gate 1 (length): if the document exceeds one screen (~15 pages), no single pass.
-  → First unfold it with LARP-Map long-document mode ('from the conclusion, one step at a time'), then enter §5.
+  → First draw the conclusion/issue skeleton map and stop (§3.10 Scene 1 — performed with this
+    document alone, no extra file needed; if the LARP-Map long-document mode file was provided
+    alongside, its procedure may be followed instead). When the user designates an issue, enter §5
+    on that scope only.
   → Build the map and ledger by sequentially exhausting ~10-page segments (by the document's own
     page numbers) — reading the whole text and then drawing from memory in one pass is forbidden
     (measured to be where the middle gets lost). Evidence cited only by name (lectures, remarks,
