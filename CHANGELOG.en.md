@@ -9,6 +9,7 @@ Analysis devices unchanged. This edition fixes only the four points where the to
 - **Plain-language designation** (LARP.md §3.5-1 · map wait-line, map_long step 0): the user can designate what to analyze in their own words ("is there actually any basis for the part where he allegedly ordered it?") instead of node IDs. The tool links to the matching argument and confirms — "I understood it as ___ — is that right?" — before proceeding (mislink guard).
 - **Map wait-line rewritten**: "Please designate a node ID…" → "Just say 'proceed' and I'll dig into the ★ 5 / or point at what you're curious about in your own words." IDs demoted to a parenthetical option.
 - **Page-mark check** (LARP.md §2): if the pasted text lost its page marks (`- 12 -`), the first reply says "no page anchors — I can't point you to pages" up front — blocking the silent anchor-less failure.
+- **USAGE simplified**: §1 replaced with four steps — "copy twice, paste once, then follow the tool's questions" (modules always pasted, no condition). "Don't paste a long judgment whole" retired: **pasting whole is now the default**, cutting out one issue's section demoted to the §4 fallback (the tool, not the user, does the cutting). §3 leads with plain-language designation. Gate-0 / split-edition advanced notes moved to §5.0.
 - **README entrance decision tree**: six lines that let a first-time user pick one file (usually LARP.md).
 
 ## v260710b (2026-07-10) — Long-document mode: the evidence ledger as the closing artifact per issue

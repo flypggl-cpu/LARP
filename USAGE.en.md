@@ -8,30 +8,18 @@
 
 ---
 
-## 1. Running it — 6 steps
+## 1. Running it — four things
+
+**Copy twice, paste once, then follow the tool's questions.**
 
 1. **Open a chatbot.** Start a new conversation at chatgpt.com or claude.ai (the free tier works).
-2. **Paste the prompt.** Copy the *entire* contents of [`prompts/LARP.en.md`](prompts/LARP.en.md) and paste it as your first message (it's long — that's fine). If you'll go to the 2nd pass, paste [`prompts/LARP_modules.en.md`](prompts/LARP_modules.en.md) right after it.
-   - If you'll use it often, put it once into the chatbot's "project" or "custom instructions" so you don't paste it every time.
-3. **Paste the text to analyze.** In the next message, paste the *full original text* (not a summary — the tool pulls the argument from the original wording). A one-line hint helps, e.g., "check whether this text's conclusion holds." (For more precision, add the 〈What to include〉 template below.)
-4. **The first-pass analysis appears, then it stops.** The tool outputs a *plain-language summary → logic map → evidence ledger*, then **stops**. How to read it is in **§2**. (If it doesn't stop, add the line "do only the first pass, then stop.")
-5. **Pick where to go deeper → 2nd pass → you judge.** Write the spots to dig into (e.g., `A1`, `W1`) and it analyzes only those (syntax in **§3**). Just say "continue" and it takes only the core (★) on its own. The tool only *marks* "this looks suspicious"; whether to accept it is up to you.
-6. **(Optional) "write it up as a report."** The earlier output is a record of *the order it was inspected in*, which is hard to read. Ask for a report at the end and it rewrites everything into *the reader's order of understanding* — ① what this document says → ② the argument's load (the 2–3 points the conclusion actually rests on) → ③ where it is solid → ④ where it is risky (if it collapses, what collapses with it) → ⑤ a conditional map (what happens if what is confirmed) → ⑥ the judgment that is the human's part. It invents no new facts (only what touched the earlier analysis) and still renders no verdict.
+2. **Paste the two prompt files.** Copy the *entire* contents of [`prompts/LARP.en.md`](prompts/LARP.en.md) as your first message, then paste [`prompts/LARP_modules.en.md`](prompts/LARP_modules.en.md) right after it (long is fine). If you'll use it often, put them once into the chatbot's "project" or "custom instructions."
+3. **Paste the text to analyze — whole.** A long judgment or paper goes in as is: the tool first shows **the list of disputed issues and stops.** Point at what you're curious about in your own words — "was it right to believe F's statements?" You don't need numbers or symbols. (A short text skips this step and goes straight to analysis.)
+   - One check: if your pasted text keeps its page marks (like `- 12 -`), you'll also get "open page N" guidance.
+   - If the chatbot truncates the text as too long → the fallback in **§4** (paste one issue's section only).
+4. **Read the result, pick where to dig.** The tool leads with a *plain-language summary*, marks the suspicious spots, then **stops** (how to read it: **§2**). Say "continue" and it digs into the core (★) on its own, or designate in your own words (**§3**). At the end, ask "write it up as a report" and it rewrites everything in *the reader's order* — ① what this document says ② where the conclusion actually rests ③ where it's solid ④ where it's risky ⑤ what happens if what gets confirmed ⑥ the judgment that is yours. The verdict is yours, not the tool's.
 
-> **For a very long document (a court ruling, etc.) — advanced: Gate-0 preprocessing.** Before analysis, run [Gate 0](prompts/LARP_gate0.en.md) first — a mechanical sweep of watermarks, page numbers, *redaction/citation gaps*, and evidence tags gives you a *checklist* to reconcile the later analysis against (in a code-running environment, [`tools/larp_gate0.py`](tools/larp_gate0.py) is more accurate).
-
-> **Advanced: how to run the split edition (for a small-context environment where a huge prompt breaks — NotebookLM, etc.).** The key is *which file to load at which stage.*
->
-> 1. **Map stage:** load [S0 common](prompts/LARP_split_S0_common.en.md) + [S1 map](prompts/LARP_split_S1_map.en.md) as sources, and run [Gate 0](prompts/LARP_gate0.en.md) preprocessing first ([`tools/larp_gate0.py`](tools/larp_gate0.py) in a code environment, otherwise Gate 0's manual five-sweep — not code-only). → paste the document → it draws the *structure map* only and **stops.** *It deliberately flags no problems at this stage* — the selection criteria (the symptom index, the six questions) aren't loaded yet, and that is the point of the split.
-> 2. **Pick a scope:** looking at the map, choose one conclusion/issue to examine.
-> 3. **Deep stage:** **keep S0 loaded** (don't turn it off) and *add* [S2 select](prompts/LARP_split_S2_select.en.md) and the [criteria & check modules](prompts/LARP_modules.en.md). → say "review the anomalous arguments of [scope]" → it goes deep on just that part.
-> 4. Leave the map and Gate-0 result from step 1 in place — they become the *carry-over packet* for the next stage.
->
-> **Note (English).** The English `S0 common` and `S2 select` are *thin pointers* — each lists which sections of [`LARP.en.md`](prompts/LARP.en.md) to load (only `S1 map` is a full cut). So on the English side, load those listed sections into your sources as the file instructs.
->
-> (In a roomy environment where you can paste everything at once, use the integrated [`LARP.en.md`](prompts/LARP.en.md) instead — the split edition is only for environments that *force* you to cut it up.)
-
-> **Don't paste a long judgment whole.** If there are several charges/issues, run it *issue by issue* → **§4**.
+> Gate-0 preprocessing for very long documents and the split edition for small-context environments have moved to the advanced features in **§5** — you won't normally need them.
 
 **〈What to include〉 template (optional).** Text alone is enough, but adding the below makes it more precise. Blanks are marked "no material" and it proceeds.
 
@@ -92,13 +80,14 @@ At the end, an opinion on the whole text — e.g., "if all three signals (unstat
 
 ## 3. Designating where to go deeper (2nd pass)
 
-Looking at the map, write the spots to dig into.
+**Your own words work.** Write what you're curious about as is — "is there actually any basis for the part where he allegedly ordered it?", "was it right to believe F's statements?" — and the tool finds the matching argument and confirms: "I understood it as ___ (p.N). Is that right?" Just saying "continue" takes only the core (★).
+
+If you're comfortable with the map's symbols, those work too:
 
 ```text
 A1, W1, V1      ← specific items
 E1->A1          ← a specific link
 argument 2      ← by number
-continue        ← takes only the ★-marked items on its own
 ```
 
 To look at just one sentence quickly: `Just this argument, skip the map. "...source sentence..."`
@@ -107,23 +96,38 @@ The 2nd pass also leads with a *plain-language summary* (what changed, what rema
 
 ---
 
-## 4. Long multi-issue documents (judgments, papers, reports), issue by issue
+## 4. When the text is too long to fit — paste one issue's section (fallback)
 
-The full version is built for long, complex texts in the first place — but a single long document has several issues and hundreds of pieces of evidence (a judgment's several charges, a paper's several claims/chapters, a report's several conclusions), so **pasting it whole means neither the tool nor a person can hold it all** (the AI drops the middle of a long text; the tool is built to focus on the *load-bearing claim + the top few*). So run it **issue by issue.**
+**The default is pasting the whole text (§1).** The tool shows the issue list and digs only into the issue you pick — measured on a real ruling, narrowing to one issue is also what makes even small models miss almost nothing.
 
-1. **Pick one issue.** Cut by issue (for a judgment, "bribery: relatedness to office," "a fund: was it a substitute payment"; for a paper, "the causal claim in ch. 3," "core hypothesis A") and put in only that reasoning section.
+But if your chatbot's input limit is small and **a long document gets truncated**, fall back to splitting it yourself:
+
+1. **Paste only one issue's section.** For a judgment: from the page where that charge/issue's heading starts to just before the next heading. If you can't tell where it starts, paste just the table of contents first and ask "which pages does issue N span?"
 2. **(If very long) unfold the structure first.** Use [LARP-Map long-document mode](prompts/LARP_map_long.en.md) to unfold it *from the conclusion, one step at a time.*
-3. **Run that issue through the full version, per §1.** You get the evidence ledger and, if there are competing hypotheses, the evidence × hypothesis matrix.
-4. **The gaps are already flagged in the result.** The tool itself points out *missing evidence (V)* and *left-out candidates* — you don't have to run anything extra to see "what's missing."
+3. **Run that section through the full version, per §1.** You get the evidence ledger and, if there are competing hypotheses, the evidence × hypothesis matrix.
+4. **The gaps are already flagged in the result.** The tool itself points out *missing evidence (V)* and *left-out candidates.*
 5. **Next issue, then stitch.** A human stitches cross-issue links (one fact used as a ground for two issues, etc.) at the end.
 
 **"All evidence and all hypotheses in one run" is not what the tool promises** — no human can do that either. Completeness comes not from a *single run* but from the *issue-by-issue procedure.*
 
----
-
 ## 5. For more certainty — optional features
 
 §1–§4 are usually enough. The below is only for when you want *extra certainty.* In particular — **turning each ground it surfaces into a question you can paste straight into deep research is one of this tool's core uses** (§5.1 for verification · §5.2 for acquisition). It doesn't stop at naming the hidden premise; it hands you *what to check* — the answer and the verdict still stay with you.
+
+### 5.0 Preprocessing very long documents, and small-context environments (advanced)
+
+**Gate-0 preprocessing for very long documents (court rulings, etc.).** Before analysis, run [Gate 0](prompts/LARP_gate0.en.md) first — a mechanical sweep of watermarks, page numbers, *redaction/citation gaps*, and evidence tags gives you a *checklist* to reconcile the later analysis against (in a code-running environment, [`tools/larp_gate0.py`](tools/larp_gate0.py) is more accurate).
+
+**The split edition (for a small-context environment where a huge prompt breaks — NotebookLM, etc.).** The key is *which file to load at which stage.*
+
+1. **Map stage:** load [S0 common](prompts/LARP_split_S0_common.en.md) + [S1 map](prompts/LARP_split_S1_map.en.md) as sources, and run [Gate 0](prompts/LARP_gate0.en.md) preprocessing first ([`tools/larp_gate0.py`](tools/larp_gate0.py) in a code environment, otherwise Gate 0's manual five-sweep — not code-only). → paste the document → it draws the *structure map* only and **stops.** *It deliberately flags no problems at this stage* — the selection criteria (the symptom index, the six questions) aren't loaded yet, and that is the point of the split.
+2. **Pick a scope:** looking at the map, choose one conclusion/issue to examine.
+3. **Deep stage:** **keep S0 loaded** (don't turn it off) and *add* [S2 select](prompts/LARP_split_S2_select.en.md) and the [criteria & check modules](prompts/LARP_modules.en.md). → say "review the anomalous arguments of [scope]" → it goes deep on just that part.
+4. Leave the map and Gate-0 result from step 1 in place — they become the *carry-over packet* for the next stage.
+
+**Note (English).** The English `S0 common` and `S2 select` are *thin pointers* — each lists which sections of [`LARP.en.md`](prompts/LARP.en.md) to load (only `S1 map` is a full cut). So on the English side, load those listed sections into your sources as the file instructs.
+
+(In a roomy environment where you can paste everything at once, use the integrated [`LARP.en.md`](prompts/LARP.en.md) instead — the split edition is only for environments that *force* you to cut it up.)
 
 ### 5.1 When a point needs outside checking — how to get the deep-research question
 Where a single text can't answer (e.g. is a cited precedent real, does a quote match the original, a V-marked missing piece), the tool doesn't guess — it **writes the check question itself.** How to get it:

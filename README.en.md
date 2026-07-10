@@ -19,7 +19,7 @@ LARP is a set of prompts (plus one small code helper) that **surface the doubtfu
 
 | Tool | What it does | When (which text) |
 |---|---|---|
-| **[full LARP](prompts/LARP.en.md)** + [modules](prompts/LARP_modules.en.md) | shows what *unstated assumption* a claim is resting on, whether it could be explained another way, and whether any evidence that should be there is missing | to examine a claim closely (the main use) |
+| **[full LARP](prompts/LARP.en.md)** + [modules](prompts/LARP_modules.en.md) | shows what *unstated assumption* a claim is resting on, whether it could be explained another way, and whether any evidence that should be there is missing | to examine a claim closely (the main use) — a long document can go in whole (it shows the issue list first and stops) |
 | **[LARP-Lite](prompts/LARP_lite.en.md)** | the same check, fast, on *one screen* | a quick look at a short text |
 | [LARP-Map](prompts/LARP_map.en.md) | draws *how* a text's claims and their supporting reasons and evidence connect (it doesn't judge right or wrong) | to see how a text is put together (short/medium) |
 | [LARP-Map long-document mode](prompts/LARP_map_long.en.md) | for a very long text (like a court ruling), walks down from the conclusion *one step at a time*, checking nothing is missed | very long, complex texts (rulings, papers) |
@@ -104,7 +104,7 @@ Above all — **for each ground that needs checking, it writes you a deep-resear
 
 **Stopping is the whole point.** The machine lays out everything worth questioning; the human decides "this is the key, this I'll believe." And the responsibility stays with the human.
 
-> **Long multi-issue documents, issue by issue.** Don't paste a long document with several issues (a judgment, a paper, a long report) all at once. Split it into single issues (a claim, a charge), run them one at a time, then stitch — a single run does *not* unfold *all* evidence and *all* hypotheses (no human could either). The tool focuses on each issue's core and makes *omissions visible*. Procedure: [USAGE §4](USAGE.en.md).
+> **Long multi-issue documents — paste whole, then pick.** A long document (a judgment, a paper, a long report) can go in whole: the tool shows the list of disputed issues first and stops, and you pick the issue to dig into — in your own words. A single run still does *not* unfold *all* evidence and *all* hypotheses at once (no human could either); completeness comes from going issue by issue and stitching at the end. If your chatbot truncates long input, the fallback is pasting one issue's section: [USAGE §4](USAGE.en.md).
 
 See [USAGE.en.md](USAGE.en.md) for details.
 
