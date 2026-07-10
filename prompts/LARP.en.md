@@ -1,4 +1,4 @@
-# LARP: Layer-grounded Argument Reasoning Probe (AIVA-L-CALM v260710c)
+# LARP: Layer-grounded Argument Reasoning Probe (AIVA-L-CALM v260710e)
 
 *[한국어](LARP.md) | English*
 
@@ -221,6 +221,10 @@ If none are designated, pass only the top 5 by conclusion relevance to the next 
 
 Second pass (full reconstruction): apply the relevant modules only to the selected/designated anomalous arguments.
 Do not auto-run all modules.
+Cross-issue reconciliation: if a key piece of evidence in the designated issue is also used in another
+issue of the document, always compare its treatment there — a place where the same evidence carries
+different weight per issue (decisive in one, insufficient in another) is a top-priority review point.
+The boundary of the designated scope does not exempt this comparison.
 ```
 
 ### 2) Make source quotation mandatory
@@ -234,6 +238,9 @@ If absent, mark "material not provided" or "no basis in the document."
 A summary or paraphrase is not a quote. Carry over the original wording verbatim, then analyze how it was interpreted and arranged.
 Attach a locator (page·line·paragraph·evidence-list number, or whatever unit the document provides) to every source quote so it can be verified.
 Every factual claim about the document must be either (a) a verifiable source quote carrying a locator, or (b) explicitly marked as the tool's reconstruction/inference (W·implicit, etc.) — a bare assertion dressed up as a quote, with no tag, is prohibited. Mark redacted or blank quotations as 'no basis in the document (quote gap)'; do not invent content.
+Quotation marks (including 「」) are for source quotes only — do not use them for reconstructions,
+propositions, hidden premises, or node labels (the verification layer's quote-check code mistakes
+reconstructions for source quotes and raises false alarms; measured: 95 false positives).
 ```
 
 ### 3) For externally-checked modules, generate a "research query" and complete verification by re-feeding the result
@@ -960,7 +967,18 @@ Non-★ evidence gets no card — only one ledger row in §7.9 (load control).
 Do not drop a single piece of evidence the document cites or mentions; put each on its own row. ★ evidence is expanded as a §7.8 card, and the same source is counted as weight only once.
 
 ```text
-| EvID | Atomic content (gist) | Source (first-hand/downstream/objective) | Common-source group | Hypothesis it fits | Diagnosticity | Originality flag |
+| EvID | Atomic content (gist) | Source (first-hand/downstream/objective) | Common-source group | Hypothesis it fits | Diagnosticity | Formation status |
+
+Formation-status column (the old 'originality flag', strengthened) — record three *different* questions per item:
+  ① Admissibility: admitted or not + the stated ground (consent / formation acknowledged / reliability, with locator)
+  ② Formation: is the author, the time of creation, or the originality (forgery/alteration) disputed,
+     and is the court's ruling on it [affirmatively found / only the opponent's claim rejected / not ruled on] (locator)
+  ③ Meaning: is what the content signifies disputed (expand as a §7.8 card)
+Escalation rule: rejecting the opponent's forgery/alteration claim is not an affirmative finding of
+  formation. If evidence whose formation is 'not ruled on' or 'rejection only' is used as a ground for
+  the conclusion (especially when it is the issue's only non-testimonial exhibit), escalate it to a
+  gap axis (V) / anomalous-argument candidate. A judgment that recycles the admissibility ground (①)
+  as if it settled formation or meaning (②·③) is itself a selection target.
 ```
 
 Coverage self-check (mandatory): after writing the ledger, scan again for items the document cited ('evidence-list number N'·witness name·document name, etc.), reconcile against the ledger so nothing is missing, and add any missing item as an 'omission candidate' before proceeding (reinforces §3.5-8 items 7·8). (Optional) running the same reconciliation in code cross-checks the model's lossy reading.
