@@ -1,4 +1,4 @@
-# LARP split edition S0 — common rules (always loaded at every stage) [synced to integrated v260713]
+# LARP split edition S0 — common rules (always loaded at every stage) [synced to integrated v260703g]
 
 *[한국어](LARP_split_S0_common.md) | English*
 

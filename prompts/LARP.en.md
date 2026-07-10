@@ -1,4 +1,4 @@
-# LARP: Layer-grounded Argument Reasoning Probe (AIVA-L-CALM v260715)
+# LARP: Layer-grounded Argument Reasoning Probe (AIVA-L-CALM v260710c)
 
 *[한국어](LARP.md) | English*
 
@@ -162,6 +162,10 @@ The meaning of each range:
 
 If the target is not a single text but a public claim scattered across the world (e.g., flat-earth theory) and no source text to examine is given, first assemble the target argument with the **acquisition mode** of §3.5-3 before decomposition, then enter §5 decomposition.
 
+In the first reply, check whether the pasted text preserves the document's own page marks (e.g., `- 12 -`).
+If not, proceed, but say up front: "No page anchors — I cannot point you to specific pages. If possible,
+re-paste text with page marks preserved for precise guidance."
+
 Even if the input is insufficient, start the analysis right away.
 But mark insufficient material as `material not provided`, `cannot confirm`, `unconfirmed condition`, and do not use guesses as if they were confirmed facts.
 
@@ -209,7 +213,10 @@ Do not apply the whole thing at once.
 First pass (reconstruction · selection): extract candidates broadly, write a stage-7 minimal reconstruction block for each,
 and select anomalous-argument candidates via the six-question screen. After performing the 7.7 document-level synthesis,
 output the selections/exclusions with their reasons and the full-argument map (indented tree), then stop.
-Have the reviewer designate node IDs, path IDs, and argument numbers on the argument map.
+Have the reviewer designate what to analyze in depth — by node ID / path / argument number, **or in plain
+language** ("is there actually any basis for the part where the defendant allegedly ordered it?"). For a
+plain-language designation, link it to the matching argument and always confirm first: "I understood it
+as: ___ (p.N). Is that right?"
 If none are designated, pass only the top 5 by conclusion relevance to the next stage.
 
 Second pass (full reconstruction): apply the relevant modules only to the selected/designated anomalous arguments.
@@ -886,8 +893,12 @@ C1  fraud-from-the-start found — conclusion (gist: found there was no intent t
 After outputting the tree map, output the 7.7 document-level synthesis, and be sure to stop, then output the following sentence.
 
 ```text
-Please designate a node ID, path ID, or argument number from the tree map above to analyze in depth.
-e.g., A1, E1->A1, W1, L1, V1, H1, argument candidate 2
+That's the full sweep. Among the suspicious candidates, the ones that could shake the conclusion most
+are marked ★. Just say "proceed" and I'll dig into those 5.
+Or point at what you're curious about in your own words — "is there actually any basis for the part
+where the defendant allegedly ordered it?", "was it right to believe F's statements?" You don't need
+the numbers; I'll find the matching argument and confirm with you.
+(If you're familiar with them, node/path/argument IDs work too. e.g., A1, E1->A1, W1, argument candidate 2)
 ```
 
 Do not run the detailed-analysis modules before the user designates.

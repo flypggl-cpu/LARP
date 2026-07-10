@@ -1,4 +1,4 @@
-# LARP Criteria & Check Modules (v260713)
+# LARP Criteria & Check Modules (v260703g)
 
 *A pluggable module file split out from the main body "LARP v260616."*
 *The body keeps the decomposition engine, the six-question screen, and a one-line index of the 10 symptom groups only. Load this file alongside the body when you need the detailed definitions, review questions, routing, and criminal check axes for each symptom.*
@@ -316,12 +316,12 @@ For a rebuttal selected as surface-level, attach the B-1 test (reconstruct the s
 ---
 
 *Split out and created in v260616. Source: the §8 detail table, §10 situation table, and §13.2 list of the LARP v260614 body. Moved without changing content.*
-*v260702 — Added "rebuttal-surfaceness" to Group 6; created the E "judgment (appellate) profile" (a product of real-measured verification on a judgment).*
-*v260704 — Forced the E-3 scoring targets to all Gate-0 rebuttal seeds (to prevent the recurring omission of rebuttals seen in the turn-based test).*
-*v260706 — Created the "registration criteria" section (parent-layer + four requirements); registered strawman-narrowing rebuttal and conclusion-premised rebuttal in Group 6 (sibling symptoms of the exclusion-strength degree of freedom, from real measurement on a judgment); reconnected the B-1 test in E-3.*
-*v260713 — Created the "argument-type entry point" section: Walton's argumentation schemes adopted not as a transplanted list but as the doorway into the completion-degrees-of-freedom ledger (identify type → the degrees of freedom that type calls for are looked up automatically). Six scheme seeds (sign · expert opinion · cause · analogy · consistency · absence) mapped to the degrees of freedom each calls first, an open list (a type outside the table is registered as a residual). Lineage: Walton's critical questions + argumentation schemes. Transplanting the whole set of schemes is rejected (non-MECE · four requirements · over-designed).*
+*v260702a — Added "rebuttal-surfaceness" to Group 6; created the E "judgment (appellate) profile" (a product of real-measured verification on a judgment).*
+*v260702c — Forced the E-3 scoring targets to all Gate-0 rebuttal seeds (to prevent the recurring omission of rebuttals seen in the turn-based test).*
+*v260702e — Created the "registration criteria" section (parent-layer + four requirements); registered strawman-narrowing rebuttal and conclusion-premised rebuttal in Group 6 (sibling symptoms of the exclusion-strength degree of freedom, from real measurement on a judgment); reconnected the B-1 test in E-3.*
+*v260703g — Created the "argument-type entry point" section: Walton's argumentation schemes adopted not as a transplanted list but as the doorway into the completion-degrees-of-freedom ledger (identify type → the degrees of freedom that type calls for are looked up automatically). Six scheme seeds (sign · expert opinion · cause · analogy · consistency · absence) mapped to the degrees of freedom each calls first, an open list (a type outside the table is registered as a residual). Lineage: Walton's critical questions + argumentation schemes. Transplanting the whole set of schemes is rejected (non-MECE · four requirements · over-designed).*
 
-*v260712 — Created the "two-layer structure of the layer concept" section: the distinction between the formation-condition axis (§5.2) and the completion-degrees-of-freedom axis, the 9-row completion-degrees-of-freedom ledger (an open list — with real-measured triggers), the two-part grammar of insufficient/improper (an unclosed degree of freedom = insufficient, a wrong closure = improper — the ground for exhaustive reconciliation in selection), the residual-registration rule (an anomaly outside the ledger is registered as a new degree-of-freedom candidate — making incompleteness a detection device). The standpoint row's meta-axis standing is stated.*
+*v260703f — Created the "two-layer structure of the layer concept" section: the distinction between the formation-condition axis (§5.2) and the completion-degrees-of-freedom axis, the 9-row completion-degrees-of-freedom ledger (an open list — with real-measured triggers), the two-part grammar of insufficient/improper (an unclosed degree of freedom = insufficient, a wrong closure = improper — the ground for exhaustive reconciliation in selection), the residual-registration rule (an anomaly outside the ledger is registered as a new degree-of-freedom candidate — making incompleteness a detection device). The standpoint row's meta-axis standing is stated.*
 
 *LARP criteria & check modules (Layer-grounded Argument Reasoning Probe) · Author: CHAE Sooyang · CC BY-NC-SA 4.0*
 *A personal methodology project, not the official position of any institution.*

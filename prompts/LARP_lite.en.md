@@ -1,4 +1,4 @@
-# LARP-Lite — Fast Argument Check (lightweight, v260714)
+# LARP-Lite — Fast Argument Check (lightweight, v260705)
 
 > **For short, simple texts only** (a tweet, a short paragraph, a single claim). A one-screen quick check.
 > **For long or complex (multi-claim) texts**, Lite will miss things — first map the whole structure with **LARP-Map**, then analyze with the **full LARP**. Likewise for high-stakes, slow-feedback work (criminal, HR, due diligence, policy).
@@ -36,7 +36,7 @@ Then **stop.** Do not render a verdict. Ask:
 
 ---
 
-*v260714 — Made the "if false, why it collapses" line mandatory on the key hidden premise (spell out the counter-case / collapse link when it isn't true — turning a flag into understanding) + a nudge to double-check for further premises. Plain-languaged the preamble's jargon (reconstruct · collision · post-hoc immunization · layer), keeping each technical term in parentheses as a concept anchor / bridge to the full version — so a person can read, understand, and imitate it. A capacity-transfer reinforcement: pairing *what* was flagged with *why* it matters — the full version's Scene-4 "where it is risky," shrunk to Lite size.*
+*v260705 — Made the "if false, why it collapses" line mandatory on the key hidden premise (spell out the counter-case / collapse link when it isn't true — turning a flag into understanding) + a nudge to double-check for further premises. Plain-languaged the preamble's jargon (reconstruct · collision · post-hoc immunization · layer), keeping each technical term in parentheses as a concept anchor / bridge to the full version — so a person can read, understand, and imitate it. A capacity-transfer reinforcement: pairing *what* was flagged with *why* it matters — the full version's Scene-4 "where it is risky," shrunk to Lite size.*
 
 *v260618 — Applied evidence atomization + the (actual content vs arguer's reading, read otherwise) split to the load-bearing claim's key evidence (stops lumping).*
 
