@@ -18,6 +18,7 @@ The full LARP's Pass-1 output leaves two risks a human cannot filter even while 
 | `larp_card_audit.py` | lumping · blanks | was the evidence evaluated in the §7.8 cards / §7.9 ledger, atomized and complete |
 | `larp_quote_audit.py` | disguised hallucination | does a sentence presented as a 'source quote' actually exist in the source |
 | `larp_matrix_audit.py` | non-diagnostic · double-counting | in the evidence × hypothesis matrix (§7.10): is non-diagnostic evidence used as a core ground · common-source duplication · hypothesis gaps |
+| `larp_stat_audit.py` | statistics internal consistency | recompute-and-compare reported p·t·χ²·CI, multiple-comparison survival, meta heterogeneity·Egger, GRIM·impossible values (for papers / statistical grounds, no verdict) |
 
 Semantic omission (tag-less weak points/rebuttals) can't be fully caught by code, so use it together with the separate model pass [`LARP_verify.en.md`](../prompts/LARP_verify.en.md) (omission hunt). For the full order, see the ['verification layer' section in USAGE](../USAGE.en.md).
 
@@ -75,6 +76,8 @@ In one line: **it turns the AI's "happened to find it" into the machine's "did i
 | [`larp_card_audit.py`](larp_card_audit.py) | Completeness check — blanks·lumping·non-diagnostic·missing fields in §7.8 cards / §7.9 ledger |
 | [`larp_quote_audit.py`](larp_quote_audit.py) | Hallucination check — does a 'source quote' actually exist in the source (deterministic) |
 | [`larp_matrix_audit.py`](larp_matrix_audit.py) | Matrix check — structural audit of the evidence × hypothesis matrix (§7.10): diagnosticity, independence, hypothesis gaps (no verdict) |
+| [`larp_stat_audit.py`](larp_stat_audit.py) | Quantitative-validity check — deterministic recompute of reported statistics' internal consistency/reproducibility (closed-form; Python, no dependencies, no verdict) |
+| [`larp_stat_schema.en.md`](larp_stat_schema.en.md) | Input JSON schema + extraction discipline for the quantitative audit · [한국어](larp_stat_schema.md) |
 | [`larp_matrix_schema.md`](larp_matrix_schema.md) | JSON schema for the evidence × hypothesis matrix + diagnosticity-derivation rules |
 | [`coverage_audit_prompt.en.md`](coverage_audit_prompt.en.md) | A no-code **unified** chatbot approximation — full evidence scan (incl. *name-only*) + tree reconcile (no guarantee) |
 
