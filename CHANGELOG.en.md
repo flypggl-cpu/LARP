@@ -2,6 +2,15 @@
 
 *[한국어](CHANGELOG.md) | English*
 
+## v260710f (2026-07-10) — Slimming executed: the discriminant's second deletion
+
+Removal of three items the clause audit judged purely redundant — enforcing §1-0's "a rising version should get shorter."
+
+- **In-body version footnotes moved**: the trailing *v26xxxx* footnotes (17 ko + 5 en) moved to `prompts/archive/LARP_version_footnotes.md` — duplicating CHANGELOG while consuming prompt tokens.
+- **§4 'Overall flow' stubbed**: its body triple-restated §3.5-1 / the §3.6 run-card; now a one-line pointer.
+- **§7.8 originality/admissibility flag merged into the §7.9 formation-status column**: removing the risk that a model performs only the shallow rule when a shallow flag and a deep column coexist.
+- Held from the audit: generation-context notation, dual self-checks, triple seed statements, the three output ranges (negligible difference or distinct roles — user's call).
+
 ## v260710e (2026-07-10) — Separating the formation axis: admissibility ≠ formation ≠ meaning
 
 From re-examining a real judgment (the meeting-minutes case): the court used the minutes' content as an incriminating circumstance ("written on the spot", p.65) while never ruling on the time of creation or originality — only rejecting the opponent's alteration claim (p.74). Without this distinction in the ledger, this type of anomaly gets demoted to a side question in the docket (measured: run13's Q1 demotion).
