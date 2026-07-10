@@ -2,6 +2,17 @@
 
 *[한국어](CHANGELOG.md) | English*
 
+## v260710g — 2026-07-10
+
+- `prompts/LARP.md`·`LARP.en.md`: §7.8–7.10 restructured as an **evidence→hypothesis database (E·M·P·H)**. Pass 1's standard output is now declared to be the DB, not prose —
+  - §7.8 diagnosticity card → **meaning-hypothesis (M) rows**: formation/content hypotheses distinguished + a ruling-status field. Comparative verdict form, diagnosticity–credibility coupling, and atomization rules retained.
+  - §7.9 evidence ledger → **DB core**: four node layers (E·M·P·H), two link types (⊢ explicit / ⊦ reconstructed with mandatory labels), and a build order (top-down skeleton with expected-evidence pre-registration before close reading — coupled to §3.5-6 — then bottom-up build). Basic columns, the three-way formation status + escalation rule, extended columns, completeness scope, and the coverage self-check all carried over.
+  - §7.10 matrix → **four cross-reconciliations + four structural tests**: expected-but-absent (V) / present-but-unexpected / hypotheses-in-mid-air / unused evidence + unruled-use / double-weight / common-source / bridge-audit (post-hoc immunization and plausibility→credibility tagging). The evidence × hypothesis matrix remains as a view of the extended column (JSON·matrix_audit hook kept).
+  - Run card items 4·5·5b (§3.6), the handoff packet (§3.9 — the DB is now its canonical content), and the §14 output list updated to DB terms.
+- Basis: schema measurements — a 5.6KB bidirectional prompt (top-down pre-registration + bottom-up DB + cross-reconciliation) caught ~10/11 anomalies (one-way v1: 6/11; previous full version: 5.5/10). DB alone reaches only 74% coverage, so gate-0 seeds and the verification layer (§3.7) are kept unchanged.
+- Previous text archived as `prompts/archive/LARP_v260710f.md` (+en).
+- `prompts/LARP_map_long.md`·`.en.md` moved to `prompts/archive/LARP_map_long_v260710b.*`. Measured basis: the DB-based full version now covers both the structure/evidence table (real coverage 90.7%) and anomaly detection (10/11), absorbing the interactive step-by-step mode's role. Links updated in README·USAGE·LARP_map·LARP_weigh·tools (tools docs: link paths only, pointed to the archive).
+
 ## v260710f (2026-07-10) — Slimming executed: the discriminant's second deletion
 
 Removal of three items the clause audit judged purely redundant — enforcing §1-0's "a rising version should get shorter."

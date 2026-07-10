@@ -12,7 +12,7 @@ LARP is a set of prompts (plus one small code helper) that **surface the doubtfu
 >
 > **First time? Pick just one file.**
 > - **"Find the anomalous arguments too"** (most cases) → [`prompts/LARP.en.md`](prompts/LARP.en.md) — for a long document the tool shows the issue list first and stops; point at what you're curious about in your own words.
-> - Just want the structure drawn quickly → short text [`prompts/LARP_map.en.md`](prompts/LARP_map.en.md) / long text [`prompts/LARP_map_long.en.md`](prompts/LARP_map_long.en.md)
+> - Just want the structure drawn quickly → [`prompts/LARP_map.en.md`](prompts/LARP_map.en.md) (for long texts, the full version outputs the structure and evidence table as the evidence→hypothesis DB)
 > - A 5-minute taste → [`prompts/LARP_lite.en.md`](prompts/LARP_lite.en.md)
 > - The other files are supporting parts — you don't need to know them at first.
 > - One check before pasting: if the text keeps its page marks (like `- 12 -`), you'll also get "open page N" guidance.
@@ -22,11 +22,10 @@ LARP is a set of prompts (plus one small code helper) that **surface the doubtfu
 | **[full LARP](prompts/LARP.en.md)** + [modules](prompts/LARP_modules.en.md) | shows what *unstated assumption* a claim is resting on, whether it could be explained another way, and whether any evidence that should be there is missing | to examine a claim closely (the main use) — a long document can go in whole (it shows the issue list first and stops) |
 | **[LARP-Lite](prompts/LARP_lite.en.md)** | the same check, fast, on *one screen* | a quick look at a short text |
 | [LARP-Map](prompts/LARP_map.en.md) | draws *how* a text's claims and their supporting reasons and evidence connect (it doesn't judge right or wrong) | to see how a text is put together (short/medium) |
-| [LARP-Map long-document mode](prompts/LARP_map_long.en.md) | for a very long text (like a court ruling), walks down from the conclusion *one step at a time*, checking nothing is missed | very long, complex texts (rulings, papers) |
 | [LARP-Weigh](prompts/LARP_weigh.en.md) | when there are two explanations ("fraud or a mistake?"), compares *which the evidence fits better* | to decide which of two explanations fits |
 | [coverage audit `tools/`](tools/) | pulls every cited piece of evidence *by code* so you can check you didn't miss any | making sure no evidence is missed in a long text *(optional · code)* |
 
-> **You don't run them all — just what you need.** The core is the [full LARP](prompts/LARP.en.md), which flags an argument's weak points, and its one-screen condensed [LARP-Lite](prompts/LARP_lite.en.md) — a short text needs only Lite; a text worth scrutinizing, the full version. To see the *structure* first, use [LARP-Map](prompts/LARP_map.en.md) (the [long-document mode](prompts/LARP_map_long.en.md) for very long texts); to decide between competing hypotheses, [LARP-Weigh](prompts/LARP_weigh.en.md); and add the [coverage audit](tools/) if you're worried about dropped evidence.
+> **You don't run them all — just what you need.** The core is the [full LARP](prompts/LARP.en.md), which flags an argument's weak points, and its one-screen condensed [LARP-Lite](prompts/LARP_lite.en.md) — a short text needs only Lite; a text worth scrutinizing, the full version. To see the *structure* first, use [LARP-Map](prompts/LARP_map.en.md); to decide between competing hypotheses, [LARP-Weigh](prompts/LARP_weigh.en.md); and add the [coverage audit](tools/) if you're worried about dropped evidence.
 >
 > Step-by-step mechanics (pasting, reading the 1st/2nd pass, FAQ) are in [USAGE](USAGE.en.md); "why it matters" is in the [introduction](docs/introduction.en.md). For the full version, paste the body and the [modules](prompts/LARP_modules.en.md) *together* and run both passes (for short, simple texts, Lite is the shortcut).
 
@@ -118,7 +117,6 @@ See [USAGE.en.md](USAGE.en.md) for details.
 | [`prompts/LARP_modules.en.md`](prompts/LARP_modules.en.md) | Extra criteria to paste alongside the body when going deep with the full version |
 | [`prompts/LARP_weigh.en.md`](prompts/LARP_weigh.en.md) | LARP-Weigh — compares two explanations against the evidence to see which fits better |
 | [`prompts/LARP_map.en.md`](prompts/LARP_map.en.md) | LARP-Map — draws how a text's claims, reasons, and evidence connect (short/medium texts) |
-| [`prompts/LARP_map_long.en.md`](prompts/LARP_map_long.en.md) | LARP-Map long-document mode — opens a very long text step by step, checking nothing's missed (**long texts only**) |
 | [`prompts/LARP_lite.en.md`](prompts/LARP_lite.en.md) | Lightweight edition — a one-screen quick check of a **short text** |
 | [`prompts/LARP_verify.en.md`](prompts/LARP_verify.en.md) | Verification layer — an omission-hunt 2nd pass where a separate model finds what the first analysis *missed* |
 | [`prompts/LARP_gate0.en.md`](prompts/LARP_gate0.en.md) | Gate 0 — mechanical preprocessing *before* analysis (redaction gaps, evidence seeds), manual edition for no-code environments |
