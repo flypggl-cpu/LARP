@@ -2,6 +2,22 @@
 
 *[한국어](CHANGELOG.md) | English*
 
+## v260710e (2026-07-10) — Separating the formation axis: admissibility ≠ formation ≠ meaning
+
+From re-examining a real judgment (the meeting-minutes case): the court used the minutes' content as an incriminating circumstance ("written on the spot", p.65) while never ruling on the time of creation or originality — only rejecting the opponent's alteration claim (p.74). Without this distinction in the ledger, this type of anomaly gets demoted to a side question in the docket (measured: run13's Q1 demotion).
+
+- **Formation-status column** (§7.9, strengthening the old 'originality flag'): three distinct questions per item — ① admissibility (stated ground) ② formation (author/time/originality disputed + whether the court's ruling is affirmative / rejection-only / absent) ③ meaning (import disputed).
+- **Escalation rule**: if evidence whose formation is unruled/rejection-only grounds the conclusion (especially the issue's only non-testimonial exhibit), escalate to gap axis (V) / anomaly candidate. Recycling the admissibility ground as if it settled formation or meaning is itself a selection target.
+- map_long's ledger 'disputed' column split into formation/meaning accordingly.
+
+## v260710d (2026-07-10) — Purpose-2 measurement follow-up: cross-issue reconciliation and the quotation rule
+
+Reflects the first measured run of the full version's 2nd pass (one Sonnet run, the F-statement-credibility issue). Anomaly capture ~5.5/10; no-verdict, rival-rebuttal pairing, and zero over-flagging all passed. The five misses shared one trait: contrasts beyond the designated issue's boundary, and conventional devices on the *adopting* side.
+
+- **Cross-issue reconciliation** (§3.5-1, 2nd pass): if the designated issue's key evidence is also used in another issue, always compare its treatment — same evidence, different weight is the top review point (measured miss GA-2: the same F statement supporting guilt for $2M and acquittal for $1M).
+- **Quotation rule** (§3.5-2): quotation marks are for source quotes only, never for reconstructions/labels — the verification layer's quote check mistook reconstructions for quotes (95 false positives measured).
+- Record: `verification/cases/case4_2024no620_loop/` (run12, gold_anomaly.json). For the remaining blind spots (formulaic credibility phrases, plausibility→credibility slides) the confirmed remedy is the verification layer (separate-model omission hunt), not more clauses.
+
 ## v260710c (2026-07-10) — User touchpoints: if the user can't understand it, it has failed
 
 Analysis devices unchanged. This edition fixes only the four points where the tool speaks to the user — standard: "if the user can't understand it, it has failed."
@@ -9,6 +25,7 @@ Analysis devices unchanged. This edition fixes only the four points where the to
 - **Plain-language designation** (LARP.md §3.5-1 · map wait-line, map_long step 0): the user can designate what to analyze in their own words ("is there actually any basis for the part where he allegedly ordered it?") instead of node IDs. The tool links to the matching argument and confirms — "I understood it as ___ — is that right?" — before proceeding (mislink guard).
 - **Map wait-line rewritten**: "Please designate a node ID…" → "Just say 'proceed' and I'll dig into the ★ 5 / or point at what you're curious about in your own words." IDs demoted to a parenthetical option.
 - **Page-mark check** (LARP.md §2): if the pasted text lost its page marks (`- 12 -`), the first reply says "no page anchors — I can't point you to pages" up front — blocking the silent anchor-less failure.
+- **Gate 1 made self-contained** (LARP.md): the first map for a long document is now explicitly "performed with this document alone, no extra file needed" — LARP.md + modules + source text completes the whole flow (removing confusion from the file-name reference). map_long remains as the structure-only / precision-map option.
 - **USAGE simplified**: §1 replaced with four steps — "copy twice, paste once, then follow the tool's questions" (modules always pasted, no condition). "Don't paste a long judgment whole" retired: **pasting whole is now the default**, cutting out one issue's section demoted to the §4 fallback (the tool, not the user, does the cutting). §3 leads with plain-language designation. Gate-0 / split-edition advanced notes moved to §5.0.
 - **README entrance decision tree**: six lines that let a first-time user pick one file (usually LARP.md).
 
