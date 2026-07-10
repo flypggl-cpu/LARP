@@ -103,7 +103,7 @@ The 2nd pass also leads with a *plain-language summary* (what changed, what rema
 But if your chatbot's input limit is small and **a long document gets truncated**, fall back to splitting it yourself:
 
 1. **Paste only one issue's section.** For a judgment: from the page where that charge/issue's heading starts to just before the next heading. If you can't tell where it starts, paste just the table of contents first and ask "which pages does issue N span?"
-2. **(If very long) unfold the structure first.** Use [LARP-Map long-document mode](prompts/LARP_map_long.en.md) to unfold it *from the conclusion, one step at a time.*
+2. **(Optional) if you want a more precise map.** The full version already produces the issue map first. Use [LARP-Map long-document mode](prompts/LARP_map_long.en.md) separately only when you want the precision map with evidence-tag reconciliation and the evidence ledger.
 3. **Run that section through the full version, per §1.** You get the evidence ledger and, if there are competing hypotheses, the evidence × hypothesis matrix.
 4. **The gaps are already flagged in the result.** The tool itself points out *missing evidence (V)* and *left-out candidates.*
 5. **Next issue, then stitch.** A human stitches cross-issue links (one fact used as a ground for two issues, etc.) at the end.
