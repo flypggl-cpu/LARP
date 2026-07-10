@@ -1,4 +1,4 @@
-# LARP: Layer-grounded Argument Reasoning Probe (AIVA-L-CALM v260710e)
+# LARP: Layer-grounded Argument Reasoning Probe (AIVA-L-CALM v260710f)
 
 *[한국어](LARP.md) | English*
 
@@ -524,19 +524,7 @@ Format: juxtaposition of source fragments (by direction, with page anchors) + ju
 
 ## 4. Overall flow
 
-Execute in two passes (execution-control rules are §3.5).
-
-```text
-[First pass — reconstruction · selection] track object-perception (§5) → propositionalize (§6) → layer–argument bridge (§6.5)
-  → extract candidates broadly + a minimal reconstruction block per candidate (forward · backward · contrast · competing · six questions, §7)
-  → select anomalous arguments via the six questions + group-index tagging (§8) → document-level 3-signal synthesis (§7.7)
-  → output selection/exclusion reasons + the full argument map (indented tree), then stop (§7.6).
-[User designation] designate node IDs, paths, argument numbers (if none, the top 5 by conclusion relevance).
-[Second pass — full reconstruction] select and apply modules only to the designated arguments (§10·§11) → re-adjust object-name and judgment strength (§12)
-  → maintain/weaken/hold + tidy the open-questions ledger (§12) → (if a criminal case, §13).
-```
-
-The output items and their order follow §14.
+The canonical execution order is the §3.6 run-card (pass definitions: §3.5-1; output items and order: §14). The old summary here was redundant and has been removed.
 
 ---
 
@@ -954,8 +942,10 @@ Principle: **consistency (fit) ≠ diagnosticity (discriminating power)**. If a 
 - Source·independence: first-hand (direct) / downstream hearsay (heard from whom) / non-testimonial objective.
   If common-source, mark them grouped; do not sum as independent corroboration (no double-counting, group 5·Module P).
 - Diagnosticity: discriminates / partly non-diagnostic / non-diagnostic (+ which hypothesis it tilts toward).
-- Originality·admissibility flag: quote gap·originality dispute·hearsay·illegally obtained → do not conclude;
-  register a record-confirmation instruction in the ledger (check admissibility↔probative-value confusion, group 1).
+- Formation·admissibility: record against the ledger's (§7.9) 'formation status' column — ① admissibility
+  (stated ground) ② formation (author/time/originality: affirmative / rejection-only / unruled) ③ meaning.
+  Includes quote gaps, hearsay, illegally-obtained disputes. Do not conclude; hand off as a record-check
+  instruction, and apply the §7.9 escalation rule here as well.
 ```
 
 Non-★ evidence gets no card — only one ledger row in §7.9 (load control).
@@ -1550,15 +1540,7 @@ The **worked example (a crowdfunding non-delivery case)** showing the format and
 
 ---
 
-*v260628 — Execution fixing & per-evidence evaluation strengthened: added §3.6 'Pass-1 execution run-card' (fixed order·per-step [done] gates·length gate 1·stop gate 2·symmetry/quote gate 3·verification gate 4); §7.8 'evidence diagnosticity card' (consistency≠diagnosticity; per ★ evidence: actual content/citer·reading/read-otherwise/source·independence/diagnosticity/originality; two-directional atomization for minutes-type evidence); §7.9 'evidence ledger' (one row per cited item + coverage self-check); §5.2 Pass-1 load control (operating set by default); §3.5-2 quote-locator·tag rule; §3.7 verification-layer (LARP-Verify) definition; plus a separate LARP_verify.md (omission-hunt 2nd pass) and tools/larp_quote_audit.py (quote-source comparison). Plus §7.10 evidence × hypothesis matrix (a synthesis view of §7.8/§7.9 when there are competing hypotheses; a default full-version output, verified by tools/larp_matrix_audit.py). No new engine — it lifts the scattered §3.5-8 #7·#8·modules K/P/N·Map atomization into mandatory Pass-1 steps. Applied & verified: a judgment, minutes-lumping correction.*
-
-*v260618 — Evidence atomization & diagnosticity recall: two items added to the pre-output self-check (§3.5-8). (7) Check that key evidence was not lumped ("…etc") and that testimonial vs. non-testimonial objective evidence was not bundled, and that each item's actual content was distinguished from its imputed meaning. (8) If a key item appears to fit both hypotheses equally, register it in the ledger as a diagnosticity-check candidate (a 1st-pass recall flag, not a verdict). No new module or procedure — a null-scan that routes to existing §6·§7.1·group 5·modules K/G/M. Pairs with the evidence atomization in Map·Lite v260618.*
-
-*v260617 — Insight reflected (collision/resistance): one conceptual anchor added to §0.1 — the proving ground of verification is not a ground's 'bottom' but where it collides with the world's resistance (standing on its own vs. post hoc immunization), and a ground's reality differs by layer. No new module or procedure (only a spine tying together the scattered Q⑤·Modules O·Q·T·§5.2). Grounds the no-verdict boundary in the bottomlessness of criteria. Source: "Frozen Names and the Flowing World."*
-
-*v260616 — Slimming the criteria apparatus (Musk stage 2, first cut): moved the §8 detailed selection-criteria table (~50 items), the §10 situation table (situation→module), and the §13.2 list of 28 grounds out of the body into the separate file "LARP Criteria & Check Modules." The body keeps only the §8 one-line 10-group index (for symptom naming and routing). The decomposition engine (§0–§7), the six questions, modules A–T, and deep-research query generation are unchanged. Body ~1600→~1249 lines. Also) order-redundancy cleanup: §1 goals (11 items)→4 goals + pointers, §4 flow (15 steps)→a compressed step map + section pointers; the canonical order is unified into §3.5·§14. Also) rule-redundancy cleanup: §15 slimmed from a re-teaching block into a hard-limit re-confirmation checklist (definitions/explanations delegated to sources such as §3·§5.3·§7.2, keeping only the one-line prohibitions for reinforcement); §3·§3.5 unchanged. Also) moved the §17 worked example (~165 lines) to the separate file "LARP Worked Example," leaving only a pointer in the body. Output-format rules (§5–§14·§7.5·NotebookLM) remain in the body. Also) moved the §5.2 layer-design philosophy (the 3 qualification criteria, the argument-underdetermination rationale) to the criteria & check modules' "D. Layer-design criteria," leaving only the operating rules in the body. Also-feature) Proposal 1: a new deep-research "acquisition mode" in §3.5-3 (charitably assemble scattered claims with no source text, with rebuttals, assemble-only / no evaluation) + a no-source-text entry path in §2. Proposal 2: a "decomposition skeleton (glance view)" added to the §14 first-pass output (a rearrangement of 7·9, for ease of viewing). Both items connect directly to the agreed 4 goals (goals 3·1).*
-
-*v260614 — Cleanup for public release: generalized examples (removed non-public documents, unified into the crowdfunding case), defined output ranges (summary/standard/deep), removed quotes from Mermaid split-edge labels. The architecture is kept on the v260612 reconstruction base: forward (warrant) · backward (layer) double reconstruction and the contrast (the split), the six-question screen gate, indexing of the 10 groups, the W·L·V nodes and the split edge, the 7.7 reverse-construction 3-signal synthesis, the orientation of judgment, the 5-condition absence test, the 3-tier expected evidence · prediction pre-registration, the open-questions ledger, the pre-output self-check, the 3 confidence elements, Group 9 frame foreclosure · Group 6 collection gap, the precision of Modules B-1·L·M·N. For older versions, see 90_archive.*
+*Version history: CHANGELOG.en.md; former in-body footnotes: prompts/archive/LARP_version_footnotes.md.*
 
 *LARP — full version (Layer-grounded Argument Reasoning Probe) · Author: CHAE Sooyang · CC BY-NC-SA 4.0*
 *A personal methodology project, not the official position of any institution. This tool does not replace judgment.*
