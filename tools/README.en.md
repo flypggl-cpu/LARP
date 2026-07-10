@@ -78,6 +78,6 @@ In one line: **it turns the AI's "happened to find it" into the machine's "did i
 | [`larp_matrix_schema.md`](larp_matrix_schema.md) | JSON schema for the evidence × hypothesis matrix + diagnosticity-derivation rules |
 | [`coverage_audit_prompt.en.md`](coverage_audit_prompt.en.md) | A no-code **unified** chatbot approximation — full evidence scan (incl. *name-only*) + tree reconcile (no guarantee) |
 
-For the whole long-text workflow, see the [coverage-audit section in USAGE](../USAGE.en.md) and the [long-document mode](../prompts/LARP_map_long.en.md).
+For the whole long-text workflow, see the [coverage-audit section in USAGE](../USAGE.en.md) and the [long-document mode (archived)](../prompts/archive/LARP_map_long_v260710b.en.md).
 
 *Author: CHAE Sooyang · CC BY-NC-SA 4.0 · A personal methodology project, not the official position of any institution.*

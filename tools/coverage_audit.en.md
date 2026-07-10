@@ -42,7 +42,7 @@ Default is **auto-detection** (it picks the marker scheme with the most cited ke
 
 ## Operation — paired with the long-document mode
 
-1. In the [long-document mode](../prompts/LARP_map_long.en.md)'s **"source-list traction"** step, make the tree cite references *by marker*.
+1. In the [long-document mode (archived)](../prompts/archive/LARP_map_long_v260710b.en.md)'s **"source-list traction"** step, make the tree cite references *by marker*.
 2. When each issue (final conclusion) is finished, run this audit over that span.
 3. Feed `[missing?]` keys back into the tree as `[unexpanded]`/`[missing?]` nodes and update the coverage ledger.
 4. Repeat until every key is *covered* or *flagged* → no silent omission for cited references.
