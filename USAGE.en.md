@@ -17,7 +17,7 @@
 3. **Paste the text to analyze — whole.** A long judgment or paper goes in as is: the tool first shows **the list of disputed issues and stops.** Point at what you're curious about in your own words — "was it right to believe F's statements?" You don't need numbers or symbols. (A short text skips this step and goes straight to analysis.)
    - One check: if your pasted text keeps its page marks (like `- 12 -`), you'll also get "open page N" guidance.
    - If the chatbot truncates the text as too long → the fallback in **§4** (paste one issue's section only).
-4. **Read the result, pick where to dig.** The tool leads with a *plain-language summary*, marks the suspicious spots, then **stops** (how to read it: **§2**). Say "continue" and it digs into the core (★) on its own, or designate in your own words (**§3**). At the end, ask "write it up as a report" and it rewrites everything in *the reader's order* — ① what this document says ② where the conclusion actually rests ③ where it's solid ④ where it's risky ⑤ what happens if what gets confirmed ⑥ the judgment that is yours. The verdict is yours, not the tool's.
+4. **Read the result, pick where to dig.** The tool leads with a *plain-language summary*, marks the suspicious spots, then **stops** (how to read it: **§2**). Say "continue" and it digs into the core (★) on its own, or designate in your own words (**§3**). At the end, ask "write it up as a report" and it rewrites everything in a reader-friendly order. The verdict is yours, not the tool's.
 
 > Gate-0 preprocessing for very long documents and the split edition for small-context environments have moved to the advanced features in **§5** — you won't normally need them.
 
@@ -34,7 +34,7 @@
 
 ## 2. Reading the result — what the first pass produces
 
-> **Note — the tool moves in "scenes."** ① **Scene 1 (map)**: it draws the conclusion/ground skeleton and *stops* (= step 4 above, §2 below). → you pick a scope → ② **Scene 3 (selection)**: it flags only the anomalous arguments in that part (= step 5, the 2nd pass). In between, an optional *Scene 2 (diagram)* can just show the reconstruction. → if you want, **Scene 4 (report)** gives the final document in reading order (step 6). "1st pass / 2nd pass" is just an easy name for this scene flow.
+> If the output mentions "Scene 1 / 3 / 4" — those are the map → selection → report stages, and "1st/2nd pass" is just an easy name for that flow.
 
 **A *plain-language summary* (everyday prose, no codes or jargon) comes first — read that first.** It states, in plain words: this text's conclusion, the assumption it silently leans on, whether the decisive-looking evidence really discriminates, what actually discriminates, and what's missing. Below is how to read the *detail* that follows it.
 
@@ -112,7 +112,7 @@ But if your chatbot's input limit is small and **a long document gets truncated*
 
 ## 5. For more certainty — optional features
 
-§1–§4 are usually enough. The below is only for when you want *extra certainty.* In particular — **turning each ground it surfaces into a question you can paste straight into deep research is one of this tool's core uses** (§5.1 for verification · §5.2 for acquisition). It doesn't stop at naming the hidden premise; it hands you *what to check* — the answer and the verdict still stay with you.
+§1–§4 are usually enough. The features below are only for when you want *extra certainty.*
 
 ### 5.0 Preprocessing very long documents, and small-context environments (advanced)
 
@@ -163,27 +163,7 @@ Then an **omission hunt** — in a *new window / different model*, give [`prompt
 
 The verification layer doesn't *remove* the risks — it makes them *visible.* The final judgment is the human's.
 
-### 5.4 Which model, and how far to run — measured guidance (2026-07, a 57-page ruling scope)
-
-We built an answer key on a real court ruling and measured "did it catch everything" per model/procedure combination (details: `verification/cases/case4_2024no620_loop/`).
-
-| Setup | Recall |
-|---|---|
-| Small (Haiku-class) model + prompt only | 56% |
-| Small + code seeds as input (gate 0) | 86% |
-| Small + code check → repair pass | 89% |
-| Above + separate-model omission hunt | 95.6% |
-| Mid (Sonnet-class) model + prompt only | 96% |
-
-Practical guidance:
-
-- **Model tier**: mid (Sonnet-class) is the practical floor for mapping and omission hunting; use a higher tier (Opus-class) for anomaly screening and close reading. Small models only for helper roles like running the repair pass.
-- **Tier does not replace the verification layer.** No tier reports its own omissions, and a self-tallied "seeds n/n exhausted" cannot be trusted (measured: reported 52/54, actually 26/54). Reconciliation counts are canonical only from code.
-- **How far to run depends on how much you'll rely on the result**: skimming → code check + repair pass (near-zero cost; effectively the default). Results used for decisions or documents → add the separate-model omission hunt. Skipped layers leave the output marked 'unverified' (Gate 4).
-- Even with every layer, residual omission remains (measured ~4% — untagged, semantic). That layer is the human's share.
-
-
----
+Remember three things: ① a better model misses far less (small free models drop a lot on long texts). ② If the result feeds a decision that matters, run the checks above. ③ Even with everything run, some omission remains — the last check is the human's. (Measurement record: `verification/cases/case4_2024no620_loop/`)
 
 ## 6. FAQ
 
