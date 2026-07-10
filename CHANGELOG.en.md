@@ -36,7 +36,7 @@ Reflects the first measured run of the full version's 2nd pass (one Sonnet run, 
 
 - **Cross-issue reconciliation** (§3.5-1, 2nd pass): if the designated issue's key evidence is also used in another issue, always compare its treatment — same evidence, different weight is the top review point (measured miss GA-2: the same F statement supporting guilt for $2M and acquittal for $1M).
 - **Quotation rule** (§3.5-2): quotation marks are for source quotes only, never for reconstructions/labels — the verification layer's quote check mistook reconstructions for quotes (95 false positives measured).
-- Record: `verification/cases/case4_2024no620_loop/` (run12, gold_anomaly.json). For the remaining blind spots (formulaic credibility phrases, plausibility→credibility slides) the confirmed remedy is the verification layer (separate-model omission hunt), not more clauses.
+- Record (kept privately; run12, gold_anomaly.json). For the remaining blind spots (formulaic credibility phrases, plausibility→credibility slides) the confirmed remedy is the verification layer (separate-model omission hunt), not more clauses.
 
 ## v260710c (2026-07-10) — User touchpoints: if the user can't understand it, it has failed
 
@@ -56,17 +56,17 @@ A map_long-only edition. Adds an evidence ledger — answering the evidence-adju
 - **The ledger is an output artifact, not a generation order**: making the model build the ledger *first* lowered small-model recall (91% vs 97% tree-first at issue level — table-writing consumes the output budget). Expand the tree first, then mechanically rearrange terminal evidence — no loss risk.
 - **Row format**: page · actual content · used-by · disputed · discriminating power (an answer to a question, not a verdict) · notes (redacted quote / notation anomaly / admissibility caveat).
 - **Two human-verification devices**: a rows-per-page table (a zero-row page = where a human opens the source), and an unused-evidence list (exposing evidence cited but never used in the argument).
-- Also measured: **issue-level designation + a single prompt** gets even a small model to ~97% (vs 56% for the whole scope at once) — if you want to skip the verification layer, designate the scope. Record: `verification/cases/case4_2024no620_loop/`.
+- Also measured: **issue-level designation + a single prompt** gets even a small model to ~97% (vs 56% for the whole scope at once) — if you want to skip the verification layer, designate the scope. (The measurement record is kept privately.)
 
 ## v260710 (2026-07-10) — Loss measured: reconciliation counts are canonical only from code
 
-An edition grounded in measurement: we built a gold set on a real ruling (Suwon High Court 2024no620, the 57-page North-Korea-remittance scope) and ran an execute→score→revise loop with small models. Minimal edits to the main document (LARP.md) only — family documents and tools unchanged.
+An edition grounded in measurement: we built a gold set on a real public appellate ruling (a designated 57-page issue scope) and ran an execute→score→revise loop with small models. Minimal edits to the main document (LARP.md) only — family documents and tools unchanged.
 
 - **Reconciliation counts are canonical only from code** (§3.7): a model's self-reported "seeds n/n exhausted" can be feigned exhaustion (measured: reported 52/54, actually mapped 26/54). No self-tallied counts before the code checks (a·b).
 - **Repair pass** (§3.7 order): omission/hallucination candidates detected by the code checks are fed back into the analysis pass and repaired before reaching the human (measured: recall 86→89%).
 - **Sequential segment exhaustion** (§3.6 Gate 1): build maps/ledgers for long documents by exhausting ~10-page segments — "read all, then draw from memory" is forbidden (the measured site of lost-middle).
 - **Name-only evidence registration** (§3.6 Gate 0 ③ in the Korean edition; Gate 1 note in English): explicit type list for untagged evidence (lectures, remarks, official letters, minutes …) + register on first appearance — the most common loss type.
-- Measurement assets: `verification/cases/case4_2024no620_loop/` (182-item gold set; loop record: small model alone 56% → code-seeds + repair + omission-hunt pipeline 95.6%; the residual is the human's share).
+- Measurement assets (kept privately): 182-item gold set; loop record: small model alone 56% → code-seeds + repair + omission-hunt pipeline 95.6%; the residual is the human's share).
 
 ## v260705 (2026-07-05) — Lite: capacity-transfer reinforcement (turning a flag into understanding)
 
@@ -99,7 +99,7 @@ Beyond the full version flagging weak points as *candidates*, this adds an evalu
 
 ## v260619 (2026-06-19) — Added LARP-Map long-document mode (for long-text omission)
 
-A countermeasure for the limit that drawing a long/complex text (large judgments, multi-stage arguments) *all at once* with the base Map makes omission happen silently. Adds a new mode file [`prompts/LARP_map_long.en.md`](prompts/LARP_map_long.en.md) (Korean [`.md`](prompts/LARP_map_long.md)). The existing tools/engine are unchanged, and it still does not evaluate or judge (that is the full LARP).
+A countermeasure for the limit that drawing a long/complex text (large judgments, multi-stage arguments) *all at once* with the base Map makes omission happen silently. Adds a new mode file [`prompts/LARP_map_long.en.md`](prompts/archive/LARP_map_long_v260619.en.md) (Korean [`.md`](prompts/archive/LARP_map_long_v260619.md)). *(Later absorbed into the full version and moved to archive in v260710d.)* The existing tools/engine are unchanged, and it still does not evaluate or judge (that is the full LARP).
 
 - **Interactive progressive expansion**: expand stage by stage from the final conclusion through ground stages, with a user gate at each stage — "is this all? what shall we expand next?" Go deep on one conclusion at a time.
 - **Generalized vocabulary**: conclusion–ground are relative roles, grounds labelled by depth (stage 1, 2 …), terminal = evidence, and a single descent rule — *"is this ground itself further argued?"* — handles arbitrary-depth multi-stage arguments with no fixed layer names.

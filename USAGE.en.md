@@ -56,11 +56,11 @@ A short reconstruction block per argument. Three things first:
 | V | evidence that should exist but is absent |
 | ★ | most important to the conclusion (only these go to the 2nd pass unless you pick others) |
 
-### (3) Evidence list (the tool calls it the "ledger")
+### (3) Evidence DB (the tool calls it the "evidence→hypothesis DB")
 Every cited or mentioned piece of evidence appears, *none dropped*, one per row. Each row shows — *where it came from* (something the person said themselves / something heard secondhand / objective material like a document), *grouped by same source* (one person's words counted once), *whether it can tell which side* (see (4)), and *whether its authenticity is disputed*. If the tool flagged "cited but not addressed," those *left-out candidates* show here too — what's missing is visible at a glance.
 
-### (4) Evidence-explanation table (when it splits into two explanations; the tool calls it the "matrix")
-For a "this or that" text, you get a table matching the evidence (rows) against the explanations (columns).
+### (4) Evidence × hypothesis matrix (when it splits into two explanations; a view drawn from the DB above)
+For a "this or that" text, you get a table matching the evidence (rows) against the explanations (columns) — the tool calls it the "matrix," pulled from the (3) DB.
 
 - Cell: `+` fits that explanation / `−` goes against / `0` irrelevant / `±` splits by reading.
 - **Fits-both evidence** = it fits any explanation, so it *can't tell which side* (e.g., "money was sent" fits any story). The tool calls this "non-diagnostic" — weak as a core ground.
@@ -103,10 +103,11 @@ The 2nd pass also leads with a *plain-language summary* (what changed, what rema
 But if your chatbot's input limit is small and **a long document gets truncated**, fall back to splitting it yourself:
 
 1. **Paste only one issue's section.** For a judgment: from the page where that charge/issue's heading starts to just before the next heading. If you can't tell where it starts, paste just the table of contents first and ask "which pages does issue N span?"
-2. **(Note) you don't need to build an evidence table separately.** The full version outputs the evidence→hypothesis DB (a table of which evidence supports which conclusion, §7.9) by default in Pass 1. Save it and reuse it as base material for later analyses.
-3. **Run that section through the full version, per §1.** You get the evidence ledger and, if there are competing hypotheses, the evidence × hypothesis matrix.
-4. **The gaps are already flagged in the result.** The tool itself points out *missing evidence (V)* and *left-out candidates.*
-5. **Next issue, then stitch.** A human stitches cross-issue links (one fact used as a ground for two issues, etc.) at the end.
+2. **Run that section through the full version, per §1.** You get the evidence→hypothesis DB and, if there are competing hypotheses, the evidence × hypothesis matrix.
+3. **The gaps are already flagged in the result.** The tool itself points out *missing evidence (V)* and *left-out candidates.*
+4. **Next issue, then stitch.** A human stitches cross-issue links (one fact used as a ground for two issues, etc.) at the end.
+
+> **Note — you don't need to build an evidence table separately.** The full version outputs the **evidence→hypothesis DB** (a table of which evidence supports which conclusion, §7.9) by default in Pass 1. Save it and reuse it as base material for later analyses.
 
 **"All evidence and all hypotheses in one run" is not what the tool promises** — no human can do that either. Completeness comes not from a *single run* but from the *issue-by-issue procedure.*
 
@@ -147,6 +148,8 @@ Either order works — deep research→LARP or LARP→deep research.
 → Example: [checking the claim "vaccines don't work"](examples/claim_check_vaccine.en.md)
 
 ### 5.3 Catching dropped evidence and made-up quotes with code — the verification layer (optional)
+**Three things first:** ① a better model misses far less (small free models drop a lot on long texts). ② If the result feeds a decision that matters, run the checks below. ③ Even with everything run, some omission remains — the last check is the human's. (Measurement record kept privately.)
+
 The analysis itself already surfaces *missing-evidence and omission candidates*, so that's usually enough. But when **a miss would be costly**, check from outside the two risks a model can't catch alone (*silent omission*, *invented quotes dressed as source quotes*).
 
 Save the first-pass output to a text file, then:
@@ -154,7 +157,7 @@ Save the first-pass output to a text file, then:
 ```bash
 # (1) do the quotes actually exist in the source (hallucination check)
 python tools/larp_quote_audit.py --source src.txt --analysis pass1.md
-# (2) did every cited piece of evidence make it in + ledger/card completeness (omission check)
+# (2) did every cited piece of evidence make it in + DB/card completeness (omission check)
 python tools/larp_coverage_audit.py src.txt --tree pass1.md
 python tools/larp_card_audit.py pass1.md
 ```
@@ -162,8 +165,6 @@ python tools/larp_card_audit.py pass1.md
 Then an **omission hunt** — in a *new window / different model*, give [`prompts/LARP_verify.en.md`](prompts/LARP_verify.en.md) + the source + the first-pass output, and get back only what was *not raised* (done in the same conversation, the model can't see its own blind spots). Coverage options: [tools/coverage_audit.en.md](tools/coverage_audit.en.md). **If Python is a hurdle,** upload the scripts and files to a code-running chatbot (ChatGPT, Claude) and run them with no install.
 
 The verification layer doesn't *remove* the risks — it makes them *visible.* The final judgment is the human's.
-
-Remember three things: ① a better model misses far less (small free models drop a lot on long texts). ② If the result feeds a decision that matters, run the checks above. ③ Even with everything run, some omission remains — the last check is the human's. (Measurement record: `verification/cases/case4_2024no620_loop/`)
 
 ## 6. FAQ
 
