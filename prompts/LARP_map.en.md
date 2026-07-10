@@ -2,7 +2,7 @@
 
 > Shows at a glance how *all the claims and their supporting reasons* in a text connect, as a picture (a tree) — short/medium texts. **It doesn't judge right or wrong.**
 > To *probe* the weak spots, use LARP-Lite (a quick check) or the **full LARP** (a deep one).
-> For a *very long, complex* text (a large court ruling, etc.) one pass can't reach everything — use the **long-document mode** (`LARP_map_long.en.md`): it opens the text step by step from the conclusion, checking nothing's missed.
+> For a *very long, complex* text (a large court ruling, etc.), use the [full LARP](LARP.en.md) — it outputs the structure together with the evidence table (evidence→hypothesis DB). (The former interactive long-document mode is preserved in [`archive/`](archive/LARP_map_long_v260710b.en.md).)
 
 ---
 
@@ -65,7 +65,7 @@ id, parent_id, level, role, type, text
 After drawing, ask in one line:
 **"Which branch should we look at more deeply? (For long/complex texts, continue with the full LARP; LARP-Lite only for a quick check of a short text.)"**
 
-> *If the text is long or cites many sources*, drawing it in one pass may miss evidence — switch to the long-document mode (`LARP_map_long.en.md`) and cross-check for dropped evidence with the mode-agnostic helpers in [`tools/`](../tools/README.en.md) (coverage audit — code + unified prompt).
+> *If the text is long or cites many sources*, drawing it in one pass may miss evidence — switch to the full LARP (which outputs the evidence→hypothesis DB) and cross-check for dropped evidence with the mode-agnostic helpers in [`tools/`](../tools/README.en.md) (coverage audit — code + unified prompt).
 
 ---
 

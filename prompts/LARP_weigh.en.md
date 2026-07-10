@@ -4,7 +4,7 @@
 > Where the full LARP *flags* the weak spots, this tool lines the evidence up *piece by piece* to show which explanation each piece favors.
 > **The human decides — the AI only organizes.** It does *not* declare which explanation is right or whether doubt is resolved.
 
-> This is an *evaluation* tool — strongest *after* you've laid out the structure with [LARP-Map](LARP_map.en.md) (or the [long-document mode](LARP_map_long.en.md)) and, for long texts, checked for missing evidence with the [`tools/`](../tools/README.en.md) coverage audit. For the whole flow, see [README's 'Which tool, when'](../README.en.md).
+> This is an *evaluation* tool — strongest *after* you've laid out the structure with [LARP-Map](LARP_map.en.md) (for long texts, the [full LARP](LARP.en.md)'s evidence→hypothesis DB) and, for long texts, checked for missing evidence with the [`tools/`](../tools/README.en.md) coverage audit. For the whole flow, see [README's 'Which tool, when'](../README.en.md).
 > A concrete example: [LARP-Weigh worked example](../examples/larp_weigh_example.en.md).
 
 ---

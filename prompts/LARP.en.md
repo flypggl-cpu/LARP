@@ -1,4 +1,4 @@
-# LARP: Layer-grounded Argument Reasoning Probe (AIVA-L-CALM v260710f)
+# LARP: Layer-grounded Argument Reasoning Probe (AIVA-L-CALM v260710g)
 
 *[한국어](LARP.md) | English*
 
@@ -385,9 +385,9 @@ Gate 1 (length): if the document exceeds one screen (~15 pages), no single pass.
 1. Object-perception & propositionalization (§5~6)   → [done: N claims + each verdict orientation]
 2. Layer–argument bridge (§6.5)                      → [done: N issues]
 3. Candidate extraction + per-candidate minimal reconstruction block·6 questions (§7) → [done: N candidates, ★ M]
-4. For each ★-path evidence, an 'evidence diagnosticity card' (§7.8) — none skipped → [done: K ★ evidence atomized]
-5. Update the evidence ledger (§7.9) — one row per cited item → [done: L rows]
-5b. (if there are competing hypotheses) evidence × hypothesis matrix (§7.10) — a rearrangement of cards/ledger → [done: matrix H cols × E rows]
+4. For each ★-path evidence, a meaning-hypothesis M row (§7.8) — none skipped → [done: K ★ evidence atomized]
+5. Build the evidence→hypothesis DB (§7.9) — top-down skeleton (before close reading) + bottom-up E·M·P·H rows → [done: DB, L E-rows]
+5b. Four cross-reconciliations · four structural tests (§7.10) — skeleton vs DB, list everything caught → [done: k recon · j test hits]
 6. Three signals (§7.7) → the argument map (§7.6) → self-check result (§3.5-8, printed per ★ evidence)
    → end with the user-designation wait line and STOP that turn.
 Gate 2 (stop): do not run modules after 6. Stopping is the end of Pass 1.
@@ -407,7 +407,7 @@ a. Quote-source comparison (code): tools/larp_quote_audit.py — deterministical
    source quote the tool presented actually exists in the source. Mismatch → 'possible hallucination'
    flag. (blocks disguised hallucination)
 b. Coverage comparison (code): tools/larp_coverage_audit.py — check that every cited piece of
-   evidence made it into the evidence ledger (§7.9). Missing items → 'omission candidate'.
+   evidence made it into the evidence→hypothesis DB (§7.9). Missing items → 'omission candidate'.
    (blocks mechanical omission)
 c. Omission hunt, 2nd pass (separate model): LARP_verify.md — a fresh pass, not anchored on the
    first analysis, that outputs only what was NOT raised: weak links, evidence, rebuttals, asymmetry.
@@ -457,7 +457,7 @@ S-ledger (all) | Q-ledger (all, with status) | Residual list (items dropped in c
 - Document identity: document name · analysis edition (version) · Gate-0 anchor basis (the document's own page numbers)
 - List of designable nodes: node ID + one-line label (including ★ marks)
 - The minimal reconstruction block (§7.5 format) for each ★ node, verbatim
-- The evidence-ledger rows linked to the designated conclusion (with extension columns) + the ledger's scope declaration
+- The evidence→hypothesis DB rows linked to the designated conclusion (E·M·P·H, with extension columns) + the DB's scope declaration — the DB is the canonical content of the packet
 - The related items of the open-questions ledger (with status)
 - The document-level three-signal opinion, one paragraph
 
@@ -930,73 +930,116 @@ Always attach to the opinion: what must be confirmed to resolve this suspicion
 
 ---
 
-## 7.8 Evidence diagnosticity card (mandatory for each ★-path evidence)
+## 7.8 Meaning-hypothesis (M) rows — the DB's M layer (mandatory per ★-path evidence)
 
-Principle: **consistency (fit) ≠ diagnosticity (discriminating power)**. If a piece of evidence fits the adopted hypothesis and the competing hypothesis *equally*, it is non-diagnostic — do not use it as a core ground; raise a flag only. For each ★-path (top-5) evidence, write the following at the atomic level (no "…etc"; do not bundle testimonial and non-testimonial objective evidence into one node).
+In the evidence→hypothesis DB (§7.9), each piece of evidence (E) gains force upward only through a **meaning hypothesis (M)**. Distinguish two kinds — a **formation hypothesis** (is this evidence genuine: author, time, originality) and a **content hypothesis** (what does this entry/statement signify). Write an M row per ★-path evidence at the atomic level (no "…etc"; do not bundle testimonial and non-testimonial objective evidence). Non-★ evidence gets no M row — only an E row in §7.9 (load control).
+
+Write diagnosticity verdicts in comparative form — after asserting "discriminates / non-diagnostic", always add one comparison line: "under H1 the likelihood of this evidence appearing is …, under H2 …". This is the minimal sentence-level block against pseudo-diagnosticity (checking fit with one side only and reading it as support).
+
+Diagnosticity–credibility coupling: for evidence flagged as a discriminating axis, automatically register a credibility-check instruction (originality, formation history, manipulability) in the docket — the diagnosticity ranking is the priority order for credibility checks. Force and trustworthiness are different degrees of freedom; a deceiver plants evidence exactly where it discriminates most.
+
+Principle: **consistency (fit) ≠ diagnosticity (discriminating power)**. If evidence fits the adopted and the competing hypothesis *equally*, it is non-diagnostic — do not use it as a core ground; raise a flag only.
 
 ```text
-- Actual content: source quote. If one source carries entries in both directions, split into atoms ① ② (e.g., minutes).
-- Citer·reading: who (court/prosecution/defense) imputed what meaning.
-  If both sides cite the same source by different lines, flag 'selective use of evidence (group 6)'.
+[M-row fields]
+- Actual content: source quote. If one source carries entries in both directions, split into atoms ①② (e.g., minutes).
+- Citer·reading: who (court/prosecution/defense) imputed what meaning. If both sides cite the same
+  source by different lines, flag 'selective use of evidence (group 6)'.
 - Read otherwise: at least one line of competing reading.
-- Source·independence: first-hand (direct) / downstream hearsay (heard from whom) / non-testimonial objective.
-  If common-source, mark them grouped; do not sum as independent corroboration (no double-counting, group 5·Module P).
-- Diagnosticity: discriminates / partly non-diagnostic / non-diagnostic (+ which hypothesis it tilts toward).
-- Formation·admissibility: record against the ledger's (§7.9) 'formation status' column — ① admissibility
-  (stated ground) ② formation (author/time/originality: affirmative / rejection-only / unruled) ③ meaning.
-  Includes quote gaps, hearsay, illegally-obtained disputes. Do not conclude; hand off as a record-check
-  instruction, and apply the §7.9 escalation rule here as well.
+- Source·independence: first-hand / downstream hearsay (heard from whom) / non-testimonial objective.
+  Common-source items are grouped; never summed as independent corroboration (groups 5·Module P).
+- Diagnosticity: discriminates / partly / non-diagnostic (+ which hypothesis it tilts toward).
+- Formation·admissibility: per the E row's 'formation status' (§7.9) — ① admissibility (stated ground)
+  ② formation (author/time/originality: affirmative / rejection-only / unruled) ③ meaning. Includes
+  quote gaps, hearsay, illegally-obtained disputes. Do not conclude; hand off as a record-check
+  instruction and apply the §7.9 escalation rule here too.
+- Ruling status: the document's ruling on this M — [affirmatively found / opponent's claim rejected only / not ruled on].
 ```
 
-Non-★ evidence gets no card — only one ledger row in §7.9 (load control).
+---
 
-\---
+## 7.9 The evidence→hypothesis database (Pass 1's standard output — four layers E·M·P·H)
 
-## 7.9 Evidence ledger (single ledger — one row for every cited piece of evidence, none omitted)
-
-Do not drop a single piece of evidence the document cites or mentions; put each on its own row. ★ evidence is expanded as a §7.8 card, and the same source is counted as weight only once.
+Pass 1's standard output is not prose but the **evidence→hypothesis DB**. The document's entire argument is transcribed into four node layers and two link types. This DB is the canonical content of the §3.9 handoff packet; the 2nd pass, the verification layer, the report, and re-entry in a new session all operate on top of it.
 
 ```text
-| EvID | Atomic content (gist) | Source (first-hand/downstream/objective) | Common-source group | Hypothesis it fits | Diagnosticity | Formation status |
+[Four layers]
+[E] Evidence   one cited/mentioned item = one row (tagged and name-only alike).
+[M] Meaning hypothesis   formation/content hypotheses (§7.8 row format) + the document's ruling status.
+[P] Intermediate proposition   the factual proposition the meaning hypotheses support.
+[H] Issue hypothesis   the issue's competing answers — adopted and rival hypotheses side by side.
 
-Formation-status column (the old 'originality flag', strengthened) — record three *different* questions per item:
-  ① Admissibility: admitted or not + the stated ground (consent / formation acknowledged / reliability, with locator)
-  ② Formation: is the author, the time of creation, or the originality (forgery/alteration) disputed,
-     and is the court's ruling on it [affirmatively found / only the opponent's claim rejected / not ruled on] (locator)
-  ③ Meaning: is what the content signifies disputed (expand as a §7.8 card)
+[Two link types (upward E→M→P→H)]
+⊢ explicit   a link the document actually asserted (with locator).
+⊦ reconstructed   a bridge the tool restored because the document skipped it — label mandatory
+  (e.g., ⊦"absent a motive, errors are memory decay"). The tool does not invent a better argument —
+  the object of evaluation is the document's argument.
+
+[Build order — do not violate]
+① Top-down skeleton (before close reading): read only the table of contents, claim summaries, and
+   conclusions; erect H (adopted + rivals) and the P skeleton per issue, and write each H's expected-
+   evidence list NOW (§3.5-6 pre-registration — required / strongly expected / diagnostic).
+   No post-hoc editing of expected evidence before Pass 1 ends (additions marked as additions only).
+② Bottom-up build (close reading): with gate-0 seeds as the exhaustive baseline of the E layer,
+   fill E segment by segment. Attach M per E; link along the document's argument path with ⊢;
+   restore skipped bridges with ⊦.
+
+[E-row basic columns]
+| EvID | Atomic content (gist) | Locator | Source (first-hand/downstream/objective + summary level) | Common-source group | Hypothesis it fits | Diagnosticity | Formation status |
+
+Formation status — three distinct questions per item:
+  ① Admissibility: admitted or not + the stated ground (with locator)
+  ② Formation: author/time/originality disputed + the court's ruling [affirmative / rejection-only / unruled] (locator)
+  ③ Meaning: import disputed (expand as a §7.8 M row)
 Escalation rule: rejecting the opponent's forgery/alteration claim is not an affirmative finding of
-  formation. If evidence whose formation is 'not ruled on' or 'rejection only' is used as a ground for
-  the conclusion (especially when it is the issue's only non-testimonial exhibit), escalate it to a
-  gap axis (V) / anomalous-argument candidate. A judgment that recycles the admissibility ground (①)
-  as if it settled formation or meaning (②·③) is itself a selection target.
+formation. If evidence whose formation is unruled/rejection-only grounds the conclusion (especially
+the issue's only non-testimonial exhibit), escalate to a gap axis (V) / anomaly candidate. Recycling
+the admissibility ground as if it settled formation or meaning is itself a selection target.
+
+Summary level of the source (mandatory for summarizing documents like judgments):
+  verbatim transcript / author's (court's) summary / admissibility-excluded·limited citation.
+
+[Extended columns — filled in the 2nd pass for ★/path rows; module K·P·N·G judgments are recorded
+ here, not in separate tables — running a module = filling columns + the module's own synthesis]
+| Independence·dependence (P) | Hypothesis relation +/−/0/± (§7.10) | Distinguishing checkpoint (K) | Expected-evidence match (G) | Probability-structure flag (N) |
+
+[Completeness scope — declare the baseline of "none omitted" at the head of the DB]
+- Whole-document scope (default) / designated-issue scope (2nd pass). State it explicitly; leave the
+  possibility of out-of-scope evidence as one docket item rather than a permanent 'tentative' sticker.
 ```
 
-Coverage self-check (mandatory): after writing the ledger, scan again for items the document cited ('evidence-list number N'·witness name·document name, etc.), reconcile against the ledger so nothing is missing, and add any missing item as an 'omission candidate' before proceeding (reinforces §3.5-8 items 7·8). (Optional) running the same reconciliation in code cross-checks the model's lossy reading.
+Coverage self-check (mandatory): after the E layer, re-scan gate-0 seeds and every tagged/named citation, reconcile against the DB **within the declared scope**, and add anything missing as an 'omission candidate' before proceeding (§3.5-8 items 7·8). A seed item absent from the DB is a mechanical omission — always recover it. Completeness is never guaranteed by model reading alone — confirm with gate-0 seeds and the coverage comparison (§3.7).
 
-This ledger is the **evidence database** — the evidence × hypothesis evaluation (§7.10) holds *only on top of it*. So listing *every* tag-cited (evidence-list number)·witness·document item is a precondition of the evaluation, and its completeness cannot be guaranteed by the model's reading — confirm it with the coverage comparison (§3.7).
+---
 
-\---
+## 7.10 Four cross-reconciliations · four structural tests (on the DB — the evidence × hypothesis matrix is a view of it)
 
-## 7.10 Evidence × hypothesis matrix (when there are competing hypotheses — synthesis view)
-
-When the ★ path has competing hypotheses (H1·H2…), lay the §7.8 cards / §7.9 ledger out once more as an **evidence × hypothesis matrix**. This is not new analysis but a *rearrangement of the cards/ledger already filled* — a view to see, at a glance, discriminating power rather than mere consistency (the non-diagnostic signal of §7.7 shows up here as structure).
+Once the DB is built, reconcile the top-down skeleton against the bottom-up DB, and run structural tests on the DB itself. What these catch is the canonical candidate list of anomalous arguments — the six questions and the group index are then used to interrogate and name them.
 
 ```text
-- Rows = ★·core evidence (§7.9), columns = the competing hypotheses. Cell = the hypothesis
-  relation per reading: + fits / − cuts against / 0 neutral. If one source splits by reading, ± (e.g., minutes).
-- Derive diagnosticity: '+' to two or more hypotheses → non-diagnostic / '+' to one only and reading-robust
-  → discriminates / '+' only under some reading → partly.
-- Independence is a separate axis: even if it discriminates, downstream hearsay or common-source is not
-  independent corroboration (no double-counting).
-- Per-hypothesis synthesis (no score): ⟨independent diagnostic support (discriminates + independent) /
-  non-diagnostic·dependent support (no weight) / missing evidence V⟩.
-- No verdict: the matrix shows only the structure of support and the gaps. Which hypothesis holds is for the human.
-- Completeness status (mandatory): at the head of the matrix, mark 'all M evidence-database items included / coverage unconfirmed (provisional)'. **A hypothesis evaluation with missing evidence cannot be trusted** — if one missing item is diagnostic the conclusion can flip, so the matrix is *provisional* until the database's completeness is confirmed (or the missing items are shown to be non-diagnostic).
+[Cross-reconciliation — top-down skeleton ↔ bottom-up DB]
+Recon1 expected-but-absent    expected evidence with no E row → gap (V); top priority if 'required'.
+Recon2 present-but-unexpected an E row on no H's expected list → signal of an incomplete hypothesis
+                              set, or reclassification needed (list, don't drop).
+Recon3 hypotheses in mid-air  H·P with no ⊢ path down to any E (conclusions standing on ⊦ only).
+Recon4 unused evidence        E reaching no M·P (cited by the document yet unused in its argument).
+
+[Structural tests — DB invariants]
+TestA unruled use     an M with ruling status [unruled]/[rejection-only] used upward — especially a
+                      formation hypothesis (escalation rule §7.9).
+TestB double weight   the same E (or same source) carrying different weight in different P·H
+                      (couples with the cross-issue reconciliation of §3.5-1).
+TestC common source   E's supporting a P·H that belong to one source group yet counted as
+                      independent corroboration.
+TestD bridge audit    collect every ⊦ label in one place; for each, one line — "if this assumption is
+                      false, what collapses". Separately mark structures that survive only by adding
+                      bridges against each new counter-datum (post-hoc immunization), and bridges that
+                      convert situational plausibility into testimonial credibility.
 ```
 
-Optionally emit the same matrix as JSON (format: `tools/larp_matrix_schema.md`); the verification layer's `tools/larp_matrix_audit.py` then checks non-diagnostic-as-core, double-counting, and V gaps in code. (If LARP-Weigh is the dedicated edition for weighing just two explanations, this matrix brings that logic inside the full version.)
+When rival hypotheses (H1·H2…) stand, the same DB may be rearranged as an **evidence × hypothesis matrix** — not new analysis but a view of the extended column (hypothesis relation): rows = ★/core evidence, columns = hypotheses, cells +/−/0/±; diagnosticity derived as before; per-hypothesis synthesis ⟨independent diagnostic support / non-diagnostic·dependent support (no weight) / missing evidence V⟩; no verdict; completeness state declared at the head. Optionally emit the matrix as JSON (`tools/larp_matrix_schema.md`) for `tools/larp_matrix_audit.py` to check non-diagnostic-as-core, double counting, and V gaps in code. (If LARP-Weigh is the dedicated edition for two explanations, these reconciliations and tests bring that logic into the full version as its default output.)
 
-\---
+---
 
 ## 8. Stage 4: Anomalous-argument selection criteria — symptom index
 
@@ -1461,8 +1504,8 @@ At the end, you must organize in the following order.
 5. The examinable claim (including the orientation of judgment)
 6. The layer–argument bridge table
 7. Per-candidate minimal reconstruction blocks (forward · backward · contrast · competing · six questions)
-7-1. Evidence diagnosticity cards for the ★ path (§7.8)
-7-2. Evidence ledger (§7.9) — one row per cited item
+7-1. Meaning-hypothesis M rows for the ★ path (§7.8)
+7-2. Evidence→hypothesis DB (§7.9) — all E·M·P·H rows + cross-reconciliation·structural-test results (§7.10)
 7-3. Evidence × hypothesis matrix (§7.10, when there are competing hypotheses)
 8. Decomposition skeleton (glance view) — for each claim: conclusion/claim ← explicit grounds / hidden grounds (W) / layer issues (L) as a short nested list. After seeing the detailed reconstruction blocks (7), this is a compressed summary that lets one grasp the whole argument structure at a glance again. It is a rearrangement of the contents of earlier items (7·9), not new analysis. **Include every extracted claim, not just ★ candidates** (completeness first) — ★ only marks priority.
 9. Anomalous-argument selection result and group tagging (modules not run)
