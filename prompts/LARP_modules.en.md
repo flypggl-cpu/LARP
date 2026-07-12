@@ -13,6 +13,7 @@
 
 The body's §8 keeps the 10 groups only as a one-line index. Below is the meaning and review question for each selection criterion.
 Selection already happened in the body's stage-7 six-question screen; this table exists to (a) attach a precise name to a caught symptom and (b) route it to a module.
+**Do not sweep this table top-down like a checklist starting from the group headings.** Compare the detailed criteria one by one per candidate, then map upward to a group (the body's §8 bottom-up rule) — judging at the group level first silently drops detailed symptoms.
 
 #### Group 1. Evidence formation & source
 
