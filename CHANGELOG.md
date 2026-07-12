@@ -22,6 +22,7 @@
 - `prompts/LARP_map_long.md`·`.en.md` → `prompts/archive/LARP_map_long_v260710b.*`로 이동. 실측 근거: DB판 전체판이 구조·증거 표(망라 실질 90.7%)와 이상 포착(10/11)을 함께 담당하므로 대화형 단계별 모드의 역할이 흡수됨. README·USAGE·LARP_map·LARP_weigh·tools의 링크를 정리(도구 문서는 링크 경로만 아카이브로 수정).
 - `prompts/LARP_split_S0_common·S1_map·S2_select.md`(+en) → `prompts/archive/LARP_split_*_v260703g.*`로 이동. 근거: 세 파일 합계(129KB)가 전체판(118KB)보다 크고, 동기 기준이 v260703g에 멈춰 승격 규칙·기대증거 대조가 없는 구판 분석을 조용히 냄 — 유지비 대비 실익 없음. 저용량 환경이 필요해지면 스키마판(5.6KB, 이상 포착 10/11 실측)을 씨앗으로 새로 만드는 것이 낫다. USAGE §5.0 분할판 절 삭제, README 목록 정리.
 - README(+en): '무엇을 보여 주나'에 증거→가설 DB·기대증거 대조 소개 추가, USAGE·card_audit 행의 구용어(대장·카드) 정리, `prompts/archive/` 행 신설. USAGE(+en) §2 (3)을 DB 읽는 법으로 개정, (3-1) '기대증거 맞춰보기' 신설.
+- `prompts/LARP_modules.md`(+en) A절 머리에 상향식 경고 1줄 추가 — 군 제목부터 훑는 하향 사용 금지, 세부 선별기준 개별 대조 후 상향 매핑(본문 §8 규칙의 사본). 근거: 모듈 단독 참조 시 일반 기준 선행으로 세부 이상 논증이 빠진 사용자 실사례.
 
 ## v260710f (2026-07-10) — 감량 집행: 판별식의 두 번째 삭제
 
