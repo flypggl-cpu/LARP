@@ -19,7 +19,7 @@
    - If the chatbot truncates the text as too long → the fallback in **§4** (paste one issue's section only).
 4. **Read the result, pick where to dig.** The tool leads with a *plain-language summary*, marks the suspicious spots, then **stops** (how to read it: **§2**). Say "continue" and it digs into the core (★) on its own, or designate in your own words (**§3**). At the end, ask "write it up as a report" and it rewrites everything in a reader-friendly order. The verdict is yours, not the tool's.
 
-> Gate-0 preprocessing for very long documents and the split edition for small-context environments have moved to the advanced features in **§5** — you won't normally need them.
+> Gate-0 preprocessing for very long documents has moved to the advanced features in **§5** — you won't normally need it.
 
 **〈What to include〉 template (optional).** Text alone is enough, but adding the below makes it more precise. Blanks are marked "no material" and it proceeds.
 
@@ -134,20 +134,9 @@ But if your chatbot's input limit is small and **a long document gets truncated*
 
 §1–§4 are usually enough. The features below are only for when you want *extra certainty.*
 
-### 5.0 Preprocessing very long documents, and small-context environments (advanced)
+### 5.0 Pre-pass for very long documents — Gate 0 (advanced)
 
 **Gate-0 preprocessing for very long documents (court rulings, etc.).** Before analysis, run [Gate 0](prompts/LARP_gate0.en.md) first — a mechanical sweep of watermarks, page numbers, *redaction/citation gaps*, and evidence tags gives you a *checklist* to reconcile the later analysis against (in a code-running environment, [`tools/larp_gate0.py`](tools/larp_gate0.py) is more accurate).
-
-**The split edition (for a small-context environment where a huge prompt breaks — NotebookLM, etc.).** The key is *which file to load at which stage.*
-
-1. **Map stage:** load [S0 common](prompts/LARP_split_S0_common.en.md) + [S1 map](prompts/LARP_split_S1_map.en.md) as sources, and run [Gate 0](prompts/LARP_gate0.en.md) preprocessing first ([`tools/larp_gate0.py`](tools/larp_gate0.py) in a code environment, otherwise Gate 0's manual five-sweep — not code-only). → paste the document → it draws the *structure map* only and **stops.** *It deliberately flags no problems at this stage* — the selection criteria (the symptom index, the six questions) aren't loaded yet, and that is the point of the split.
-2. **Pick a scope:** looking at the map, choose one conclusion/issue to examine.
-3. **Deep stage:** **keep S0 loaded** (don't turn it off) and *add* [S2 select](prompts/LARP_split_S2_select.en.md) and the [criteria & check modules](prompts/LARP_modules.en.md). → say "review the anomalous arguments of [scope]" → it goes deep on just that part.
-4. Leave the map and Gate-0 result from step 1 in place — they become the *carry-over packet* for the next stage.
-
-**Note (English).** The English `S0 common` and `S2 select` are *thin pointers* — each lists which sections of [`LARP.en.md`](prompts/LARP.en.md) to load (only `S1 map` is a full cut). So on the English side, load those listed sections into your sources as the file instructs.
-
-(In a roomy environment where you can paste everything at once, use the integrated [`LARP.en.md`](prompts/LARP.en.md) instead — the split edition is only for environments that *force* you to cut it up.)
 
 ### 5.1 When a point needs outside checking — how to get the deep-research question
 Where a single text can't answer (e.g. is a cited precedent real, does a quote match the original, a V-marked missing piece), the tool doesn't guess — it **writes the check question itself.** How to get it:

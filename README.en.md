@@ -87,7 +87,7 @@ Feed in a document and the tool first gives a *plain-language summary* (everyday
 - Alternative explanations — other ways to read the same facts (e.g. "not fraud, but a failed attempt to juggle debts")
 - Missing evidence — things that should exist if the claim were true, but aren't in the record
 
-It also gives a list of every cited or mentioned piece of evidence, and an opinion on whether the whole document is tilted toward its conclusion from the start.
+It also outputs the **evidence→hypothesis table (DB)** — every cited or mentioned piece of evidence, one per row, connected to *what it is read to mean and which conclusion it reaches*. For each item it marks whether the text answered "was this really made by that person at that time" (forgery/alteration disputes). *Before* reading the body closely, the tool writes down "the evidence that should exist if this conclusion is true," then matches that list against the table and reports the mismatches — *evidence that should exist but doesn't*, *conclusions floating without evidence*. Finally comes an opinion on whether the whole document is tilted toward its conclusion from the start.
 
 Above all — **for each ground that needs checking, it writes you a deep-research question you can paste straight into a search.** It doesn't stop at exposing the hidden premise; it hands you *where to dig* as well. (The tool writes the question; the answer and the verdict stay with deep research and with you.)
 
@@ -120,8 +120,7 @@ See [USAGE.en.md](USAGE.en.md) for details.
 | [`prompts/LARP_lite.en.md`](prompts/LARP_lite.en.md) | Lightweight edition — a one-screen quick check of a **short text** |
 | [`prompts/LARP_verify.en.md`](prompts/LARP_verify.en.md) | Verification layer — an omission-hunt 2nd pass where a separate model finds what the first analysis *missed* |
 | [`prompts/LARP_gate0.en.md`](prompts/LARP_gate0.en.md) | Gate 0 — mechanical preprocessing *before* analysis (redaction gaps, evidence seeds), manual edition for no-code environments |
-| `prompts/LARP_split_*` | **Split edition** — feed the full version in stages in a small-context environment (NotebookLM, etc.): [S0 common](prompts/LARP_split_S0_common.en.md) · [S1 map](prompts/LARP_split_S1_map.en.md) · [S2 select](prompts/LARP_split_S2_select.en.md) (English S0·S2 point to the corresponding sections of LARP.en.md) |
-| [`USAGE.en.md`](USAGE.en.md) | **Full-version guide** — walkthrough + reading every output (ledger·matrix·V·three signals)·2nd pass·verification layer·FAQ |
+| [`USAGE.en.md`](USAGE.en.md) | **Full-version guide** — walkthrough + reading every output (evidence→hypothesis DB·expected-evidence matching·matrix·V·three signals)·2nd pass·verification layer·FAQ |
 | [`USAGE_lite.en.md`](USAGE_lite.en.md) | **Lite guide** — a quick check of a short text (one paste-and-go) |
 | [`docs/introduction.en.md`](docs/introduction.en.md) | Introduction — why this matters |
 | [`examples/worked_example.en.md`](examples/worked_example.en.md) | A worked example (fictional case) |
@@ -129,13 +128,14 @@ See [USAGE.en.md](USAGE.en.md) for details.
 | [`examples/claim_check_vaccine.en.md`](examples/claim_check_vaccine.en.md) | A claim-check example — deep research → analysis → decision ("vaccines don't work") |
 | [`docs/lineage.en.md`](docs/lineage.en.md) | Lineage (Walton·Toulmin·ACH·enthymeme·Popper) and how LARP differs from existing tools |
 | [`docs/appendix_deep.en.md`](docs/appendix_deep.en.md) | Going deeper — the thinking underneath (optional) |
+| [`prompts/archive/`](prompts/archive/) | preserved past versions and absorbed editions (Map-Long, split edition) |
 | [`CHANGELOG.en.md`](CHANGELOG.en.md) | Version history |
 | [`verification/`](verification/) | Verification harness — version regression test (fixed cases + behavior rubric) |
 | [`tools/`](tools/) | **helper tools (advanced · verification)** — code checks over the analysis. The tools below · [plain-language intro](tools/README.en.md) |
 | [`tools/larp_gate0.py`](tools/larp_gate0.py) | Gate 0 code — *before* analysis: strips watermarks, anchors page numbers, scans redaction gaps, seeds the evidence list |
 | [`tools/larp_coverage_audit.py`](tools/larp_coverage_audit.py) | coverage audit — pulls every cited piece of evidence so you can check none was missed in a long text |
 | [`tools/larp_quote_audit.py`](tools/larp_quote_audit.py) | quote audit — checks that sentences the analysis presents as "source quotes" really exist in the source (catches invented quotes) |
-| [`tools/larp_card_audit.py`](tools/larp_card_audit.py) | card/ledger audit — checks the evidence tables for blanks, lumping, and typos |
+| [`tools/larp_card_audit.py`](tools/larp_card_audit.py) | evidence-table audit — checks for blanks, lumping, and typos |
 | [`tools/larp_matrix_audit.py`](tools/larp_matrix_audit.py) | evidence × hypothesis matrix audit — same-source double-counting, non-diagnostic-as-core, empty cells |
 | [`tools/larp_matrix_schema.en.md`](tools/larp_matrix_schema.en.md) | the matrix's data format and how to fill it · [한국어](tools/larp_matrix_schema.md) |
 
