@@ -56,8 +56,27 @@ A short reconstruction block per argument. Three things first:
 | V | evidence that should exist but is absent |
 | ★ | most important to the conclusion (only these go to the 2nd pass unless you pick others) |
 
-### (3) Evidence DB (the tool calls it the "evidence→hypothesis DB")
-Every cited or mentioned piece of evidence appears, *none dropped*, one per row. Each row shows — *where it came from* (something the person said themselves / something heard secondhand / objective material like a document), *grouped by same source* (one person's words counted once), *whether it can tell which side* (see (4)), and *whether its authenticity is disputed*. If the tool flagged "cited but not addressed," those *left-out candidates* show here too — what's missing is visible at a glance.
+### (3) Evidence→hypothesis table (the tool calls it the "DB")
+Every cited or mentioned piece of evidence appears, *none dropped*, one per row — and each piece is connected like a ladder: **what it is read to mean → which intermediate fact it supports → which conclusion it reaches**. Links the text actually asserted are marked `⊢`; bridges the text skipped and the tool filled in are marked `⊦` — the more `⊦` under a conclusion, the less the text itself argued for it.
+
+Each evidence row shows:
+
+- *Where it came from* — something the person said themselves / heard secondhand / objective material like a document.
+- *Grouped by same source* — words from the same person are counted once.
+- *Whether it can tell which side* — can this evidence alone decide which explanation is right (see (4)).
+- *Three separate questions about whether it's genuine* — the tool splits what looks like one question into three: ① was it accepted as evidence (and on what stated ground), ② **was it really made by that person at that time** (forgery/alteration disputes — with a mark for whether the text *answered* this, *only knocked down the other side's claim*, or *never addressed it*), ③ what does its content mean. If evidence with no answer to ② was used to ground the conclusion, the tool warns separately — because "rejecting the other side's claim" is not the same as "confirming it's genuine."
+
+*Left-out candidates* — evidence the text cites but never uses in its argument — show here too, so what's missing is visible at a glance.
+
+### (3-1) Matching against expected evidence (the heart of Pass 1)
+*Before* reading the body closely, the tool writes down "the evidence that should exist in the record if this conclusion is true." After reading, it matches that list against the actual evidence table and reports the mismatches in four kinds:
+
+- **Should exist but doesn't** — expected evidence absent from the material (marked V). Look here first.
+- **Wasn't expected but exists** — surprise evidence; may signal the list of explanations is incomplete.
+- **Conclusions floating without evidence** — no asserted link running all the way down to actual evidence.
+- **Cited but unused evidence** — evidence the text mentions yet never uses in its argument. Itself a point worth checking.
+
+The point is "write it down first, match it later" — write it after reading and you'll just copy what you already saw.
 
 ### (4) Evidence × hypothesis matrix (when it splits into two explanations; a view drawn from the DB above)
 For a "this or that" text, you get a table matching the evidence (rows) against the explanations (columns) — the tool calls it the "matrix," pulled from the (3) DB.
