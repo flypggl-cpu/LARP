@@ -2,6 +2,11 @@
 
 *[한국어](CHANGELOG.md) | English*
 
+## v260710k — 2026-07-14
+
+- `prompts/LARP.md` (+en) §3.10 gains a **verification-return** procedure (between Stages 4 and 5, anytime) — when answers to confirmation questions (Q) come back, the relevant flag transitions to closed (with source) / kept / reopened (new flag on another branch, retroactive) and the result is recorded on the tree. Contract: answers n = transitions n (no silent drops). Verification is completed not by producing questions but by correcting the map with answers — the loop that ran one way now closes.
+- New `verification/cases/case4_long_doc_five_stage.md` (+en) — a behavioral rubric for the five-stage contracts (tree exhaustiveness · checkpoints · hits=flags · flags=blocks+deferrals · verification return). No fixed input (the tester supplies a public long document) — regression testing now guards today's invariants against silent breakage by future edits.
+
 ## v260710j — 2026-07-14
 
 - `prompts/LARP.md` (+en): **§3.10 reorganized as the "five-stage execution mode — one tree."** The only artifact is the Stage-1 full tree; every procedure deepens it — plant (tree) → deepen (M·DB on the designated branch; the DB table is that branch exported as a table) → shake (recon/test hits pinned on tree nodes as flags ⚑) → interrogate (block·six questions·modules per flag/★) → rewrite (report). Old Scene 2 (optional diagram) absorbed into Stage 2; the selection's interrogation moved to Stage 4. Basis: the artifact type changing at each step was the common root of comprehension failures and omissions (buried tree, test hits never promoted to blocks) — the user now just follows one growing map.
