@@ -4,7 +4,7 @@
 
 > This document covers running the **full version** and reading its results. For a *quick check of a short text*, see the [Lite guide](USAGE_lite.en.md); for *which tool, when*, see the [README](README.en.md).
 
-**One loop looks like this.** Paste the prompt → paste the text to analyze → the tool lays out the argument, produces a *first-pass analysis*, and **stops** → you pick where to look deeper → it analyzes only those spots in a *second pass* → **you judge.** No install.
+**One loop looks like this — one tree grown in five stages.** Paste the prompt → paste the text → ① the tool unfolds the whole text's argument as a **tree map** and stops → ② you pick a branch (issue) and a detailed table attaches to each piece of its evidence → ③ the map comes back with **flags (⚑)** pinned where something looks off → ④ you pick a flag and only that spot is interrogated in detail → ⑤ finally, ask "rewrite it as a report" and you get readable prose. The same map grows at every stage, so there is nothing new to learn — **you judge.** No install.
 
 ---
 
@@ -14,7 +14,7 @@
 
 1. **Open a chatbot.** Start a new conversation at chatgpt.com or claude.ai (the free tier works).
 2. **Paste the two prompt files.** Copy the *entire* contents of [`prompts/LARP.en.md`](prompts/LARP.en.md) as your first message, then paste [`prompts/LARP_modules.en.md`](prompts/LARP_modules.en.md) right after it (long is fine). If you'll use it often, put them once into the chatbot's "project" or "custom instructions."
-3. **Paste the text to analyze — whole.** A long judgment or paper goes in as is: the tool first shows **the list of disputed issues and stops.** Point at what you're curious about in your own words — "was it right to believe F's statements?" You don't need numbers or symbols. (A short text skips this step and goes straight to analysis.)
+3. **Paste the text to analyze — whole.** Do not attach a PDF file as is — **copy the content as text** and paste it (file attachments break page marks and increase misses). A long judgment or paper goes in as is: the tool first shows **the list of disputed issues and stops.** Point at what you're curious about in your own words — "was it right to believe F's statements?" You don't need numbers or symbols. (A short text skips this step and goes straight to analysis.)
    - One check: if your pasted text keeps its page marks (like `- 12 -`), you'll also get "open page N" guidance.
    - If the chatbot truncates the text as too long → the fallback in **§4** (paste one issue's section only).
 4. **Read the result, pick where to dig.** The tool leads with a *plain-language summary*, marks the suspicious spots, then **stops** (how to read it: **§2**). Say "continue" and it digs into the core (★) on its own, or designate in your own words (**§3**). At the end, ask "write it up as a report" and it rewrites everything in a reader-friendly order. The verdict is yours, not the tool's.
@@ -32,20 +32,20 @@
 
 ---
 
-## 2. Reading the result — what the first pass produces
+## 2. Reading the result — what each stage produces
 
-> If the output mentions "Scene 1 / 3 / 4" — those are the map → selection → report stages, and "1st/2nd pass" is just an easy name for that flow.
+> If the output mentions "Stage 1–5" — those are ① tree map ② evidence table ③ flags ④ interrogation ⑤ report. Sections (1)–(5) below note which stage each output belongs to.
 
 **A *plain-language summary* (everyday prose, no codes or jargon) comes first — read that first.** It states, in plain words: this text's conclusion, the assumption it silently leans on, whether the decisive-looking evidence really discriminates, what actually discriminates, and what's missing. Below is how to read the *detail* that follows it.
 
-### (1) Argument blocks
+### (1) Argument blocks (Stage 4 — when a flag is interrogated)
 A short reconstruction block per argument. Three things first:
 
 - **Hidden premise** — an assumption the text silently leans on (tagged `implicit`).
 - **Split** — where the stated reason differs from the one actually doing the work. Look here first.
 - **Six-question result** — the numbers that came back "no / unclear." The reason to doubt is there.
 
-### (2) Logic map (symbols)
+### (2) Logic map (symbols) — the same symbols from the Stage-1 tree to the end
 
 | Symbol | Meaning |
 |---|---|
@@ -54,9 +54,10 @@ A short reconstruction block per argument. Three things first:
 | L | the condition that made it look this way (not written; reconstructed) |
 | H | alternative explanation (rival hypothesis) (not written; reconstructed) |
 | V | evidence that should exist but is absent |
-| ★ | most important to the conclusion (only these go to the 2nd pass unless you pick others) |
+| ★ | most important to the conclusion (interrogated by default unless you pick others) |
+| ⚑ | caught by the reconciliations/tests — marked for interrogation (Stage 3) |
 
-### (3) Evidence→hypothesis table (the tool calls it the "DB")
+### (3) Evidence→hypothesis table (Stage 2 — attaches to the branch you picked; the tool calls it the "DB")
 Every cited or mentioned piece of evidence appears, *none dropped*, one per row — and each piece is connected like a ladder: **what it is read to mean → which intermediate fact it supports → which conclusion it reaches**. Links the text actually asserted are marked `⊢`; bridges the text skipped and the tool filled in are marked `⊦` — the more `⊦` under a conclusion, the less the text itself argued for it.
 
 Each evidence row shows:
@@ -68,7 +69,7 @@ Each evidence row shows:
 
 *Left-out candidates* — evidence the text cites but never uses in its argument — show here too, so what's missing is visible at a glance.
 
-### (3-1) Matching against expected evidence (the heart of Pass 1)
+### (3-1) Matching against expected evidence, and flags (⚑) (Stage 3 — marking what looks off)
 *Before* reading the body closely, the tool writes down "the evidence that should exist in the record if this conclusion is true." After reading, it matches that list against the actual evidence table and reports the mismatches in four kinds:
 
 - **Should exist but doesn't** — expected evidence absent from the material (marked V). Look here first.
@@ -77,6 +78,8 @@ Each evidence row shows:
 - **Cited but unused evidence** — evidence the text mentions yet never uses in its argument. Itself a point worth checking.
 
 The point is "write it down first, match it later" — write it after reading and you'll just copy what you already saw.
+
+Mismatches and test hits come back as **flags (⚑)** pinned on the relevant branch of the tree map — each flag carries a one-line reason, and the tool asks "which flag shall I interrogate?" and stops.
 
 ### (4) Evidence × hypothesis matrix (when it splits into two explanations; a view drawn from the DB above)
 For a "this or that" text, you get a table matching the evidence (rows) against the explanations (columns) — the tool calls it the "matrix," pulled from the (3) DB.
@@ -90,7 +93,7 @@ In a word — read by *which side it points to*, not *whether it merely sounds c
 
 > Also check the **completeness status** at the head of the table — *all evidence included* or *coverage unconfirmed (provisional)*. **An evaluation with missing evidence is provisional** (one missing item, if it discriminates, can flip the conclusion). If unconfirmed, first check that all evidence is in via §5.3.
 
-### (5) Opinion on the whole text (three signals)
+### (5) Opinion on the whole text — three signals (Stage-3 tail)
 At the end, an opinion on the whole text — e.g., "if all three signals (unstated assumptions tilting one way · leaning on fits-both evidence · built so no material could shake it) point the same way, the text may have fixed its conclusion before gathering evidence."
 
 → Then the tool stops and asks "where shall we look deeper?" (**§3**).
@@ -156,7 +159,7 @@ Either order works — deep research→LARP or LARP→deep research.
 → Example: [checking the claim "vaccines don't work"](examples/claim_check_vaccine.en.md)
 
 ### 5.3 Catching dropped evidence and made-up quotes with code — the verification layer (optional)
-**Three things first:** ① a better model misses far less (small free models drop a lot on long texts). ② If the result feeds a decision that matters, run the checks below. ③ Even with everything run, some omission remains — the last check is the human's. (Measurement record kept privately.)
+**Three things first:** ① a better model misses far less — feeding a long judgment to the cheapest model has been observed, in a real case, to collapse the procedure itself (small free models are for short texts). ② If the result feeds a decision that matters, run the checks below. ③ Even with everything run, some omission remains — the last check is the human's. (Measurement record kept privately.)
 
 The analysis itself already surfaces *missing-evidence and omission candidates*, so that's usually enough. But when **a miss would be costly**, check from outside the two risks a model can't catch alone (*silent omission*, *invented quotes dressed as source quotes*).
 

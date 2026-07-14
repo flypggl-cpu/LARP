@@ -2,6 +2,17 @@
 
 *[한국어](CHANGELOG.md) | English*
 
+## v260710j — 2026-07-14
+
+- `prompts/LARP.md` (+en): **§3.10 reorganized as the "five-stage execution mode — one tree."** The only artifact is the Stage-1 full tree; every procedure deepens it — plant (tree) → deepen (M·DB on the designated branch; the DB table is that branch exported as a table) → shake (recon/test hits pinned on tree nodes as flags ⚑) → interrogate (block·six questions·modules per flag/★) → rewrite (report). Old Scene 2 (optional diagram) absorbed into Stage 2; the selection's interrogation moved to Stage 4. Basis: the artifact type changing at each step was the common root of comprehension failures and omissions (buried tree, test hits never promoted to blocks) — the user now just follows one growing map.
+- **Anti-skip chain**: ① each stage reprints the previous stage's contract numbers (checkpoint) — unmet means no entry ② per-stage contracts (branch tree E = DB E / ★ = M rows / total hits = flags / flags = blocks + reasoned deferrals) ③ every output item must reference a tree node ID — an orphan output is an omission signal ④ tree reprints cover only the updated branch. Run card split into a Stages-2·3 turn and a Stage-4 turn (blocks·six questions moved to Stage 4).
+- USAGE (+en): the one-loop description and §2 realigned to the five stages; ⚑ added to the symbol table.
+- Analysis machinery unchanged — decomposition engine, six questions, modules, and the DB schema untouched; only the execution shell and output rules were rearranged.
+
+## v260710i — 2026-07-14
+
+- Scene-1 tree W·L·H·V notation revised **reader-first** — tags in plain words (hidden assumption·deciding criterion·other explanation·missing evidence, symbol in parentheses), each line a complete sentence with a fixed form (no compressed noun phrases), and a mandatory legend at the head of the tree. Basis: the run19 tree met its contract but its terse noun-phrase style was hard for the user to parse — "if the user cannot understand it, it has failed" (purpose 1).
+
 ## v260710h — 2026-07-11 — tools: added a quantitative-validity audit (closed-form statistics)
 
 Prompt and modules unchanged; addition to `tools/` only. Adds to the verification layer a deterministic audit slice that catches *anomalies inside the numbers* — coding, slice by slice, the one gap that neither deep research nor the existing apparatus filled for papers / statistical documents (the internal validity of quantitative inference).
@@ -9,6 +20,14 @@ Prompt and modules unchanged; addition to `tools/` only. Adds to the verificatio
 - **`tools/larp_stat_audit.py`** (pure Python, no dependencies, special functions built in — scipy not required): recompute-and-compare reported p·t·χ²·CI, multiple-comparison survival (Bonferroni·BH), meta-analysis heterogeneity (Q·I²·τ²) and Egger funnel asymmetry, GRIM (can integer data yield that mean), impossible values (|r|>1, negative variance, p>1) and p-value reporting errors. Runs with no install in a code-running chatbot; exit code 1 on any inconsistency.
 - **Keeps the no-verdict boundary**: checks only the *internal consistency and reproducibility* of reported numbers; does not judge the science — truth, causation, study design. A missing reproduction input stays `cannot_verify` (not reproducible = a finding). Model sensitivity, causal identification, and Bayesian criticism are delegated to specialized tools / a statistician.
 - Input schema & extraction discipline: `tools/larp_stat_schema.md`(·en), registered in tools/README. Same family of deterministic audit as `coverage_audit` and `quote_audit` ("structure by code, judgment by the human").
+
+## v260710h — 2026-07-14
+
+- `prompts/LARP.md`·`LARP.en.md`: **Scene 1 promoted to the "full-argument tree map"** — for long documents the first artifact is no longer an issue list/skeleton but the full tree, the canonical artifact of user understanding: every conclusion (C) → all claims (A, ★) → all evidence (E), exhausted within each issue section following the document's own recitation order (no "…etc"), plus one line each of W·L·H·V per claim, fork marks, and a page anchor on every row. The turn is devoted to the tree (no blocks·DB·matrix). Basis: in real use the tree was built as run-card step 6 (after tokens were spent) and came out impoverished — users understand the document through the tree, and tree-first also wins on recall (measured 97% vs ledger-first 91%).
+  - **Tree output contract (closed by numbers)**: claim rows = issue count / seeds n = tree E n + additions m / an A without W·H·V is [incomplete] — a failing contract makes Pass 1 incomplete. (Direction B of the external failure report, applied to the tree.)
+  - **Overflow = turn split**: no compression; continue issue by issue.
+  - Run-card step 6 becomes a tree *update* (folding V·promotions into the designated branch); the §7.6 Scene-1 evidence constraint reconciled to "exhaustive listing (atomization·evaluation belong to the 2nd pass)".
+- TestD (§7.10) gains a third bridge tag — **bridges converting temporal relation into substantive connection** ("same day / right after / around then → linked·aware·conspired"). Basis: run18's residual gap (the timing-synchronization node escaped all three promotion triggers) — generalized by extending TestD's existing enumeration rather than adding dedicated machinery; a TestD hit is promotion trigger ①, so blocks and the six questions follow automatically.
 
 ## v260710g — 2026-07-10
 
@@ -23,6 +42,9 @@ Prompt and modules unchanged; addition to `tools/` only. Adds to the verificatio
 - `prompts/LARP_split_S0_common·S1_map·S2_select.md` (+en) moved to `prompts/archive/LARP_split_*_v260703g.*`. Basis: the three files total 129KB — larger than the full version (118KB) — and their sync base stopped at v260703g, silently producing analyses without the escalation rule or expected-evidence reconciliation; maintenance cost exceeds benefit. If a low-capacity edition is needed later, the schema edition (5.6KB, measured 10/11 anomaly capture) is the better seed. USAGE §5.0 split section removed; README list cleaned.
 - README (+en): the "What it shows" section now introduces the evidence→hypothesis DB and expected-evidence matching; stale terms (ledger/card) cleaned in the USAGE and card_audit rows; a `prompts/archive/` row added. USAGE (+en) §2 (3) rewritten as how to read the DB, with a new (3-1) "Matching against expected evidence."
 - `prompts/LARP_modules.md` (+en): one bottom-up warning line added at the head of section A — no top-down sweeping from group headings; compare detailed criteria individually, then map upward (a copy of the body's §8 rule). Basis: a real user case where consulting general criteria first dropped detailed anomalous arguments.
+- `prompts/LARP.md` (+en): new **promotion rule (★ must not be the only path)** — hits in the §7.10 reconciliations/tests, rejections caught by gate-0 rejection seeds, and interpretation-contested/double-direction/discriminating-axis evidence must get a block and the six-question interrogation regardless of conclusion relevance (★). Run-card step 5c "promotion feedback" added. Basis: analysis of a real external failure (g version + 148-page PDF fed directly + cheapest model) — Pass 1 ran fine, but block promotion was bound to ★ alone, leaving five decisive sub-nodes folded inside big issues outside the blocks. run17 (same document, same edition, Sonnet + seeds) did list those nodes in §7.10, so only the list→block feedback loop was added (no new machinery).
+- USAGE (+en): §1 warning against feeding PDFs directly (paste as text); §5.3 real-case warning about the cheapest models.
+- Rejected on record: restoring the split edition (the failure report's own re-correction — the Pass-1 gate did not collapse) and making gate-0 mandatory (conflicts with the measured ~97% via issue designation and the UX principle).
 
 ## v260710f (2026-07-10) — Slimming executed: the discriminant's second deletion
 
