@@ -2,6 +2,12 @@
 
 *[한국어](CHANGELOG.md) | English*
 
+## v260710l — 2026-07-14
+
+- Stage 5 (report) becomes **mandatory-to-ask** — when Stage 4 finishes, the tool must ask "shall I organize this into a report? (you can also look at more branches)" and stop. Generation only on request (auto-generation stays forbidden — new-assertion and waste risks), but skipping the question is a skipped stage. The question is fixed at the end of the Stage-4 run-card turn; USAGE one-loop text and the case4 rubric aligned. Basis: leaving it "on request" only means users never learn the report stage exists.
+- The Stage-1 evidence-exhaustion wording made document-neutral ("a judgment's order of recitation; a paper's chapters and citation order").
+- USAGE (+en) readability pass applied: §1-3 first-screen description updated to the tree map (fixing the stale 'issue list'), §1-4 report sentence aligned to 'the tool asks first' (v260710l), symbol table and body terms unified with the tree output (hidden premise→hidden assumption, condition→deciding criterion), the '2nd pass' §3 title replaced with 'picking branches and flags', and a one-line gloss for deep research at first mention.
+
 ## v260710k — 2026-07-14
 
 - `prompts/LARP.md` (+en) §3.10 gains a **verification-return** procedure (between Stages 4 and 5, anytime) — when answers to confirmation questions (Q) come back, the relevant flag transitions to closed (with source) / kept / reopened (new flag on another branch, retroactive) and the result is recorded on the tree. Contract: answers n = transitions n (no silent drops). Verification is completed not by producing questions but by correcting the map with answers — the loop that ran one way now closes.

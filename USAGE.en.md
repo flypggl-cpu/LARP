@@ -14,10 +14,10 @@
 
 1. **Open a chatbot.** Start a new conversation at chatgpt.com or claude.ai (the free tier works).
 2. **Paste the two prompt files.** Copy the *entire* contents of [`prompts/LARP.en.md`](prompts/LARP.en.md) as your first message, then paste [`prompts/LARP_modules.en.md`](prompts/LARP_modules.en.md) right after it (long is fine). If you'll use it often, put them once into the chatbot's "project" or "custom instructions."
-3. **Paste the text to analyze — whole.** Do not attach a PDF file as is — **copy the content as text** and paste it (file attachments break page marks and increase misses). A long judgment or paper goes in as is: the tool first shows **the list of disputed issues and stops.** Point at what you're curious about in your own words — "was it right to believe F's statements?" You don't need numbers or symbols. (A short text skips this step and goes straight to analysis.)
+3. **Paste the text to analyze — whole.** Do not attach a PDF file as is — **copy the content as text** and paste it (file attachments break page marks and increase misses). A long judgment or paper goes in as is: the tool first unfolds **the whole text's argument as a tree map and stops** (which conclusion stands on which claims and evidence, at a glance). Point at what you're curious about in your own words — "was it right to believe F's statements?" You don't need numbers or symbols. (A short text skips this step and goes straight to analysis.)
    - One check: if your pasted text keeps its page marks (like `- 12 -`), you'll also get "open page N" guidance.
    - If the chatbot truncates the text as too long → the fallback in **§4** (paste one issue's section only).
-4. **Read the result, pick where to dig.** The tool leads with a *plain-language summary*, marks the suspicious spots, then **stops** (how to read it: **§2**). Say "continue" and it digs into the core (★) on its own, or designate in your own words (**§3**). At the end, ask "write it up as a report" and it rewrites everything in a reader-friendly order. The verdict is yours, not the tool's.
+4. **Read the result, pick where to dig.** The tool leads with a *plain-language summary*, marks the suspicious spots, then **stops** (how to read it: **§2**). Say "continue" and it digs into the core (★) on its own, or designate in your own words (**§3**). When you are done, the tool itself asks "shall I organize this into a report?" — say yes and it rewrites everything in a reader-friendly order. The verdict is yours, not the tool's.
 
 > Gate-0 preprocessing for very long documents has moved to the advanced features in **§5** — you won't normally need it.
 
@@ -41,7 +41,7 @@
 ### (1) Argument blocks (Stage 4 — when a flag is interrogated)
 A short reconstruction block per argument. Three things first:
 
-- **Hidden premise** — an assumption the text silently leans on (tagged `implicit`).
+- **Hidden assumption (W)** — an assumption the text silently leans on (tagged `implicit`).
 - **Split** — where the stated reason differs from the one actually doing the work. Look here first.
 - **Six-question result** — the numbers that came back "no / unclear." The reason to doubt is there.
 
@@ -50,10 +50,10 @@ A short reconstruction block per argument. Three things first:
 | Symbol | Meaning |
 |---|---|
 | C / A / E | conclusion / claim / evidence (written in the text) |
-| W | hidden premise (not written; reconstructed) |
-| L | the condition that made it look this way (not written; reconstructed) |
-| H | alternative explanation (rival hypothesis) (not written; reconstructed) |
-| V | evidence that should exist but is absent |
+| W | hidden assumption — what the conclusion silently leans on, unwritten (reconstructed) |
+| L | deciding criterion — a spot that changes with the standard you apply (reconstructed) |
+| H | other explanation — another way to read the same evidence (reconstructed) |
+| V | missing evidence — should exist but is not in the material |
 | ★ | most important to the conclusion (interrogated by default unless you pick others) |
 | ⚑ | caught by the reconciliations/tests — marked for interrogation (Stage 3) |
 
@@ -100,7 +100,7 @@ At the end, an opinion on the whole text — e.g., "if all three signals (unstat
 
 ---
 
-## 3. Designating where to go deeper (2nd pass)
+## 3. Designating where to go deeper — picking branches and flags
 
 **Your own words work.** Write what you're curious about as is — "is there actually any basis for the part where he allegedly ordered it?", "was it right to believe F's statements?" — and the tool finds the matching argument and confirms: "I understood it as ___ (p.N). Is that right?" Just saying "continue" takes only the core (★).
 
@@ -114,7 +114,7 @@ argument 2      ← by number
 
 To look at just one sentence quickly: `Just this argument, skip the map. "...source sentence..."`
 
-The 2nd pass also leads with a *plain-language summary* (what changed, what remains).
+The deep-dive result also leads with a *plain-language summary* (what changed, what remains).
 
 ---
 
@@ -142,6 +142,8 @@ But if your chatbot's input limit is small and **a long document gets truncated*
 **Gate-0 preprocessing for very long documents (court rulings, etc.).** Before analysis, run [Gate 0](prompts/LARP_gate0.en.md) first — a mechanical sweep of watermarks, page numbers, *redaction/citation gaps*, and evidence tags gives you a *checklist* to reconcile the later analysis against (in a code-running environment, [`tools/larp_gate0.py`](tools/larp_gate0.py) is more accurate).
 
 ### 5.1 When a point needs outside checking — how to get the deep-research question
+
+*Deep research = the feature that has an AI do sourced research for you (available in ChatGPT·Claude·Gemini).*
 Where a single text can't answer (e.g. is a cited precedent real, does a quote match the original, a V-marked missing piece), the tool doesn't guess — it **writes the check question itself.** How to get it:
 
 1. **Just run the analysis.** When a point needs confirming, the tool attaches a question right there — you don't have to ask. (If it doesn't, add one line: "turn the points that need checking into deep-research questions.")
@@ -153,7 +155,7 @@ For a scattered claim with no source text (a news/social-media claim), you can h
 
 1. **Give it the claim instead of a document and say "there's no source — gather the grounds first."** The tool produces a deep-research query that collects the claim's *strongest* form together with *authoritative rebuttals* (with safeguards against strawmanning and low-quality sources).
 2. **Paste that query into a deep-research AI to retrieve the material.** The retrieved material becomes the "target" and enters normal analysis.
-3. **From there, as in §1.** See the hidden premises and missing evidence, run the tool's follow-up check questions (§5.1) through deep research, and you decide whether to accept.
+3. **From there, as in §1.** See the hidden assumptions and missing evidence, run the tool's follow-up check questions (§5.1) through deep research, and you decide whether to accept.
 
 Either order works — deep research→LARP or LARP→deep research.
 → Example: [checking the claim "vaccines don't work"](examples/claim_check_vaccine.en.md)
