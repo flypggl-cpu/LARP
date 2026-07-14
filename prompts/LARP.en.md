@@ -1,4 +1,4 @@
-# LARP: Layer-grounded Argument Reasoning Probe (AIVA-L-CALM v260710k)
+# LARP: Layer-grounded Argument Reasoning Probe (AIVA-L-CALM v260710l)
 
 *[한국어](LARP.md) | English*
 
@@ -393,6 +393,7 @@ Gate 1 (length): if the document exceeds one screen (~15 pages), no single pass.
    → end with "which flag (or ★) shall I interrogate?" and STOP that turn.
 [Stage 4 turn — per designated spot (or all ★+flags on "continue")]
 7. Minimal reconstruction block · six-question interrogation (§7·§7.5) + the modules its type calls → [done: p blocks + q deferrals = designated ★+flag count (deferral reason mandatory)]
+   → when the designated spots are done, always ask and stop: "More branches (flags), or shall I write the report?" (the Stage-5 question — never skip)
 Gate 2 (stop): stop at every stage boundary. If the previous stage's [done] contract is unmet, do not enter the next stage — repair first.
 Gate 3 (symmetry·quotation): for each ★ claim, visibly print one line of the defense's (rival's) strongest rebuttal (§7.3), and mark any redacted/blank quotation as 'no basis in the document (quote gap)' rather than inventing it (§3.5-2). If either is missing, treat that ★ as incomplete and fix before proceeding.
 Gate 4 (verification layer): until the Pass-1 output passes the verification layer (LARP-Verify, §3.7) — quote-source comparison, coverage comparison, omission-hunt 2nd pass — mark it 'unverified'. Do not use unverified output as a settled ground.
@@ -485,7 +486,7 @@ There is only **one artifact: the tree** (the full-argument tree of Stage 1), an
 ```text
 [Surface — what the user sees. Turn plan: Stage 1 = first turn / Stages 2·3 = one turn after designation / Stage 4 = the next turn / Stage 5 = on request]
 Stage 1  Plant — full-argument tree map (the canonical artifact of user understanding — this turn is devoted to the tree; form and symbols per §7.6):
-        every conclusion (C) the document disputes → all claims (A) per conclusion (★ marked, no lumping) → all evidence (E) under each A — exhausted within each issue section, following the document's own order of recitation (no "…etc"; tagged and name-only items alike). Per A, the four lines below + a fork mark.
+        every conclusion (C) the document disputes → all claims (A) per conclusion (★ marked, no lumping) → all evidence (E) under each A — exhausted within each issue section, following the document's own order of presentation (a judgment's order of recitation; a paper's chapters and citation order) (no "…etc"; tagged and name-only items alike). Per A, the four lines below + a fork mark.
         [Reader-first notation — write the tags in plain words with the symbol in parentheses. Each line must be a complete sentence that makes sense on its own, not a compressed noun phrase]
         Hidden assumption (W)   form: "this claim stands on the unwritten assumption that '…'".
         Deciding criterion (L)  form: "it changes depending on whether you take it as … or as … — the text chose the former" (exposing what made it look that way).
@@ -503,7 +504,8 @@ Stage 4  Interrogate — for each designated flag (or, on "continue", all ★+fl
         [Contract] flag count = interrogation-block count + explicit deferrals (reason mandatory). An anomaly newly found without a flag gets its flag registered retroactively, then interrogated. The body of a flagging sentence is plain prose — it must convey what is anomalous and why even when read without the symptom code or group number, which are a parenthetical appendage. Evidence appearing in the selection gets a one-line introduction on first appearance (what it is · who made it · its gist), so the user can understand it without the source text. Priority is sensitivity — start from the joint whose collapse would collapse the conclusion. Accompany the display of key evidence (below) *before* the opinion.
 (anytime)  Verification return — when answers to confirmation questions (Q) come back (the user pastes deep-research results or record checks), transition the relevant flag to one of three states and record the result at its place in the tree: closed (confirmed — with the source that closed it) / kept (check failed or unconfirmed — the gap stands) / reopened (if a new fact touches another branch, register a new flag there retroactively). An unsourced answer is not accepted as fact (existing rule). Verification does not end at producing questions — this transition, correcting the map with answers, completes it.
         [Contract] answers pasted n = state transitions n (no silent drops — if a transition is impossible, state why and keep).
-Stage 5  Rewrite — report (on request): the final document that rewrites the output of Stages 1–4 into the reader's order of understanding. The order of analysis and the order of presentation differ (§1-0) — Stages 1–4 are the order of analysis; the report is the order of understanding. Leaving the selection output as-is hands over a record of inspection, not understanding.
+Stage 5  Rewrite — report: the final document that rewrites the output of Stages 1–4 into the reader's order of understanding.
+        **Asking is mandatory** — when Stage 4 finishes, always ask: "Shall I organize the analysis so far into a readable report? (You can also look at more branches.)" Generate only if the user wants it — but skipping the question and ending is a skipped stage. The order of analysis and the order of presentation differ (§1-0) — Stages 1–4 are the order of analysis; the report is the order of understanding. Leaving the selection output as-is hands over a record of inspection, not understanding.
         [Report discipline — transplanted from the investigation-pack's second pass]
         · No new assertions: do not create in the report any fact, question, or opinion absent from Stages 1–4. If a new question appears while writing, do not slip it into the prose — add it to the ledger and supplement the analysis.
         · Grounds by ID reference: every statement must touch a selection item · S · Q (you need not expose the ID in the prose, but do not write a sentence that touches none).
