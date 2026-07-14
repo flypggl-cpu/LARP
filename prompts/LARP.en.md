@@ -1,4 +1,4 @@
-# LARP: Layer-grounded Argument Reasoning Probe (AIVA-L-CALM v260710l)
+# LARP: Layer-grounded Argument Reasoning Probe (AIVA-L-CALM v260710m)
 
 *[한국어](LARP.md) | English*
 
@@ -153,11 +153,7 @@ Input confirmed facts, document statements, raw material, evidence, observations
 Fact judgment / legal judgment / investigative review / investment judgment / emotional sorting / writing / decision-making / counter-hypothesis review / other.
 
 [Output range]
-Choose summary / standard / deep. If unspecified, use standard.
-The meaning of each range:
-  Summary: top conclusion-relevance (★) candidates only, briefly + the argument map (indented tree) + the 7.7 three signals. Minimal reconstruction blocks for ★ candidates only, in short form.
-  Standard (default): minimal reconstruction blocks for all extracted candidates + the argument map + through the 7.7 three signals (= the full first pass). Second-pass modules come after user designation.
-  Deep: in addition to standard, apply the second-pass detailed modules immediately to the high conclusion-relevance paths without waiting for user designation.
+Follow the five-stage turn plan (§3.10) — there is no separate range selection. Volume is regulated by the user's "more conservative / more aggressive" and "continue" instructions.
 ```
 
 If the target is not a single text but a public claim scattered across the world (e.g., flat-earth theory) and no source text to examine is given, first assemble the target argument with the **acquisition mode** of §3.5-3 before decomposition, then enter §5 decomposition.
@@ -366,7 +362,7 @@ A check tacked on formally after the output is self-justification, not self-chec
 
 ---
 
-## 3.6 Pass-1 execution run-card (fixed order — follow this order; print [done] at each step)
+## 3.6 Execution run-card (fixed order — follow this order; print [done] at each step)
 
 It compresses the sprawling spec onto one screen. The body below is the detailed reference; execution follows this order.
 
@@ -377,12 +373,12 @@ Gate 1 (length): if the document exceeds one screen (~15 pages), no single pass.
     tree is the canonical artifact through which the user understands the document — produce no
     other artifact (blocks·DB·matrix) in this turn; devote it to the tree. When the user designates
     an issue, enter §5 on that scope only.
-  → Build the map and ledger by sequentially exhausting ~10-page segments (by the document's own
+  → Build the tree (Stage 1) and DB (Stage 2) by sequentially exhausting ~10-page segments (by the document's own
     page numbers) — reading the whole text and then drawing from memory in one pass is forbidden
     (measured to be where the middle gets lost). Evidence cited only by name (lectures, remarks,
     interviews, press releases, memos, official letters, minutes, correspondence, immigration
     records, fact-inquiry replies, in-court testimony) is the most common loss — register it in
-    the ledger on first appearance.
+    the tree·DB on first appearance.
 [Stages 2·3 turn — after user designation, in this order. Reprint Stage-1 contract numbers (seeds n/n · claim count) at the head of the turn]
 1. Object-perception & propositionalization (§5~6) — internal work → [done: N claims + each verdict orientation]
 2. Layer–argument bridge (§6.5) — internal work      → [done: N issues]
@@ -438,14 +434,14 @@ Plain-summary rules:
 - Answer: ① what is this text's conclusion  ② what assumption does it silently lean on (in plain words)
   ③ does the decisive-looking evidence actually discriminate, or does it fit any explanation
   ④ what actually discriminates, and how solid is it  ⑤ what should be there but is missing
-- 'Finding first, the working later.' Cards, ledger, matrix, map, group tags go after the summary as 'grounds / detail'.
+- 'Finding first, the working later.' M rows, DB, matrix, group tags go after the summary as 'grounds / detail' (the tree is the exception — it is Stage 1's first artifact).
 - Don't use a term without a gloss: diagnosticity→'the power to tell which side', non-diagnostic→'fits both,
   so it doesn't decide', warrant/hidden premise→'an unstated assumption', layer-shift→'covering one layer's
   question with another layer's answer', etc.
 - Don't fill the human summary with node codes — codes are for the detail, the map, and verification.
 ```
 
-The detail after the summary (blocks, ledger, matrix, map) stays as is, for verification and accumulation — but it is *grounds the reader opens if they want*, not the result they read first.
+The detail after the summary (blocks, DB, matrix) stays as is, for verification and accumulation — but it is *grounds the reader opens if they want*, not the result they read first.
 
 \---
 
@@ -455,7 +451,7 @@ Pass-2 detailed analysis (and the next turn of Gate-5 split execution) takes as 
 
 ```text
 [Packet contents — carrying only this is enough for the next scene / next session to stand. Fixed field names (the investigation-pack handoff-protocol style)]
-Document·edition | Scope | List of conclusion nodes | List of hypotheses | Ledger reconciliation (seeds n/n · rebuttals m/m) |
+Document·edition | Scope | List of conclusion nodes | List of hypotheses | DB reconciliation (seeds n/n · rebuttals m/m) |
 S-ledger (all) | Q-ledger (all, with status) | Residual list (items dropped in compression) | Top-priority next check
 [Legacy-format compatible items]
 - Document identity: document name · analysis edition (version) · Gate-0 anchor basis (the document's own page numbers)
@@ -476,7 +472,7 @@ S-ledger (all) | Q-ledger (all, with status) | Residual list (items dropped in c
 ## 3.10 Five-stage execution mode — one tree (default)
 
 There is only **one artifact: the tree** (the full-argument tree of Stage 1), and every subsequent procedure deepens that same tree stage by stage — plant it (Stage 1) → deepen it (Stage 2) → shake it (Stage 3) → interrogate it (Stage 4) → rewrite it (Stage 5). The user looks at the same map each stage and only follows what has newly grown. Pipeline direction: plant → user designation → full depth on the designated branch only. Analysis happens *after* designation. No approval gates, no schedule of evaluative language, no verdict fields — the user's next designation *is* the next stage, and the intervening Q&A is not formalized (if unsure, ask; the conversation does that work).
-(Legacy scene labels: Scene 1 = Stage 1, Scenes 2·3 = Stages 2–4, Scene 4 = Stage 5.)
+(Legacy labels: Scene 1 = Stage 1, Scenes 2·3 = Stages 2–4, Scene 4 = Stage 5 / '1st pass' = Stages 1–3, '2nd pass' = Stage 4.)
 
 [Stage chain — anti-skip]
 · Checkpoint: each stage starts by reprinting the previous stage's contract numbers. If the previous contract is unmet, do not enter the next stage — repair first.
@@ -526,13 +522,13 @@ Targets (limited to three): ① evidence with an interpretive dispute stated wit
 Format: juxtaposition of source fragments (by direction, with page anchors) + juxtaposition of readings (who reads it how) + one line of authoring context. The opinion is an appendage after the display, not a substitute for it.
 
 [Interior — the AI's internal discipline. To the user it appears only as the tail's reconciliation numbers]
-1. Scope-exhaustive ledger (§7.9): exhaust the Gate-0 evidence seeds + rebuttal seeds through the scope filter.
+1. Scope-exhaustive DB (§7.9): exhaust the Gate-0 evidence seeds + rebuttal seeds through the scope filter.
 2. Two ledgers: the open-questions ledger (Q — factual questions) and the argument-opinion ledger (S — argumentative weaknesses / structural opinions that do not convert into factual questions: common-source convergence, summary-level dependence, rebuttal-surfaceness, etc.). An opinion gets an S ID the instant it arises; no deletion or summarizing; carried cumulatively in the packet.
 3. ID-reference integrity: every flag and question in the final output references a node/evidence/S/Q ID. No item without an ID. The tail's "ledger n / reflected n" reconciliation — if the numbers don't match, the loss is exposed.
 4. Preserve by compression: items dropped from the summary/briefing are moved to the residual list (packet), not deleted.
-5. Intermediate-proposition reconciliation (reinforcing §7.5): unfold the intermediate propositions the designated conclusion needs as rows, and reconcile whether each has a documentary ground. A required proposition with no ground = a candidate gap axis.
-5-1. Pre-registration settlement (closing the hypothesis–expected-evidence loop): for every item of the pre-registration (§3.5-6 · Module G · institutional expected premises), assign a settlement after the ledger is complete — met (which evidence corresponds) / absent (three branches: not-recorded · not-collected · non-existent; if indistinguishable, a confirmation instruction) / unconfirmed. A pre-registration that is not settled is decoration — the reason for registering (blocking post-hoc fitting and making the gap visible) is completed at settlement. An absence of the "essential" grade is the top candidate for a V node.
-6. Documentary-evidence discipline: note the generation context (author→recipient · purpose · **timing**) — timing records whether it was formed before or after the dispute/investigation began (a record made before the dispute differs in evidentiary grain from one made conscious of the dispute). "Objective" is a transmission-path tag, not a guarantee of interpretive neutrality. Evidence with an interpretive dispute is card-mandatory + its matrix values only under a reading condition.
+5. Intermediate-proposition reconciliation: its execution IS §7.10 Recon3 (hypotheses in mid-air) — do not run the same test twice. Only the criterion stays here: a required proposition with no ground = a candidate gap axis.
+5-1. Pre-registration settlement: its execution IS §7.10 Recon1·2 — do not settle twice. Give the reconciliation table a settlement column assigning every pre-registered item (§3.5-6 · Module G · institutional expected premises) one of: met (which evidence corresponds) / absent (not-recorded · not-collected · non-existent; if indistinguishable, a check instruction) / unconfirmed. An unsettled pre-registration is decoration. A 'required'-grade absence is the top V-node candidate.
+6. Documentary-evidence discipline: note the generation context (author→recipient · purpose · **timing**) — timing records whether it was formed before or after the dispute/investigation began (a record made before the dispute differs in evidentiary grain from one made conscious of the dispute). "Objective" is a transmission-path tag, not a guarantee of interpretive neutrality. Evidence with an interpretive dispute gets a mandatory M row + its matrix values only under a reading condition.
 7. Exhaustive rebuttals: the scoring targets are all Gate-0 rebuttal seeds within the scope (Module E-3). Do not substitute a list the AI curated. For a rebuttal selected as surface-level, attach the B-1 test (reconstruct the strongest position) — keep the selection only if it is still surface-level even after building the arguer's strongest reconstruction.
 7-1. The grammar of selection (see the "two-layer structure" in the criteria & check modules): write a flag, where possible, in the two-part grammar — insufficient ("reached the conclusion without closing [a degree of freedom]") and improper ("closed [a degree of freedom] in [a direction] but with the ground unrecorded / asymmetric"). Every ground can be checked exhaustively against the completion-degrees-of-freedom ledger, and an anomaly outside the ledger is registered as a new degree-of-freedom candidate. Entry order: for a ★-path ground or a core rebuttal, first identify its type in one line (sign · expert opinion · cause · analogy · consistency · absence — the modules' "argument-type entry point"); the degrees of freedom that type calls for become the priority lookup, so the six questions and the ledger check latch onto that spot automatically.
 8. Order audit (may be shown in the tail): did pre-registration precede reading the evidence / did decomposition precede selection.
