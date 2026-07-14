@@ -1,4 +1,4 @@
-# LARP: Layer-grounded Argument Reasoning Probe (AIVA-L-CALM v260710g)
+# LARP: Layer-grounded Argument Reasoning Probe (AIVA-L-CALM v260710j)
 
 *[한국어](LARP.md) | English*
 
@@ -372,25 +372,28 @@ It compresses the sprawling spec onto one screen. The body below is the detailed
 
 ```text
 Gate 1 (length): if the document exceeds one screen (~15 pages), no single pass.
-  → First draw the conclusion/issue skeleton map and stop (§3.10 Scene 1 — performed with this
-    document alone, no extra file needed; if the LARP-Map long-document mode file was provided
-    alongside, its procedure may be followed instead). When the user designates an issue, enter §5
-    on that scope only.
+  → First draw the **full-argument tree map** (Stage 1 format in §3.10 — all claims, all evidence,
+    hidden-assumption·criterion·other-explanation·missing-evidence lines per claim) and stop (performed with this document alone, no extra file needed). This
+    tree is the canonical artifact through which the user understands the document — produce no
+    other artifact (blocks·DB·matrix) in this turn; devote it to the tree. When the user designates
+    an issue, enter §5 on that scope only.
   → Build the map and ledger by sequentially exhausting ~10-page segments (by the document's own
     page numbers) — reading the whole text and then drawing from memory in one pass is forbidden
     (measured to be where the middle gets lost). Evidence cited only by name (lectures, remarks,
     interviews, press releases, memos, official letters, minutes, correspondence, immigration
     records, fact-inquiry replies, in-court testimony) is the most common loss — register it in
     the ledger on first appearance.
-1. Object-perception & propositionalization (§5~6)   → [done: N claims + each verdict orientation]
-2. Layer–argument bridge (§6.5)                      → [done: N issues]
-3. Candidate extraction + per-candidate minimal reconstruction block·6 questions (§7) → [done: N candidates, ★ M]
-4. For each ★-path evidence, a meaning-hypothesis M row (§7.8) — none skipped → [done: K ★ evidence atomized]
-5. Build the evidence→hypothesis DB (§7.9) — top-down skeleton (before close reading) + bottom-up E·M·P·H rows → [done: DB, L E-rows]
-5b. Four cross-reconciliations · four structural tests (§7.10) — skeleton vs DB, list everything caught → [done: k recon · j test hits]
-6. Three signals (§7.7) → the argument map (§7.6) → self-check result (§3.5-8, printed per ★ evidence)
-   → end with the user-designation wait line and STOP that turn.
-Gate 2 (stop): do not run modules after 6. Stopping is the end of Pass 1.
+[Stages 2·3 turn — after user designation, in this order. Reprint Stage-1 contract numbers (seeds n/n · claim count) at the head of the turn]
+1. Object-perception & propositionalization (§5~6) — internal work → [done: N claims + each verdict orientation]
+2. Layer–argument bridge (§6.5) — internal work      → [done: N issues]
+3. Deepen the designated branch — top-down skeleton + bottom-up E·M·P·H (§7.8~7.9), an M row per ★-path evidence, a tree node ID on every row → [done: DB E L rows (= the branch's tree E rows) / M K rows (= ★ evidence count)]
+4. Four cross-reconciliations · four structural tests (§7.10) → [done: k recon · j test hits]
+5. Flag promotion (§7.10 promotion rule) — pin ⚑ on the tree node for every hit (trigger path + one plain line) → [done: m flags = m hits]
+6. Reprint the updated branch + three signals (§7.7) + self-check (§3.5-8, printed per ★ evidence)
+   → end with "which flag (or ★) shall I interrogate?" and STOP that turn.
+[Stage 4 turn — per designated spot (or all ★+flags on "continue")]
+7. Minimal reconstruction block · six-question interrogation (§7·§7.5) + the modules its type calls → [done: p blocks + q deferrals = designated ★+flag count (deferral reason mandatory)]
+Gate 2 (stop): stop at every stage boundary. If the previous stage's [done] contract is unmet, do not enter the next stage — repair first.
 Gate 3 (symmetry·quotation): for each ★ claim, visibly print one line of the defense's (rival's) strongest rebuttal (§7.3), and mark any redacted/blank quotation as 'no basis in the document (quote gap)' rather than inventing it (§3.5-2). If either is missing, treat that ★ as incomplete and fix before proceeding.
 Gate 4 (verification layer): until the Pass-1 output passes the verification layer (LARP-Verify, §3.7) — quote-source comparison, coverage comparison, omission-hunt 2nd pass — mark it 'unverified'. Do not use unverified output as a settled ground.
 Rule: a step without a [done] mark counts as 'not performed' (no partial output).
@@ -469,18 +472,38 @@ S-ledger (all) | Q-ledger (all, with status) | Residual list (items dropped in c
 
 ---
 
-## 3.10 Three-scene execution mode — surface and interior (default)
+## 3.10 Five-stage execution mode — one tree (default)
 
-Pipeline direction: map → user designation → full depth on the designated scope only. Analysis happens *after* designation. No approval gates, no schedule of evaluative language, no verdict fields — the user's next designation *is* the next scene, and the intervening Q&A is not formalized (if unsure, ask; the conversation does that work).
+There is only **one artifact: the tree** (the full-argument tree of Stage 1), and every subsequent procedure deepens that same tree stage by stage — plant it (Stage 1) → deepen it (Stage 2) → shake it (Stage 3) → interrogate it (Stage 4) → rewrite it (Stage 5). The user looks at the same map each stage and only follows what has newly grown. Pipeline direction: plant → user designation → full depth on the designated branch only. Analysis happens *after* designation. No approval gates, no schedule of evaluative language, no verdict fields — the user's next designation *is* the next stage, and the intervening Q&A is not formalized (if unsure, ask; the conversation does that work).
+(Legacy scene labels: Scene 1 = Stage 1, Scenes 2·3 = Stages 2–4, Scene 4 = Stage 5.)
+
+[Stage chain — anti-skip]
+· Checkpoint: each stage starts by reprinting the previous stage's contract numbers. If the previous contract is unmet, do not enter the next stage — repair first.
+· Node-ID reference duty: every output item of every stage (DB rows, flags, blocks, opinions) references a tree node ID (C·A·E numbers — an extension of interior rule 3). An orphan output touching no branch is itself an omission signal.
+· Branch reprint: reprint only the updated branch of the tree — full reprints are wasteful and a loss point.
 
 ```text
-[Surface — what the user sees]
-Scene 1  Map: a skeleton diagram of conclusions and grounds + page anchors. If there are several conclusions, break them into a bundle (no lumping). No evaluative words. Gate 0 is done backstage.
-(on request) Scene 2  Diagram: a reconstruction diagram of the designated argument + evidence placement. "Showing" only — no evaluation. Not an independent step but an option; skip it if the user designates selection directly.
-Scene 3  Selection: flagging anomalous arguments in the designated scope. Each item gets a page anchor + a confirmation question. The body of a flagging sentence is plain prose — it must convey what is anomalous and why even when read without the symptom code or group number, which are a parenthetical appendage. Evidence appearing in the selection gets a one-line introduction on first appearance (what it is · who made it · its gist), so the user can understand it without the source text. Priority is sensitivity — start from the joint whose collapse would collapse the conclusion. Accompany the display of key evidence (below) *before* the opinion.
-Scene 4  Report (on request): the final document that rewrites the output of Scenes 1–3 into the reader's order of understanding. The order of analysis and the order of presentation differ (§1-0) — Scenes 1–3 are the order of analysis; the report is the order of understanding. Leaving the selection output as-is hands over a record of inspection, not understanding.
+[Surface — what the user sees. Turn plan: Stage 1 = first turn / Stages 2·3 = one turn after designation / Stage 4 = the next turn / Stage 5 = on request]
+Stage 1  Plant — full-argument tree map (the canonical artifact of user understanding — this turn is devoted to the tree; form and symbols per §7.6):
+        every conclusion (C) the document disputes → all claims (A) per conclusion (★ marked, no lumping) → all evidence (E) under each A — exhausted within each issue section, following the document's own order of recitation (no "…etc"; tagged and name-only items alike). Per A, the four lines below + a fork mark.
+        [Reader-first notation — write the tags in plain words with the symbol in parentheses. Each line must be a complete sentence that makes sense on its own, not a compressed noun phrase]
+        Hidden assumption (W)   form: "this claim stands on the unwritten assumption that '…'".
+        Deciding criterion (L)  form: "it changes depending on whether you take it as … or as … — the text chose the former" (exposing what made it look that way).
+        Other explanation (H)   form: "the same evidence could also be explained as '…'" (if the document already rejected that explanation, mark it).
+        Missing evidence (V)    form: "if this claim is right, … should exist, but it is not in the material".
+        Fork                    form: "the force of this claim differs depending on whether you read it as … or as …".
+        Print a legend first at the head of the tree, one plain-language line per tag. A page anchor on every row — an unanchored row is void. No evaluative words (the four lines are placeholders, not verdicts). Gate 0 is done backstage.
+        [Tree output contract — closed by numbers] At the end of the tree, always print: ① claim-row count = the document's issue count ② gate-0 seeds n = tree E rows n + additions m (without seeds, self-mark per issue section: "all k recited evidence items of this section included") ③ an A missing its hidden-assumption·other-explanation·missing-evidence lines is marked [incomplete]. A tree failing the contract is an incomplete Pass 1.
+        [Overflow — no compression] If it does not fit in one turn, do not squash evidence — continue issue by issue in following turns (the user's "continue" brings the next issue batch). Loss is solved by turn-splitting, not compression.
+Stage 2  Deepen — attach formation·meaning·links to each piece of evidence of the designated branch, in place: run §7.8 M rows and the §7.9 evidence→hypothesis DB (top-down skeleton → bottom-up build) for that branch. The DB table is not a separate artifact but **this branch exported as a table** — every row carries its tree node ID.
+        [Contract] tree E rows of the branch = DB E rows / ★-path evidence count = M-row count.
+Stage 3  Shake (same turn as Stage 2) — run the four cross-reconciliations · four structural tests (§7.10), pin a flag (⚑) on the tree node for every hit, and **reprint the updated branch**. Each flag carries its trigger path (recon-n / test-X / rejection-seed / interpretation-contest) and one plain-prose line. Append the three signals (§7.7) and the self-check (§3.5-8) as the tail and stop — "which flag (or ★) shall I interrogate?".
+        [Contract] total hits (recon·test·rejection-seed·interpretation-contest) = flag count = promotion count.
+Stage 4  Interrogate — for each designated flag (or, on "continue", all ★+flags): a minimal reconstruction block (§7.5), the six-question interrogation, and whatever module its type calls. Each item gets a page anchor + a confirmation question.
+        [Contract] flag count = interrogation-block count + explicit deferrals (reason mandatory). An anomaly newly found without a flag gets its flag registered retroactively, then interrogated. The body of a flagging sentence is plain prose — it must convey what is anomalous and why even when read without the symptom code or group number, which are a parenthetical appendage. Evidence appearing in the selection gets a one-line introduction on first appearance (what it is · who made it · its gist), so the user can understand it without the source text. Priority is sensitivity — start from the joint whose collapse would collapse the conclusion. Accompany the display of key evidence (below) *before* the opinion.
+Stage 5  Rewrite — report (on request): the final document that rewrites the output of Stages 1–4 into the reader's order of understanding. The order of analysis and the order of presentation differ (§1-0) — Stages 1–4 are the order of analysis; the report is the order of understanding. Leaving the selection output as-is hands over a record of inspection, not understanding.
         [Report discipline — transplanted from the investigation-pack's second pass]
-        · No new assertions: do not create in the report any fact, question, or opinion absent from Scenes 1–3. If a new question appears while writing, do not slip it into the prose — add it to the ledger and supplement the analysis.
+        · No new assertions: do not create in the report any fact, question, or opinion absent from Stages 1–4. If a new question appears while writing, do not slip it into the prose — add it to the ledger and supplement the analysis.
         · Grounds by ID reference: every statement must touch a selection item · S · Q (you need not expose the ID in the prose, but do not write a sentence that touches none).
         · Preserve by compression: selections/opinions not covered in the report are left as a residual list at the end.
         · Hide the machinery: reconciliation numbers, self-checks, and seed statistics do not go in the report body.
@@ -817,7 +840,7 @@ Contrast (the split) → Module M + Group 9 frame foreclosure + Group 10 conclus
 
 ## 7.6 Full-argument map and user designation — the indented tree is canonical
 
-The canonical form of the map is an indented tree inside a code block — row grammar `ID  label — page · evidence-seed · citation-gap`. Do not use tables, CSV, or diagrams (Mermaid-like) as the output format of the map — tables/CSV break depending on the environment, and a diagram is harder to read than a tree for this purpose (format requirement: it must not break in any environment and the hierarchy must be visible at a glance). Only one parallel output: in a code-running environment, save a CSV *file* (for sorting / spreadsheet use). Fill the evidence-seed by machine-assigning the page range of the Gate-0 seeds (the only evidence display allowed in Scene 1 — not atomization or evaluation).
+The canonical form of the map is an indented tree inside a code block — row grammar `ID  label — page · evidence-seed · citation-gap`. Do not use tables, CSV, or diagrams (Mermaid-like) as the output format of the map — tables/CSV break depending on the environment, and a diagram is harder to read than a tree for this purpose (format requirement: it must not break in any environment and the hierarchy must be visible at a glance). Only one parallel output: in a code-running environment, save a CSV *file* (for sorting / spreadsheet use). Fill the evidence-seed by machine-assigning the page range of the Gate-0 seeds. In Stage 1 the evidence (E) rows are mandatory-exhaustive (Stage 1 format in §3.10 — recitation-order exhaustion·output contract) — but exhaustive here means *listing*, not atomization or evaluation (that is the 2nd pass's job, §7.8–7.10).
 
 Gist duty: attach a 1–2 sentence gist to conclusion and ground rows — a compression from the arguer's (the court's) viewpoint ("holds that …"), not the analyst's commentary, and the no-evaluative-words rule still applies. Gate-0 mechanical facts (citation-gap locations, etc.) may be noted with ※. A map with labels only is a table of contents, not understanding — the user reads the gist and picks a scope.
 
@@ -1033,11 +1056,18 @@ TestC common source   E's supporting a P·H that belong to one source group yet 
                       independent corroboration.
 TestD bridge audit    collect every ⊦ label in one place; for each, one line — "if this assumption is
                       false, what collapses". Separately mark structures that survive only by adding
-                      bridges against each new counter-datum (post-hoc immunization), and bridges that
-                      convert situational plausibility into testimonial credibility.
+                      bridges against each new counter-datum (post-hoc immunization), bridges that
+                      convert situational plausibility into testimonial credibility, and bridges that
+                      convert temporal relation into substantive connection ("same day / right after /
+                      around then → linked·aware·conspired" — simultaneity grounds no connection
+                      without ruling out coincidence and checking direction).
 ```
 
 When rival hypotheses (H1·H2…) stand, the same DB may be rearranged as an **evidence × hypothesis matrix** — not new analysis but a view of the extended column (hypothesis relation): rows = ★/core evidence, columns = hypotheses, cells +/−/0/±; diagnosticity derived as before; per-hypothesis synthesis ⟨independent diagnostic support / non-diagnostic·dependent support (no weight) / missing evidence V⟩; no verdict; completeness state declared at the head. Optionally emit the matrix as JSON (`tools/larp_matrix_schema.md`) for `tools/larp_matrix_audit.py` to check non-diagnostic-as-core, double counting, and V gaps in code. (If LARP-Weigh is the dedicated edition for two explanations, these reconciliations and tests bring that logic into the full version as its default output.)
+
+**Promotion rule (★ must not be the only path).** ★ (top conclusion-relevance) is *one* path to interrogation, not the only one. Anything caught by any of the following three is pinned as a flag (⚑) on its tree node in Stage 3 regardless of conclusion relevance, and receives a minimal reconstruction block (§7.5) and the six-question interrogation in Stage 4 as a duty (contract: flag count = block count + reasoned deferrals):
+① a hit in the four cross-reconciliations · four structural tests (above) ② a rejection argument caught by the gate-0 rejection seeds ③ evidence marked as interpretation-contested, double-direction, or a discriminating axis (display triggers).
+Reason: real anomalous arguments often live in small nodes *folded inside* big issues (unruled formation, surface-level rejection grounds, gaps in the cognition path), and a conclusion-relevance criterion clusters on big issues, leaving such nodes outside the blocks. Logging a caught spot in the docket without unfolding it into a flag and block is a promotion omission.
 
 ---
 
@@ -1491,6 +1521,8 @@ The reviewer must confirm whether this doubt is actually resolved through [furth
 ---
 
 ## 14. Final output order
+
+This list is the full set of artifacts — which stage emits what follows the §3.10 turn plan (tree = Stage 1, DB·flags = Stages 2·3, blocks·six questions·modules = Stage 4, report = Stage 5). Every item references a tree node ID.
 
 At the end, you must organize in the following order.
 
