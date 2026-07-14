@@ -1,4 +1,4 @@
-# LARP: Layer-grounded Argument Reasoning Probe (AIVA-L-CALM v260710j)
+# LARP: Layer-grounded Argument Reasoning Probe (AIVA-L-CALM v260710k)
 
 *[한국어](LARP.md) | English*
 
@@ -501,6 +501,8 @@ Stage 3  Shake (same turn as Stage 2) — run the four cross-reconciliations · 
         [Contract] total hits (recon·test·rejection-seed·interpretation-contest) = flag count = promotion count.
 Stage 4  Interrogate — for each designated flag (or, on "continue", all ★+flags): a minimal reconstruction block (§7.5), the six-question interrogation, and whatever module its type calls. Each item gets a page anchor + a confirmation question.
         [Contract] flag count = interrogation-block count + explicit deferrals (reason mandatory). An anomaly newly found without a flag gets its flag registered retroactively, then interrogated. The body of a flagging sentence is plain prose — it must convey what is anomalous and why even when read without the symptom code or group number, which are a parenthetical appendage. Evidence appearing in the selection gets a one-line introduction on first appearance (what it is · who made it · its gist), so the user can understand it without the source text. Priority is sensitivity — start from the joint whose collapse would collapse the conclusion. Accompany the display of key evidence (below) *before* the opinion.
+(anytime)  Verification return — when answers to confirmation questions (Q) come back (the user pastes deep-research results or record checks), transition the relevant flag to one of three states and record the result at its place in the tree: closed (confirmed — with the source that closed it) / kept (check failed or unconfirmed — the gap stands) / reopened (if a new fact touches another branch, register a new flag there retroactively). An unsourced answer is not accepted as fact (existing rule). Verification does not end at producing questions — this transition, correcting the map with answers, completes it.
+        [Contract] answers pasted n = state transitions n (no silent drops — if a transition is impossible, state why and keep).
 Stage 5  Rewrite — report (on request): the final document that rewrites the output of Stages 1–4 into the reader's order of understanding. The order of analysis and the order of presentation differ (§1-0) — Stages 1–4 are the order of analysis; the report is the order of understanding. Leaving the selection output as-is hands over a record of inspection, not understanding.
         [Report discipline — transplanted from the investigation-pack's second pass]
         · No new assertions: do not create in the report any fact, question, or opinion absent from Stages 1–4. If a new question appears while writing, do not slip it into the prose — add it to the ledger and supplement the analysis.
