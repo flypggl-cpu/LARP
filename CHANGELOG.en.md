@@ -2,6 +2,10 @@
 
 *[한국어](CHANGELOG.md) | English*
 
+## v260710m — 2026-07-14
+
+- **Waste/conflict audit (net reduction).** ① The summary/standard/deep [Output range] deleted — a pre-five-stage relic whose definitions all conflict with the current turn plan and tree contract; volume control unified under "conservative/aggressive" and "continue". ② Interior rules 5 (intermediate-proposition reconciliation) and 5-1 (pre-registration settlement) reduced to references to §7.10 Recon3 and Recon1·2 — blocking double execution of the same tests (the three-way settlement survives as a column of the reconciliation table). ③ Stale terms updated in bulk: 'card'→M row, 'evidence ledger'→DB (~15 spots; the 'completion-degrees-of-freedom ledger' is a distinct concept and stays), 'Pass-1' dropped from the §3.6 title, the alias line gains "'1st pass' = Stages 1–3, '2nd pass' = Stage 4", and the 'finding first' clause now excepts the tree (Stage 1's first artifact). Analysis machinery unchanged — deletions, reductions, renames only.
+
 ## v260710l — 2026-07-14
 
 - Stage 5 (report) becomes **mandatory-to-ask** — when Stage 4 finishes, the tool must ask "shall I organize this into a report? (you can also look at more branches)" and stop. Generation only on request (auto-generation stays forbidden — new-assertion and waste risks), but skipping the question is a skipped stage. The question is fixed at the end of the Stage-4 run-card turn; USAGE one-loop text and the case4 rubric aligned. Basis: leaving it "on request" only means users never learn the report stage exists.
