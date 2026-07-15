@@ -81,7 +81,7 @@ The point is "write it down first, match it later" — write it after reading an
 
 Mismatches and test hits come back as **flags (⚑)** pinned on the relevant branch of the tree map — each flag carries a one-line reason, and the tool asks "which flag shall I interrogate?" and stops.
 
-### (4) Evidence × hypothesis matrix (when it splits into two explanations; a view drawn from the DB above)
+### (4) Evidence × hypothesis matrix (Stage-2 companion — when it splits into two explanations, the (3) table rearranged to compare just the two)
 For a "this or that" text, you get a table matching the evidence (rows) against the explanations (columns) — the tool calls it the "matrix," pulled from the (3) DB.
 
 - Cell: `+` fits that explanation / `−` goes against / `0` irrelevant / `±` splits by reading.
