@@ -4,7 +4,7 @@
 
 > This document covers running the **full version** and reading its results. For a *quick check of a short text*, see the [Lite guide](USAGE_lite.en.md); for *which tool, when*, see the [README](README.en.md).
 
-**One loop looks like this — one tree grown in five stages.** Paste the prompt → paste the text → ① the tool unfolds the whole text's argument as a **tree map** and stops → ② you pick a branch (issue) and a detailed table attaches to each piece of its evidence → ③ the map comes back with **flags (⚑)** pinned where something looks off → ④ you pick a flag and only that spot is interrogated in detail → ⑤ when done, the tool itself asks "shall I organize this into a report?" — say yes and you get readable prose. The same map grows at every stage, so there is nothing new to learn — **you judge.** No install.
+**One loop looks like this — one tree grown in five stages.** Paste the prompt → paste the text → ① the tool unfolds the whole text's argument as a **tree map**, re-counts the source window by window to fill in missed evidence by itself, and stops → ② you pick a branch (issue) and a detailed table attaches to each piece of its evidence → ③ the map comes back with **flags (⚑)** pinned where something looks off → ④ you pick a flag and only that spot is interrogated in detail → ⑤ when done, the tool itself asks "shall I organize this into a report?" — say yes and you get readable prose. The same map grows at every stage, so there is nothing new to learn — **you judge.** No install.
 
 ---
 

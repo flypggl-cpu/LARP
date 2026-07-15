@@ -2,6 +2,13 @@
 
 *[한국어](CHANGELOG.md) | English*
 
+## v260716 — 2026-07-16
+
+- `prompts/LARP.md` (+en): **omission re-sweep** added to Stage 1 (same turn, mandatory) — after drawing the tree, split the source into 5-page windows, list every evidence expression per window → reconcile O/X against the tree → retroactively register what's missing ([added]), printing [found k / in tree m / added n] per window with every window exhausted. Principle: not "recall what you missed" (self-assessment — anchored) but "re-count the source" (mechanical — no memory involved). Measured basis: on the holdout, the same-window re-sweep recovered all four evidence items that three independent runs had jointly missed, adding 33 items in total (more than the new-window hunt's 17). The densest blind spot was the judgment's own "summary of evidence" section.
+- Contract ② revised: for seedless documents, self-marking (unverifiable) → **re-sweep numbers substitute for seeds** (total found k = pre-sweep E + added) — resolving holdout symptom S5.
+- Gate-0 zero-seed warning updated: the first remedy is the in-procedure re-sweep; the new-window omission hunt (LARP_verify) becomes the additional recommendation for high-stakes use — reflecting the principle that procedures requiring extra user effort die in real use. The new-window hunt remains for analysis-level omissions (missing rebuttals·weak links·asymmetry), which same-window work still cannot see (role split verified on the seedless holdout: verify_h1).
+- case4 rubric·USAGE aligned. Rollback: if the re-sweep pushes the tree turn into frequent overflow splits, separate it into its own turn.
+
 ## v260715 — 2026-07-15
 
 - **Only the two essential prescriptions from the holdout observation (Seoul High Court 2011no3260, Sonnet ×3)** — by the §1-0 test: only what directly touches the delivery of purpose 2. The remaining symptoms (contract-definition variance etc.) are development-measurement issues, held.
