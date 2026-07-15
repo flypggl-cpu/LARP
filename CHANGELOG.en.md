@@ -2,47 +2,53 @@
 
 *[한국어](CHANGELOG.md) | English*
 
-## v260710m — 2026-07-14
+## v260715 — 2026-07-15
+
+- **Only the two essential prescriptions from the holdout observation (Seoul High Court 2011no3260, Sonnet ×3)** — by the §1-0 test: only what directly touches the delivery of purpose 2. The remaining symptoms (contract-definition variance etc.) are development-measurement issues, held.
+- P2 **Closed list of deferral grounds**: Stage-4 contract's "reason mandatory" replaced with "only two permitted grounds" — (a) outside the designated scope (ledger registration mandatory) (b) duplication of the same source·same bridge as another block (block ID named). Volume/contribution/importance explicitly excluded. Basis: deferral rates swung 0%/20%/54% across three holdout runs — free-text reasons were a legal exit from interrogation. Rollback: revert if legitimate deferrals fall outside the list and block quality degrades.
+- P3-a **Gate-0 silent failure made visible**: tools/larp_gate0.py now warns on zero seeds + zero rejection markers ("format recognition failed; manual sweep + omission hunt strongly recommended"). Same rule added to the manual path in LARP.md (+en, in tree contract ②). Basis: the holdout document produced zero seeds without any warning — the user could not know a defense line was off. Rollback: adjust if the warning misfires on documents where extraction is in fact normal.
+
+## v260714f — 2026-07-14
 
 - **Waste/conflict audit (net reduction).** ① The summary/standard/deep [Output range] deleted — a pre-five-stage relic whose definitions all conflict with the current turn plan and tree contract; volume control unified under "conservative/aggressive" and "continue". ② Interior rules 5 (intermediate-proposition reconciliation) and 5-1 (pre-registration settlement) reduced to references to §7.10 Recon3 and Recon1·2 — blocking double execution of the same tests (the three-way settlement survives as a column of the reconciliation table). ③ Stale terms updated in bulk: 'card'→M row, 'evidence ledger'→DB (~15 spots; the 'completion-degrees-of-freedom ledger' is a distinct concept and stays), 'Pass-1' dropped from the §3.6 title, the alias line gains "'1st pass' = Stages 1–3, '2nd pass' = Stage 4", and the 'finding first' clause now excepts the tree (Stage 1's first artifact). Analysis machinery unchanged — deletions, reductions, renames only.
 
-## v260710l — 2026-07-14
+## v260714e — 2026-07-14
 
 - Stage 5 (report) becomes **mandatory-to-ask** — when Stage 4 finishes, the tool must ask "shall I organize this into a report? (you can also look at more branches)" and stop. Generation only on request (auto-generation stays forbidden — new-assertion and waste risks), but skipping the question is a skipped stage. The question is fixed at the end of the Stage-4 run-card turn; USAGE one-loop text and the case4 rubric aligned. Basis: leaving it "on request" only means users never learn the report stage exists.
 - The Stage-1 evidence-exhaustion wording made document-neutral ("a judgment's order of recitation; a paper's chapters and citation order").
-- USAGE (+en) readability pass applied: §1-3 first-screen description updated to the tree map (fixing the stale 'issue list'), §1-4 report sentence aligned to 'the tool asks first' (v260710l), symbol table and body terms unified with the tree output (hidden premise→hidden assumption, condition→deciding criterion), the '2nd pass' §3 title replaced with 'picking branches and flags', and a one-line gloss for deep research at first mention.
+- USAGE (+en) readability pass applied: §1-3 first-screen description updated to the tree map (fixing the stale 'issue list'), §1-4 report sentence aligned to 'the tool asks first' (v260714e), symbol table and body terms unified with the tree output (hidden premise→hidden assumption, condition→deciding criterion), the '2nd pass' §3 title replaced with 'picking branches and flags', and a one-line gloss for deep research at first mention.
 
-## v260710k — 2026-07-14
+## v260714d — 2026-07-14
 
 - `prompts/LARP.md` (+en) §3.10 gains a **verification-return** procedure (between Stages 4 and 5, anytime) — when answers to confirmation questions (Q) come back, the relevant flag transitions to closed (with source) / kept / reopened (new flag on another branch, retroactive) and the result is recorded on the tree. Contract: answers n = transitions n (no silent drops). Verification is completed not by producing questions but by correcting the map with answers — the loop that ran one way now closes.
 - New `verification/cases/case4_long_doc_five_stage.md` (+en) — a behavioral rubric for the five-stage contracts (tree exhaustiveness · checkpoints · hits=flags · flags=blocks+deferrals · verification return). No fixed input (the tester supplies a public long document) — regression testing now guards today's invariants against silent breakage by future edits.
 
-## v260710j — 2026-07-14
+## v260714c — 2026-07-14
 
 - `prompts/LARP.md` (+en): **§3.10 reorganized as the "five-stage execution mode — one tree."** The only artifact is the Stage-1 full tree; every procedure deepens it — plant (tree) → deepen (M·DB on the designated branch; the DB table is that branch exported as a table) → shake (recon/test hits pinned on tree nodes as flags ⚑) → interrogate (block·six questions·modules per flag/★) → rewrite (report). Old Scene 2 (optional diagram) absorbed into Stage 2; the selection's interrogation moved to Stage 4. Basis: the artifact type changing at each step was the common root of comprehension failures and omissions (buried tree, test hits never promoted to blocks) — the user now just follows one growing map.
 - **Anti-skip chain**: ① each stage reprints the previous stage's contract numbers (checkpoint) — unmet means no entry ② per-stage contracts (branch tree E = DB E / ★ = M rows / total hits = flags / flags = blocks + reasoned deferrals) ③ every output item must reference a tree node ID — an orphan output is an omission signal ④ tree reprints cover only the updated branch. Run card split into a Stages-2·3 turn and a Stage-4 turn (blocks·six questions moved to Stage 4).
 - USAGE (+en): the one-loop description and §2 realigned to the five stages; ⚑ added to the symbol table.
 - Analysis machinery unchanged — decomposition engine, six questions, modules, and the DB schema untouched; only the execution shell and output rules were rearranged.
 
-## v260710i — 2026-07-14
+## v260714b — 2026-07-14
 
 - Scene-1 tree W·L·H·V notation revised **reader-first** — tags in plain words (hidden assumption·deciding criterion·other explanation·missing evidence, symbol in parentheses), each line a complete sentence with a fixed form (no compressed noun phrases), and a mandatory legend at the head of the tree. Basis: the run19 tree met its contract but its terse noun-phrase style was hard for the user to parse — "if the user cannot understand it, it has failed" (purpose 1).
 
-## v260710h — 2026-07-11 — tools: added a quantitative-validity audit (closed-form statistics)
-
-Prompt and modules unchanged; addition to `tools/` only. Adds to the verification layer a deterministic audit slice that catches *anomalies inside the numbers* — coding, slice by slice, the one gap that neither deep research nor the existing apparatus filled for papers / statistical documents (the internal validity of quantitative inference).
-
-- **`tools/larp_stat_audit.py`** (pure Python, no dependencies, special functions built in — scipy not required): recompute-and-compare reported p·t·χ²·CI, multiple-comparison survival (Bonferroni·BH), meta-analysis heterogeneity (Q·I²·τ²) and Egger funnel asymmetry, GRIM (can integer data yield that mean), impossible values (|r|>1, negative variance, p>1) and p-value reporting errors. Runs with no install in a code-running chatbot; exit code 1 on any inconsistency.
-- **Keeps the no-verdict boundary**: checks only the *internal consistency and reproducibility* of reported numbers; does not judge the science — truth, causation, study design. A missing reproduction input stays `cannot_verify` (not reproducible = a finding). Model sensitivity, causal identification, and Bayesian criticism are delegated to specialized tools / a statistician.
-- Input schema & extraction discipline: `tools/larp_stat_schema.md`(·en), registered in tools/README. Same family of deterministic audit as `coverage_audit` and `quote_audit` ("structure by code, judgment by the human").
-
-## v260710h — 2026-07-14
+## v260714a — 2026-07-14
 
 - `prompts/LARP.md`·`LARP.en.md`: **Scene 1 promoted to the "full-argument tree map"** — for long documents the first artifact is no longer an issue list/skeleton but the full tree, the canonical artifact of user understanding: every conclusion (C) → all claims (A, ★) → all evidence (E), exhausted within each issue section following the document's own recitation order (no "…etc"), plus one line each of W·L·H·V per claim, fork marks, and a page anchor on every row. The turn is devoted to the tree (no blocks·DB·matrix). Basis: in real use the tree was built as run-card step 6 (after tokens were spent) and came out impoverished — users understand the document through the tree, and tree-first also wins on recall (measured 97% vs ledger-first 91%).
   - **Tree output contract (closed by numbers)**: claim rows = issue count / seeds n = tree E n + additions m / an A without W·H·V is [incomplete] — a failing contract makes Pass 1 incomplete. (Direction B of the external failure report, applied to the tree.)
   - **Overflow = turn split**: no compression; continue issue by issue.
   - Run-card step 6 becomes a tree *update* (folding V·promotions into the designated branch); the §7.6 Scene-1 evidence constraint reconciled to "exhaustive listing (atomization·evaluation belong to the 2nd pass)".
 - TestD (§7.10) gains a third bridge tag — **bridges converting temporal relation into substantive connection** ("same day / right after / around then → linked·aware·conspired"). Basis: run18's residual gap (the timing-synchronization node escaped all three promotion triggers) — generalized by extending TestD's existing enumeration rather than adding dedicated machinery; a TestD hit is promotion trigger ①, so blocks and the six questions follow automatically.
+
+## v260711 — 2026-07-11 — tools: added a quantitative-validity audit (closed-form statistics)
+
+Prompt and modules unchanged; addition to `tools/` only. Adds to the verification layer a deterministic audit slice that catches *anomalies inside the numbers* — coding, slice by slice, the one gap that neither deep research nor the existing apparatus filled for papers / statistical documents (the internal validity of quantitative inference).
+
+- **`tools/larp_stat_audit.py`** (pure Python, no dependencies, special functions built in — scipy not required): recompute-and-compare reported p·t·χ²·CI, multiple-comparison survival (Bonferroni·BH), meta-analysis heterogeneity (Q·I²·τ²) and Egger funnel asymmetry, GRIM (can integer data yield that mean), impossible values (|r|>1, negative variance, p>1) and p-value reporting errors. Runs with no install in a code-running chatbot; exit code 1 on any inconsistency.
+- **Keeps the no-verdict boundary**: checks only the *internal consistency and reproducibility* of reported numbers; does not judge the science — truth, causation, study design. A missing reproduction input stays `cannot_verify` (not reproducible = a finding). Model sensitivity, causal identification, and Bayesian criticism are delegated to specialized tools / a statistician.
+- Input schema & extraction discipline: `tools/larp_stat_schema.md`(·en), registered in tools/README. Same family of deterministic audit as `coverage_audit` and `quote_audit` ("structure by code, judgment by the human").
 
 ## v260710g — 2026-07-10
 
