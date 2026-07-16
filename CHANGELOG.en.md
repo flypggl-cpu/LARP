@@ -2,6 +2,13 @@
 
 *[한국어](CHANGELOG.md) | English*
 
+## v260716d — 2026-07-16
+
+- **Companion-tool alignment and notation transfer** (ripple cleanup of the full-edition revisions; analysis machinery unchanged):
+  - A terminology: LARP_verify (+en) "evidence ledger" → "tree E rows·evidence→hypothesis DB"; LARP_gate0 (+en) seed exhaustion now names the tree·DB; LARP_modules (+en) E-1·E-4 "ledger/card" → "DB/M rows". (The degrees-of-freedom ledger is a distinct concept and stays.)
+  - B notation: LARP_map (+en) gains the line-head glyphs (🔴🔵⚪, shared with the full edition) and the evidence-line sentence grammar ("name — one content sentence → use") — unifying the two tree tools' grammar so users learn it once.
+  - Not transferred (rejected on record): all long-document machinery (five stages, contracts, re-sweep, flags, verification return) — it conflicts with the identity (lightness) of Lite·Map·Weigh; R5.
+
 ## v260716c — 2026-07-16
 
 - **Two minimal interventions for tree readability·comprehensibility** (exhaustiveness·contracts untouched, zero new machinery):
