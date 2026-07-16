@@ -56,7 +56,7 @@ A short reconstruction block per argument. Three things first:
 
 | Symbol | Meaning |
 |---|---|
-| C / A / E | conclusion / claim / evidence (written in the text) |
+| 🔴 C / 🔵 A / ⚪ E | conclusion / claim / evidence (written in the text) — each layer has its own color |
 | W | hidden assumption — what the conclusion silently leans on, unwritten (reconstructed) |
 | L | deciding criterion — a spot that changes with the standard you apply (reconstructed) |
 | H | other explanation — another way to read the same evidence (reconstructed) |

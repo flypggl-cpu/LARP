@@ -2,6 +2,13 @@
 
 *[한국어](CHANGELOG.md) | English*
 
+## v260716c — 2026-07-16
+
+- **Two minimal interventions for tree readability·comprehensibility** (exhaustiveness·contracts untouched, zero new machinery):
+  - Comprehensibility — **E-row sentence grammar**: "evidence name — one content sentence (who did/said what) → use (which ruling it supports) (p.N)". Bare noun-phrase endings forbidden. Extends the v260714b complete-sentence principle to E rows.
+  - Readability — **line-head color glyphs**: 🔴 conclusion (C) / 🔵 claim (A) / ⚪ evidence (E). Emoji at line heads only, indentation in spaces (alignment). Reflected in the §7.6 row grammar. Emoji are Unicode characters — stable in model output and rendered in color even inside code blocks (color comes from the OS emoji font); the only known limitation is a cosmetic half-width monospace drift.
+- USAGE symbol table and case4 rubric aligned. Rollback: if the glyphs materially break tree alignment on some chatbot, switch to monochrome glyphs (■◆·).
+
 ## v260716b — 2026-07-16
 
 - **Relocation remedy** — the v260716a externally-anchored contracts were ignored again on a fresh conversation with a top reasoning model (the contents baseline "cited" but never counted; the evidence-roster reconciliation absent; 15-page windows despite the 5-page rule). Diagnosis: position, not strength — clauses buried mid-way in a 126KB prompt evaporate at generation time (R1). The Sonnet measurements passed precisely because the harness restated the spec next to the task.
