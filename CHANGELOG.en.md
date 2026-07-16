@@ -2,6 +2,21 @@
 
 *[한국어](CHANGELOG.md) | English*
 
+## v260716b — 2026-07-16
+
+- **Relocation remedy** — the v260716a externally-anchored contracts were ignored again on a fresh conversation with a top reasoning model (the contents baseline "cited" but never counted; the evidence-roster reconciliation absent; 15-page windows despite the 5-page rule). Diagnosis: position, not strength — clauses buried mid-way in a 126KB prompt evaporate at generation time (R1). The Sonnet measurements passed precisely because the harness restated the spec next to the task.
+- ① `prompts/LARP.md` (+en): a five-item "pre-print check for the Stage-1 tree" added to §15 (re-confirm just before output — the position closest to generation): contents-count printed / roster n=n / 5-page windows / exhaustiveness / no compression, turn-split instead. ② USAGE (+en) §1: a **three-line card pasted next to the text** for long judgments — reflecting the measured fact that instructions closest to the task are the ones obeyed; included in the single paste, no extra user effort.
+- Rollback: if the §15 check degrades into substanceless checklist recitation ("confirmed" without numbers), remove ① and keep only the three-line card.
+- **[Subsequent correction]** The run that motivated this and v260716a turned out to have used a **lightweight (Flash-Lite-class) model**, not a top one. The observed collapse matches the small-model procedure collapse USAGE §5.3 warns about — as evidence of a design flaw it is confounded (design/capability not separated). The fixes themselves (external anchors, pre-print check, three-line card) remain sound on principle and are kept, but no further clauses should be added without reproducing the failure on a top-tier model.
+
+## v260716a — 2026-07-16
+
+- **Sealing the two contracts that lacked external anchors** — response to a real-use failure (same judgment, a top-tier reasoning model: 3 claim rows · 7 E rows · 15-page sweep windows with 3–5 finds each — every contract formally present, substance compressed). A textbook F2 case: the model breached exactly the contracts with no anchor outside itself.
+  - Contract ①: "claim rows = issue count" (self-referential tautology) → **replaced with "the ruled-item count of the document's own table of contents/section headings"** — actually counted, printed, reconciled; model self-definitions ("major issues only") forbidden; issues outside the contents kept as [added]. (Un-deferring holdout symptom S2 — a self-referential contract passes not only cross-run variance but single-run poverty.)
+  - Contract ②: a judgment's **"summary of evidence" section = the document's own evidence roster (natural seeds)** — count its items and reconcile every one against tree E (measured on this holdout judgment: 35 items; the densest blind spot of h1–h4 was precisely this section). An external anchor that works even where gate-0 fails.
+  - Sweep windows fixed from "~5 pages" to **"5 pages (±1); larger windows void the sweep"**, plus "a short tree is not a virtue but a failure".
+- case4 rubric aligned. Rollback: if contract ① idles on documents without a table of contents, revert only its contents clause; if the evidence-roster reconciliation misfires on documents lacking such a section, soften to a conditional.
+
 ## v260716 — 2026-07-16
 
 - `prompts/LARP.md` (+en): **omission re-sweep** added to Stage 1 (same turn, mandatory) — after drawing the tree, split the source into 5-page windows, list every evidence expression per window → reconcile O/X against the tree → retroactively register what's missing ([added]), printing [found k / in tree m / added n] per window with every window exhausted. Principle: not "recall what you missed" (self-assessment — anchored) but "re-count the source" (mechanical — no memory involved). Measured basis: on the holdout, the same-window re-sweep recovered all four evidence items that three independent runs had jointly missed, adding 33 items in total (more than the new-window hunt's 17). The densest blind spot was the judgment's own "summary of evidence" section.

@@ -16,6 +16,13 @@
 2. **Paste the two prompt files.** Copy the *entire* contents of [`prompts/LARP.en.md`](prompts/LARP.en.md) as your first message, then paste [`prompts/LARP_modules.en.md`](prompts/LARP_modules.en.md) right after it (long is fine). If you'll use it often, put them once into the chatbot's "project" or "custom instructions."
 3. **Paste the text to analyze — whole.** Do not attach a PDF file as is — **copy the content as text** and paste it (file attachments break page marks and increase misses). A long judgment or paper goes in as is: the tool first unfolds **the whole text's argument as a tree map and stops** (which conclusion stands on which claims and evidence, at a glance). Point at what you're curious about in your own words — "was it right to believe F's statements?" You don't need numbers or symbols. (A short text skips this step and goes straight to analysis.)
    - One check: if your pasted text keeps its page marks (like `- 12 -`), you'll also get "open page N" guidance.
+   - **For a long judgment, paste these three lines right before the text** — rules buried in a huge prompt fade, but instructions right next to the task are obeyed (measured):
+
+```text
+Actually count the ruled items in the table of contents and show that count next to the claim-row count.
+Show n = n that every item of the "summary of evidence" list is reflected in the tree.
+Do the omission re-sweep in 5-page windows.
+```
    - If the chatbot truncates the text as too long → the fallback in **§4** (paste one issue's section only).
 4. **Read the result, pick where to dig.** The tool leads with a *plain-language summary*, marks the suspicious spots, then **stops** (how to read it: **§2**). Say "continue" and it digs into the core (★) on its own, or designate in your own words (**§3**). When you are done, the tool itself asks "shall I organize this into a report?" — say yes and it rewrites everything in a reader-friendly order. The verdict is yours, not the tool's.
 
@@ -161,7 +168,7 @@ Either order works — deep research→LARP or LARP→deep research.
 → Example: [checking the claim "vaccines don't work"](examples/claim_check_vaccine.en.md)
 
 ### 5.3 Catching dropped evidence and made-up quotes with code — the verification layer (optional)
-**Three things first:** ① a better model misses far less — feeding a long judgment to the cheapest model has been observed, in a real case, to collapse the procedure itself (small free models are for short texts). ② If the result feeds a decision that matters, run the checks below. ③ Even with everything run, some omission remains — the last check is the human's. (Measurement record kept privately.)
+**Three things first:** ① for long judgments and papers use **Claude Sonnet-class or above** (GPT-4-class+, Gemini Pro+) — lightweight models (Flash/Lite/mini-class) were measured, on the same judgment, to crush issues and evidence to a fraction (light/free models are for short texts). ② If the result feeds a decision that matters, run the checks below. ③ Even with everything run, some omission remains — the last check is the human's. (Measurement record kept privately.)
 
 The analysis itself already surfaces *missing-evidence and omission candidates*, so that's usually enough. But when **a miss would be costly**, check from outside the two risks a model can't catch alone (*silent omission*, *invented quotes dressed as source quotes*).
 
