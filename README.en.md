@@ -16,7 +16,7 @@ LARP is a set of prompts (plus one small code helper) that **surface the doubtfu
 > - A 5-minute taste → [`prompts/LARP_lite.en.md`](prompts/LARP_lite.en.md)
 > - The other files are supporting parts — you don't need to know them at first.
 > - One check before pasting: if the text keeps its page marks (like `- 12 -`), you'll also get "open page N" guidance.
-> - One line on model choice: any model works for short texts, but **for long judgments and papers use Claude Sonnet-class or above** (GPT-4-class+, Gemini Pro+) — in a direct same-judgment comparison, lightweight models (Flash/Lite/mini-class) were measured to crush 17 issues into 4 and 108 evidence rows into 8.
+> - One line on model choice: any model works for short texts, but **for long judgments and papers use Claude Sonnet-class or above** (GPT-4-class+) — in a direct same-judgment comparison, lightweight models (Flash/Lite/mini-class) were measured to crush 17 issues into 4 and 108 evidence rows into 8.
 
 | Tool | What it does | When (which text) |
 |---|---|---|

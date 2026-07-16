@@ -12,7 +12,7 @@
 
 **Copy twice, paste once, then follow the tool's questions.**
 
-1. **Open a chatbot and check the model.** Start a new conversation on claude.ai or chatgpt.com, and pick **Claude Sonnet-class or above** (GPT-4-class+, Gemini Pro+) — on long texts with the full edition, free default (lightweight) models crush the procedure (measured). For quick checks of short texts, the Lite edition + a free model is enough.
+1. **Open a chatbot and check the model.** Start a new conversation on claude.ai or chatgpt.com, and pick **Claude Sonnet-class or above** (GPT-4-class+) — on long texts with the full edition, free default (lightweight) models crush the procedure (measured). For quick checks of short texts, the Lite edition + a free model is enough.
 2. **Paste the two prompt files.** Copy the *entire* contents of [`prompts/LARP.en.md`](prompts/LARP.en.md) as your first message, then paste [`prompts/LARP_modules.en.md`](prompts/LARP_modules.en.md) right after it (long is fine). If you'll use it often, put them once into the chatbot's "project" or "custom instructions."
 3. **Paste the text to analyze — whole.** Do not attach a PDF file as is — **copy the content as text** and paste it (file attachments break page marks and increase misses). A long judgment or paper goes in as is: the tool first unfolds **the whole text's argument as a tree map and stops** (which conclusion stands on which claims and evidence, at a glance). Point at what you're curious about in your own words — "was it right to believe F's statements?" You don't need numbers or symbols. (A short text skips this step and goes straight to analysis.)
    - One check: if your pasted text keeps its page marks (like `- 12 -`), you'll also get "open page N" guidance.
@@ -150,7 +150,7 @@ But if your chatbot's input limit is small and **a long document gets truncated*
 
 ### 5.1 When a point needs outside checking — how to get the deep-research question
 
-*Deep research = the feature that has an AI do sourced research for you (available in ChatGPT·Claude·Gemini).*
+*Deep research = the feature that has an AI do sourced research for you (available in ChatGPT·Claude).*
 Where a single text can't answer (e.g. is a cited precedent real, does a quote match the original, a V-marked missing piece), the tool doesn't guess — it **writes the check question itself.** How to get it:
 
 1. **Just run the analysis.** When a point needs confirming, the tool attaches a question right there — you don't have to ask. (If it doesn't, add one line: "turn the points that need checking into deep-research questions.")
@@ -168,7 +168,7 @@ Either order works — deep research→LARP or LARP→deep research.
 → Example: [checking the claim "vaccines don't work"](examples/claim_check_vaccine.en.md)
 
 ### 5.3 Catching dropped evidence and made-up quotes with code — the verification layer (optional)
-**Three things first:** ① for long judgments and papers use **Claude Sonnet-class or above** (GPT-4-class+, Gemini Pro+) — lightweight models (Flash/Lite/mini-class) were measured, on the same judgment, to crush issues and evidence to a fraction (light/free models are for short texts). ② If the result feeds a decision that matters, run the checks below. ③ Even with everything run, some omission remains — the last check is the human's. (Measurement record kept privately.)
+**Three things first:** ① for long judgments and papers use **Claude Sonnet-class or above** (GPT-4-class+) — lightweight models (Flash/Lite/mini-class) were measured, on the same judgment, to crush issues and evidence to a fraction (light/free models are for short texts). ② If the result feeds a decision that matters, run the checks below. ③ Even with everything run, some omission remains — the last check is the human's. (Measurement record kept privately.)
 
 The analysis itself already surfaces *missing-evidence and omission candidates*, so that's usually enough. But when **a miss would be costly**, check from outside the two risks a model can't catch alone (*silent omission*, *invented quotes dressed as source quotes*).
 
