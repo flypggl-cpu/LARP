@@ -288,7 +288,7 @@ Registration example (derived retroactively): the parent layer of rebuttal-surfa
 
 A profile to load together with the body when applying it to a judgment, especially an appellate judgment. It is an instance of the criteria-swap interface (above), and the body (decomposition engine · six questions · modules) is unchanged.
 
-**E-1. Bundling the same source (first-instance / present-instance double narration).** An appellate judgment narrates the same evidence twice — (a) as a summary of the first-instance judgment and (b) as present-instance reinforcement. In the ledger, bundle the first-instance and present-instance citation of the same statement/document as a common source and count the weight only once. But separate as its own atom any part where the content changed between the first and present instance (addition, correction, retreat) — the change itself is material for a credibility assessment.
+**E-1. Bundling the same source (first-instance / present-instance double narration).** An appellate judgment narrates the same evidence twice — (a) as a summary of the first-instance judgment and (b) as present-instance reinforcement. In the DB, bundle the first-instance and present-instance citation of the same statement/document as a common source and count the weight only once. But separate as its own atom any part where the content changed between the first and present instance (addition, correction, retreat) — the change itself is material for a credibility assessment.
 
 **E-2. The summary-level three tags (mandatory alongside the source column in §7.9).**
 
@@ -310,7 +310,7 @@ But if that alternative hypothesis is the defense's affirmative claim, a certain
 For a rebuttal selected as surface-level, attach the B-1 test (reconstruct the strongest position) — keep the selection only if it is still surface-level even after building the arguer's (the court's) strongest reconstruction (appendix §3: the point where forward/backward reconstruction split is the strongest signal). Sibling symptoms of the same degree of freedom — strawman-narrowing rebuttal and conclusion-premised rebuttal — are also checked when scoring rebuttal seeds exhaustively.
 ```
 
-**E-4. Reflecting the redaction (de-identification) duty.** A citation gap detected by the Gate-0 scan is entered in the ledger/card as "no ground in the document (citation gap)," and confirming the actual content of that evidence is registered in the open-questions ledger as a record-check instruction. What is de-identified in a published judgment is often institutional documents and personal-information parts — which may be exactly the evidence the court weights as objective reinforcement — so whether the citation gap is handled governs the top-level evidence evaluation.
+**E-4. Reflecting the redaction (de-identification) duty.** A citation gap detected by the Gate-0 scan is entered in the DB/M rows as "no ground in the document (citation gap)," and confirming the actual content of that evidence is registered in the open-questions ledger as a record-check instruction. What is de-identified in a published judgment is often institutional documents and personal-information parts — which may be exactly the evidence the court weights as objective reinforcement — so whether the citation gap is handled governs the top-level evidence evaluation.
 
 **E-5. Location marker.** Use the judgment's own page numbers as the canonical anchor (body §3.5-2, the Gate-0 anchor index).
 

@@ -29,6 +29,8 @@ Rules:
 - Conclusion at the top, grounds one level below each step (indentation = "what's below supports what's above").
 - A role word at the start of the line: `Conclusion / Ground / Material / Actual content / Arguer's reading / Read otherwise / Hidden premise / Counter`.
 - A tag at the end: `[explicit]` · `[content]` · `[W·inferred]` · `[W·implicit]` · `[competing]`, unclear `(unclear)`.
+- Line-head glyphs (shared with the full edition): 🔴 conclusion / 🔵 ground·claim / ⚪ evidence — emoji at line heads only, indentation in spaces.
+- Do not end an evidence line as a bare noun phrase: `⚪ evidence name — one content sentence (who did/said what) → use (which claim it supports)`.
 - `Read otherwise [competing]` is a competing reading at the *evidence* level; `Counter [competing]` is at the *conclusion* level.
 - If two grounds support the conclusion *only together*, add `(joint)`. Default is independent.
 
