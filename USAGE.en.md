@@ -12,7 +12,7 @@
 
 **Copy twice, paste once, then follow the tool's questions.**
 
-1. **Open a chatbot.** Start a new conversation at chatgpt.com or claude.ai (the free tier works).
+1. **Open a chatbot and check the model.** Start a new conversation on claude.ai or chatgpt.com, and pick **Claude Sonnet-class or above** (GPT-4-class+, Gemini Pro+) — on long texts with the full edition, free default (lightweight) models crush the procedure (measured). For quick checks of short texts, the Lite edition + a free model is enough.
 2. **Paste the two prompt files.** Copy the *entire* contents of [`prompts/LARP.en.md`](prompts/LARP.en.md) as your first message, then paste [`prompts/LARP_modules.en.md`](prompts/LARP_modules.en.md) right after it (long is fine). If you'll use it often, put them once into the chatbot's "project" or "custom instructions."
 3. **Paste the text to analyze — whole.** Do not attach a PDF file as is — **copy the content as text** and paste it (file attachments break page marks and increase misses). A long judgment or paper goes in as is: the tool first unfolds **the whole text's argument as a tree map and stops** (which conclusion stands on which claims and evidence, at a glance). Point at what you're curious about in your own words — "was it right to believe F's statements?" You don't need numbers or symbols. (A short text skips this step and goes straight to analysis.)
    - One check: if your pasted text keeps its page marks (like `- 12 -`), you'll also get "open page N" guidance.
