@@ -175,3 +175,7 @@ This is a **methodology tool**, not software — one prompt plus documentation, 
 ---
 
 *Seeing evidence through what you already believe is something everyone already does. Correcting your beliefs to fit the evidence is a skill that has to be learned. LARP is a tool to help with that skill.*
+
+---
+
+*Author: CHAE Sooyang · [CC BY-NC-SA 4.0](https://creativecommons.org/licenses/by-nc-sa/4.0/)*

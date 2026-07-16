@@ -199,3 +199,7 @@ The verification layer doesn't *remove* the risks — it makes them *visible.* T
 **Q. It doesn't stop after the first pass.** Add **"do only the first pass (the argument map), then stop"** to your first message. Smaller models benefit from this line.
 
 **Q. Security?** **Do not put real case records or referral materials into an external AI.** Practice on public texts.
+
+---
+
+*Author: CHAE Sooyang · [CC BY-NC-SA 4.0](https://creativecommons.org/licenses/by-nc-sa/4.0/)*

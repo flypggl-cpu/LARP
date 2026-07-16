@@ -274,3 +274,7 @@ Merged two tools — one for reviewing arguments (AIVA), and one for analyzing t
 ## Earlier
 
 Developed in the order CALM → L-CALM → AIVA-L-CALM. See the archive in the original storage folder for details.
+
+---
+
+*Author: CHAE Sooyang · [CC BY-NC-SA 4.0](https://creativecommons.org/licenses/by-nc-sa/4.0/)*

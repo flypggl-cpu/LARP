@@ -199,3 +199,7 @@ python tools/larp_card_audit.py 1차출력.md
 **Q. 1차에서 안 멈추고 끝까지 가버려요.** 첫 메시지에 **"1차(논증 지도)까지만 하고 멈춰"**를 덧붙이세요. 작은 모델일수록 이 한 줄이 도움이 됩니다.
 
 **Q. 보안은?** **실제 사건기록·송치자료는 외부 AI에 넣지 마세요.** 연습은 공개된 글로.
+
+---
+
+*저작자 채수양 · [CC BY-NC-SA 4.0](https://creativecommons.org/licenses/by-nc-sa/4.0/)*
