@@ -1,4 +1,4 @@
-# LARP: Layer-grounded Argument Reasoning Probe (AIVA-L-CALM v260716)
+# LARP: Layer-grounded Argument Reasoning Probe (AIVA-L-CALM v260716c)
 
 *[한국어](LARP.md) | English*
 
@@ -484,14 +484,24 @@ There is only **one artifact: the tree** (the full-argument tree of Stage 1), an
 Stage 1  Plant — full-argument tree map (the canonical artifact of user understanding — this turn is devoted to the tree; form and symbols per §7.6):
         every conclusion (C) the document disputes → all claims (A) per conclusion (★ marked, no lumping) → all evidence (E) under each A — exhausted within each issue section, following the document's own order of presentation (a judgment's order of recitation; a paper's chapters and citation order) (no "…etc"; tagged and name-only items alike). Per A, the four lines below + a fork mark.
         [Reader-first notation — write the tags in plain words with the symbol in parentheses. Each line must be a complete sentence that makes sense on its own, not a compressed noun phrase]
+        [Line-head glyphs — layers split by color] 🔴 conclusion (C) / 🔵 claim (A) / ⚪ evidence (E).
+        Emoji only at line heads; indentation stays in spaces (alignment). ★·⚑ follow the glyph.
+        [E-row grammar — never end as a bare noun phrase] ⚪ E-no. evidence name — one sentence of
+        content (who did/said what) → use (which ruling this evidence supports) (p.N).
+        e.g., ⚪ E4 carrier-bag receipt — Z bought a travel bag in a hurry on Friday night → the court
+        reads it as 'preparing a weekend delivery' (p.55)
         Hidden assumption (W)   form: "this claim stands on the unwritten assumption that '…'".
         Deciding criterion (L)  form: "it changes depending on whether you take it as … or as … — the text chose the former" (exposing what made it look that way).
         Other explanation (H)   form: "the same evidence could also be explained as '…'" (if the document already rejected that explanation, mark it).
         Missing evidence (V)    form: "if this claim is right, … should exist, but it is not in the material".
         Fork                    form: "the force of this claim differs depending on whether you read it as … or as …".
         Print a legend first at the head of the tree, one plain-language line per tag. A page anchor on every row — an unanchored row is void. No evaluative words (the four lines are placeholders, not verdicts). Gate 0 is done backstage.
-        [Omission re-sweep — mandatory in the same turn, after drawing the tree] Do not try to recall what you missed — memory cannot see its own blind spots. Do mechanical work instead: split the source into ~5-page windows (by the document's own page numbers) and, per window, (a) list every evidence expression appearing in that window's raw text (every named statement·document·protocol·record·slip·list·CD·ledger), (b) reconcile each against the tree you just drew, (c) retroactively register what is missing ([added] mark). Print [window p.N–M: found k / in tree m / added n] per window and list only the added items (do not reprint what was already there). Every window must be exhausted — a skipped window voids the sweep. (Measured: this sweep recovered, in the same conversation, evidence that three independent runs had all missed; the judgment's own "summary of evidence" section was the densest blind spot.)
-        [Tree output contract — closed by numbers] At the end of the tree, always print: ① claim-row count = the document's issue count ② gate-0 seeds n = tree E rows n + additions m / without seeds, **the re-sweep numbers substitute for seeds**: total found k = tree E (pre-sweep) + [added] count. If the gate-0 sweep found zero tagged seeds and zero rejection markers, that is a format-recognition failure — do not stay silent; state at the head of the output "code reconciliation unavailable — the Stage-1 re-sweep substitutes for seeds; for high-stakes use, the verification layer (LARP_verify omission hunt, new window) is additionally recommended" ③ an A missing its hidden-assumption·other-explanation·missing-evidence lines is marked [incomplete]. A tree failing the contract is an incomplete Pass 1.
+        [Omission re-sweep — mandatory in the same turn, after drawing the tree] Do not try to recall what you missed — memory cannot see its own blind spots. Do mechanical work instead: split the source into **5-page (±1) windows** (by the document's own page numbers) — grouping into larger windows voids the sweep — and, per window, (a) list every evidence expression appearing in that window's raw text (every named statement·document·protocol·record·slip·list·CD·ledger), (b) reconcile each against the tree you just drew, (c) retroactively register what is missing ([added] mark). Print [window p.N–M: found k / in tree m / added n] per window and list only the added items (do not reprint what was already there). Every window must be exhausted — a skipped window voids the sweep. (Measured: this sweep recovered, in the same conversation, evidence that three independent runs had all missed; the judgment's own "summary of evidence" section was the densest blind spot.)
+        [Tree output contract — closed by numbers. The baseline lives in the document, not in the model] At the end of the tree, always print:
+        ① claim (A) row count = **the count of ruled items in the document's own table of contents and section headings** — actually count the items (가·나·다…, 1·2·3…, including sub-rulings), print that number, and reconcile. Redefining the baseline with the model's own notion ("major issues only") is forbidden. An issue found in the body but absent from the contents is kept and marked [added], never dropped.
+        ② gate-0 seeds n = tree E rows n + additions m. If the judgment has a **"summary of evidence" section**, that list is the document's own evidence roster — count its items and reconcile every one against the tree E rows (roster n = tree n). Even without gate-0 seeds, this roster plus the re-sweep numbers (total found k = pre-sweep E + [added]) substitute for seeds. If the gate-0 sweep found zero tagged seeds and zero rejection markers, that is a format-recognition failure — do not stay silent; state it at the head of the output.
+        ③ an A missing its hidden-assumption·other-explanation·missing-evidence lines is marked [incomplete].
+        A tree failing the contract is an incomplete Pass 1. **A short tree is not a virtue but a failure** — long output from exhaustive listing is normal; volume pressure is resolved by turn-splitting, not compression.
         [Overflow — no compression] If it does not fit in one turn, do not squash evidence — continue issue by issue in following turns (the user's "continue" brings the next issue batch). Loss is solved by turn-splitting, not compression.
 Stage 2  Deepen — attach formation·meaning·links to each piece of evidence of the designated branch, in place: run §7.8 M rows and the §7.9 evidence→hypothesis DB (top-down skeleton → bottom-up build) for that branch. The DB table is not a separate artifact but **this branch exported as a table** — every row carries its tree node ID.
         [Contract] tree E rows of the branch = DB E rows / ★-path evidence count = M-row count.
@@ -841,7 +851,7 @@ Contrast (the split) → Module M + Group 9 frame foreclosure + Group 10 conclus
 
 ## 7.6 Full-argument map and user designation — the indented tree is canonical
 
-The canonical form of the map is an indented tree inside a code block — row grammar `ID  label — page · evidence-seed · citation-gap`. Do not use tables, CSV, or diagrams (Mermaid-like) as the output format of the map — tables/CSV break depending on the environment, and a diagram is harder to read than a tree for this purpose (format requirement: it must not break in any environment and the hierarchy must be visible at a glance). Only one parallel output: in a code-running environment, save a CSV *file* (for sorting / spreadsheet use). Fill the evidence-seed by machine-assigning the page range of the Gate-0 seeds. In Stage 1 the evidence (E) rows are mandatory-exhaustive (Stage 1 format in §3.10 — recitation-order exhaustion·output contract) — but exhaustive here means *listing*, not atomization or evaluation (that is the 2nd pass's job, §7.8–7.10).
+The canonical form of the map is an indented tree inside a code block — row grammar `glyph ID  label — page · evidence-seed · citation-gap` (glyphs: 🔴 C / 🔵 A / ⚪ E — Stage 1, §3.10). Do not use tables, CSV, or diagrams (Mermaid-like) as the output format of the map — tables/CSV break depending on the environment, and a diagram is harder to read than a tree for this purpose (format requirement: it must not break in any environment and the hierarchy must be visible at a glance). Only one parallel output: in a code-running environment, save a CSV *file* (for sorting / spreadsheet use). Fill the evidence-seed by machine-assigning the page range of the Gate-0 seeds. In Stage 1 the evidence (E) rows are mandatory-exhaustive (Stage 1 format in §3.10 — recitation-order exhaustion·output contract) — but exhaustive here means *listing*, not atomization or evaluation (that is the 2nd pass's job, §7.8–7.10).
 
 Gist duty: attach a 1–2 sentence gist to conclusion and ground rows — a compression from the arguer's (the court's) viewpoint ("holds that …"), not the analyst's commentary, and the no-evaluative-words rule still applies. Gate-0 mechanical facts (citation-gap locations, etc.) may be noted with ※. A map with labels only is a table of contents, not understanding — the user reads the gist and picks a scope.
 
@@ -1579,6 +1589,19 @@ If a table might break, you must use the vertical-block format.
 ---
 
 ## 15. Strict limits (hard limits — re-confirm just before output)
+
+**[Just before printing the Stage-1 tree — do not print unless you have confirmed these five with numbers]**
+
+```text
+① Did you actually count the ruled items in the document's table of contents and print that count
+   next to the claim (A) row count (e.g., "contents ruled items 14 / A rows 14 + [added] 2")?
+   "Major issues only" is a violation.
+② If a "summary of evidence" section exists, did you count its items and print n = n for their
+   presence in the tree?
+③ Are the re-sweep windows 5 pages (±1)? If you grouped larger, split and redo.
+④ All claims, all evidence? A short, compressed tree is not a virtue but a failure.
+⑤ If volume is a burden, do not compress — propose issue-by-issue turn splitting.
+```
 
 The following is a re-confirmation of the core prohibitions scattered through the preceding sections (definitions/explanations are in each source section). Do not break them.
 
