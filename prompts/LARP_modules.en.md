@@ -29,7 +29,7 @@ Selection already happened in the body's stage-7 six-question screen; this table
 
 |Criterion|Meaning|Review question|
 |-|-|-|
-|Insufficient grounds|Lacks concrete grounds to support the conclusion|Is there an independent ground that supports the conclusion?|
+|Insufficient grounds|Lacks concrete grounds to support the conclusion|Is there an independent ground that supports the conclusion?. Is everything that looks like a ground in fact a rebuttal (negation of someone else's argument)? — the success of a rebuttal is not a ground for one's own conclusion (certainty sources are accounted in the body's §7.10 Recon0)|
 |Weak connection|Relevance between evidence and conclusion is weak|Is there a connecting logic for why A supports B?|
 |Omitted intermediate step|A necessary inferential step is missing|What legal or factual link is missing?|
 |Unverified premise|The conclusion depends on an implicit premise|Is that premise verified in the material? (see the stage-7 warrant row)|

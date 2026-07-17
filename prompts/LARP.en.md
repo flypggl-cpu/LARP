@@ -1,4 +1,4 @@
-# LARP: Layer-grounded Argument Reasoning Probe (AIVA-L-CALM v260716c)
+# LARP: Layer-grounded Argument Reasoning Probe (AIVA-L-CALM v260716f)
 
 *[한국어](LARP.md) | English*
 
@@ -505,7 +505,7 @@ Stage 1  Plant — full-argument tree map (the canonical artifact of user unders
         [Overflow — no compression] If it does not fit in one turn, do not squash evidence — continue issue by issue in following turns (the user's "continue" brings the next issue batch). Loss is solved by turn-splitting, not compression.
 Stage 2  Deepen — attach formation·meaning·links to each piece of evidence of the designated branch, in place: run §7.8 M rows and the §7.9 evidence→hypothesis DB (top-down skeleton → bottom-up build) for that branch. The DB table is not a separate artifact but **this branch exported as a table** — every row carries its tree node ID.
         [Contract] tree E rows of the branch = DB E rows / ★-path evidence count = M-row count.
-Stage 3  Shake (same turn as Stage 2) — run the four cross-reconciliations · four structural tests (§7.10), pin a flag (⚑) on the tree node for every hit, and **reprint the updated branch**. Each flag carries its trigger path (recon-n / test-X / rejection-seed / interpretation-contest) and one plain-prose line. Append the three signals (§7.7) and the self-check (§3.5-8) as the tail and stop — "which flag (or ★) shall I interrogate?".
+Stage 3  Shake (same turn as Stage 2) — account the certainty-source ledger (Recon0) first, then run the four cross-reconciliations · four structural tests (§7.10), pin a flag (⚑) on the tree node for every hit, and **reprint the updated branch**. Each flag carries its trigger path (recon-n / test-X / rejection-seed / interpretation-contest) and one plain-prose line. Append the three signals (§7.7) and the self-check (§3.5-8) as the tail and stop — "which flag (or ★) shall I interrogate?".
         [Contract] total hits (recon·test·rejection-seed·interpretation-contest) = flag count = promotion count.
 Stage 4  Interrogate — for each designated flag (or, on "continue", all ★+flags): a minimal reconstruction block (§7.5), the six-question interrogation, and whatever module its type calls. Each item gets a page anchor + a confirmation question.
         [Contract] flag count = interrogation-block count + explicit deferrals. **Only two deferral grounds are permitted**: (a) outside the designated scope — with mandatory registration in the open-questions ledger (b) duplication of the same source·same bridge as another block — naming that block's ID. Nothing else qualifies (low volume, low contribution, or low importance are not grounds — that judgment belongs to the human). An anomaly newly found without a flag gets its flag registered retroactively, then interrogated. The body of a flagging sentence is plain prose — it must convey what is anomalous and why even when read without the symptom code or group number, which are a parenthetical appendage. Evidence appearing in the selection gets a one-line introduction on first appearance (what it is · who made it · its gist), so the user can understand it without the source text. Priority is sensitivity — start from the joint whose collapse would collapse the conclusion. Accompany the display of key evidence (below) *before* the opinion.
@@ -1052,6 +1052,12 @@ Once the DB is built, reconcile the top-down skeleton against the bottom-up DB, 
 
 ```text
 [Cross-reconciliation — top-down skeleton ↔ bottom-up DB]
+Recon0 certainty-source ledger   For each adopted conclusion (H), account for where its certainty came from, in three columns (no numeric computation — classification and counts only):
+                        [new]       evidence→conclusion paths the document itself laid down (n)
+                        [restored]  discounts on existing evidence lifted by rebutting opposing arguments/doubts (m)
+                                    — with a ceiling: only up to the undiscounted original value. A rebuttal at the level of "it can also be read otherwise" lifts the discount only partially.
+                        [reread]    the same material read in a different direction (k) — marked if the rereading's validity is itself disputed.
+                        Then ask: when [new] = 0, is there a passage (page-cited) where the document itself performs the affirmative assessment that "the restored total reaches the conclusion's threshold"? If not — **certainty source unknown**: notify, alone at the head of the selection list (not in parallel with other flags), that the conclusion's certainty may have come not from argument but from the rhetorical momentum of rebuttal victories. Rebuttal tears down the opponent's argument; by itself it does not build one's own conclusion.
 Recon1 expected-but-absent    expected evidence with no E row → gap (V); top priority if 'required'.
 Recon2 present-but-unexpected an E row on no H's expected list → signal of an incomplete hypothesis
                               set, or reclassification needed (list, don't drop).
@@ -1098,7 +1104,7 @@ Group 2. Connection·inference structure — insufficient grounds · weak connec
 Group 3. Formal logic — affirming the consequent/denying the antecedent · quantifier slippage · modal error · fallacy of composition/division
 Group 4. Causal inference — causal leap · uncontrolled confounder · reverse causation · confusing correlation/causation · post hoc causation
 Group 5. Probability·statistical structure — base-rate neglect · confusing evidence independence · ignoring joint probability · insufficient evidential diagnosticity · missing reference class · sampling/generalization error · ignoring regression to the mean · post hoc patterning
-Group 6. Alternative hypotheses·contrary evidence·falsification — untested alternative hypothesis · omitted contrary circumstance · selective use of evidence · collection gap · confusing defeater types · unfalsifiable structure · violation of simplicity
+Group 6. Alternative hypotheses·contrary evidence·falsification — untested alternative hypothesis · omitted contrary circumstance · selective use of evidence · collection gap · confusing defeater types · unfalsifiable structure · violation of simplicity · surface-level rejection grounds · strawman-diminished rejection · conclusion-presupposing rejection · doubt-exhaustion illusion
 Group 7. Subjective inference·timing — leap to intent · unclear time order (ex-post→ex-ante)
 Group 8. Legal elements·evidence rules — confusing legal elements · propensity/prior-record error · shifting the burden of proof · unclear sufficiency threshold
 Group 9. Concept·object construction — wavering conceptual criterion · object-formation error · frame foreclosure
