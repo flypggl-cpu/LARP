@@ -18,8 +18,12 @@ Each of LARP's core devices comes from a long tradition.
 | **Reconstructing the hidden (implicit) premise** | the logic tradition of the **enthymeme** — restoring the omitted premise |
 | **Unfalsifiable structure · the whole-document three signals** | Karl Popper's **falsifiability**, demarcation in philosophy of science |
 | **Burden of proof · reasonable doubt · presumption of innocence** | criminal evidence law and legal-argumentation theory |
+| **Certainty-source ledger (Recon0) · closure rule · dialogue-layer symptoms (self-evidence exemption · silencing move · unresponsive reply · denial of common ground)** | van Eemeren & Grootendorst's **pragma-dialectics** — the ten rules for critical discussion |
+| **Detecting status laundering · genre substitution** — distinguishing rebuttal from proof | speech-act theory (Lewis's presupposition accommodation), argumentation frameworks (Dung), truth-maintenance systems (TMS), Bayesian confirmation theory |
 
 Seen this way, LARP is less an *invention* than an *arrangement*. And that is not a weakness but a **basis for trust** — it means proven tools were gathered into one procedure.
+
+> **Absorption status of the pragma-dialectics ten rules (audit note).** Van Eemeren & Grootendorst's ten rules reclassify every classical fallacy as "a violation of one rule of critical discussion." LARP does not bolt this rule framework on as a separate checklist — instead, each violation type of the ten rules is absorbed so that it already has a name somewhere in the LARP index: rules 3 (strawman), 6 (premise smuggling), 7 (argumentation schemes), 8 (formal logic), 9 (closure — triangulated by Recon0·Group 6·Group 8), and 10 (language) are registered by measurement; the dialogue-layer remainder of rules 1·2·4·6 (silencing move · self-evidence exemption · unresponsive reply · denial of common ground) is registered as theoretical entries awaiting measurement. A second routing layer by rule number would be double naming, so it is not added. The full mapping is in the revision audit record (`verification/records_private/pragma_dialectics_scan.md`).
 
 ---
 
@@ -55,6 +59,7 @@ Having stated the overlaps and differences, the limits are equally clear.
 
 - **Formal rigor falls short of an engine like Carneades.** LARP has neither formal semantics nor a proof-standards computation engine.
 - **There is no quantitative matrix scoring like ACH's.** It does not numerically sum per-hypothesis evidence scores.
+- **It does not compute Bayesian probabilities numerically.** The certainty-source ledger (Recon0) counts only the *structure* of combination (new/restored/reread); the multiplication is the human's judgment — numbers without base-rate data are only the appearance of precision.
 - **There is no empirical benchmark yet.** We verified that it "works as intended," but we have no data measuring *how much better* it is than a plain LLM.
 
 So LARP's contribution is not a *new theory* but **integration + automation + accessibility** — gathering scattered, proven methods (Walton·Toulmin·Heuer·enthymeme·Popper) into one install-free prompt, so even a non-developer can apply it to real documents immediately while the human keeps the judgment.
