@@ -1,4 +1,4 @@
-# LARP Criteria & Check Modules (v260716e)
+# LARP Criteria & Check Modules (v260717b)
 
 *A pluggable module file split out from the main body "LARP v260616."*
 *The body keeps the decomposition engine, the six-question screen, and a one-line index of the 10 symptom groups only. Load this file alongside the body when you need the detailed definitions, review questions, routing, and criminal check axes for each symptom.*
@@ -98,6 +98,7 @@ Selection already happened in the body's stage-7 six-question screen; this table
 |Propensity / prior-record error|Infers this offense from prior convictions or bad character (forbidden propensity inference)|Are prior record/propensity used not to prove the act but as a character attack?|
 |Shifting the burden of proof|Converts a failure to explain (ignorance) into evidence of guilt, or shifts the burden onto the defendant|Has what the prosecution must prove been replaced by the defendant's failure to explain? (argument from ignorance / violation of the presumption of innocence). Has the refutation of an acquittal (the court below's or a dissent's reasoning) been substituted for the completion of the prosecution's proof — rebutting doubts only restores support; it is not an affirmative showing that the threshold was reached|
 |Unclear sufficiency threshold|The "beyond reasonable doubt" standard wavers or is lowered|Is the proof threshold applied consistently and not lowered case by case?. A doubt need only be reasonable, not proven — if the rebuttal amounts to "it can also be read otherwise," the doubt survives; does the strength of the rebuttal reflect this asymmetry|
+|Self-evidence exemption|Seeks exemption from the burden of proof by declaring "obvious · self-evident · beyond question" (pragma-dialectics rule 2 violation — theoretical entry, awaiting measurement)|Does an actual ground follow the declaration, or does the declaration substitute for one? (adjacent to E-3 ㉯ bare-maxim form)|
 
 #### Group 9. Concept & object construction
 
@@ -115,7 +116,10 @@ Selection already happened in the body's stage-7 six-question screen; this table
 |Ad hominem / appeal to emotion|Appeals to the person, emotion, or prejudice instead of grounds|Does the conclusion lean on attacking a person or on emotion rather than facts and grounds?|
 |Complex question / embedded premise|Plants the conclusion into the question or narrative in advance|Does "why did they embezzle it" already presuppose the disputed fact?|
 |Conclusion-first / motivated reasoning|Grounds are selected and arranged to serve the conclusion (motivated reasoning)|Is there a structural signal that the material was arranged toward the conclusion after the fact? (the decision procedure is the 3-signal synthesis in 7.7)|
-|Illusion of narrative coherence|Mistakes the smoothness/consistency of the story for the strength of evidence|Has the mere fact of a consistent narrative been used as a basis for truth? (coherence is not correspondence)|
+|Illusion of narrative coherence|Mistakes the smoothness/consistency of the story for the strength of evidence|Has the mere fact of a consistent narrative been used as a basis for truth? (coherence is not correspondence). Does certainty rise together with narrative smoothness while no new evidence is added (coherence shift)? — reconcile the points where certainty rises against the points where evidence is added|
+|Silencing move|Blocks the very raising of objections — threats, taboo-marking, denying standing (rule 1 violation — theoretical entry, awaiting measurement)|Is there a spot where an objection is treated as improper to raise rather than rebutted on its content?|
+|Unresponsive reply|The reply does not address the content of the argument raised — answers a different point or restates the conclusion (rule 4 violation — theoretical entry, awaiting measurement)|Does the rejection/reply aim at the actual content of the opposing argument, or has the target been switched? (a different axis from surface-level rejection grounds — that is quality of grounds; this is the target)|
+|Denial of common ground|Denies later what the document itself earlier accepted or presupposed, or uses an unagreed point as an agreed starting point (rule 6 violation — theoretical entry, awaiting measurement)|Is there a clash between earlier accepted facts and later narration; has the starting point shifted silently?|
 
 ---
 
