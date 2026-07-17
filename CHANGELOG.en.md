@@ -2,6 +2,14 @@
 
 *[한국어](CHANGELOG.md) | English*
 
+## v260716f — 2026-07-16
+
+- **New Recon0 "certainty-source ledger"** (at the head of the §7.10 reconciliations; Stage 3's first act) — a qualitative operationalization of the likelihood-ratio principle. Per adopted conclusion, certainty sources are accounted in three columns [new evidence paths / restored — discounts lifted by rebutting doubts (ceiling: the undiscounted original; "can be read otherwise" lifts only partially) / reread], and when [new]=0 the document's own affirmative assessment that "the restored total reaches the threshold" must be page-cited — absent, a standalone head notice: **certainty source unknown**. No numeric computation (consistent with the v260703e rejection of numeric Bayes — classification and counts only).
+  - Honest design record: the first draft (a binary "zero affirmative arguments = no argument exists") would have false-alarmed on legitimate pure-rebuttal documents (undiscounted total reaching threshold, affirmatively assessed) — corrected into ledger form by the author's likelihood-ratio point. Rebuttal can raise certainty but has a ceiling; the anomaly is not "rebuttal only" but "no ledger".
+  - Hierarchy completed: LR principle (theory) → Recon0 ledger (general) → doubt-exhaustion illusion · Group-8 substitution · E-5 reversal (special cases).
+- Group-2 "insufficient grounds" check question sharpened: "is everything that looks like a ground in fact a rebuttal — a rebuttal's success is not a ground for one's own conclusion."
+- case4 rubric aligned. Checker: on a re-run of this judgment, does C1 receive a [new 0 / restored m] accounting and the head notice. Rollback: if Recon0 idles on affirmative-rich ordinary documents, restrict it to Gate-1 (long) documents.
+
 ## v260716e — 2026-07-16
 
 - **"Doubt-exhaustion illusion" registered + burden-of-proof sharpening** (a pattern found in real holdout-judgment use; a lower-model review memo independently examined, adopted with modifications):
