@@ -2,6 +2,15 @@
 
 *[한국어](CHANGELOG.md) | English*
 
+## v260716e — 2026-07-16
+
+- **"Doubt-exhaustion illusion" registered + burden-of-proof sharpening** (a pattern found in real holdout-judgment use; a lower-model review memo independently examined, adopted with modifications):
+  - New Group-6 symptom **doubt-exhaustion illusion** (index + one module-table row): deriving the conclusion directly from rebutting an enumerated list of doubts — hiding the unverified completeness premise. The check question makes reconciliation with Module Q (independently generated strongest rebuttal) the operational test (ACH · van Fraassen's bad lot · Walton's burden distinction · Pollock's undercutting defeaters). Proposal B (a ③ sub-question) rejected — the verdict is already reachable under ③ (measured: ②③⑤ "unclear" succeeded); what was missing was a name, and the six questions are invariant machinery.
+  - Two Group-8 check-question sharpenings: burden-shift gains "refuting the acquittal is not completing the proof — rebutting doubts only restores support"; unclear sufficiency threshold gains "a doubt need only be reasonable — a rebuttal at the level of 'can be read otherwise' leaves the doubt alive (the asymmetry of the standard)".
+  - New **E-5 acquittal-reversal structure** in the judgment profile: mandatory one-line notation [new circumstance: what / none: re-reading] (countable) → "none" auto-fires the two Group-8 checks + an immediacy-principle check instruction. One list-level cross-reference sentence at the end of E-3.
+  - Incidental repair: the English §8 Group-6 index was missing three previously registered symptoms (surface-level rejection grounds · strawman-diminished rejection · conclusion-presupposing rejection) — found and fixed.
+- Basis: the same skeleton appeared three times in one judgment. Checker: on a re-run, do the three spots receive this name. Rollback: if the entry over-fires on non-judgment documents, tighten the Q-reconciliation requirement.
+
 ## v260716d — 2026-07-16
 
 - **Companion-tool alignment and notation transfer** (ripple cleanup of the full-edition revisions; analysis machinery unchanged):
