@@ -1,4 +1,4 @@
-# LARP: Layer-grounded Argument Reasoning Probe (AIVA-L-CALM v260716f)
+# LARP: Layer-grounded Argument Reasoning Probe (AIVA-L-CALM v260716g)
 
 *[한국어](LARP.md) | English*
 
@@ -486,6 +486,7 @@ Stage 1  Plant — full-argument tree map (the canonical artifact of user unders
         [Reader-first notation — write the tags in plain words with the symbol in parentheses. Each line must be a complete sentence that makes sense on its own, not a compressed noun phrase]
         [Line-head glyphs — layers split by color] 🔴 conclusion (C) / 🔵 claim (A) / ⚪ evidence (E).
         Emoji only at line heads; indentation stays in spaces (alignment). ★·⚑ follow the glyph.
+        [A-row direction mark — mandatory] End every claim (A) row with its direction: **[builds]** (an argument toward its own conclusion) or **[demolishes→target]** (a rebuttal aimed at another argument or doubt — name the target). Sentence form reveals direction: "… can be found" builds; "the court below held …, but this is hard to accept" demolishes. A rebuttal tears down the opponent's argument; it does not build one's own conclusion.
         [E-row grammar — never end as a bare noun phrase] ⚪ E-no. evidence name — one sentence of
         content (who did/said what) → use (which ruling this evidence supports) (p.N).
         e.g., ⚪ E4 carrier-bag receipt — Z bought a travel bag in a hurry on Friday night → the court
@@ -501,6 +502,7 @@ Stage 1  Plant — full-argument tree map (the canonical artifact of user unders
         ① claim (A) row count = **the count of ruled items in the document's own table of contents and section headings** — actually count the items (가·나·다…, 1·2·3…, including sub-rulings), print that number, and reconcile. Redefining the baseline with the model's own notion ("major issues only") is forbidden. An issue found in the body but absent from the contents is kept and marked [added], never dropped.
         ② gate-0 seeds n = tree E rows n + additions m. If the judgment has a **"summary of evidence" section**, that list is the document's own evidence roster — count its items and reconcile every one against the tree E rows (roster n = tree n). Even without gate-0 seeds, this roster plus the re-sweep numbers (total found k = pre-sweep E + [added]) substitute for seeds. If the gate-0 sweep found zero tagged seeds and zero rejection markers, that is a format-recognition failure — do not stay silent; state it at the head of the output.
         ③ an A missing its hidden-assumption·other-explanation·missing-evidence lines is marked [incomplete].
+        ④ Print a direction count per C: [builds n / demolishes m]. **If builds = 0**, mark next to that C: "no branch in this tree builds this conclusion on its own" — a structural report, not a verdict (the precise certainty accounting is Stage 3's Recon0).
         A tree failing the contract is an incomplete Pass 1. **A short tree is not a virtue but a failure** — long output from exhaustive listing is normal; volume pressure is resolved by turn-splitting, not compression.
         [Overflow — no compression] If it does not fit in one turn, do not squash evidence — continue issue by issue in following turns (the user's "continue" brings the next issue batch). Loss is solved by turn-splitting, not compression.
 Stage 2  Deepen — attach formation·meaning·links to each piece of evidence of the designated branch, in place: run §7.8 M rows and the §7.9 evidence→hypothesis DB (top-down skeleton → bottom-up build) for that branch. The DB table is not a separate artifact but **this branch exported as a table** — every row carries its tree node ID.
@@ -1052,12 +1054,13 @@ Once the DB is built, reconcile the top-down skeleton against the bottom-up DB, 
 
 ```text
 [Cross-reconciliation — top-down skeleton ↔ bottom-up DB]
-Recon0 certainty-source ledger   For each adopted conclusion (H), account for where its certainty came from, in three columns (no numeric computation — classification and counts only):
+Recon0 certainty-source ledger   For each adopted conclusion (H), account for where its certainty came from — using the Stage-1 direction marks as initial values (demolishes→restored candidates, builds→new·reread candidates; no double classification) — in three columns (no numeric computation — classification and counts only):
                         [new]       evidence→conclusion paths the document itself laid down (n)
                         [restored]  discounts on existing evidence lifted by rebutting opposing arguments/doubts (m)
                                     — with a ceiling: only up to the undiscounted original value. A rebuttal at the level of "it can also be read otherwise" lifts the discount only partially.
                         [reread]    the same material read in a different direction (k) — marked if the rereading's validity is itself disputed.
                         Then ask: when [new] = 0, is there a passage (page-cited) where the document itself performs the affirmative assessment that "the restored total reaches the conclusion's threshold"? If not — **certainty source unknown**: notify, alone at the head of the selection list (not in parallel with other flags), that the conclusion's certainty may have come not from argument but from the rhetorical momentum of rebuttal victories. Rebuttal tears down the opponent's argument; by itself it does not build one's own conclusion.
+                        (Optional) In a code environment, also emit the ledger as JSON (format: tools/larp_recon0_schema.md) — tools/larp_recon0_audit.py verifies the column totals and the notice condition in code.
 Recon1 expected-but-absent    expected evidence with no E row → gap (V); top priority if 'required'.
 Recon2 present-but-unexpected an E row on no H's expected list → signal of an incomplete hypothesis
                               set, or reclassification needed (list, don't drop).
