@@ -2,6 +2,10 @@
 
 *[한국어](CHANGELOG.md) | English*
 
+## v260717c — 2026-07-17
+
+- `docs/lineage.md` (+en) updated — pragma-dialectics (van Eemeren & Grootendorst) ten rules and this week's disciplines (speech-act theory, argumentation frameworks, TMS, Bayes) added to the lineage table, with an **absorption-status audit note**: 6 measured entries + 4 theoretical entries, no second routing layer by rule number, full mapping in pragma_dialectics_scan.md. One line added to the honest limits: "does not compute Bayesian numbers." Purpose: a future auditor confirms "this lineage is already absorbed" without re-scanning — forgetting prevented at the lineage level.
+
 ## v260717b — 2026-07-17
 
 - **Four dialogue-layer symptoms registered as theoretical entries** — the scan's four partials converted from hold to registration (author's call: "unregistered is forgotten" — the index is the memory). Each carries a **(theoretical entry, awaiting measurement)** mark distinguishing it from measured symptoms:
