@@ -2,6 +2,18 @@
 
 *[한국어](CHANGELOG.md) | English*
 
+## v260717b — 2026-07-17
+
+- **Four dialogue-layer symptoms registered as theoretical entries** — the scan's four partials converted from hold to registration (author's call: "unregistered is forgotten" — the index is the memory). Each carries a **(theoretical entry, awaiting measurement)** mark distinguishing it from measured symptoms:
+  - Group 8 **self-evidence exemption** (rule 2 — declaration substituting for grounds; adjacent to E-3 ㉯)
+  - Group 10 **silencing move** (rule 1) · **unresponsive reply** (rule 4 — target-switching; axis explicitly distinguished from surface-level rejection grounds) · **denial of common ground** (rule 6)
+- Registered simultaneously in the §8 index (+en) and the module tables (+en). The mark is removed upon measurement; long-unmeasured entries become deletion candidates — the net-reduction pressure is preserved via the mark.
+
+## v260717a — 2026-07-17
+
+- **Group-10 narrative-coherence check question sharpened** (modules, +en) — importing the operational signal from coherence-shift research: "does certainty rise together with narrative smoothness while no new evidence is added — reconcile certainty-rise points against evidence-addition points." Operationalizes the cognitive mechanism of status laundering at sentence level.
+- **Pragma-dialectics ten-rules mapping scan** (observation record, verification/records_private/pragma_dialectics_scan.md) — result: fully covered 6 / partial 4 / absent 0. All four partials sit at the dialogue layer (silencing moves · self-evidence exemption · response relevance · denial of common ground) — consistent with the diagnosis that criterion blind spots come from missing layers, not missing items. Rule 9 (closure) is triangulated by Recon0·Group 6·Group 8 — evidence that this week's registrations filled the biggest hole. Registration of the four partials is held (R5 — reviewed when a real case bites).
+
 ## v260717 — 2026-07-17
 
 - **New tools/larp_recon0_audit.py + larp_recon0_schema.md (+en)** — code verification of the Recon0 certainty-source ledger. Audit scope is bookkeeping consistency only (ledger presence · column totals · full/partial restoration marks · declared-vs-actual reconciliation · the "new=0 + no affirmative assessment" notice condition) — the format doc states explicitly that classification truth remains the human's. One optional hook line in §7.10 Recon0; listed in tools/README and README.
