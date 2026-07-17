@@ -2,6 +2,17 @@
 
 *[한국어](CHANGELOG.md) | English*
 
+## v260717 — 2026-07-17
+
+- **New tools/larp_recon0_audit.py + larp_recon0_schema.md (+en)** — code verification of the Recon0 certainty-source ledger. Audit scope is bookkeeping consistency only (ledger presence · column totals · full/partial restoration marks · declared-vs-actual reconciliation · the "new=0 + no affirmative assessment" notice condition) — the format doc states explicitly that classification truth remains the human's. One optional hook line in §7.10 Recon0; listed in tools/README and README.
+- Self-tests passed: positive (the measured judgment's C1 accounting [new 1 / restored 6 (full 4·partial 2) / reread 13] + affirmative p.56 → zero violations) / negative (new 0 + no assessment + doctored totals → notice fired + declaration mismatch caught, exit 1). Disguised totals (inflated self-reports) are blocked by declared_counts reconciliation — F1 ("a report is not evidence") applied to Recon0.
+
+## v260716g — 2026-07-16
+
+- **Direction marks grafted onto the tree** — TMS/Dung structural detection (support vs attack edges) brought into the paste-only flow's first screen: ① every A row ends with [builds]/[demolishes→target] (sentence form reveals direction) ② new tree contract ④: per-C [builds n / demolishes m] count; builds=0 → structural report "no branch builds this conclusion on its own" (not a verdict) ③ Recon0 takes Stage-1 direction marks as initial values (no double classification). Hierarchy completed: Stage-1 marks (show) → Stage-3 Recon0 (account) → code audit (verify; planned).
+- Theoretical context on record: the underlying issue is the criminal-procedure problem of **aggregate probative force** — Bayesian in structure (multiple items of evidence combining into certainty). LARP's stance unchanged: expose the **structure** of combination (independence, common source, ignored joint probability, certainty sources) but never compute numeric probabilities (Module N "expose the structure, do not calculate"; the v260703e rejection of numeric Bayes). Bayes without numbers — column-and-edge bookkeeping is its operationalization.
+- case4 rubric aligned. Rollback: if direction marks become formal noise on short documents, restrict to Gate-1 (long) documents.
+
 ## v260716f — 2026-07-16
 
 - **New Recon0 "certainty-source ledger"** (at the head of the §7.10 reconciliations; Stage 3's first act) — a qualitative operationalization of the likelihood-ratio principle. Per adopted conclusion, certainty sources are accounted in three columns [new evidence paths / restored — discounts lifted by rebutting doubts (ceiling: the undiscounted original; "can be read otherwise" lifts only partially) / reread], and when [new]=0 the document's own affirmative assessment that "the restored total reaches the threshold" must be page-cited — absent, a standalone head notice: **certainty source unknown**. No numeric computation (consistent with the v260703e rejection of numeric Bayes — classification and counts only).
