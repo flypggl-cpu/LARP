@@ -2,7 +2,9 @@
 
 *[한국어](README.md) | English*
 
-This folder is the **code part of the full LARP's verification layer (LARP.md §3.7)**. After the Pass-1 output, it makes the risks a human cannot otherwise filter ***visible* — flagged mechanically and the same way every time (i.e. deterministically).** The table below states precisely *what each tool does*; how to run them (the same for all) and the detailed manual follow.
+This folder is the **code part of the full LARP's verification layer (LARP.md §3.7)**. Even after a person re-reads and reviews the AI's Pass-1 analysis, some risks **can't be caught by eye** (an invented quote looks just like a real one; dropped evidence is *absent*, so there's nothing to notice) — this folder makes them ***visible*, flagged mechanically and the same way every time (i.e. deterministically).** The table below states precisely *what each tool does*; how to run them (the same for all) and the detailed manual follow.
+
+> **Why can't the AI catch this itself?** An AI is less a *librarian* who looks things up than a *storyteller* who produces the most plausible answer. So it can drop a piece of evidence from a long text (completeness) or invent a quote not in the source (faithfulness) without noticing — and asking the same AI "did you miss anything?" misses the same spots again, because it's the *same* eye, not a second one. **"The AI produced it" is not "it looked it up and confirmed it,"** so the tools below do that confirmation by machine. (More: [AI's limits](../docs/ai_problems_and_this_tool.en.md))
 
 > **Mode-agnostic.** These tools aren't tied to one mode — they reconcile against the map/output of *any* mode: the base LARP-Map, the long-document mode, or the full LARP.
 
