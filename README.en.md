@@ -139,6 +139,7 @@ See [USAGE.en.md](USAGE.en.md) for details.
 | [`tools/larp_card_audit.py`](tools/larp_card_audit.py) | evidence-table audit — checks for blanks, lumping, and typos |
 | [`tools/larp_matrix_audit.py`](tools/larp_matrix_audit.py) | evidence × hypothesis matrix audit — same-source double-counting, non-diagnostic-as-core, empty cells |
 | [`tools/larp_matrix_schema.en.md`](tools/larp_matrix_schema.en.md) | the matrix's data format and how to fill it · [한국어](tools/larp_matrix_schema.md) |
+| [`tools/larp_recon0_audit.py`](tools/larp_recon0_audit.py) | certainty-source ledger audit — code-checks the bookkeeping of where a conclusion's certainty came from (new evidence · restoration by rebuttal · rereading) |
 
 > New here? Start with the [introduction](docs/introduction.en.md). The deep theory is gathered separately in the [appendix](docs/appendix_deep.en.md) — skip it if you just want to start using the tool.
 
@@ -170,12 +171,8 @@ This is a **methodology tool**, not software — one prompt plus documentation, 
 
 ## License
 
-**[CC BY-NC-SA 4.0](https://creativecommons.org/licenses/by-nc-sa/4.0/)** (Attribution-NonCommercial-ShareAlike). You may share and adapt it freely with credit, for non-commercial purposes, and derivative works must use the same license. See [`LICENSE`](LICENSE) for the full text.
+**Author: CHAE Sooyang** · **[CC BY-NC-SA 4.0](https://creativecommons.org/licenses/by-nc-sa/4.0/)** (Attribution-NonCommercial-ShareAlike). You may share and adapt it freely with credit, for non-commercial purposes, and derivative works must use the same license. See [`LICENSE`](LICENSE) for the full text.
 
 ---
 
 *Seeing evidence through what you already believe is something everyone already does. Correcting your beliefs to fit the evidence is a skill that has to be learned. LARP is a tool to help with that skill.*
-
----
-
-*Author: CHAE Sooyang · [CC BY-NC-SA 4.0](https://creativecommons.org/licenses/by-nc-sa/4.0/)*
