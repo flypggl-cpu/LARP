@@ -12,16 +12,16 @@ This folder is the **code part of the full LARP's verification layer (LARP.md §
 
 The full LARP's Pass-1 output leaves two risks a human cannot filter even while looking at it — **silent omission** (evidence/weak points never raised) and **disguised hallucination** (invented sentences that look like source quotes). The scripts here are the code part of that verification layer; without relying on model discipline, they make the risks *visible* deterministically.
 
-| Script | Blocks | One line |
+| Script | Problem it catches | In plain terms |
 |---|---|---|
-| `larp_coverage_audit.py` | mechanical omission | did every tag-cited piece of evidence make it onto the map/ledger |
-| `larp_card_audit.py` | lumping · blanks | was the evidence evaluated in the §7.8 cards / §7.9 ledger, atomized and complete |
-| `larp_quote_audit.py` | disguised hallucination | does a sentence presented as a 'source quote' actually exist in the source |
-| `larp_matrix_audit.py` | non-diagnostic · double-counting | in the evidence × hypothesis matrix (§7.10): is non-diagnostic evidence used as a core ground · common-source duplication · hypothesis gaps |
-| `larp_recon0_audit.py` | ledger bookkeeping consistency | audits the certainty-source ledger (§7.10 Recon0): column totals, full/partial restoration marks, and the "new=0 + no affirmative assessment" notice condition (format: `larp_recon0_schema.md`) |
-| `larp_stat_audit.py` | statistics internal consistency | recompute-and-compare reported p·t·χ²·CI, multiple-comparison survival, meta heterogeneity·Egger, GRIM·impossible values (for papers / statistical grounds, no verdict) |
+| `larp_coverage_audit.py` | dropped evidence | mechanically counts whether your map dropped any evidence the text cited by number (a tag) |
+| `larp_card_audit.py` | lumped-together evaluation | checks each piece of evidence was judged on its own — not lumped together or left with blank cells (§7.8 cards · §7.9 ledger) |
+| `larp_quote_audit.py` | invented quotes | compares, character for character, whether a sentence claimed to be "in the source" really is |
+| `larp_matrix_audit.py` | useless evidence · double-counting | checks whether evidence that can't tell the hypotheses apart was used as a core ground, whether one source was counted twice, and whether a hypothesis is missing (evidence × hypothesis matrix §7.10) |
+| `larp_recon0_audit.py` | ledger arithmetic errors | re-checks that the totals and marks in the "where did this certainty come from" ledger add up (Recon0 §7.10, format `larp_recon0_schema.md`) |
+| `larp_stat_audit.py` | inconsistent statistics | recomputes the statistics a paper reports (p·t·χ²·confidence intervals) to see if they hang together, and flags values that couldn't occur (for papers/statistics, no verdict) |
 
-> **For the improvement loop (developers):** `larp_recall_audit.py` is different in kind from the checks above — it deterministically scores the *recall* of a candidate analysis against a gold set (`gold_set.json`). It's for regression measurement while *revising* the tool, not a check for an individual analysis.
+> **For the improvement loop (developers):** `larp_recall_audit.py` is used differently from the checks above — it compares a new output against a pre-built answer set (gold set `gold_set.json`) and scores how much it caught without missing (*recall*). It's for checking that performance didn't drop while *revising* the tool, not a check for an individual analysis.
 
 Semantic omission (tag-less weak points/rebuttals) can't be fully caught by code, so use it together with the separate model pass [`LARP_verify.en.md`](../prompts/LARP_verify.en.md) (omission hunt). For the full order, see the ['verification layer' section in USAGE](../USAGE.en.md).
 
