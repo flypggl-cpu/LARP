@@ -18,6 +18,7 @@ The full LARP's Pass-1 output leaves two risks a human cannot filter even while 
 | `larp_card_audit.py` | lumping · blanks | was the evidence evaluated in the §7.8 cards / §7.9 ledger, atomized and complete |
 | `larp_quote_audit.py` | disguised hallucination | does a sentence presented as a 'source quote' actually exist in the source |
 | `larp_matrix_audit.py` | non-diagnostic · double-counting | in the evidence × hypothesis matrix (§7.10): is non-diagnostic evidence used as a core ground · common-source duplication · hypothesis gaps |
+- `larp_recon0_audit.py` — audits the certainty-source ledger (§7.10 Recon0): column totals, full/partial restoration marks, and the "new=0 + no affirmative assessment" notice condition (format: `larp_recon0_schema.md`)
 | `larp_stat_audit.py` | statistics internal consistency | recompute-and-compare reported p·t·χ²·CI, multiple-comparison survival, meta heterogeneity·Egger, GRIM·impossible values (for papers / statistical grounds, no verdict) |
 
 Semantic omission (tag-less weak points/rebuttals) can't be fully caught by code, so use it together with the separate model pass [`LARP_verify.en.md`](../prompts/LARP_verify.en.md) (omission hunt). For the full order, see the ['verification layer' section in USAGE](../USAGE.en.md).

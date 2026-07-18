@@ -3,6 +3,7 @@
 # 검산 대상: 부기의 정합(장부 존재·칸 합계·통지 조건). 분류의 진실은 검산하지 않는다(그건 사람 몫).
 # 사용: python larp_recon0_audit.py 장부.json
 # 형식: tools/larp_recon0_schema.md
+# Author: CHAE Sooyang (저작자 채수양) · License: CC BY-NC-SA 4.0 (Attribution-NonCommercial-ShareAlike)
 import json, sys
 
 KINDS = ("신규", "복원", "재해석")

@@ -2,8 +2,7 @@
 # -*- coding: utf-8 -*-
 #
 # LARP Gate 0 — deterministic input preprocessing / 게이트0 입력 전처리
-# Author: CHAE Sooyang (저작자 채수양)
-# License: CC BY-NC-SA 4.0  (Attribution-NonCommercial-ShareAlike)
+# Author: CHAE Sooyang (저작자 채수양) · License: CC BY-NC-SA 4.0 (Attribution-NonCommercial-ShareAlike)
 # A personal methodology project, not the official position of any institution.
 # 개인 방법론 프로젝트이며, 어느 기관의 공식 입장도 아닙니다.
 #
@@ -212,6 +211,10 @@ def main():
     print(f"[게이트0] 대장 시드(고유 꼬리표): 전체 {len(uniq_all)}건" + (f", 스코프 {len(uniq_scope)}건" if lo else ''))
     closed = [r for r in rejects if r['closed_by']]
     print(f"[게이트0] 배척 문단 시드: 주장 표지 {len(rejects)}건 / 배척 종결 짝 {len(closed)}건")
+    if len(uniq_all) == 0 and len(rejects) == 0:
+        print("[게이트0] ⚠ 경고: 증거 시드 0건 + 배척 표지 0건 — 이 문서의 표기 형식을 인식하지 못했습니다.")
+        print("          코드 대조(빠짐 검사)가 작동하지 않는 상태입니다. 반드시: ① 게이트0 수동 다섯 훑기를 직접 수행하고")
+        print("          ② 분석 후 LARP_verify(누락 사냥, 새 창·다른 모델)를 시드 대용으로 돌리십시오.")
     for r in closed:
         print(f"   - {r['page']}쪽 주장: …{r['claim'][:46]} → 배척 {r['closed_by']['page']}쪽")
     print(f"[게이트0] 날짜 이상 후보 {len(flags)}건 (판정 금지 — 모듈 A로):")
