@@ -75,6 +75,7 @@ In one line: **it turns the AI's "happened to find it" into the machine's "did i
 | File | What |
 |---|---|
 | [`coverage_audit.en.md`](coverage_audit.en.md) | Detailed manual — supported tag types, commands, workflow, limits |
+| [`larp_gate0.py`](larp_gate0.py) | (preprocessing — separate from the checks) Gate 0: *before* analysis, strip watermarks, add page anchors, scan citation gaps, extract evidence seeds (LARP.md §3.6) |
 | [`larp_coverage_audit.py`](larp_coverage_audit.py) | Omission check — cited tags ↔ map/ledger reconcile (Python, no dependencies) |
 | [`larp_card_audit.py`](larp_card_audit.py) | Completeness check — blanks·lumping·non-diagnostic·missing fields in §7.8 cards / §7.9 ledger |
 | [`larp_quote_audit.py`](larp_quote_audit.py) | Hallucination check — does a 'source quote' actually exist in the source (deterministic) |
@@ -84,7 +85,7 @@ In one line: **it turns the AI's "happened to find it" into the machine's "did i
 | [`larp_recall_audit.py`](larp_recall_audit.py) | (developer · improvement loop) Recall scoring — deterministically measures a candidate output's recall against a gold set |
 | [`larp_stat_schema.en.md`](larp_stat_schema.en.md) | Input JSON schema + extraction discipline for the quantitative audit · [한국어](larp_stat_schema.md) |
 | [`larp_recon0_schema.en.md`](larp_recon0_schema.en.md) | Recon0 ledger JSON format · [한국어](larp_recon0_schema.md) |
-| [`larp_matrix_schema.md`](larp_matrix_schema.md) | JSON schema for the evidence × hypothesis matrix + diagnosticity-derivation rules |
+| [`larp_matrix_schema.en.md`](larp_matrix_schema.en.md) | JSON schema for the evidence × hypothesis matrix + diagnosticity-derivation rules · [한국어](larp_matrix_schema.md) |
 | [`coverage_audit_prompt.en.md`](coverage_audit_prompt.en.md) | A no-code **unified** chatbot approximation — full evidence scan (incl. *name-only*) + tree reconcile (no guarantee) |
 
 For the whole long-text workflow, see the [coverage-audit section in USAGE](../USAGE.en.md) and the [long-document mode (archived)](../prompts/archive/LARP_map_long_v260710b.en.md).
