@@ -14,6 +14,8 @@ This folder is the **code part of the full LARP's verification layer (LARP.md §
 
 The full LARP's Pass-1 output leaves two risks a human cannot filter even while looking at it — **silent omission** (evidence/weak points never raised) and **disguised hallucination** (invented sentences that look like source quotes). The scripts here are the code part of that verification layer; rather than relying on the model's diligence, they flag the risks mechanically and the same way every time, making them *visible* (i.e. deterministically).
 
+> **One measured data point.** Scored for recall against one real appellate judgment (a 182-item answer key): Sonnet reached **~96%** overall (claims 100%, evidence 96%); a first Haiku run **~56%** (model choice matters a lot). Yet even the 96% output **silently dropped 7 real items** — invisible on reading, surfaced only by comparison against the key. That is exactly why the code checks in this folder exist. (Recall measures *completeness against a key*, not truth.)
+
 | Script | Problem it catches | In plain terms |
 |---|---|---|
 | `larp_coverage_audit.py` | dropped evidence | mechanically counts whether your map dropped any evidence the text cited by number (a tag) |
