@@ -84,7 +84,7 @@
 
 ## v260715 — 2026-07-15
 
-- **Only the two essential prescriptions from the holdout observation (Seoul High Court 2011no3260, Sonnet ×3)** — by the §1-0 test: only what directly touches the delivery of purpose 2. The remaining symptoms (contract-definition variance etc.) are development-measurement issues, held.
+- **Only the two essential prescriptions from the holdout observation (a public appellate ruling, Sonnet ×3)** — by the §1-0 test: only what directly touches the delivery of purpose 2. The remaining symptoms (contract-definition variance etc.) are development-measurement issues, held.
 - P2 **Closed list of deferral grounds**: Stage-4 contract's "reason mandatory" replaced with "only two permitted grounds" — (a) outside the designated scope (ledger registration mandatory) (b) duplication of the same source·same bridge as another block (block ID named). Volume/contribution/importance explicitly excluded. Basis: deferral rates swung 0%/20%/54% across three holdout runs — free-text reasons were a legal exit from interrogation. Rollback: revert if legitimate deferrals fall outside the list and block quality degrades.
 - P3-a **Gate-0 silent failure made visible**: tools/larp_gate0.py now warns on zero seeds + zero rejection markers ("format recognition failed; manual sweep + omission hunt strongly recommended"). Same rule added to the manual path in LARP.md (+en, in tree contract ②). Basis: the holdout document produced zero seeds without any warning — the user could not know a defense line was off. Rollback: adjust if the warning misfires on documents where extraction is in fact normal.
 
