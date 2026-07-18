@@ -2,7 +2,7 @@
 
 *[한국어](README.md) | English*
 
-This folder is the **code part of the full LARP's verification layer (LARP.md §3.7)**. After the Pass-1 output, it makes the risks a human cannot otherwise filter **deterministically *visible*.** Here's the plain-language version first; the detailed manual is linked at the bottom.
+This folder is the **code part of the full LARP's verification layer (LARP.md §3.7)**. After the Pass-1 output, it makes the risks a human cannot otherwise filter **deterministically *visible*.** The table below states precisely *what each tool does*; how to run them (the same for all) and the detailed manual follow.
 
 > **Mode-agnostic.** These tools aren't tied to one mode — they reconcile against the map/output of *any* mode: the base LARP-Map, the long-document mode, or the full LARP.
 
@@ -25,48 +25,17 @@ The full LARP's Pass-1 output leaves two risks a human cannot filter even while 
 
 Semantic omission (tag-less weak points/rebuttals) can't be fully caught by code, so use it together with the separate model pass [`LARP_verify.en.md`](../prompts/LARP_verify.en.md) (omission hunt). For the full order, see the ['verification layer' section in USAGE](../USAGE.en.md).
 
-Below is a detailed walk-through of one of them — the *coverage* check.
+## How to run — the same for every script
 
----
+The six scripts share one shape: **`python larp_○○_audit.py <input file> [options]` → deterministic diagnostics → exit code 1 on any inconsistency.** Only the input differs per tool (source text · Pass-1 markdown · matrix/ledger/statistics JSON). Use whichever path suits you.
 
-## Why omissions happen — start here
-
-When you ask LARP-Map to "draw all the arguments in this text," the AI reads **the way a person skims a few hundred pages.** Just as a person can't hold an entire thick book in mind at once, the AI, faced with a long text, **fails to see a piece of evidence somewhere in the middle and never puts it on the map.**
-
-Two things make this hard.
-
-- The AI didn't **lie** — it simply *didn't see* it. (LLM reading is inherently "leaky" this way.)
-- Worse, the AI **doesn't tell you "I dropped something."** The gap happens *silently*, so you assume the map is complete when it isn't.
-
-The longer and more complex the text, the more often this "silent omission" occurs. In one real judgment, the map dropped a whole written statement.
-
-## What this tool does
-
-It does **not** re-read the text and judge it. Instead it mechanically counts the **"evidence tags"** the text put there itself.
-
-In a judgment that's `증거목록 순번 239`; in a paper, `[12]`; in a common-law document, `Exhibit A`; in academic writing, `(Smith 2020)` — whenever a text points to a specific piece of evidence, it attaches a *tag*. The tool scrapes **every one** of those tags and builds a *complete checklist*.
-
-Then it compares your map against that checklist and tells you:
-
-> "These tags are on the map. **But these tags are clearly cited in the text and missing from your map (= missing?).**"
-
-Because a computer counting numbers never *gets tired or skips*, the checklist is complete. So **evidence the text cited with a tag cannot vanish silently** — it's either on the map or flagged as missing.
-
-In one line: **it turns the AI's "happened to find it" into the machine's "did it count every tag."**
-
-## How to use it — three paths
-
-1. **Easiest — just ask.** Give a code-running AI (me here, or ChatGPT/Claude's code execution) the *text* and *your map*, and get the list of missing evidence. **No install.**
-2. **Run it yourself.** If you have Python, it's one command. (See the manual below.)
+1. **Easiest — just ask.** Give a code-running AI (me here, or ChatGPT/Claude's code execution) the *input file* and get the result. **No install.**
+2. **Run it yourself.** With Python it's one command; each script takes `-h` to show its arguments.
 3. **No code — a chatbot approximation.** To avoid code entirely, paste [`coverage_audit_prompt.en.md`](coverage_audit_prompt.en.md) into a chatbot. But this has the *AI read it itself*, so there is **no omission guarantee** (unlike 1 and 2).
 
-> If you need the guarantee, use 1 or 2 (code). Path 3 is a *stand-in* for those who find code too hard.
-
-## Honest limits — and the complement
-
-- **The code audit only *guarantees* evidence that carries a tag.** Evidence mentioned *by name only* (e.g. "Kim's written statement") the code cannot catch.
-  - **Complement:** for name-only evidence, the unified chatbot prompt [`coverage_audit_prompt.en.md`](coverage_audit_prompt.en.md) sweeps it in via its *full scan* and reconciles against the tree. But it's an *approximation (no guarantee)*, so the honest picture is **tagged = guaranteed by code / name-only = boosted by the prompt**, used together. (Why can't "all evidence" be guaranteed by code? Because *what counts as one evidence item* is already interpretive — only the markers, whose boundaries the document drew, can be exhaustively counted by a machine.)
-- It is **not a verdict** on right or wrong. It doesn't ask whether the evidence is true or important — only whether *your map covered it or dropped it* (judgment stays with the human — the LARP principle).
+> **No-verdict principle.** These tools never rule on right or wrong — they only make the inconsistencies a human would miss *visible*; the judgment stays with the human (the LARP principle).
+>
+> **For command details, tag types, and workflow,** see the representative worked manual [`coverage_audit.en.md`](coverage_audit.en.md) — the other scripts follow the same pattern.
 
 ---
 
