@@ -1,4 +1,4 @@
-# LARP: Layer-grounded Argument Reasoning Probe (AIVA-L-CALM v260716g)
+# LARP: Layer-grounded Argument Reasoning Probe (AIVA-L-CALM v260719)
 
 *[한국어](LARP.md) | English*
 
@@ -392,7 +392,7 @@ Gate 1 (length): if the document exceeds one screen (~15 pages), no single pass.
    → when the designated spots are done, always ask and stop: "More branches (flags), or shall I write the report?" (the Stage-5 question — never skip)
 Gate 2 (stop): stop at every stage boundary. If the previous stage's [done] contract is unmet, do not enter the next stage — repair first.
 Gate 3 (symmetry·quotation): for each ★ claim, visibly print one line of the defense's (rival's) strongest rebuttal (§7.3), and mark any redacted/blank quotation as 'no basis in the document (quote gap)' rather than inventing it (§3.5-2). If either is missing, treat that ★ as incomplete and fix before proceeding.
-Gate 4 (verification layer): until the Pass-1 output passes the verification layer (LARP-Verify, §3.7) — quote-source comparison, coverage comparison, omission-hunt 2nd pass — mark it 'unverified'. Do not use unverified output as a settled ground.
+Gate 4 (verification layer): until the Pass-1 output passes the verification layer (LARP-Verify, §3.7) — quote-source comparison, coverage comparison, omission-hunt 2nd pass — mark it 'unverified'. Do not use unverified output as a settled ground. (The same-turn re-sweep runs automatically during the pass; the code and separate-model independent checks cannot self-run in this window — the user runs them via the USAGE procedure, and anything not run is labeled 'independent verification not run (measured completeness ~96%)', §3.7.)
 Rule: a step without a [done] mark counts as 'not performed' (no partial output).
 ```
 
@@ -418,6 +418,8 @@ Repair pass: omission/hallucination candidates detected by a·b are fed back int
 ```
 
 The verification layer does not *remove* hallucination or omission — it makes them *visible* so a human can filter them. The principle that final judgment belongs to the human is unchanged.
+
+**Default and honest labeling.** The omission check the tool *can* run by itself (the same-turn re-sweep, §3.10) runs **automatically** during the pass — the user need not exercise any option. But the independent checks above (code checks a·b, separate-model omission hunt c) cannot be self-run inside the window this prompt runs in (they need a fresh window / different model — independence is the point: appended within the same session it becomes the same eye and the effect vanishes). So rather than pressing the user to opt out, the Pass-1 output carries an **honest completeness label** — e.g. *"auto re-sweep done · independent verification not run (measured completeness ~96%, some omission possible)."* Grounds are empirical — even a strong model, after the same-turn re-sweep, sat at ~96% completeness, missing name-only testimony and narrative items that were recovered only by a *different eye*. A user who wants to push completeness higher follows the independent procedure in USAGE (run LARP_verify in a fresh window → feed the result back into the full LARP; a different model if possible). The tool does not label the result 'verified' before that, and the final judgment is the human's.
 
 **Reconciliation counts are canonical only when produced by code.** A model's self-reported "seeds n/n exhausted" can be feigned exhaustion (measured: a small model reported 52/54 while actually mapping 26/54). Do not use self-tallied counts as reconciliation numbers before they pass the code checks (a·b).
 
@@ -1109,9 +1111,9 @@ Group 4. Causal inference — causal leap · uncontrolled confounder · reverse 
 Group 5. Probability·statistical structure — base-rate neglect · confusing evidence independence · ignoring joint probability · insufficient evidential diagnosticity · missing reference class · sampling/generalization error · ignoring regression to the mean · post hoc patterning
 Group 6. Alternative hypotheses·contrary evidence·falsification — untested alternative hypothesis · omitted contrary circumstance · selective use of evidence · collection gap · confusing defeater types · unfalsifiable structure · violation of simplicity · surface-level rejection grounds · strawman-diminished rejection · conclusion-presupposing rejection · doubt-exhaustion illusion
 Group 7. Subjective inference·timing — leap to intent · unclear time order (ex-post→ex-ante)
-Group 8. Legal elements·evidence rules — confusing legal elements · propensity/prior-record error · shifting the burden of proof · unclear sufficiency threshold
+Group 8. Legal elements·evidence rules — confusing legal elements · propensity/prior-record error · shifting the burden of proof · unclear sufficiency threshold · self-evidence exemption
 Group 9. Concept·object construction — wavering conceptual criterion · object-formation error · frame foreclosure
-Group 10. Dialectic·meta — straw man · ad hominem/appeal to emotion · complex question/embedded premise · conclusion-first/motivated reasoning · illusion of narrative coherence
+Group 10. Dialectic·meta — straw man · ad hominem/appeal to emotion · complex question/embedded premise · conclusion-first/motivated reasoning · illusion of narrative coherence · silencing move · unresponsive reply · denial of common ground
 ```
 
 For the detailed definition and review question of each selection criterion, refer to the separate file **"LARP Criteria & Check Modules"** (the §8 detail table).
