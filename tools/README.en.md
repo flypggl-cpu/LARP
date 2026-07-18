@@ -2,7 +2,7 @@
 
 *[한국어](README.md) | English*
 
-This folder is the **code part of the full LARP's verification layer (LARP.md §3.7)**. After the Pass-1 output, it makes the risks a human cannot otherwise filter **deterministically *visible*.** The table below states precisely *what each tool does*; how to run them (the same for all) and the detailed manual follow.
+This folder is the **code part of the full LARP's verification layer (LARP.md §3.7)**. After the Pass-1 output, it makes the risks a human cannot otherwise filter ***visible* — flagged mechanically and the same way every time (i.e. deterministically).** The table below states precisely *what each tool does*; how to run them (the same for all) and the detailed manual follow.
 
 > **Mode-agnostic.** These tools aren't tied to one mode — they reconcile against the map/output of *any* mode: the base LARP-Map, the long-document mode, or the full LARP.
 
@@ -10,7 +10,7 @@ This folder is the **code part of the full LARP's verification layer (LARP.md §
 
 ## Verification-check scripts — blocking the residual risks
 
-The full LARP's Pass-1 output leaves two risks a human cannot filter even while looking at it — **silent omission** (evidence/weak points never raised) and **disguised hallucination** (invented sentences that look like source quotes). The scripts here are the code part of that verification layer; without relying on model discipline, they make the risks *visible* deterministically.
+The full LARP's Pass-1 output leaves two risks a human cannot filter even while looking at it — **silent omission** (evidence/weak points never raised) and **disguised hallucination** (invented sentences that look like source quotes). The scripts here are the code part of that verification layer; rather than relying on the model's diligence, they flag the risks mechanically and the same way every time, making them *visible* (i.e. deterministically).
 
 | Script | Problem it catches | In plain terms |
 |---|---|---|
