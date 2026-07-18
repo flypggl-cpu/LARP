@@ -2,6 +2,12 @@
 
 *[한국어](CHANGELOG.md) | English*
 
+## v260719 — 2026-07-19
+
+- **The 2nd-pass omission hunt (separate model, LARP_verify) promoted to a standard default step of the verification layer** (§3.7 + Gate 4, +ko) — from a high-stakes-only conditional recommendation to a default procedure. On producing the Pass-1 output, the tool must tell the user: *"still unverified — I recommend running it once on a different model / fresh window; for a short or low-stakes analysis you may skip it by explicit choice, in which case it stays 'unverified (omission hunt skipped).'"* States the **independence** requirement (no appending within the same session/model) and "the tool does not skip on its own." Grounds: empirical — even a strong model reached only ~96% completeness, missing name-only testimony and narrative items even after the same-turn re-sweep, recovered only by a *different eye*.
+- **docs/ai_problems_and_this_tool (+ko) §2 added** — "Why the AI can't catch its own errors — it generates, it doesn't look things up": the librarian-vs-storyteller root + four limits (completeness, faithfulness, no self-knowledge, non-independent self-review), "produced ≠ confirmed." Sections renumbered 1–7.
+- **tools/README (+ko) restructured** — removed per-tool usage repetition (one shared run block), reworded the function table in plain language, listed larp_gate0.py, added the "why can't the AI catch this itself" callout + one measured data point (Sonnet ~96% / Haiku ~56%, 7 silent omissions). Public identifiers kept at 0.
+
 ## v260717c — 2026-07-17
 
 - `docs/lineage.md` (+en) updated — pragma-dialectics (van Eemeren & Grootendorst) ten rules and this week's disciplines (speech-act theory, argumentation frameworks, TMS, Bayes) added to the lineage table, with an **absorption-status audit note**: 6 measured entries + 4 theoretical entries, no second routing layer by rule number, full mapping in pragma_dialectics_scan.md. One line added to the honest limits: "does not compute Bayesian numbers." Purpose: a future auditor confirms "this lineage is already absorbed" without re-scanning — forgetting prevented at the lineage level.
