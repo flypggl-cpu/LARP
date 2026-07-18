@@ -20,7 +20,22 @@ AI now writes smooth text without limit. But **writing well and being right are 
 
 ---
 
-## 2. Why "looking inside the AI" doesn't really solve it — because it's just like the human mind
+## 2. Why the AI can't catch its own errors — it *generates*, it doesn't *look things up*
+
+Go one step deeper and you see why the AI itself can't catch these problems. This is where people misunderstand most: "The AI did the analysis — how does it miss its own mistakes?"
+
+It comes down to one thing. **An AI is not a machine that looks up "what does the document say"; it's a machine that produces "what a good answer would probably look like."** Not a *librarian* who checks the sources, but a *storyteller* stringing together the most plausible next sentence. Feed it a judgment and that judgment isn't stored inside to be pulled up on demand — from the impression of having read it, the AI *re-invents a plausible answer.* Four limits branch out from here.
+
+- **It can't see exhaustively (completeness).** A storyteller doesn't count a list item by item. A piece of evidence in a long text can simply drop out; the *feeling* of "I saw it all" isn't the same as having counted it all.
+- **It's not verbatim (faithfulness).** Producing smooth sentences is its day job, so when it "recalls" a source quote it can invent plausible wording that isn't in the source. There's no tell — it looks real even to itself.
+- **It doesn't know it's wrong.** There's no internal ledger saying "I dropped evidence #239." So asking "did you miss anything?" won't surface it — it'll confidently say "no." Just as a person can't notice what they *never saw.*
+- **Its self-review isn't independent.** The same AI re-reading its own answer through the same circuits misses the same spots again. Not a second eye — the *same* eye.
+
+What not to misread — this doesn't mean "AI is dumb." It's genuinely good at associating, structuring, drafting. The limit sits exactly at **it can't guarantee "nothing left out" and "verbatim" on its own**, and the real danger is that people, seeing fluent output, *assume those two guarantees are there too.* In one line: **"the AI produced it" is not "it looked it up and confirmed it."**
+
+---
+
+## 3. Why "looking inside the AI" doesn't really solve it — because it's just like the human mind
 
 One big push against these problems, especially *secret scheming*, is to **"look inside the AI's *path of thought* — how it reached that answer."** Read the "reasoning" it prints on screen, or dissect its internal circuits like a brain.
 
@@ -32,7 +47,7 @@ In short — **for a human or an AI alike, the *path* of thought is invisible.**
 
 ---
 
-## 3. What this tool does, then — check the stepping stones, not the path
+## 4. What this tool does, then — check the stepping stones, not the path
 
 This tool (LARP) does not look inside the AI. It **pulls out the assumptions a conclusion stands on and tests them one by one.** In three ways.
 
@@ -44,7 +59,7 @@ This tool (LARP) does not look inside the AI. It **pulls out the assumptions a c
 
 ---
 
-## 4. What this tool can actually do
+## 5. What this tool can actually do
 
 - **It cuts off telling-you-what-you-want-to-hear.** By scrutinizing *both sides equally* and not deciding for you, it blocks the AI's habit of taking your side. — This is its strongest use.
 - **It shakes a wobbly answer in advance.** By first testing "if this assumption is false, does the conclusion collapse?", it surfaces answers that would flip under pushback.
@@ -56,7 +71,7 @@ This tool (LARP) does not look inside the AI. It **pulls out the assumptions a c
 
 ---
 
-## 5. What this tool cannot do (honestly)
+## 6. What this tool cannot do (honestly)
 
 - **The truth about the world.** Whether something is true or false is settled, in the end, by *real evidence and reality.* This tool does not *give* you truth — it only points to *where you must check.*
 - **Cleverer scheming.** If the deception hides not in a *false assumption* but in *what it conceals and what it selects (choice and omission)*, or in *actions*, it isn't caught. It narrows the target but doesn't seal it.
@@ -66,7 +81,7 @@ This tool (LARP) does not look inside the AI. It **pulls out the assumptions a c
 
 ---
 
-## 6. Closing — a tool for making thought *sound*, not a *truth machine*
+## 7. Closing — a tool for making thought *sound*, not a *truth machine*
 
 The honest one-liner: **this tool makes thinking *sound* (well-built) — it cuts off flattery, exposes fabrication and omission, and shakes an answer that would wobble. But *whether it's true* still has to cross the bridge of reality, and this tool's value is precisely in pointing to *where that bridge must be placed.***
 
