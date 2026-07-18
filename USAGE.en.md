@@ -167,7 +167,7 @@ For a scattered claim with no source text (a news/social-media claim), you can h
 Either order works — deep research→LARP or LARP→deep research.
 → Example: [checking the claim "vaccines don't work"](examples/claim_check_vaccine.en.md)
 
-### 5.3 Catching dropped evidence and made-up quotes — the verification layer (2nd-pass omission hunt is standard · skippable for low-stakes)
+### 5.3 Pushing completeness higher — the independent verification layer (optional)
 **Three things first:** ① for long judgments and papers use **Claude Sonnet-class or above** (GPT-4-class+) — lightweight models (Flash/Lite/mini-class) were measured, on the same judgment, to crush issues and evidence to a fraction (light/free models are for short texts). ② If the result feeds a decision that matters, run the checks below. ③ Even with everything run, some omission remains — the last check is the human's. (Measurement record kept privately.)
 
 The analysis itself already surfaces *missing-evidence and omission candidates*, so that's usually enough. But when **a miss would be costly**, check from outside the two risks a model can't catch alone (*silent omission*, *invented quotes dressed as source quotes*).
@@ -182,7 +182,9 @@ python tools/larp_coverage_audit.py src.txt --tree pass1.md
 python tools/larp_card_audit.py pass1.md
 ```
 
-Then a **2nd-pass omission hunt — now the standard closing step.** Even a strong model reaches only ~96% completeness and silently drops items like name-only testimony. In a *new window / different model*, give [`prompts/LARP_verify.en.md`](prompts/LARP_verify.en.md) + the source + the first-pass output, and get back only what was *not raised* (done in the same conversation, the model can't see its own blind spots — it must be a *different eye*). For a short or low-stakes analysis you may skip it, but then the result stays 'unverified (omission hunt skipped).' Coverage options: [tools/coverage_audit.en.md](tools/coverage_audit.en.md). **If Python is a hurdle,** upload the scripts and files to a code-running chatbot (ChatGPT, Claude) and run them with no install.
+**The default is automatic.** During the analysis the tool runs its own re-sweep and catches first-round omissions — up to here you do nothing. But that alone leaves completeness at a measured **~96%**, so items like name-only testimony can silently remain (the result is labeled 'independent verification not run').
+
+**To block omissions as far as possible,** add one independent pass — this is the part the tool can't do itself, so you run it. In a *new window* (same model works; a different model is stronger), give [`prompts/LARP_verify.en.md`](prompts/LARP_verify.en.md) + the source + the first-pass output, get back only what was *not raised*, then **feed that result back into the full LARP** (done in the same conversation, the model can't see its own blind spots — it must be a *different eye*). For tagged evidence specifically you can settle it with the code checks (coverage·quote), and **if Python is a hurdle,** upload the scripts and files to a code-running chatbot (ChatGPT, Claude) with no install. Coverage options: [tools/coverage_audit.en.md](tools/coverage_audit.en.md).
 
 The verification layer doesn't *remove* the risks — it makes them *visible.* The final judgment is the human's.
 
