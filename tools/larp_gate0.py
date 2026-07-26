@@ -99,15 +99,20 @@ RE_JOSEO   = re.compile(r'([가-힣A-Z]{1,6})에 대한 (원심|당심)\s*(증�
 RE_PISHIN  = re.compile(r'(\d{1,2})회 (?:검찰 )?피의자신문')
 RE_DOC     = re.compile(r'(20\d{2}\.\s*\d{1,2}\.\s*\d{1,2}\.자\s*[가-힣A-Z()\u00B7 ]{2,30}?(?:문건|보고서|회의록|서신|공문|메모|제안서|정산서|의견서|진술서|합의서|영수증|항소이유서|항소이유보충서))')
 RE_HOJEUNG = re.compile(r'증[가나다]?\s*제\d+호증(?:의\s*\d+(?:\s*내지\s*\d+)?)?')
+RE_NOT_EVIDENCE = re.compile(r'의견서|항소이유서|보충서|답변서|준비서면|변론요지서')
 
 def seed(doc, lo=None, hi=None):
     rows = []
     for pg, line in doc:
         if lo and (pg is None or pg < lo or pg > hi):
             continue
+        # 당사자 제출 서면은 증거가 아니라 주장 계보다 — 대장 시드에서 제외한다
+        # (실측: 73건 중 4건이 변호인·검찰 의견서였고, 트리 E 행에 없는 것이 오히려 옳다)
         for rx, kind in ((RE_SUNBEON, '증거목록 순번'), (RE_JOSEO, '공판조서'),
                          (RE_DOC, '일자 문건'), (RE_HOJEUNG, '호증')):
             for m in rx.finditer(line):
+                if RE_NOT_EVIDENCE.search(m.group(0)):
+                    continue
                 rows.append({'kind': kind, 'tag': re.sub(r'\s+', ' ', m.group(0)).strip(), 'page': pg})
         for m in RE_SUNBEON2.finditer(line):
             rows.append({'kind': '증거목록 순번', 'tag': f'{m.group(1)} 순번 {m.group(2)}', 'page': pg})
@@ -159,6 +164,7 @@ def scan_rejections(doc, lo=None, hi=None):
 def main():
     ap = argparse.ArgumentParser()
     ap.add_argument('textfile'); ap.add_argument('--pages'); ap.add_argument('--json'); ap.add_argument('--md', help='NotebookLM 소스 투입용 md 보고서 경로')
+    ap.add_argument('--brief', action='store_true', help='시드 목록 인쇄 생략. 기본은 전수 인쇄 — 계약 ②(시드 n = 트리 E n) 대조에 목록이 필요하다')
     a = ap.parse_args()
     lo = hi = None
     if a.pages:
@@ -209,6 +215,13 @@ def main():
     for r in (red_scope if lo else red)[:20]:
         print(f"   - {r['page']}쪽 [{r['type']}] …{r['context']}")
     print(f"[게이트0] 대장 시드(고유 꼬리표): 전체 {len(uniq_all)}건" + (f", 스코프 {len(uniq_scope)}건" if lo else ''))
+    seed_list = uniq_scope if lo else uniq_all
+    if a.brief:
+        print("   (목록 생략 — --brief. 계약 ②를 대조하려면 목록이 필요하다)")
+    else:
+        print("   ↓ 이 목록이 증거 대장의 전수 기준이다. 트리·DB는 이 항목들을 소진해야 한다.")
+        for s in seed_list:
+            print(f"   - [{s['kind']}] {s['tag']} ({s['page']}쪽)")
     closed = [r for r in rejects if r['closed_by']]
     print(f"[게이트0] 배척 문단 시드: 주장 표지 {len(rejects)}건 / 배척 종결 짝 {len(closed)}건")
     if len(uniq_all) == 0 and len(rejects) == 0:
