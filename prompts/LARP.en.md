@@ -371,6 +371,48 @@ A check tacked on formally after the output is self-justification, not self-chec
 It compresses the sprawling spec onto one screen. The body below is the detailed reference; execution follows this order.
 
 ```text
+Gate 0 (preprocessing · code first): immediately after the document is fed in and before entering §5,
+  run the deterministic preprocessing (tools/larp_gate0.py; without the tool, do the same items as a
+  manual checklist and label it 'manual preprocessing').
+  ① Strip running heads and watermarks + build the anchor index on the document's own page numbers —
+     the canonical location marker is the document's own page number.
+  ② Scan for citation gaps (redaction / de-identification) — detected items must be reflected in the
+     §7.8 M rows and the §7.9 DB as 'no basis in the document (citation gap)'. Filling a blank quotation
+     from the surrounding context ("to the effect that …") is disguised hallucination.
+  ②-1 **Locate the issue-roster section** — find the section where the document enumerates its own
+     issues ("summary of grounds of appeal", "summary of the charges", "the issues in this case") and
+     extract its items. This is the external baseline for contract ①. If none is found, fall back to the
+     table of contents; if that is absent too, label it 'no external baseline' (so the model does not
+     invent one).
+  ③ Extract every tagged piece of evidence (evidence-list number, hearing round of a trial protocol,
+     dated document name, exhibit number) → seeds for the evidence→hypothesis DB (§7.9). The model must
+     not delete seed rows; it supplements them by reading for name-only evidence (a speaker's name, an
+     unnumbered document — lectures, remarks, interviews, press releases, memos, official letters,
+     minutes, correspondence, immigration records, fact-inquiry replies, in-court testimony). Evidence
+     dropped for lacking a tag is the most common loss, so register name-only evidence in the tree·DB
+     on first appearance.
+  ④ Scan for anomalous date/source notations — do not adjudicate; hand them to Module A (quote-source
+     comparison) and the open-questions ledger.
+  ⑤ Exhaustively scan rejection paragraphs (judgment profile) — extract the formula "… contends that …
+     … cannot be accepted / is without merit" to build rejection seeds. Scoring of rejection arguments
+     (Module E-3) must exhaust these seeds.
+
+  [Manual edition — where code cannot be run, perform the same five items by the sweeps below and label
+   it 'manual preprocessing (lower recall)'. **The code is an accelerator, not a precondition.**]
+  ① Declare the running heads and notices repeated on every page as ignorable, and take the document's
+     own page numbers as anchors.
+  ② Sweep for places where a quotation opens and closes with nothing inside, and where "to the effect
+     that" / "it is recorded that" has no quoted source before or after, and build the citation-gap list.
+  ③ Sweep the document from start to finish for evidence numbers, list numbers, hearing rounds and dated
+     document names to build the tagged-evidence list (the seeds) — this must be an exhaustive sweep
+     *before* the analysis, not discovery during it.
+  ④ Note, as candidates only, places where a date, name or source notation looks inconsistent with its
+     surroundings (no adjudication).
+  ⑤ Sweep every "… contends that"-type sentence to build the rejection-paragraph list.
+  If the sweep yields zero tagged seeds *and* zero rejection markers, that is a format-recognition
+  failure. Do not stay silent — state at the head of the output: "code comparison unavailable — Stage 1's
+  omission re-sweep substitutes for the seeds; for uses where an omission would be serious, the
+  verification layer (LARP_verify omission hunt, fresh window) is additionally recommended."
 Stage 0 (skeleton·pre-registration — **before close reading**, right after Gate 0 and before Stage 1):
   Read only the table of contents, claim summaries and conclusions; erect the hypothesis skeleton
   (H: adopted + rival) and the intermediate-proposition (P) skeleton per issue, and pre-register
@@ -407,6 +449,10 @@ Gate 1 (length): if the document exceeds one screen (~15 pages), no single pass.
 Gate 2 (stop): stop at every stage boundary. If the previous stage's [done] contract is unmet, do not enter the next stage — repair first.
 Gate 3 (symmetry·quotation): for each ★ claim, visibly print one line of the defense's (rival's) strongest rebuttal (§7.3), and mark any redacted/blank quotation as 'no basis in the document (quote gap)' rather than inventing it (§3.5-2). If either is missing, treat that ★ as incomplete and fix before proceeding.
 Gate 4 (verification layer): until the Pass-1 output passes the verification layer (LARP-Verify, §3.7) — quote-source comparison, coverage comparison, omission-hunt 2nd pass — mark it 'unverified'. Do not use unverified output as a settled ground. (The same-turn re-sweep runs automatically during the pass. **Where search tools exist, run a·b (deterministic string comparison) in the same turn too and report the three numbers** — §3.7. Only c (the semantic omission hunt), which needs a separate model, is deferred to the USAGE procedure; anything not run is honestly labeled 'independent verification not run'.)
+Gate 5 (scope first): for long documents (those hitting Gate 1), the five-stage execution mode (§3.10) is
+  the **default**. Token pressure is relieved by narrowing the scope, not by chunking — analysis happens
+  *after* the user designates, at full depth within the designated range only, and within that range
+  exhaustiveness (DB · rejection paragraphs) is mandatory.
 Rule: a step without a [done] mark counts as 'not performed' (no partial output).
 ```
 
