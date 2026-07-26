@@ -4,7 +4,7 @@
 
 ## v260727 — 2026-07-27
 
-Reflects the results of running **Stage 1 six times independently** (Sonnet) on one judgment (Suwon High Court 2024No620, 148 pages · 73 gate-0 seeds) and scoring the output externally against the document's own rosters (gate-0 seeds, the "summary of grounds of appeal"). Each item carries an evidence grade — **[measured]** effect was measured / **[grounded]** reasoned but not yet measured / **[judgment]** author's call.
+Reflects the results of running **Stage 1 six times independently** (Sonnet) on one judgment (148 pages · 73 gate-0 seeds) and scoring the output externally against the document's own rosters (gate-0 seeds, the "summary of grounds of appeal"). Each item carries an evidence grade — **[measured]** effect was measured / **[grounded]** reasoned but not yet measured / **[judgment]** author's call.
 
 ### Purpose 1, 'without omission' — only what is closed by a contract gets kept
 
