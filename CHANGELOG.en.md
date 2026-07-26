@@ -45,7 +45,7 @@ Reflects the results of running **Stage 1 six times independently** (Sonnet) on 
 - **Zero repetitions under identical conditions.** All six runs differed, so effect and run-to-run variance are not separated.
 - **One document, one model.** And this judgment is the tuning document for the gate-0 regexes — on documents where seeds do not extract (measured 0 on the holdout 2011No3260), much of the above goes inert.
 - **Length grew** — 131,224 → 141,547 characters (+7.9%; Korean 62,371 → 67,728, +8.6%), against §1-0's *"a version going up should get shorter, not longer."* Most of the growth is the empirical grounds for why each instruction exists (instructions without grounds were repeatedly observed being reinterpreted). The reductions live in duplicate absorption (three self-check sets, three coverage checks, four pre-registration statements, the residual shells of modules K·P, the dual vocabulary) and were not touched this time.
-- **The English run-card is missing the Gate 0 and Gate 5 blocks** that the Korean has. This predates this release and was not fixed here.
+- **[repair] Gate 0 and Gate 5 blocks restored to the English run-card** — the English edition referenced `gate-0` **18 times with no defining block** (a translation omission predating this release). The Korean Gate 0 (preprocessing ①–⑤ + ②-1 locate the issue roster + the manual edition, "the code is an accelerator, not a precondition") and Gate 5 (scope first) were moved into the same positions. Not new content — a translation gap filled. The gate list now runs 0–5 on both sides.
 - The previous version is archived at `prompts/archive/LARP_v260719.en.md`.
 
 ## v260719 — 2026-07-19
