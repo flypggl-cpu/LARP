@@ -1,4 +1,4 @@
-# LARP: Layer-grounded Argument Reasoning Probe (AIVA-L-CALM v260719)
+# LARP: Layer-grounded Argument Reasoning Probe (AIVA-L-CALM v260727)
 
 *[한국어](LARP.md) | English*
 
@@ -326,6 +326,10 @@ Grade expected evidence in three tiers: essential / strong expectation / diagnos
   Diagnostic: an auxiliary circumstance that fits one hypothesis better → not used as a sole basis for the conclusion
 ```
 
+**The execution point is §3.10 Stage 0 — right after Gate 0, before Stage 1 (the tree).** Stage 1
+exhausts all evidence, so writing the expected evidence after it collapses the whole point of this
+clause. The order audit (§3.10 interior rule 8) must record this timing as a duty.
+
 ### 7) Keep the open-questions ledger single
 
 Register every reviewer question, research query, and record-confirmation instruction that arises during analysis in **one open-questions ledger**, and manage its status.
@@ -367,6 +371,16 @@ A check tacked on formally after the output is self-justification, not self-chec
 It compresses the sprawling spec onto one screen. The body below is the detailed reference; execution follows this order.
 
 ```text
+Stage 0 (skeleton·pre-registration — **before close reading**, right after Gate 0 and before Stage 1):
+  Read only the table of contents, claim summaries and conclusions; erect the hypothesis skeleton
+  (H: adopted + rival) and the intermediate-proposition (P) skeleton per issue, and pre-register
+  each H's expected evidence NOW (§3.5-6 — essential / strong expectation / diagnostic).
+  It must precede reading the body's evidence description — written afterwards it is not a
+  prediction but a transcription. The output is short: issue list + hypothesis pairs + expected
+  evidence. No tree, DB or blocks.
+  → [done: n issues / n hypothesis pairs / k pre-registered expected-evidence items (0 ungraded)]
+  **End the turn here.** Print the output, stop, and wait for the user — do not bundle it with
+  Stage 1 (the tree). Grounds: see the Stage 0 note in §3.10 below.
 Gate 1 (length): if the document exceeds one screen (~15 pages), no single pass.
   → First draw the **full-argument tree map** (Stage 1 format in §3.10 — all claims, all evidence,
     hidden-assumption·criterion·other-explanation·missing-evidence lines per claim) and stop (performed with this document alone, no extra file needed). This
@@ -381,7 +395,7 @@ Gate 1 (length): if the document exceeds one screen (~15 pages), no single pass.
     the tree·DB on first appearance.
 [Stages 2·3 turn — after user designation, in this order. Reprint Stage-1 contract numbers (seeds n/n · claim count) at the head of the turn]
 1. Object-perception & propositionalization (§5~6) — internal work → [done: N claims + each verdict orientation]
-2. Layer–argument bridge (§6.5) — internal work      → [done: N issues]
+2. Layer–argument bridge (§6.5) — **visible artifact** → [done: N issues = N bridge-table rows]
 3. Deepen the designated branch — top-down skeleton + bottom-up E·M·P·H (§7.8~7.9), an M row per ★-path evidence, a tree node ID on every row → [done: DB E L rows (= the branch's tree E rows) / M K rows (= ★ evidence count)]
 4. Four cross-reconciliations · four structural tests (§7.10) → [done: k recon · j test hits]
 5. Flag promotion (§7.10 promotion rule) — pin ⚑ on the tree node for every hit (trigger path + one plain line) → [done: m flags = m hits]
@@ -392,7 +406,7 @@ Gate 1 (length): if the document exceeds one screen (~15 pages), no single pass.
    → when the designated spots are done, always ask and stop: "More branches (flags), or shall I write the report?" (the Stage-5 question — never skip)
 Gate 2 (stop): stop at every stage boundary. If the previous stage's [done] contract is unmet, do not enter the next stage — repair first.
 Gate 3 (symmetry·quotation): for each ★ claim, visibly print one line of the defense's (rival's) strongest rebuttal (§7.3), and mark any redacted/blank quotation as 'no basis in the document (quote gap)' rather than inventing it (§3.5-2). If either is missing, treat that ★ as incomplete and fix before proceeding.
-Gate 4 (verification layer): until the Pass-1 output passes the verification layer (LARP-Verify, §3.7) — quote-source comparison, coverage comparison, omission-hunt 2nd pass — mark it 'unverified'. Do not use unverified output as a settled ground. (The same-turn re-sweep runs automatically during the pass; the code and separate-model independent checks cannot self-run in this window — the user runs them via the USAGE procedure, and anything not run is labeled 'independent verification not run (measured completeness ~96%)', §3.7.)
+Gate 4 (verification layer): until the Pass-1 output passes the verification layer (LARP-Verify, §3.7) — quote-source comparison, coverage comparison, omission-hunt 2nd pass — mark it 'unverified'. Do not use unverified output as a settled ground. (The same-turn re-sweep runs automatically during the pass. **Where search tools exist, run a·b (deterministic string comparison) in the same turn too and report the three numbers** — §3.7. Only c (the semantic omission hunt), which needs a separate model, is deferred to the USAGE procedure; anything not run is honestly labeled 'independent verification not run'.)
 Rule: a step without a [done] mark counts as 'not performed' (no partial output).
 ```
 
@@ -419,7 +433,24 @@ Repair pass: omission/hallucination candidates detected by a·b are fed back int
 
 The verification layer does not *remove* hallucination or omission — it makes them *visible* so a human can filter them. The principle that final judgment belongs to the human is unchanged.
 
-**Default and honest labeling.** The omission check the tool *can* run by itself (the same-turn re-sweep, §3.10) runs **automatically** during the pass — the user need not exercise any option. But the independent checks above (code checks a·b, separate-model omission hunt c) cannot be self-run inside the window this prompt runs in (they need a fresh window / different model — independence is the point: appended within the same session it becomes the same eye and the effect vanishes). So rather than pressing the user to opt out, the Pass-1 output carries an **honest completeness label** — e.g. *"auto re-sweep done · independent verification not run (measured completeness ~96%, some omission possible)."* Grounds are empirical — even a strong model, after the same-turn re-sweep, sat at ~96% completeness, missing name-only testimony and narrative items that were recovered only by a *different eye*. A user who wants to push completeness higher follows the independent procedure in USAGE (run LARP_verify in a fresh window → feed the result back into the full LARP; a different model if possible). The tool does not label the result 'verified' before that, and the final judgment is the human's.
+**Separate what needs independence from what does not.** Checks a·b (quote-source comparison, coverage comparison) are **deterministic string comparison** — whether a string is present in the source reads the same to the same eye or a different one. Independence is required for *judgment*, not for *comparison*. What genuinely needs a fresh window or a different model is c (the semantic omission hunt) alone.
+
+**In a tool-equipped environment — run a·b inside this window.** If the execution environment has file-reading and search tools (agent, CLI, code-running window), perform the following **in the same turn**, immediately after the draft is complete, and report the result.
+
+```text
+b-1 Exhaustive seed comparison: **string-search** each gate-0 seed tag (evidence-list number,
+    hearing round, document date, exhibit number) inside your own draft. Do not count from
+    memory — search.
+b-2 Retroactive registration: register anything not found into the tree/DB with an [added] mark.
+b-3 Report: print three numbers — 'seeds n / in draft m / added after machine comparison k'.
+    Do not hide the gap between m and n — that gap is the effect of this comparison, and hiding
+    it is disguised exhaustion.
+Handle citation gaps the same way (gate-0 detected n = artifact marked n).
+```
+
+Measured (148-page judgment, 73 seeds): with neither the seed list nor machine comparison, recall was **55%**; with the seed list alone, the draft reached **74%**; with machine comparison as well, **96%**. Citation gaps went 31% → 92%. The machine comparison mattered more than handing over the list. Defer to the out-of-window procedure (USAGE) only where no tools exist.
+
+**Default and honest labeling.** The omission check the tool *can* run by itself (the same-turn re-sweep, §3.10) runs **automatically** during the pass — the user need not exercise any option. But **c (the semantic omission hunt)** cannot be self-run inside the window this prompt runs in (they need a fresh window / different model — independence is the point: appended within the same session it becomes the same eye and the effect vanishes). So rather than pressing the user to opt out, the Pass-1 output carries an **honest completeness label** — e.g. *"auto re-sweep done · independent verification not run (measured completeness ~96%, some omission possible)."* Grounds are empirical — even a strong model, after the same-turn re-sweep, sat at ~96% completeness, missing name-only testimony and narrative items that were recovered only by a *different eye*. A user who wants to push completeness higher follows the independent procedure in USAGE (run LARP_verify in a fresh window → feed the result back into the full LARP; a different model if possible). The tool does not label the result 'verified' before that, and the final judgment is the human's.
 
 **Reconciliation counts are canonical only when produced by code.** A model's self-reported "seeds n/n exhausted" can be feigned exhaustion (measured: a small model reported 52/54 while actually mapping 26/54). Do not use self-tallied counts as reconciliation numbers before they pass the code checks (a·b).
 
@@ -473,7 +504,7 @@ S-ledger (all) | Q-ledger (all, with status) | Residual list (items dropped in c
 
 ## 3.10 Five-stage execution mode — one tree (default)
 
-There is only **one artifact: the tree** (the full-argument tree of Stage 1), and every subsequent procedure deepens that same tree stage by stage — plant it (Stage 1) → deepen it (Stage 2) → shake it (Stage 3) → interrogate it (Stage 4) → rewrite it (Stage 5). The user looks at the same map each stage and only follows what has newly grown. Pipeline direction: plant → user designation → full depth on the designated branch only. Analysis happens *after* designation. No approval gates, no schedule of evaluative language, no verdict fields — the user's next designation *is* the next stage, and the intervening Q&A is not formalized (if unsure, ask; the conversation does that work).
+There is only **one artifact: the tree** (the full-argument tree of Stage 1), and every subsequent procedure deepens that same tree stage by stage — erect the skeleton (Stage 0) → plant it (Stage 1) → deepen it (Stage 2) → shake it (Stage 3) → interrogate it (Stage 4) → rewrite it (Stage 5). Stage 0 alone precedes the tree — the list of what should be there must be written before seeing the tree for it to function as a prediction. The user looks at the same map each stage and only follows what has newly grown. Pipeline direction: plant → user designation → full depth on the designated branch only. Analysis happens *after* designation. No approval gates, no schedule of evaluative language, no verdict fields — the user's next designation *is* the next stage, and the intervening Q&A is not formalized (if unsure, ask; the conversation does that work).
 (Legacy labels: Scene 1 = Stage 1, Scenes 2·3 = Stages 2–4, Scene 4 = Stage 5 / '1st pass' = Stages 1–3, '2nd pass' = Stage 4.)
 
 [Stage chain — anti-skip]
@@ -482,7 +513,34 @@ There is only **one artifact: the tree** (the full-argument tree of Stage 1), an
 · Branch reprint: reprint only the updated branch of the tree — full reprints are wasteful and a loss point.
 
 ```text
-[Surface — what the user sees. Turn plan: Stage 1 = first turn / Stages 2·3 = one turn after designation / Stage 4 = the next turn / Stage 5 = on request]
+[Surface — what the user sees. Turn plan: **Stage 0 = first turn** / **Stage 1 = second turn** / Stages 2·3 = one turn after designation / Stage 4 = the next turn / Stage 5 = on request. Do not bundle Stages 0 and 1 — the first turn's budget is fixed, so one of {the four lines, the re-sweep} is always sacrificed]
+Stage 0  Erect the skeleton (**before close reading** — right after Gate 0, before Stage 1):
+        Read only the table of contents, claim summaries and conclusions; erect the adopted and
+        rival hypotheses (H) and the intermediate-proposition (P) skeleton per issue, and
+        pre-register each H's expected evidence (§3.5-6 — essential / strong expectation /
+        diagnostic).
+        **Deferring this stage until after Stage 1 voids the pre-registration.** Stage 1 exhausts
+        all evidence, so by then the close reading is done and the arrangement the document made
+        conditions the prediction — precisely the situation §3.5-6 forbids.
+        The output is short — issue list + hypothesis pairs + expected evidence. No tree, DB or blocks.
+        [Contract] n issues = n hypothesis pairs / k pre-registered items (0 ungraded).
+        Pre-registered items may not be edited before Stage 4 ends — new items get an [added] mark only.
+        **End the turn here** — do not bundle Stage 0 with Stage 1. Two reasons.
+        (a) Budget: the first turn's budget is fixed and the contracts decide its allocation.
+            When Stages 0 and 1 were bundled, one run kept the four lines per A and crushed the
+            omission re-sweep into 6 large windows instead of the 5-page format (a violation);
+            another kept the re-sweep and dropped the four lines (0% complete). Total output was
+            about the same in both — this is allocation, not laziness.
+        (b) Scope: the user can see the issues and hypothesis pairs first and choose where to dig
+            (the point of Gate 5, scope-first).
+        [Input practice — to make pre-registration real] Where possible, run this stage on an
+        **excerpt of the contents, summaries and conclusion only**. If the full text is already in
+        context, 'before close reading' does not hold — unlike a human's pre-registration, the model
+        has already seen the text (measured: two runs given the full text both marked their own
+        pre-registration 'void' in the order audit). In an environment where windows/turns can be
+        split, run Stage 0 on the excerpt, carry over only its output, and feed the full text at
+        Stage 1. Where that is impossible, run it anyway but state honestly in the order audit
+        (interior rule 8): 'run after full-text input — pre-registration force limited'.
 Stage 1  Plant — full-argument tree map (the canonical artifact of user understanding — this turn is devoted to the tree; form and symbols per §7.6):
         every conclusion (C) the document disputes → all claims (A) per conclusion (★ marked, no lumping) → all evidence (E) under each A — exhausted within each issue section, following the document's own order of presentation (a judgment's order of recitation; a paper's chapters and citation order) (no "…etc"; tagged and name-only items alike). Per A, the four lines below + a fork mark.
         [Reader-first notation — write the tags in plain words with the symbol in parentheses. Each line must be a complete sentence that makes sense on its own, not a compressed noun phrase]
@@ -499,16 +557,55 @@ Stage 1  Plant — full-argument tree map (the canonical artifact of user unders
         Missing evidence (V)    form: "if this claim is right, … should exist, but it is not in the material".
         Fork                    form: "the force of this claim differs depending on whether you read it as … or as …".
         Print a legend first at the head of the tree, one plain-language line per tag. A page anchor on every row — an unanchored row is void. No evaluative words (the four lines are placeholders, not verdicts). Gate 0 is done backstage.
-        [Omission re-sweep — mandatory in the same turn, after drawing the tree] Do not try to recall what you missed — memory cannot see its own blind spots. Do mechanical work instead: split the source into **5-page (±1) windows** (by the document's own page numbers) — grouping into larger windows voids the sweep — and, per window, (a) list every evidence expression appearing in that window's raw text (every named statement·document·protocol·record·slip·list·CD·ledger), (b) reconcile each against the tree you just drew, (c) retroactively register what is missing ([added] mark). Print [window p.N–M: found k / in tree m / added n] per window and list only the added items (do not reprint what was already there). Every window must be exhausted — a skipped window voids the sweep. (Measured: this sweep recovered, in the same conversation, evidence that three independent runs had all missed; the judgment's own "summary of evidence" section was the densest blind spot.)
+        [Omission re-sweep — mandatory in the same turn, after drawing the tree] Do not try to recall what you missed — memory cannot see its own blind spots. Do mechanical work instead: split the source into **5-page (±1) windows** (by the document's own page numbers) — grouping into larger windows voids the sweep — and, per window, (a) list every evidence expression appearing in that window's raw text (every named statement·document·protocol·record·slip·list·CD·ledger), (b) reconcile each against the tree you just drew, (c) **actually write what is missing into the tree body as a new E row** ([added] mark). Print [window p.N–M: found k / in tree m / added n] per window — but do not let these three numbers be self-contained inside the re-sweep log. At the end of the sweep, **print the reconciliation `total added n = E rows newly standing in the tree body n`**. If the two differ the sweep is incomplete, and the difference is exactly the loss. **Writing it in the log is not registering it** (measured: given the seed list, a run still logged items without putting them in the tree — 84% by mention became 64% by actual inclusion, a 20-point leak). Do not reprint what was already there. Every window must be exhausted — a skipped window voids the sweep. (Measured: this sweep recovered, in the same conversation, evidence that three independent runs had all missed; the judgment's own "summary of evidence" section was the densest blind spot.)
         [Tree output contract — closed by numbers. The baseline lives in the document, not in the model] At the end of the tree, always print:
-        ① claim (A) row count = **the count of ruled items in the document's own table of contents and section headings** — actually count the items (가·나·다…, 1·2·3…, including sub-rulings), print that number, and reconcile. Redefining the baseline with the model's own notion ("major issues only") is forbidden. An issue found in the body but absent from the contents is kept and marked [added], never dropped.
+        ① **Close the issue count with the document's own roster.** Baseline priority:
+          1st — **the section where the document itself enumerates the issues.** In an appellate
+            judgment that is the "summary of grounds of appeal" (each party's disputes, listed by the
+            document itself). A first-instance judgment has the "summary of the charges"; a paper, the
+            research questions / hypotheses in its introduction; a report, its summary or recommendations.
+          2nd — the ruled items of the table of contents / section headings (only if the 1st is absent).
+          3rd — with neither available, extract ruling sentences from the body, but **say so** and write
+            'no external baseline — issue count unverified' in the contract line.
+          When using the 1st or 2nd, actually count that section's items and print `roster n / A rows m`.
+          **Redefining the baseline with the model's own notion is forbidden** — "major issues only" is a
+          violation. Reason: if the model sets the baseline, the contract becomes an identity (measured:
+          across six runs of the same document with the same model, A rows ranged 44–183, a 4.2× spread,
+          and **not one run tripped contract ①**. Yet reconciling afterwards against the "summary of
+          grounds of appeal" showed every one of the six carried 23–24 of the 24 issues — **the content
+          was fine; only the contract was inert**).
+          An issue found in the body but absent from the roster is kept and marked [added], never dropped.
         ② gate-0 seeds n = tree E rows n + additions m. If the judgment has a **"summary of evidence" section**, that list is the document's own evidence roster — count its items and reconcile every one against the tree E rows (roster n = tree n). Even without gate-0 seeds, this roster plus the re-sweep numbers (total found k = pre-sweep E + [added]) substitute for seeds. If the gate-0 sweep found zero tagged seeds and zero rejection markers, that is a format-recognition failure — do not stay silent; state it at the head of the output.
-        ③ an A missing its hidden-assumption·other-explanation·missing-evidence lines is marked [incomplete].
+        ③ **Close it by numbers**: claim (A) row count = hidden-assumption (W) row count = other-
+          explanation (H) row count. Print the three side by side; where they diverge, name the
+          [incomplete] A. A tree with even one [incomplete] left may not enter Stage 2 (a Gate-2 stop)
+          — repair first. Missing evidence (V) may be recorded as 'judgment deferred' when the five
+          absence conditions (§7.6) cannot be established, but W and H stand on every A without
+          exception — reconstruction is not excused by thin material (§0.1).
         ④ Print a direction count per C: [builds n / demolishes m]. **If builds = 0**, mark next to that C: "no branch in this tree builds this conclusion on its own" — a structural report, not a verdict (the precise certainty accounting is Stage 3's Recon0).
+        ⑤ **Close 'is it readable' by numbers**: print `E rows carrying '→ use' = total E rows` and
+          `E rows ending in a predicate = total E rows`. If either falls short, fix the shortfall
+          before printing. The failure criteria:
+          · no '→ use' — the evidence is placed without saying **which ruling it supports**
+          · ending in a noun ('…circumstance', '…purport', '…basis') — noun-phrase compression;
+            who read it how is missing
+          · ending in a quotation mark — the source is transcribed with no reading attached
+          These three turn the tree into a **table of contents**. A user cannot point at what looks
+          wrong in a table of contents — this is where Purpose 1's 'so the user can see it' breaks
+          (§1-0, self-standing readability).
         A tree failing the contract is an incomplete Pass 1. **A short tree is not a virtue but a failure** — long output from exhaustive listing is normal; volume pressure is resolved by turn-splitting, not compression.
         [Overflow — no compression] If it does not fit in one turn, do not squash evidence — continue issue by issue in following turns (the user's "continue" brings the next issue batch). Loss is solved by turn-splitting, not compression.
-Stage 2  Deepen — attach formation·meaning·links to each piece of evidence of the designated branch, in place: run §7.8 M rows and the §7.9 evidence→hypothesis DB (top-down skeleton → bottom-up build) for that branch. The DB table is not a separate artifact but **this branch exported as a table** — every row carries its tree node ID.
-        [Contract] tree E rows of the branch = DB E rows / ★-path evidence count = M-row count.
+Stage 2  Deepen — attach formation·meaning·links to each piece of evidence of the designated branch, in place.
+        First **visibly output** the §6.5 layer–argument bridge table for the designated branch. Its
+        third column is the useful joint (the J node), and §7.3 backward reconstruction and §10's
+        module adjustment both take this table as input — left as 'internal work', three consumers
+        depend on a table whose existence cannot be confirmed.
+        Then run §7.8 M rows and the §7.9 evidence→hypothesis DB — the top-down skeleton (H·P·
+        pre-registration) already stands from Stage 0, so here you do **the bottom-up build only**
+        (E→M→P→H). The DB table is not a separate artifact but **this branch exported as a table** —
+        every row carries its tree node ID.
+        [Contract] bridge-table rows = the branch's layer-issue count / tree E rows of the branch =
+        DB E rows / ★-path evidence count = M-row count.
 Stage 3  Shake (same turn as Stage 2) — account the certainty-source ledger (Recon0) first, then run the four cross-reconciliations · four structural tests (§7.10), pin a flag (⚑) on the tree node for every hit, and **reprint the updated branch**. Each flag carries its trigger path (recon-n / test-X / rejection-seed / interpretation-contest) and one plain-prose line. Append the three signals (§7.7) and the self-check (§3.5-8) as the tail and stop — "which flag (or ★) shall I interrogate?".
         [Contract] total hits (recon·test·rejection-seed·interpretation-contest) = flag count = promotion count.
 Stage 4  Interrogate — for each designated flag (or, on "continue", all ★+flags): a minimal reconstruction block (§7.5), the six-question interrogation, and whatever module its type calls. Each item gets a page anchor + a confirmation question.
@@ -546,7 +643,7 @@ Format: juxtaposition of source fragments (by direction, with page anchors) + ju
 6. Documentary-evidence discipline: note the generation context (author→recipient · purpose · **timing**) — timing records whether it was formed before or after the dispute/investigation began (a record made before the dispute differs in evidentiary grain from one made conscious of the dispute). "Objective" is a transmission-path tag, not a guarantee of interpretive neutrality. Evidence with an interpretive dispute gets a mandatory M row + its matrix values only under a reading condition.
 7. Exhaustive rebuttals: the scoring targets are all Gate-0 rebuttal seeds within the scope (Module E-3). Do not substitute a list the AI curated. For a rebuttal selected as surface-level, attach the B-1 test (reconstruct the strongest position) — keep the selection only if it is still surface-level even after building the arguer's strongest reconstruction.
 7-1. The grammar of selection (see the "two-layer structure" in the criteria & check modules): write a flag, where possible, in the two-part grammar — insufficient ("reached the conclusion without closing [a degree of freedom]") and improper ("closed [a degree of freedom] in [a direction] but with the ground unrecorded / asymmetric"). Every ground can be checked exhaustively against the completion-degrees-of-freedom ledger, and an anomaly outside the ledger is registered as a new degree-of-freedom candidate. Entry order: for a ★-path ground or a core rebuttal, first identify its type in one line (sign · expert opinion · cause · analogy · consistency · absence — the modules' "argument-type entry point"); the degrees of freedom that type calls for become the priority lookup, so the six questions and the ledger check latch onto that spot automatically.
-8. Order audit (may be shown in the tail): did pre-registration precede reading the evidence / did decomposition precede selection.
+8. Order audit (**mandatory in the tail**): did pre-registration precede reading the evidence (Stage 0 performed = yes/no) / did decomposition precede selection. If 'no', mark that run's pre-registration reconciliation (interior rule 5-1) **void** — a pre-registration made out of order does not filter anchoring even when reconciled.
 9. Common ledger fields: location (anchor) · status (confirmed/partial/unconfirmed) · handling (convert to a confirmation instruction / keep as opinion / human review / hold) · rebuttal·re-evaluation condition (what, if confirmed, closes it; what, if it appears, reopens it) · the human-judgment question.
 10. Two-way reading of standpoint (executing the circularity principle of appendix §2): an institution-level standpoint — the premises a "position" like a court, an investigative agency, or the press structurally supplies (allocation of the burden of proof, the standing of an instance, free evaluation of evidence, the economy of the page) — is derived from the institution, not the text, so pre-register it, alongside the hypothesis's expected evidence, as that standpoint's expected premises *before* reading (the three-signal "warrant concealment" is upgraded from a post-hoc tally to a pre-hoc prediction check). Do not declare or attribute this text's own standpoint outline — read it from the pattern of difference formed by the answers to the opposite-placement question ("if it were the other side, where would it put this fact and what more would it have looked for," the V node). Circularity is not to be cut but made visible by contrast.
 11. Self-check — the four kinds of real-measured failure (the places actually breached in running a judgment). Confirm before output, in a countable form:
@@ -557,12 +654,6 @@ Format: juxtaposition of source fragments (by direction, with page anchors) + ju
     · does each flag/question stand on its own even with the symptom codes, group numbers, and node IDs erased (self-standing readability — §1-0)
     · does pre-registered expected evidence n = settlement n (zero items with no met/absent/unconfirmed assigned — §3.10 interior 5-1)
 ```
-
----
-
-## 4. Overall flow
-
-The canonical execution order is the §3.6 run-card (pass definitions: §3.5-1; output items and order: §14). The old summary here was redundant and has been removed.
 
 ---
 
@@ -654,16 +745,6 @@ If even one is missing, demote it to a consolation/escape layer and exclude it f
 |Joint there|What fact, evidence, difference, change, or falsifying condition shapes the object's contour||
 |Contact point|What is the condition where the usefulness here meets the dividing point there||
 |Verification|If this condition is confirmed, does the judgment or action actually change||
-
-### 5.4 Core formation sentence
-
-Organize in the following form.
-
-```text
-This object currently looks like [attached name] because [condition 1], [condition 2], [condition 3] combine.
-The useful joint of this perception is [the joint].
-If this joint is confirmed or shaken, [the judgment/action] changes.
-```
 
 ---
 
@@ -855,7 +936,15 @@ Contrast (the split) → Module M + Group 9 frame foreclosure + Group 10 conclus
 
 ## 7.6 Full-argument map and user designation — the indented tree is canonical
 
-The canonical form of the map is an indented tree inside a code block — row grammar `glyph ID  label — page · evidence-seed · citation-gap` (glyphs: 🔴 C / 🔵 A / ⚪ E — Stage 1, §3.10). Do not use tables, CSV, or diagrams (Mermaid-like) as the output format of the map — tables/CSV break depending on the environment, and a diagram is harder to read than a tree for this purpose (format requirement: it must not break in any environment and the hierarchy must be visible at a glance). Only one parallel output: in a code-running environment, save a CSV *file* (for sorting / spreadsheet use). Fill the evidence-seed by machine-assigning the page range of the Gate-0 seeds. In Stage 1 the evidence (E) rows are mandatory-exhaustive (Stage 1 format in §3.10 — recitation-order exhaustion·output contract) — but exhaustive here means *listing*, not atomization or evaluation (that is the 2nd pass's job, §7.8–7.10).
+The canonical form of the map is an indented tree inside a code block (glyphs: 🔴 C / 🔵 A / ⚪ E).
+**The canonical row grammar is §3.10 Stage 1** — this section fixes form and symbols only; sentence
+format follows §3.10. The `glyph ID label — page` notation that stood here is deleted: 'label' is a
+word that invites a noun phrase, and when a run follows it, the very noun-phrase compression §3.10
+forbids comes out (measured: across six independent runs, the share of evidence rows ending in a
+predicate was 2–18%, and half the runs attached '→ use' on only 5–23% of rows — closing on nouns like
+'→ circumstantial evidence of office space provision', with who read it how left out).
+To restate: an evidence row is `⚪ E-no. evidence name — one sentence of content (who did/said what)
+→ use (which ruling this evidence supports) (p.N)`, and **it ends in a predicate, not a noun.** Do not use tables, CSV, or diagrams (Mermaid-like) as the output format of the map — tables/CSV break depending on the environment, and a diagram is harder to read than a tree for this purpose (format requirement: it must not break in any environment and the hierarchy must be visible at a glance). Only one parallel output: in a code-running environment, save a CSV *file* (for sorting / spreadsheet use). Fill the evidence-seed by machine-assigning the page range of the Gate-0 seeds. In Stage 1 the evidence (E) rows are mandatory-exhaustive (Stage 1 format in §3.10 — recitation-order exhaustion·output contract) — but exhaustive here means *listing*, not atomization or evaluation (that is the 2nd pass's job, §7.8–7.10).
 
 Gist duty: attach a 1–2 sentence gist to conclusion and ground rows — a compression from the arguer's (the court's) viewpoint ("holds that …"), not the analyst's commentary, and the no-evaluative-words rule still applies. Gate-0 mechanical facts (citation-gap locations, etc.) may be noted with ※. A map with labels only is a table of contents, not understanding — the user reads the gist and picks a scope.
 
@@ -1014,10 +1103,12 @@ Pass 1's standard output is not prose but the **evidence→hypothesis DB**. The 
   the object of evaluation is the document's argument.
 
 [Build order — do not violate]
-① Top-down skeleton (before close reading): read only the table of contents, claim summaries, and
-   conclusions; erect H (adopted + rivals) and the P skeleton per issue, and write each H's expected-
-   evidence list NOW (§3.5-6 pre-registration — required / strongly expected / diagnostic).
-   No post-hoc editing of expected evidence before Pass 1 ends (additions marked as additions only).
+① Top-down skeleton (before close reading) — **this work is already finished at §3.10 Stage 0.**
+   You are not doing it anew here: bring Stage 0's output (per-issue H adopted+rival, the P skeleton,
+   the pre-registered expected evidence) and place it at the head of the DB. If you find yourself
+   erecting the top-down skeleton at Stage 2, the order has been violated — the close reading is
+   already done, so that expected evidence is not a pre-registration.
+   No post-hoc editing of expected evidence (additions marked as additions only).
 ② Bottom-up build (close reading): with gate-0 seeds as the exhaustive baseline of the E layer,
    fill E segment by segment. Attach M per E; link along the document's argument path with ⊢;
    restore skipped bridges with ⊦.
@@ -1270,16 +1361,6 @@ Therefore, if in (4) the conclusion cannot withstand the arguer's strongest posi
 "Material expected under each hypothesis" follows the pre-registration discipline of §3.5 (6) —
 derive it independently from the hypothesis itself before reading the document's evidence arrangement, and grade it in three tiers: essential / strong expectation / diagnostic.
 ```
-
-### J. Proof-proposition tree
-
-Use only for complex legal/factual judgments.
-
-|Level|Proposition|How it supports the higher proposition|Supporting material|Item needing confirmation|
-|-|-|-|-|-|
-|Final proposition|||||
-|Intermediate proposition 1|||||
-|Sub-proposition 1-1|||||
 
 ### K. Alternative-hypothesis discriminating power
 
@@ -1551,12 +1632,14 @@ At the end, you must organize in the following order.
 ```text
 [First-pass output]
 0. **Plain-language summary (read this first — no codes, no jargon)**: the conclusion · the hidden assumption (plain words) · does the decisive-looking evidence really discriminate · what actually discriminates and how solid · what's missing
-1. The object now seen and the attached name
-2. Summary of the object-formation conditions
-3. The usefulness here and the dividing point there
-4. The useful joint
+0-1. **Stage 0 skeleton** — issue list · hypothesis pairs (adopted/rival) · pre-registered expected
+     evidence (three tiers). Printed short, ahead of the tree, in the first turn. Not edited later.
+1. The object now seen and the attached name — Stage 2 internal work (input to the bridge table). No separate section needed
+2. Summary of the object-formation conditions — same
+3. The usefulness here and the dividing point there — same
+4. The useful joint — printed as column 3 of the bridge table (not a separate item)
 5. The examinable claim (including the orientation of judgment)
-6. The layer–argument bridge table
+6. The layer–argument bridge table — **visible artifact** (Stage 2). Includes items 3 and 4
 7. Per-candidate minimal reconstruction blocks (forward · backward · contrast · competing · six questions)
 7-1. Meaning-hypothesis M rows for the ★ path (§7.8)
 7-2. Evidence→hypothesis DB (§7.9) — all E·M·P·H rows + cross-reconciliation·structural-test results (§7.10)
@@ -1605,13 +1688,20 @@ If a table might break, you must use the vertical-block format.
 
 ```text
 ① Did you actually count the ruled items in the document's table of contents and print that count
-   next to the claim (A) row count (e.g., "contents ruled items 14 / A rows 14 + [added] 2")?
-   "Major issues only" is a violation.
+   next to the claim (A) row count (e.g., "summary of grounds of appeal 24 / A rows 24 + [added] 3")?
+   Where no such section exists use the table of contents; where that is absent too, state 'no external
+   baseline'. "Major issues only" is a violation.
 ② If a "summary of evidence" section exists, did you count its items and print n = n for their
    presence in the tree?
 ③ Are the re-sweep windows 5 pages (±1)? If you grouped larger, split and redo.
 ④ All claims, all evidence? A short, compressed tree is not a virtue but a failure.
 ⑤ If volume is a burden, do not compress — propose issue-by-issue turn splitting.
+⑥ Did you print A row count = W row count = H row count side by side? Where they diverge, repair
+   before output.
+⑦ Did you finish Stage 0 pre-registration **before close reading**? Expected evidence written after
+   Stage 1 is not a pre-registration.
+⑧ Does the re-sweep [added] total equal the number of E rows newly written into the tree body? If
+   even one item exists in the log but not in the tree, register it before printing anything.
 ```
 
 The following is a re-confirmation of the core prohibitions scattered through the preceding sections (definitions/explanations are in each source section). Do not break them.
