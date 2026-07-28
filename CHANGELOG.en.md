@@ -2,9 +2,81 @@
 
 *[한국어](CHANGELOG.md) | English*
 
+## v260728a — 2026-07-28
+
+**The sufficiency gate on the ascent from evidence to conclusion is now symmetric down to the E→M layer.** This reflects a point raised in live review: if what this tool does is *"work backwards from evidence to conclusion asking whether the argument is sufficient"*, then one of those gates was only half-built.
+
+### What was wrong [measured]
+
+§7.9 has three questions recorded per piece of evidence — ① admissibility ② formation (author, time, originality) ③ meaning (what the entry signifies) — and the escalation rule blocked *"recycling the admissibility ground (①) as if it settled formation (②) or meaning (③)"*. **①→②·③ was blocked; ②→③ was left open.**
+
+The spot that surfaced in use: a judgment rejected an originality challenge to a set of minutes (defence counsel's file-size argument) on the technical ground that *"letter spacing and line spacing change a file's size"* (②), and then **never asked again what the entries in those minutes meant (③)** — sales talk written to attract hedge-fund investment, or a record of actual cooperation — while continuing to cite them as grounds for several rulings.
+
+The tool **caught this in three pieces** — unsettled originality, contested reading, undifferentiated source. What it did not do is **tie the three together as three faces of one question** (when, why and for whom was this document written). The path where ② closes ③ sat one step outside the rule's net.
+
+### Changes
+
+- **Escalation rule expanded to four clauses (a)–(d)** (§7.9), headed by *"the three questions must each be answered separately; the answer to one may not close another."*
+  - **(c) Using the answer to ② as if it also settled ③ is equally a selection target.** The two are answered from different materials — formation from the document's physical provenance, meaning from its **purpose, addressee and context**. Find and escalate the spot where, once the formation challenge was rejected, the meaning was never asked again.
+  - **(d) Meaning travelling upward while still contested carries the same grade as unsettled formation.** If the M row's 'read otherwise' is substantively open and the evidence is nonetheless supporting P·H, escalate.
+- **Structural Test A widened from 'unruled use' to 'unsettled ascent'** (§7.10). Formation and content hypotheses now count **equally**, catching ① formation used while rejection-only, ② meaning used while still contested, and ③ a meaning question closed by a formation ruling.
+- **A gate declaration added at the head of §7.8** — *"E→M is a sufficiency gate too."* M→P and P→H are guarded by the three warrant tests and question ③ of the six; E→M is guarded by the escalation rule. The first two ask *is the bridge sound*; E→M asks *is it settled what is being carried across*. If the latter is open, the former runs empty.
+- **Module M added to the E (evidence) node in the §10 routing** — a meaning question closed by a formation ruling is 'layer covering', which Module M can catch, but the E node routed only to A·E·R.
+
+### What remains
+
+- **The M row has no 'provenance context' field** (author → addressee, purpose, time). §3.10 interior rule 6 demands it as a discipline, but there is no countable slot, so it goes unfilled — it was absent from this run's M rows too. This is the direct remedy for (c) and is the next candidate.
+- **There is no axis for "what the opposing party failed to dispute."** The surface quality of a rejection is often possible because the opponent argued weakly (here, counsel disputed file size rather than the document's purpose). Module B-1 reconstructs only the arguer's strongest position; it does not look at what the other side left on the table.
+- The previous edition is archived at `prompts/archive/LARP_v260728.md` (+`.en.md`).
+
+## v260728 — 2026-07-28
+
+Reflects the first end-to-end run of v260727 through **Stages 0→4** on one judgment (Suwon High Court 2024No620). Every previous run stopped at Stage 1; this is the first time the dialogue (plain-language designation), the selection (flags) and the judgment (six questions · modules) were actually observed running. Evidence grades as in v260727 — **[measured]** / **[grounded]** / **[judgment]**.
+
+### Observed in this run (record, not a change)
+
+- **Plain-language designation worked.** The numberless designation *"the North Korea remittance part looks off — is there really a basis for saying the defendant told them to send the 5 million and the 2 million?"* was linked to C5 and C6 respectively, and the tool asked back *"here is how I understood it … is that right?"*. It mapped the colloquial "told them to" onto the statutory element of *request*, and distinguished it from the separate *attribution* issue (where the money ended up) on its own.
+- **The cross-issue reconciliation produced a real finding.** The same testimony by F is credited as *"consistent, specific and mutually corroborating, so its credibility is recognized"* (p.75) on the *request* issue, and as *"hard to find a clear agreement"* (pp.135–136) on the *attribution* issue — two different thresholds for one piece of material, raised as the top finding. It simultaneously drew the line that *"request and attribution are different elements, so the distinction itself is not necessarily wrong"*, restraining over-flagging.
+- **The plain-language summary (§3.8) appeared properly for the first time in seven runs** — no codes, everyday words. **All 16** flaggings carried a source quotation with a page marker (100%).
+- Contracts: flags 15 = blocks 15 + deferrals 0 / DB E 92 = tree E 92 / M rows 45 = ★ evidence 45.
+
+### Change 1 — routing entries created for modules S and T [measured]
+
+**Two rows added to the §10 node-type routing table.**
+
+- `a spot where timing or sequence is the issue` → **S. Timeline / narrative reconstruction** + M
+- **T. Sensitivity / robustness analysis** added to the `C (final conclusion)` row
+- Plus an explicit rule: *"run T first when setting the interrogation order"* — Stage 4 demanded *"priority is sensitivity"* while never calling the module that measures sensitivity.
+
+Grounds: the issue at hand was *when* the request was made (timing) and yet **S was called 0 times**; Stage 4 sorted by sensitivity and **T was called 0 times**. The table had no place to call them from. (Module N, which the same static analysis had listed as "no routing", ran 3 times here — **that finding was wrong.** Module F remains at 0, but this issue may simply have had no terminology-consistency problem; judgment deferred.)
+
+### Change 2 — flagging prose unified; §9 deleted [measured]
+
+Three places prescribed how to write a flagging (§7.5 block + six questions / §9 five-sentence table / §3.10 interior rule 7-1 binary grammar). In this run **§9 and the binary grammar were used 0 times each**; only §7.5 was used.
+
+- **§9 (Stage 5: Explaining the anomalous argument) deleted.** Its five-sentence structure and prohibition list **moved into the "reason for selection or exclusion" field of the §7.5 block** — into the one place that is actually used.
+- The now-dangling "Stage 5 (detailed explanation)" reference removed from §8's waiting prompt.
+- Section numbers were **not renumbered** (protecting cross-references such as §14's "12-1"). A one-line note at the head of §10 records that §4 and §9 are now empty slots.
+- Interior rule 7-1's binary grammar was left alone this time — it is entangled with the degrees-of-freedom register in the separate modules file and needs its own decision.
+
+### Change 3 — the "no separate table" rule moved to the head of modules P and K [measured]
+
+Module P prescribes *"do not draw the dependency map as a table — fill the §7.9 DB columns"*, but the instruction sat buried mid-section and **the run built a fresh per-witness source table anyway.**
+
+- P: *"the only table this module produces is the aggregate-weight table below"* moved to the head, with what is forbidden and what is allowed separated, and the reason stated (splitting the content across DB and module destroys which one is canonical).
+- **English parity [repair]:** the English K and P were old editions — **the tables were still there and the "no separate table" instruction was absent entirely.** Brought into line with the Korean (K: table removed, DB-column instruction added; P: dependency-map table removed).
+
+### What remains
+
+- **Stage 5 (the report) has not been run.**
+- **Precision is still unmeasured** — whether the 16 flaggings are right requires a human reading the source.
+- There is no rule for **"columns that do not apply"** in the module tables (the run omitted them on its own judgment, which was reasonable).
+- `[FLAG]` was used instead of the `⚑` glyph — it does not stand out on the tree.
+- The previous edition is archived at `prompts/archive/LARP_v260727.md` (+`.en.md`).
+
 ## v260727 — 2026-07-27
 
-Reflects the results of running **Stage 1 six times independently** (Sonnet) on one judgment (148 pages · 73 gate-0 seeds) and scoring the output externally against the document's own rosters (gate-0 seeds, the "summary of grounds of appeal"). Each item carries an evidence grade — **[measured]** effect was measured / **[grounded]** reasoned but not yet measured / **[judgment]** author's call.
+Reflects the results of running **Stage 1 six times independently** (Sonnet) on one judgment (Suwon High Court 2024No620, 148 pages · 73 gate-0 seeds) and scoring the output externally against the document's own rosters (gate-0 seeds, the "summary of grounds of appeal"). Each item carries an evidence grade — **[measured]** effect was measured / **[grounded]** reasoned but not yet measured / **[judgment]** author's call.
 
 ### Purpose 1, 'without omission' — only what is closed by a contract gets kept
 
@@ -16,8 +88,8 @@ Reflects the results of running **Stage 1 six times independently** (Sonnet) on 
 
 ### Purpose 1, 'so the user can see it' — the spot that failed all six times
 
-- **[measured] §7.6's `glyph ID label — page` row grammar deleted; §3.10 Stage 1 declared canonical.** 'Label' is a word that invites a noun phrase, and while two sections prescribed different grammars for the same tree, **every one of the six runs followed §7.6.** Grounds: evidence rows ending in a predicate ran 2–18%, and half the runs attached '→ use' on only 5–23% of rows — closing on nouns like `→ circumstantial evidence of office space provision`, with who read it how left out. What static analysis had filed as a mere 'duplicate notation spec' was in fact **where half of Stage 1's core value collapsed.**
-- **[grounded] Contract ⑤ added — close 'is it readable' by numbers.** Print `E rows carrying '→ use' = total E rows` and `E rows ending in a predicate = total E rows`; fix any shortfall before printing. Three failure modes named as criteria (no use / noun ending / quotation ending). These turn the tree into a **table of contents**, and a user cannot point at what looks wrong in a table of contents (§1-0, self-standing readability). Grounds: once recall was closed by a contract it went 55% → 100% — what is not counted is not kept. Rollback condition: if this contract becomes formal noise on short documents, narrow it to Gate 1 (long documents).
+- **[measured] §7.6's `glyph ID label — page` row grammar deleted; §3.10 Stage 1 declared canonical.** 'Label' is a word that invites a noun phrase, and while two sections prescribed different grammars for the same tree, **every one of the six runs followed §7.6.** Grounds: rows carrying '→ use' ranged 5–95%, and the share naming who did the reading was 0–45% (0–6% in the three runs following this grammar) — closing on nouns like `→ circumstantial evidence of office space provision`, with who read it how left out. What static analysis had filed as a mere 'duplicate notation spec' was in fact **where half of Stage 1's core value collapsed.**
+- **[grounded] Contract ⑤ added — close 'is it readable' by numbers.** Print `E rows carrying '→ use' = total E rows` and `E rows ending in a predicate = total E rows`; fix any shortfall before printing. Three failure modes named as criteria (no use / noun ending / quotation ending). These turn the tree into a **table of contents**, and a user cannot point at what looks wrong in a table of contents (§1-0, self-standing readability). Grounds: once recall was closed by a contract it went 55% → 100% — what is not counted is not kept. **Confirmed: the first run carrying this contract reached 100% '→ use' and 92% actor-named, and the executor itself caught and repaired a 139/223 shortfall in its draft.** Rollback condition: if this contract becomes formal noise on short documents, narrow it to Gate 1 (long documents).
 
 ### Order — pre-registration was running in the very state it forbids
 
