@@ -1,4 +1,4 @@
-# LARP: Layer-grounded Argument Reasoning Probe (AIVA-L-CALM v260728a)
+# LARP: Layer-grounded Argument Reasoning Probe (AIVA-L-CALM v260728b)
 
 *[한국어](LARP.md) | English*
 
@@ -686,7 +686,7 @@ Format: juxtaposition of source fragments (by direction, with page anchors) + ju
 4. Preserve by compression: items dropped from the summary/briefing are moved to the residual list (packet), not deleted.
 5. Intermediate-proposition reconciliation: its execution IS §7.10 Recon3 (hypotheses in mid-air) — do not run the same test twice. Only the criterion stays here: a required proposition with no ground = a candidate gap axis.
 5-1. Pre-registration settlement: its execution IS §7.10 Recon1·2 — do not settle twice. Give the reconciliation table a settlement column assigning every pre-registered item (§3.5-6 · Module G · institutional expected premises) one of: met (which evidence corresponds) / absent (not-recorded · not-collected · non-existent; if indistinguishable, a check instruction) / unconfirmed. An unsettled pre-registration is decoration. A 'required'-grade absence is the top V-node candidate.
-6. Documentary-evidence discipline: note the generation context (author→recipient · purpose · **timing**) — timing records whether it was formed before or after the dispute/investigation began (a record made before the dispute differs in evidentiary grain from one made conscious of the dispute). "Objective" is a transmission-path tag, not a guarantee of interpretive neutrality. Evidence with an interpretive dispute gets a mandatory M row + its matrix values only under a reading condition.
+6. Documentary-evidence discipline: the generation context (author→recipient · purpose · **timing**) goes **in the 'provenance context' field of the §7.8 M row** (left as a discipline alone it does not get filled — measured). Timing records whether it was formed before or after the dispute/investigation began (a record made before the dispute differs in evidentiary grain from one made conscious of the dispute). "Objective" is a transmission-path tag, not a guarantee of interpretive neutrality. Evidence with an interpretive dispute gets a mandatory M row + its matrix values only under a reading condition.
 7. Exhaustive rebuttals: the scoring targets are all Gate-0 rebuttal seeds within the scope (Module E-3). Do not substitute a list the AI curated. For a rebuttal selected as surface-level, attach the B-1 test (reconstruct the strongest position) — keep the selection only if it is still surface-level even after building the arguer's strongest reconstruction.
 7-1. The grammar of selection (see the "two-layer structure" in the criteria & check modules): write a flag, where possible, in the two-part grammar — insufficient ("reached the conclusion without closing [a degree of freedom]") and improper ("closed [a degree of freedom] in [a direction] but with the ground unrecorded / asymmetric"). Every ground can be checked exhaustively against the completion-degrees-of-freedom ledger, and an anomaly outside the ledger is registered as a new degree-of-freedom candidate. Entry order: for a ★-path ground or a core rebuttal, first identify its type in one line (sign · expert opinion · cause · analogy · consistency · absence — the modules' "argument-type entry point"); the degrees of freedom that type calls for become the priority lookup, so the six questions and the ledger check latch onto that spot automatically.
 8. Order audit (**mandatory in the tail**): did pre-registration precede reading the evidence (Stage 0 performed = yes/no) / did decomposition precede selection. If 'no', mark that run's pre-registration reconciliation (interior rule 5-1) **void** — a pre-registration made out of order does not filter anchoring even when reconciled.
@@ -1126,6 +1126,14 @@ Principle: **consistency (fit) ≠ diagnosticity (discriminating power)**. If ev
 ```text
 [M-row fields]
 - Actual content: source quote. If one source carries entries in both directions, split into atoms ①② (e.g., minutes).
+- **Provenance context (mandatory)**: author → recipient · purpose · **timing**. Timing records whether it
+  was formed **before** or **after** the dispute/investigation began (§3.10 interior rule 6). If unknown, do
+  not leave it blank — write **'unknown'**. A blank means the question was never asked; 'unknown' means it
+  was asked and the material is missing, which drops into a confirmation instruction.
+  **This field is the material from which meaning (③) is answered.** The same phrase means something
+  different written into an investor-facing document than into an internal report. If this field is blank
+  or 'unknown' even after formation (②) has been settled by rejection, the meaning is still open — this is
+  where escalation clauses (c) and (d) bite (§7.9).
 - Citer·reading: who (court/prosecution/defense) imputed what meaning. If both sides cite the same
   source by different lines, flag 'selective use of evidence (group 6)'.
 - Read otherwise: at least one line of competing reading.
