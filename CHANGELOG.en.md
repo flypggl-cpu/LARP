@@ -2,6 +2,29 @@
 
 *[한국어](CHANGELOG.md) | English*
 
+## v260728b — 2026-07-28
+
+**A 'provenance context' field was added to the M row** — the direct remedy that makes escalation clauses (c) and (d) of v260728a actually get filled.
+
+### What was wrong [measured]
+
+§3.10 interior rule 6 already demanded *"note the generation context (author→recipient · purpose · **timing**) — timing records whether it was formed before or after the dispute/investigation began."* But this existed **only as a discipline sentence; the M row had no such field.** Runs produced M rows with five columns — `citer·reading / read otherwise / source·independence / diagnosticity / ruling status` — and nowhere to record purpose, addressee or timing.
+
+**What is not counted is not kept** — the pattern repeatedly confirmed in this project (evidence recall 55→96%, '→ use' 5–95→100%, both only after a contract closed them by number). A discipline without a slot goes unfilled.
+
+### Changes
+
+- **New mandatory field «provenance context» in the §7.8 M row** — `author → recipient · purpose · timing (before/after the dispute began)`. Placed immediately after 'actual content' (what the document *is* comes before who read it how).
+  - **If unknown, do not leave it blank — write 'unknown'.** A blank means the question was never asked; 'unknown' means it was asked and the material is missing, which drops into a confirmation instruction.
+  - States explicitly that *"this field is the material from which meaning (③) is answered"* — the same phrase means something different in an investor-facing document than in an internal report.
+  - **If the field is blank or 'unknown' even after formation (②) has been settled by rejection, the meaning is still open** — this is where escalation clauses (c) and (d) bite.
+- **§3.10 interior rule 6 given an address** — *"the generation context goes in the 'provenance context' field of the §7.8 M row (left as a discipline alone it does not get filled — measured)."*
+
+### What remains
+
+- **There is still no axis for "what the opposing party failed to dispute."** The surface quality of a rejection is often possible because the opponent argued weakly. Module B-1 reconstructs only the arguer's strongest position.
+- The previous edition is archived at `prompts/archive/LARP_v260728a.md` (+`.en.md`).
+
 ## v260728a — 2026-07-28
 
 **The sufficiency gate on the ascent from evidence to conclusion is now symmetric down to the E→M layer.** This reflects a point raised in live review: if what this tool does is *"work backwards from evidence to conclusion asking whether the argument is sufficient"*, then one of those gates was only half-built.
