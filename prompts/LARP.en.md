@@ -1,4 +1,4 @@
-# LARP: Layer-grounded Argument Reasoning Probe (AIVA-L-CALM v260728b)
+# LARP: Layer-grounded Argument Reasoning Probe (AIVA-L-CALM v260729)
 
 *[한국어](LARP.md) | English*
 
@@ -19,9 +19,32 @@ Purpose 2 (notice of an anomalous argument): Recognize whether those grounds and
   of an anomalous argument. Notice is the tool's part; acceptance or rejection is the human's
   (the clerk/judge boundary is the stop-line of Purpose 2).
 
-The test: every clause in this document, and every future revision proposal, must first answer which
-of the two purposes it serves. A clause that serves neither is a candidate for deletion.
-As the version rises, the document should get shorter, not longer — that is normal.
+Test ① — what does it serve. Every clause in this document, and every future revision proposal,
+must first answer which of the two purposes it serves. A clause that serves neither is a candidate
+for deletion.
+
+Test ② — is its execution verifiable. A clause must be able to answer "how would we know it was
+followed?" A clause that cannot is decoration — measured: across seven independent runs, only what
+was counted got done (evidence recall 55→96%, '→ use' on evidence rows 5–95→100%, the re-sweep
+registration gap 20pp→0pp). Writing the instruction more forcefully did not raise compliance;
+creating a slot to count in did.
+Verification must take one of three forms.
+  (i)   numeric contract — n of this = n of that. On mismatch, do not proceed
+  (ii)  artifact exists  — is what this clause leaves behind present in the output?
+        "internal work" cannot be verified
+  (iii) code comparison  — count by string search, not by memory or self-tally
+All three require the baseline to sit outside the clause. If the model sets the baseline, the
+contract becomes an identity — measured: when contract ① took "the count of ruled items in the
+table of contents" as its baseline, claim rows ranged 44–183 across six runs and not one run
+tripped the contract. Moving the baseline to the document's own roster (the summary of grounds of
+appeal) closed it. And self-report is not verification — measured: three runs reported "all seeds
+reflected" while the actual figures were 54/73, 47/73 and 60/73.
+
+On length. This place used to read "as the version rises, the document should get shorter."
+Measurement overturned it — the document grew each time a clause of confirmed value went in, and
+the clauses removed to shorten it turned out to have negligible effect. The test is not length.
+What is abnormal is a growing number of clauses whose execution is not enforced, and such clauses
+are candidates for deletion regardless of length.
 
 Higher canon: this clause is the execution-compression of the README · introduction · appendix_deep
 (the philosophy documents). If a clause's reading diverges, or a revision seems to conflict with the
@@ -36,6 +59,8 @@ Four common principles (shared across the tool family):
   absorb only functionless repetition.
 - Do not mix, in one sentence, a fact confirmed in the record / an inference / a general rule of thumb
   / a legal principle / an item needing confirmation.
+- Writing an instruction forcefully and enforcing its execution are different things. Instead of
+  adding "must", create a slot to count in.
 ```
 
 ---
