@@ -1,4 +1,4 @@
-# LARP: Layer-grounded Argument Reasoning Probe (AIVA-L-CALM v260727)
+# LARP: Layer-grounded Argument Reasoning Probe (AIVA-L-CALM v260728a)
 
 *[한국어](LARP.md) | English*
 
@@ -963,7 +963,16 @@ For each candidate, write the following block (apply the vertical-block output r
 - Conclusion relevance: high / medium / low
 - Selected: yes / no (+ the numbers of the questions answered negative/unclear)
 - Group tagging: the relevant group number and selection-criterion name (§8 index)
-- Reason for selection or exclusion:
+- Reason for selection or exclusion: when selected, write it in the **five-sentence structure**
+  below (this is the canonical wording of a flagging — there is no separate explanation section).
+    (1) The document's logic   the document judges B on the ground of A
+    (2) The missing link       but even if A is true, C must additionally be confirmed for B to follow
+    (3) Why it is risky        if C is unconfirmed, the alternative explanation D remains open
+    (4) Plain restatement      A alone does not yield B; A supports B only once C is confirmed
+    (5) Reviewer question      the reviewer must confirm material E or circumstance F (register in the ledger)
+  Forbidden: do not stop at a tag ("weak link", "premise unconfirmed", "needs review"). Do not deliver a
+  final verdict ("the conclusion is wrong", "the probative value is weak"). Do not invent facts absent
+  from the record as examples.
 ```
 
 Six-question routing:
@@ -986,9 +995,10 @@ The canonical form of the map is an indented tree inside a code block (glyphs: �
 **The canonical row grammar is §3.10 Stage 1** — this section fixes form and symbols only; sentence
 format follows §3.10. The `glyph ID label — page` notation that stood here is deleted: 'label' is a
 word that invites a noun phrase, and when a run follows it, the very noun-phrase compression §3.10
-forbids comes out (measured: across six independent runs, the share of evidence rows ending in a
-predicate was 2–18%, and half the runs attached '→ use' on only 5–23% of rows — closing on nouns like
-'→ circumstantial evidence of office space provision', with who read it how left out).
+forbids comes out. Measured across six independent runs: rows carrying '→ use' ranged 5–95%, and the
+share whose use **names who did the reading (the court, the prosecutor, the defence)** was 0–45% (the three
+runs following this section's grammar: 0–6%) — closing on nouns like '→ circumstantial evidence of office
+space provision', with who read it how left out. Once contract ⑤ made both countable, they reached 100% and 92%.
 To restate: an evidence row is `⚪ E-no. evidence name — one sentence of content (who did/said what)
 → use (which ruling this evidence supports) (p.N)`, and **it ends in a predicate, not a noun.** Do not use tables, CSV, or diagrams (Mermaid-like) as the output format of the map — tables/CSV break depending on the environment, and a diagram is harder to read than a tree for this purpose (format requirement: it must not break in any environment and the hierarchy must be visible at a glance). Only one parallel output: in a code-running environment, save a CSV *file* (for sorting / spreadsheet use). Fill the evidence-seed by machine-assigning the page range of the Gate-0 seeds. In Stage 1 the evidence (E) rows are mandatory-exhaustive (Stage 1 format in §3.10 — recitation-order exhaustion·output contract) — but exhaustive here means *listing*, not atomization or evaluation (that is the 2nd pass's job, §7.8–7.10).
 
@@ -1105,7 +1115,7 @@ Always attach to the opinion: what must be confirmed to resolve this suspicion
 
 ## 7.8 Meaning-hypothesis (M) rows — the DB's M layer (mandatory per ★-path evidence)
 
-In the evidence→hypothesis DB (§7.9), each piece of evidence (E) gains force upward only through a **meaning hypothesis (M)**. Distinguish two kinds — a **formation hypothesis** (is this evidence genuine: author, time, originality) and a **content hypothesis** (what does this entry/statement signify). Write an M row per ★-path evidence at the atomic level (no "…etc"; do not bundle testimonial and non-testimonial objective evidence). Non-★ evidence gets no M row — only an E row in §7.9 (load control).
+In the evidence→hypothesis DB (§7.9), each piece of evidence (E) gains force upward only through a **meaning hypothesis (M)**. **E→M is a sufficiency gate too.** What this tool does is climb the layers from evidence to conclusion asking whether each ascent is sufficient (E→M→P→H); M→P and P→H are guarded by the three warrant tests and question ③ of the six, and E→M is guarded by the escalation rule in §7.9. The first two ask *is the bridge sound*; E→M asks *is it settled what is being carried across* — and if the latter is open, the former runs empty. Distinguish two kinds — a **formation hypothesis** (is this evidence genuine: author, time, originality) and a **content hypothesis** (what does this entry/statement signify). Write an M row per ★-path evidence at the atomic level (no "…etc"; do not bundle testimonial and non-testimonial objective evidence). Non-★ evidence gets no M row — only an E row in §7.9 (load control).
 
 Write diagnosticity verdicts in comparative form — after asserting "discriminates / non-diagnostic", always add one comparison line: "under H1 the likelihood of this evidence appearing is …, under H2 …". This is the minimal sentence-level block against pseudo-diagnosticity (checking fit with one side only and reading it as support).
 
@@ -1166,10 +1176,25 @@ Formation status — three distinct questions per item:
   ① Admissibility: admitted or not + the stated ground (with locator)
   ② Formation: author/time/originality disputed + the court's ruling [affirmative / rejection-only / unruled] (locator)
   ③ Meaning: import disputed (expand as a §7.8 M row)
-Escalation rule: rejecting the opponent's forgery/alteration claim is not an affirmative finding of
-formation. If evidence whose formation is unruled/rejection-only grounds the conclusion (especially
-the issue's only non-testimonial exhibit), escalate to a gap axis (V) / anomaly candidate. Recycling
-the admissibility ground as if it settled formation or meaning is itself a selection target.
+Escalation rule — **the three questions must each be answered separately; the answer to one may not
+close another.**
+  (a) Rejecting the opponent's forgery/alteration claim is not an affirmative finding of formation. If
+     evidence whose formation is unruled/rejection-only grounds the conclusion (especially the issue's
+     only non-testimonial exhibit), escalate to a gap axis (V) / anomaly candidate.
+  (b) Recycling the admissibility ground (①) as if it settled formation (②) or meaning (③) is itself a
+     selection target.
+  (c) **Using the answer to ② as if it also settled ③ is equally a selection target.** Rejecting an
+     originality challenge on technical grounds settles 'this document is not a forgery' — not 'this is
+     what the entry means'. The two questions are answered from different materials: formation from the
+     document's physical provenance, meaning from its purpose, addressee and context. Find and escalate
+     the spot where, once the formation challenge was rejected, the meaning was never asked again
+     (measured: one judgment rejected an originality challenge to minutes as a file-size matter, then
+     never revisited what the entries meant — sales talk written to attract investors, or a record of
+     actual cooperation — and went on citing them as grounds for several rulings).
+  (d) **Meaning travelling upward while still contested carries the same grade as unsettled formation.**
+     If the M row's 'read otherwise' is substantively open (the document did not close that rival
+     reading head-on) and the evidence is nonetheless supporting P·H, escalate. If E→M is unsettled, the
+     sufficiency talk above it becomes measuring a bridge's strength without knowing what crosses it.
 
 Summary level of the source (mandatory for summarizing documents like judgments):
   verbatim transcript / author's (court's) summary / admissibility-excluded·limited citation.
@@ -1207,7 +1232,10 @@ Recon3 hypotheses in mid-air  H·P with no ⊢ path down to any E (conclusions s
 Recon4 unused evidence        E reaching no M·P (cited by the document yet unused in its argument).
 
 [Structural tests — DB invariants]
-TestA unruled use     an M with ruling status [unruled]/[rejection-only] used upward — especially a
+TestA unsettled ascent an M with ruling status [unruled]/[rejection-only] used upward. **Formation and
+                   content hypotheses count equally** — catch not only ① formation used while
+                   rejection-only, but also ② meaning used while still contested (the rival reading
+                   never closed), and ③ a meaning question closed by a formation ruling. Especially a
                       formation hypothesis (escalation rule §7.9).
 TestB double weight   the same E (or same source) carrying different weight in different P·H
                       (couples with the cross-issue reconciliation of §3.5-1).
@@ -1277,35 +1305,9 @@ Specify the reason for exclusion as one of: source, connecting logic, redundancy
 
 ---
 
-## 9. Stage 5: Explaining the anomalous argument
-
-Explain a selected argument in the following five-sentence structure.
-
-|Explanation element|Writing form|
-|-|-|
-|The document's or user's logic|`The document/user judges B on the ground of A.`|
-|The missing link|`But even if A is true, for B to follow, C must additionally be confirmed.`|
-|Why it is dangerous|`If C is not confirmed, the alternative explanation D remains.`|
-|Plain explanation|`A alone does not directly yield B. C must be confirmed for A to become a reason that supports B.`|
-|Reviewer question|`The reviewer must confirm material E or circumstance F.` (register in the open-questions ledger)|
-
-Write the table as follows.
-
-|No.|Anomalous argument / point raised|Relevant claim|Selection criterion|The document's or user's logic|Missing link|Why dangerous|Plain explanation|Reviewer question|Related useful joint|
-|-|-|-|-|-|-|-|-|-|-|
-|1||||||||||
-
-Forbidden ways of explaining:
-
-```text
-Do not stop at tags only, like "weak connection," "unverified premise," "needs review."
-Do not give a final evaluation like "the conclusion is wrong," "the weight is weak," "the impact is large."
-Do not invent facts not in the record as examples.
-```
-
----
-
 ## 10. Stage 6: Selecting detailed analysis modules
+
+*(Former sections §4 and §9 are deleted — §4 was an empty stub, and §9's five-sentence structure moved into the 'reason for selection' field of the §7.5 block. Section numbers were not renumbered, to preserve reference integrity.)*
 
 Do not auto-run all modules.
 Select only the modules needed for the flaw type of the selected anomalous argument.
@@ -1319,9 +1321,13 @@ Select only the modules needed for the flaw type of the selected anomalous argum
 |Split edge (W↔L discrepancy)|M. Layer-shift error check + Group 10 conclusion-first check|
 |H (alternative hypothesis)|G. Alternative-hypothesis comparison, K. Alternative-hypothesis discriminating power|
 |V (collection gap)|D. Omission of unfavorable grounds / contrary circumstances, G. Alternative-hypothesis comparison (+ §3.5 research query / record-confirmation instruction generation)|
-|E (evidence)|A. Quote–source comparison, E. Source eligibility, R. Admissibility screen|
+|E (evidence)|A. Quote–source comparison, E. Source eligibility, R. Admissibility screen, **M. Layer-drift / layer-covering check** (catches where a formation ruling closed the meaning question)|
 |Path (E→A→C)|C. Inference validity, T. Sensitivity / robustness analysis|
-|C (final conclusion)|P. Evidence synthesis / dependency-structure analysis, Q. Strongest-rebuttal construction|
+|C (final conclusion)|P. Evidence synthesis / dependency-structure analysis, Q. Strongest-rebuttal construction, **T. Sensitivity / robustness analysis**|
+|**A spot where timing or sequence is the issue** (post-hoc to ex-ante drift, timeline conflict, "when did it happen" is the fork)|**S. Timeline / narrative reconstruction** + M. Layer-drift check|
+
+**Run T first when setting the interrogation order.** Stage 4 requires *"priority is sensitivity — start from the joint whose collapse would collapse the conclusion"*, and T is what measures that sensitivity. With three or more targets, run T first to set the order and print its result as the grounds for that priority.
+Measured: in the edition without this routing, the issue at hand was *when* the request was made (timing) and yet S was never called once, and Stage 4 sorted by sensitivity while never calling T — because the table had no place to call them from.
 
 **Secondary criterion — bridge / module add-subtract.** Add/subtract the node routing above using the "candidate execution modules" column of the 6.5 bridge table.
 If it diverges from node routing, keep the union as candidates and show the reason for the choice.
@@ -1410,9 +1416,12 @@ derive it independently from the hypothesis itself before reading the document's
 
 ### K. Alternative-hypothesis discriminating power
 
-|Key material|Relation to the current explanation|Relation to the alternative hypothesis|Why it is compatible with both|Point to confirm for discrimination|
-|-|-|-|-|-|
-||supports / compatible / unclear|supports / compatible / unclear|||
+Do not build a separate table. Running this module means filling, in the relevant rows of the §7.9 DB
+extension columns, the **hypothesis relation (supports / compatible / contradicts)** and the **discrimination
+check point**. If they are already filled, quote them as they stand.
+Then write only the module's own synthesis (1-3 sentences): what material actually discriminates between the
+two hypotheses, which key material is compatible with both and why, and what the reviewer must confirm to
+discriminate (register in the open-questions ledger).
 
 ### L. Re-examination of the object's formation conditions
 
@@ -1481,15 +1490,15 @@ Use when the conclusion is suspected of being assembled after the fact / unfalsi
 ### P. Evidence synthesis / dependency-structure analysis
 
 Use for the claim that individual evidence is weak but strong in aggregate, or when corroboration / independence is at issue.
-Do not see evidence atomically; draw the source and interdependence of each piece, then evaluate the cumulative weight up to the final proof proposition.
 
-First draw the dependency map.
+**The only table this module produces is the aggregate-weight table below.** Do not draw the dependency map
+as a table (who heard it from whom, which pieces share a source) - filling the **shared-source grouping**
+column and the **independence/dependency (P)** extension column of the §7.9 DB in the relevant rows *is* the
+execution of the dependency map, and if they are already filled, quote them as they stand. Building a
+separate table splits the same content across the DB and the module, and it stops being clear which is
+canonical (measured: one run passed over this instruction and built a fresh per-witness source table).
 
-|Evidence|Source|Other evidence it depends on|Independence|Shares the same source|Reviewer confirmation item|
-|-|-|-|-|-|-|
-||||independent / dependent / unclear|yes / no / unclear||
-
-Then evaluate the aggregate weight.
+Then evaluate the aggregate weight - this table you do build.
 
 |Check item|Question|Confirmation result|
 |-|-|-|
