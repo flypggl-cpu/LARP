@@ -2,6 +2,53 @@
 
 *[한국어](CHANGELOG.md) | English*
 
+## v260729 — 2026-07-29
+
+**The test was split into two questions** — "what does it serve" now carries **"is its execution verifiable"** alongside it. And the standard *"as the version rises, the document should get shorter"* has been **withdrawn**, because seven independent runs overturned it.
+
+### Why [measured]
+
+This tool's problem was never a shortage of instructions but the **absence of a place to verify that an instruction was carried out**. Seven runs showed the same thing over and over.
+
+| | before it was counted | after |
+|---|---:|---:|
+| Gate-0 evidence seed recall | 55% | 96% |
+| '→ use' on evidence rows | 5–95% | 100% |
+| Re-sweep findings registered into the tree (gap) | 20pp | 0pp |
+| Four lines per claim (W·L·H·V) under load | 0% | 100% |
+
+**Writing the instruction more forcefully did not raise compliance. Creating a slot to count in did.**
+
+And the length standard conflicted with measurement — the document grew each time a clause of confirmed value went in (62,371 → 70,455 characters, +13.0%), while **the clauses removed to shorten it had negligible effect** (§4, §5.4 and Module J together were 0.6% of the whole). Measured duplication came to 8.7%, of which only 1.3% was actually cuttable. Ninety percent of the growth was new instruction.
+
+### Changes
+
+**§1-0's test split into ① and ②.**
+
+- **Test ① (retained)** — which of the two purposes does it serve. Serving neither makes it a deletion candidate.
+- **Test ② (new)** — a clause must be able to answer *"how would we know it was followed?"* A clause that cannot is decoration. Verification must take one of three forms.
+  - **(i) numeric contract** — n of this = n of that. On mismatch, do not proceed
+  - **(ii) artifact exists** — is what the clause leaves behind present in the output? **"Internal work" cannot be verified**
+  - **(iii) code comparison** — count by string search, not by memory or self-tally
+- **All three require the baseline to sit outside the clause.** If the model sets the baseline, the contract becomes an identity — measured: with "the count of ruled items in the table of contents" as the baseline, claim rows ranged 44–183 across six runs and **not one run tripped the contract.**
+- **Self-report is not verification** — measured: three runs reported "all seeds reflected" while the actual figures were 54/73, 47/73 and 60/73.
+
+**Length standard withdrawn.** *"Shorter is normal"* → *"The test is not length. **What is abnormal is a growing number of clauses whose execution is not enforced**, and such clauses are candidates for deletion regardless of length."*
+
+**One line added to the common principles.** *"Writing an instruction forcefully and enforcing its execution are different things. Instead of adding 'must', create a slot to count in."*
+
+### What this change does
+
+Test ② is a **gatekeeper against future clause growth**. A new clause must now answer not only what it serves but how it will be verified. And among existing clauses, those that cannot answer ② — counted in this project's element audit as **18 elements with no artifact** — surface as deletion candidates.
+
+### What remains
+
+- **There is no axis for "what the opposing party failed to dispute."**
+- **Stage 5 (the report), verification return, research-query generation and the criminal final assessment have never been run.**
+- **Precision is still unmeasured** — whether a flagging is right requires a human reading the source.
+- **Zero repetitions under identical conditions.** One document, one model, and that document is the tuning document for the gate-0 regexes.
+- The previous edition is archived at `prompts/archive/LARP_v260728b.md` (+`.en.md`).
+
 ## v260728b — 2026-07-28
 
 **A 'provenance context' field was added to the M row** — the direct remedy that makes escalation clauses (c) and (d) of v260728a actually get filled.
