@@ -8,7 +8,7 @@
 
 ### Changes
 
-- Renamed `prompts/LARP_lite.en.md` with a descriptive title that states its purpose clearly on GitHub.
+- Updated the Korean and English Lite prompt titles to `v260813`.
 - Added **object-of-judgment identification** to `Claim`, so the summary fixes exactly what the conclusion is about.
 - Added a **target-preservation check** to `The split` for rebuttals: verify that the claim actually made by the other side is the same in content, scope, and strength as the claim being rebutted.
 - Added an **evidential diagnosticity comparison** to `Alternative explanations`: compare how naturally each key piece of evidence fits each competing explanation.
