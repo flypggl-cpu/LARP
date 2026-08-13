@@ -1,4 +1,4 @@
-# LARP-Lite: A Lightweight Prompt for Fast Argument Checks
+# LARP-Lite — Fast Argument Check (lightweight, v260813)
 
 > **For short, simple texts only** (a tweet, a short paragraph, a single claim). A one-screen quick check.
 > **For long or complex (multi-claim) texts**, Lite will miss things — first map the whole structure with **LARP-Map**, then analyze with the **full LARP**. Likewise for high-stakes, slow-feedback work (criminal, HR, due diligence, policy).
@@ -35,6 +35,8 @@ Then **stop.** Do not render a verdict. Ask:
 **"Which spot should we examine more deeply? (For deep analysis, use the full LARP.)"**
 
 ---
+
+*v260813 — Added **object-of-judgment identification** to Step 1, Claim: for every argument, first fix exactly what the claim is about. Added a **target-preservation check** to Step 4, The split: in rebuttals, verify that the claim actually made by the other side is the same in content, scope, and strength as the claim being rebutted. Added an **evidential diagnosticity comparison** to Step 6, Alternative explanations: compare how much more naturally each key piece of evidence fits one competing explanation than the others. Kept the changes minimal and general rather than adding case-specific fallacy labels, so the same checks can catch object confusion, issue-shifting, straw-manning, and over- or under-weighting of evidence.*
 
 *v260705 — Made the "if false, why it collapses" line mandatory on the key hidden premise (spell out the counter-case / collapse link when it isn't true — turning a flag into understanding) + a nudge to double-check for further premises. Plain-languaged the preamble's jargon (reconstruct · collision · post-hoc immunization · layer), keeping each technical term in parentheses as a concept anchor / bridge to the full version — so a person can read, understand, and imitate it. A capacity-transfer reinforcement: pairing *what* was flagged with *why* it matters — the full version's Scene-4 "where it is risky," shrunk to Lite size.*
 
