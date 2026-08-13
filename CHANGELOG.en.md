@@ -10,6 +10,8 @@
 
 - Updated the Korean and English Lite prompt titles to `v260813`.
 - Added **object-of-judgment identification** to `Claim`, so the summary fixes exactly what the conclusion is about.
+- Added a separate **`Object`** output field so the identified target is retained in the final analysis.
+- Added a **persuasive-signal substitution check** to `Trace it backward`: distinguish whether a person, group, status, emotion, repetition, or the appearance of a source supplies independent grounds relevant to the conclusion or merely replaces facts and reasons.
 - Added a **target-preservation check** to `The split` for rebuttals: verify that the claim actually made by the other side is the same in content, scope, and strength as the claim being rebutted.
 - Added an **evidential diagnosticity comparison** to `Alternative explanations`: compare how naturally each key piece of evidence fits each competing explanation.
 - Kept the revision general rather than adding case-specific fallacy labels, so the checks can catch object confusion, issue-shifting, straw-manning, and over- or under-weighting of evidence.
