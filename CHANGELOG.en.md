@@ -2,6 +2,19 @@
 
 *[한국어](CHANGELOG.md) | English*
 
+## v260813 — 2026-08-13
+
+**LARP-Lite now distinguishes the object of an argument from the target of a rebuttal, and compares which alternative explanation each item of evidence actually supports more naturally.**
+
+### Changes
+
+- Renamed `prompts/LARP_lite.en.md` with a descriptive title that states its purpose clearly on GitHub.
+- Added **object-of-judgment identification** to `Claim`, so the summary fixes exactly what the conclusion is about.
+- Added a **target-preservation check** to `The split` for rebuttals: verify that the claim actually made by the other side is the same in content, scope, and strength as the claim being rebutted.
+- Added an **evidential diagnosticity comparison** to `Alternative explanations`: compare how naturally each key piece of evidence fits each competing explanation.
+- Kept the revision general rather than adding case-specific fallacy labels, so the checks can catch object confusion, issue-shifting, straw-manning, and over- or under-weighting of evidence.
+- Mirrored the changes in the Korean prompt and changelog.
+
 ## v260729 — 2026-07-29
 
 **The test was split into two questions** — "what does it serve" now carries **"is its execution verifiable"** alongside it. And the standard *"as the version rises, the document should get shorter"* has been **withdrawn**, because seven independent runs overturned it.
