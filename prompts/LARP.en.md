@@ -625,7 +625,9 @@ Stage 1  Plant — full-argument tree map (the canonical artifact of user unders
         Hidden assumption (W)   form: "this claim stands on the unwritten assumption that '…'".
         Deciding criterion (L)  form: "it changes depending on whether you take it as … or as … — the text chose the former" (exposing what made it look that way).
         Other explanation (H)   form: "the same evidence could also be explained as '…'" (if the document already rejected that explanation, mark it).
-        Missing evidence (V)    form: "if this claim is right, … should exist, but it is not in the material".
+        Missing evidence (V)    distinguish a `documentary support gap` from an `externally confirmed absence`.
+                                The former means "the document does not supply the type of ground needed to support this claim";
+                                it does not mean that ground is absent in reality. Use the latter only when the five absence-judgment conditions are met.
         Fork                    form: "the force of this claim differs depending on whether you read it as … or as …".
         Print a legend first at the head of the tree, one plain-language line per tag. A page anchor on every row — an unanchored row is void. No evaluative words (the four lines are placeholders, not verdicts). Gate 0 is done backstage.
         [Omission re-sweep — mandatory in the same turn, after drawing the tree] Do not try to recall what you missed — memory cannot see its own blind spots. Do mechanical work instead: split the source into **5-page (±1) windows** (by the document's own page numbers) — grouping into larger windows voids the sweep — and, per window, (a) list every evidence expression appearing in that window's raw text (every named statement·document·protocol·record·slip·list·CD·ledger), (b) reconcile each against the tree you just drew, (c) **actually write what is missing into the tree body as a new E row** ([added] mark). Print [window p.N–M: found k / in tree m / added n] per window — but do not let these three numbers be self-contained inside the re-sweep log. At the end of the sweep, **print the reconciliation `total added n = E rows newly standing in the tree body n`**. If the two differ the sweep is incomplete, and the difference is exactly the loss. **Writing it in the log is not registering it** (measured: given the seed list, a run still logged items without putting them in the tree — 84% by mention became 64% by actual inclusion, a 20-point leak). Do not reprint what was already there. Every window must be exhausted — a skipped window voids the sweep. (Measured: this sweep recovered, in the same conversation, evidence that three independent runs had all missed; the judgment's own "summary of evidence" section was the densest blind spot.)
@@ -650,8 +652,8 @@ Stage 1  Plant — full-argument tree map (the canonical artifact of user unders
         ③ **Close it by numbers**: claim (A) row count = hidden-assumption (W) row count = other-
           explanation (H) row count. Print the three side by side; where they diverge, name the
           [incomplete] A. A tree with even one [incomplete] left may not enter Stage 2 (a Gate-2 stop)
-          — repair first. Missing evidence (V) may be recorded as 'judgment deferred' when the five
-          absence conditions (§7.6) cannot be established, but W and H stand on every A without
+          — repair first. Record a `documentary support gap` immediately. For an `externally confirmed absence`, write 'judgment deferred' when the five
+          absence conditions (§7.6) cannot be established. W and H stand on every A without
           exception — reconstruction is not excused by thin material (§0.1).
         ④ Print a direction count per C: [builds n / demolishes m]. **If builds = 0**, mark next to that C: "no branch in this tree builds this conclusion on its own" — a structural report, not a verdict (the precise certainty accounting is Stage 3's Recon0).
         ⑤ **Close 'is it readable' by numbers**: print `E rows carrying '→ use' = total E rows` and
@@ -831,11 +833,14 @@ Turn the object-perception into a claim that can be examined as an argument.
 |Orientation of judgment|truth of a present structure / reconstruction of a past occurrence / evaluation of a future condition|
 |Directly verifiable part||
 |Part requiring inference||
-|Part where norm/evaluation intervenes||
+|Part where norm/evaluation/action demanded intervenes|factual judgment / normative judgment / requested action / the implicit premise connecting the three|
 |Part where emotion/preference intervenes||
 |Legal element or judgment criterion||
 
 **Orientation of judgment — writing rule.**
+
+Where a normative conclusion appears, do not infer the speaker's psychology or intent. State instead the
+connecting premise needed for `fact → norm → action`.
 
 ```text
 Even the same sentence changes the meaning of evidence and the condition under which it breaks, depending on what the judgment is about.
@@ -991,10 +996,10 @@ For each candidate, write the following block (apply the vertical-block output r
 - Reason for selection or exclusion: when selected, write it in the **five-sentence structure**
   below (this is the canonical wording of a flagging — there is no separate explanation section).
     (1) The document's logic   the document judges B on the ground of A
-    (2) The missing link       but even if A is true, C must additionally be confirmed for B to follow
-    (3) Why it is risky        if C is unconfirmed, the alternative explanation D remains open
-    (4) Plain restatement      A alone does not yield B; A supports B only once C is confirmed
-    (5) Reviewer question      the reviewer must confirm material E or circumstance F (register in the ledger)
+    (2) General principle      ordinarily, A reaches B only if a connecting rule or additional circumstance C holds
+    (3) The problem here       this document does not show C, or does not address the contrary possibility D
+    (4) Effect on the conclusion this does not establish that B is false, but the document's grounds do not support stating B at its present strength
+    (5) How to improve         to claim B, provide material E or answer the rival explanation F (register in the ledger)
   Forbidden: do not stop at a tag ("weak link", "premise unconfirmed", "needs review"). Do not deliver a
   final verdict ("the conclusion is wrong", "the probative value is weak"). Do not invent facts absent
   from the record as examples.
@@ -1056,7 +1061,9 @@ split edge = mark of a mismatch between W and L (+ a layer label)
 V-node writing rule:
 
 ```text
-Set up a V node only after checking the following five conditions of absence judgment.
+There are two kinds of V node.
+  1. Documentary support gap: marks that the document does not provide a type of evidence necessary for this conclusion. It does not say the evidence is absent in reality and does not require the five conditions.
+  2. Externally confirmed absence: says that the evidence is absent in reality; use it only after checking the following five conditions of absence judgment.
   1. Was the material actually secured
   2. Is the query/search scope sufficient
   3. Is the trace of a nature that is normally recorded
