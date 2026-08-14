@@ -24,11 +24,14 @@ LARP는 어떤 글의 **논증에서 미심쩍은 데를 짚어 주는** *지시
 | **[LARP-Lite](prompts/LARP_lite.md)** | 위 점검을 *한 화면으로* 빠르게 | 짧은 글을 빠르게 볼 때 |
 | [LARP-Map](prompts/LARP_map.md) | 글의 주장과 그것을 받치는 근거·증거가 어떻게 이어지는지 *그림으로* 정리해 준다 (옳고 그름은 따지지 않음) | 글의 짜임새부터 한눈에 보고 싶을 때 (짧은·중간 글) |
 | [LARP-Weigh](prompts/LARP_weigh.md) | "사기냐 실수냐"처럼 설명이 둘로 갈릴 때, *증거가 어느 쪽에 더 맞는지* 나란히 비교해 준다 | 두 설명 중 어느 쪽인지 가릴 때 |
+| [LARP-Challenge](prompts/LARP_challenge.md) | 한 주장에 가장 불리한 질문을 던져 숨은 전제·경쟁 가설·빠진 증거·논증 오류 후보를 체계적으로 찾는다 | 내 주장이나 널리 퍼진 주장을 반대 관점에서 강하게 점검할 때 |
 | [누락 증거 검사 `tools/`](tools/) | 긴 글이 인용한 증거를 *코드로 빠짐없이* 추려, 내가 놓친 게 없는지 대조해 준다 | 긴 글에서 빠뜨린 증거 확인 *(선택·코드)* |
 
 > **다 쓰는 게 아니라, 필요한 것만.** 핵심은 논증의 약점을 짚는 [전체판 LARP](prompts/LARP.md)과 그 한 화면 축약인 [LARP-Lite](prompts/LARP_lite.md)입니다 — 짧은 글은 Lite 하나로 끝, 깊이 따질 글은 전체판으로. 글의 *구조*부터 보고 싶으면 [LARP-Map](prompts/LARP_map.md)으로, "이거냐 저거냐" 경쟁가설을 가려야 하면 [LARP-Weigh](prompts/LARP_weigh.md), 증거 빠짐이 걱정되면 [누락 증거 검사](tools/)를 곁들이면 됩니다.
 >
 > 실제 실행법(붙여넣기·1차/2차 읽는 법·FAQ)은 [USAGE](USAGE.md)에, "왜 필요한가"는 [소개](docs/introduction.md)에 있습니다. 전체판을 쓸 땐 본문과 [모듈](prompts/LARP_modules.md)을 *함께* 붙여 1·2차를 진행하세요(짧고 단순한 글은 Lite가 지름길).
+
+> **LARP-Challenge는 반론 생성기가 아니라 주장 스트레스 테스트입니다.** 특정 주장에 의도적으로 불리한 질문을 던지므로, 출력 자체를 사실 판정으로 받아들이면 안 됩니다. 중요한 결론은 반대 주장에도 같은 기준을 적용하거나 [LARP-Weigh](prompts/LARP_weigh.md)로 경쟁 가설을 함께 비교하세요.
 
 ---
 
@@ -117,6 +120,7 @@ LARP가 하는 일이 바로 이겁니다. **숨어서 다리를 놓고 있던 �
 | [`prompts/LARP.md`](prompts/LARP.md) | 도구 본체 — 전체판 프롬프트(챗봇에 붙여 넣는 글) · [English](prompts/LARP.en.md) |
 | [`prompts/LARP_modules.md`](prompts/LARP_modules.md) | 전체판으로 깊이 볼 때 본문과 함께 붙이는 보조 기준 · [English](prompts/LARP_modules.en.md) |
 | [`prompts/LARP_weigh.md`](prompts/LARP_weigh.md) | LARP-Weigh — 두 가지 설명을 증거와 견줘 어느 쪽이 더 맞는지 따져 보는 도구 · [English](prompts/LARP_weigh.en.md) |
+| [`prompts/LARP_challenge.md`](prompts/LARP_challenge.md) | LARP-Challenge — 한 주장에 가장 불리한 질문을 체계적으로 던지는 스트레스 테스트 · [English](prompts/LARP_challenge.en.md) |
 | [`prompts/LARP_map.md`](prompts/LARP_map.md) | LARP-Map — 글의 짜임새(주장·근거·증거의 연결)를 그림으로 그려 줌(짧은·중간 글) · [English](prompts/LARP_map.en.md) |
 | [`prompts/LARP_lite.md`](prompts/LARP_lite.md) | 경량판 — **짧은 글**을 한 화면으로 빠르게 점검 · [English](prompts/LARP_lite.en.md) |
 | [`prompts/LARP_verify.md`](prompts/LARP_verify.md) | 검증 층 — 첫 분석이 *놓친* 약점·증거를 별도 모델이 사냥하는 2차 패스 · [English](prompts/LARP_verify.en.md) |

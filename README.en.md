@@ -24,11 +24,14 @@ LARP is a set of prompts (plus one small code helper) that **surface the doubtfu
 | **[LARP-Lite](prompts/LARP_lite.en.md)** | the same check, fast, on *one screen* | a quick look at a short text |
 | [LARP-Map](prompts/LARP_map.en.md) | draws *how* a text's claims and their supporting reasons and evidence connect (it doesn't judge right or wrong) | to see how a text is put together (short/medium) |
 | [LARP-Weigh](prompts/LARP_weigh.en.md) | when there are two explanations ("fraud or a mistake?"), compares *which the evidence fits better* | to decide which of two explanations fits |
+| [LARP-Challenge](prompts/LARP_challenge.en.md) | asks the hardest reasonable questions of one claim, surfacing hidden premises, competing explanations, missing evidence, and candidate argument errors | to stress-test your own or a widely shared claim from an opposing perspective |
 | [coverage audit `tools/`](tools/) | pulls every cited piece of evidence *by code* so you can check you didn't miss any | making sure no evidence is missed in a long text *(optional · code)* |
 
 > **You don't run them all — just what you need.** The core is the [full LARP](prompts/LARP.en.md), which flags an argument's weak points, and its one-screen condensed [LARP-Lite](prompts/LARP_lite.en.md) — a short text needs only Lite; a text worth scrutinizing, the full version. To see the *structure* first, use [LARP-Map](prompts/LARP_map.en.md); to decide between competing hypotheses, [LARP-Weigh](prompts/LARP_weigh.en.md); and add the [coverage audit](tools/) if you're worried about dropped evidence.
 >
 > Step-by-step mechanics (pasting, reading the 1st/2nd pass, FAQ) are in [USAGE](USAGE.en.md); "why it matters" is in the [introduction](docs/introduction.en.md). For the full version, paste the body and the [modules](prompts/LARP_modules.en.md) *together* and run both passes (for short, simple texts, Lite is the shortcut).
+
+> **LARP-Challenge is a claim stress test, not a rebuttal generator.** Because it deliberately asks questions unfavorable to one claim, do not take its output as a factual verdict. For consequential conclusions, apply the same criteria to the opposing claim or use [LARP-Weigh](prompts/LARP_weigh.en.md) to compare competing explanations.
 
 ---
 
@@ -117,6 +120,7 @@ See [USAGE.en.md](USAGE.en.md) for details.
 | [`prompts/LARP.en.md`](prompts/LARP.en.md) | The tool itself — the full-version prompt you paste into a chatbot |
 | [`prompts/LARP_modules.en.md`](prompts/LARP_modules.en.md) | Extra criteria to paste alongside the body when going deep with the full version |
 | [`prompts/LARP_weigh.en.md`](prompts/LARP_weigh.en.md) | LARP-Weigh — compares two explanations against the evidence to see which fits better |
+| [`prompts/LARP_challenge.en.md`](prompts/LARP_challenge.en.md) | LARP-Challenge — a stress test that systematically asks the hardest reasonable questions of one claim |
 | [`prompts/LARP_map.en.md`](prompts/LARP_map.en.md) | LARP-Map — draws how a text's claims, reasons, and evidence connect (short/medium texts) |
 | [`prompts/LARP_lite.en.md`](prompts/LARP_lite.en.md) | Lightweight edition — a one-screen quick check of a **short text** |
 | [`prompts/LARP_verify.en.md`](prompts/LARP_verify.en.md) | Verification layer — an omission-hunt 2nd pass where a separate model finds what the first analysis *missed* |
