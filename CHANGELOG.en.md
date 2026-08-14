@@ -2,6 +2,29 @@
 
 *[한국어](CHANGELOG.md) | English*
 
+## v260814 — 2026-08-14
+
+**Added LARP-Challenge: an adversarial claim stress test that produces a readable argument-critique report rather than a bare checklist.**
+
+### Added
+
+- Added Korean and English LARP-Challenge prompts and documented their purpose, use case, and limits in the README and introduction.
+
+### Diagnostic changes
+
+- Rebuilt the diagnostic module as **11 independent gates and 13 detail tags**.
+- Added independent checks for cumulative evidence, expected evidence and absence, provenance, sampling and base rates, causal mechanisms, analytical levels, fact-to-norm bridges, and standards of proof.
+- Added an explicit check for atomizing evidence: treating combined evidence as worthless merely because each item is insufficient alone. Dependent material must not be double-counted as independent evidence.
+- Added tags for circular reasoning, false dilemmas, equivocation, composition/division, unwarranted motive attribution, and selection bias/base-rate neglect.
+- Every finding now carries an impact rating: central, important, or supporting.
+
+### Reporting and explanation changes
+
+- Separate quoted speakers from an author’s own claims before comparing them.
+- Write a narrative report from claim and grounds through logical forks, competing explanations, missing evidence, and the narrowest conclusion currently supported; place exhaustive checks in an appendix.
+- Distinguish an argumentatively unsupported claim from an externally unverified fact.
+- Explain every central or important defect in four plain-language parts: what happened in the text, why that pattern is generally a problem, what it changes here, and what would improve the argument.
+
 ## v260813 — 2026-08-13
 
 **LARP-Lite now distinguishes the object of an argument from the target of a rebuttal, and compares which alternative explanation each item of evidence actually supports more naturally.**
