@@ -33,7 +33,14 @@ Check all eleven gates **independently and exhaustively**. Mark each `argumentat
 
 For each gate, write four short lines: **What to check; In this text; Why it matters; Next check.**
 
-For every finding, explain: **what the author actually says; why that statement does not yield the conclusion; what additional fact or premise is needed; and what better inference or evidence would fill the gap.** A label or “insufficient evidence” alone is not an explanation.
+For every finding, use these four plain-language boxes. Write 1–2 sentences per box so a non-specialist can understand.
+
+1. **What happened in the text?** — Point to the exact statement, evidence, or link at issue.
+2. **Why is this usually a problem?** — State a general principle that applies beyond this case.
+3. **What does it change here?** — Explain whether the conclusion becomes too broad, unsupported, or premature.
+4. **What would make it better?** — Give the evidence, check, or narrower conclusion needed.
+
+A label or “insufficient evidence” alone is not an explanation.
 
 ### 1. Is the claim fixed precisely?
 Are the object, time, scope, quantity, and degree of causation or intent clear? Does it turn “some cases” into “always,” “suspicion” into “proof,” or a different claim into the target claim?
@@ -120,7 +127,7 @@ Set the original explanation beside at least two competitors. Explain whether ea
 
 ### 5-1) Explanation of identified defects
 
-Explain every central and important defect in a short paragraph: **source passage → shape of the faulty inference → why the conclusion does not follow → added evidence or narrower conclusion needed.** Put jargon only in parentheses at the end.
+Explain every central and important defect in a short paragraph using the four box headings above exactly. Put jargon only in parentheses after the plain-language explanation.
 
 ### 6) Missing evidence and unasked questions
 
