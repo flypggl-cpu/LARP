@@ -26,6 +26,12 @@
 - Explain every central or important defect in four plain-language parts: what happened in the text, why that pattern is generally a problem, what it changes here, and what would improve the argument.
 - Added factual claim, normative claim, requested action, and normative hidden premise to claim reconstruction; normative analysis reconstructs the principle a conclusion needs rather than inferring the author's psychology.
 
+### Minimal full-edition alignment
+
+- Consolidated `norm/evaluation/action demanded` into one row of the full edition's object-propositionalization table, so it reconstructs factual judgment, normative judgment, requested action, and their connecting premise together.
+- Revised only the existing five-sentence flagging form, requiring a general principle, the problem in this text, the effect on the conclusion, and the way to improve it.
+- Split V (missing evidence) into a `documentary support gap` and an `externally confirmed absence`. The former marks an argument's missing support; only the latter requires the existing five absence-judgment conditions.
+
 ## v260813 — 2026-08-13
 
 **LARP-Lite now distinguishes the object of an argument from the target of a rebuttal, and compares which alternative explanation each item of evidence actually supports more naturally.**
