@@ -21,11 +21,15 @@ Set the scope in this table. Do not invent facts absent from the text; mark reco
 | Object | The person, event, policy, or fact the claim concerns |
 | Claim | The conclusion the text asks the reader to accept |
 | Scope | When, where, for whom, and to what degree it is claimed |
+| Factual claim | What the text says is true |
+| Normative claim | What it says is right, wrong, justified, or blameworthy |
+| Requested action | What it asks readers, institutions, or society to do or not do |
 | Data | Facts, quotations, and statistics offered as support |
 | Interpretation | The meaning the text assigns to each fact |
 | Hidden premise | The unstated assumption needed to get from grounds to conclusion |
+| Normative hidden premise | The principle needed to move from facts to a conclusion about criticism, responsibility, sanction, or permission |
 
-If the object, time, scope, or strength is unclear, make that the first verification task. Do not substitute a weaker or different claim.
+When a normative claim or demand for a social response appears, separate the factual claim, normative claim, requested action, and normative hidden premise. Do not infer the author's psychology or actual intention; reconstruct only the premise the conclusion needs in order to work as an argument. If the object, time, scope, or strength is unclear, make that the first verification task. Do not substitute a weaker or different claim.
 
 ## 2. Diagnose through eleven core gates
 
@@ -111,7 +115,7 @@ In two or three short paragraphs, explain the conclusion, its strongest point, i
 
 ### 2) Claim and scope
 
-Reconstruct the core claim and its object, time, and scope in one or two paragraphs. If one speaker makes two or more independent claims, number and separate them, and explain whether they are logically distinct.
+Reconstruct the core claim and its object, time, and scope in one or two paragraphs. Where normative judgment appears, explain the bridge from factual claim to normative claim to requested action, including its normative hidden premise. If one speaker makes two or more independent claims, number and separate them, and explain whether they are logically distinct.
 
 ### 3) Grounds actually used and how they are read
 
