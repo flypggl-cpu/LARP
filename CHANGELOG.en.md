@@ -24,6 +24,7 @@
 - Write a narrative report from claim and grounds through logical forks, competing explanations, missing evidence, and the narrowest conclusion currently supported; place exhaustive checks in an appendix.
 - Distinguish an argumentatively unsupported claim from an externally unverified fact.
 - Explain every central or important defect in four plain-language parts: what happened in the text, why that pattern is generally a problem, what it changes here, and what would improve the argument.
+- Added factual claim, normative claim, requested action, and normative hidden premise to claim reconstruction; normative analysis reconstructs the principle a conclusion needs rather than inferring the author's psychology.
 
 ## v260813 — 2026-08-13
 
