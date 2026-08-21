@@ -1,151 +1,269 @@
-# LARP (Layer-grounded Argument Reasoning Probe) — A Tool for Surfacing What an Argument Rests On
+# LARP (Layer-grounded Argument Reasoning Probe) — See What an Argument Is Standing On
 
 *[한국어](README.md) | English*
 
-**In an age awash in plausible text, the eye that tells "sounds right" from "is right" — it reveals the *hidden premises* and *missing evidence* a conclusion leans on.**
+**LARP makes the support beneath a conclusion visible — hidden premises, alternative explanations, and missing evidence — so the human can judge again.**
 
-> Not a tool for winning arguments. A tool for looking at your own thinking and your opponent's with the very same eye.
+> Not a tool for winning arguments. A tool for examining your own reasoning and someone else's by the same standard.
 
-LARP is a set of prompts (plus one small code helper) that **surface the doubtful spots in an argument — hidden premises, the *split* between stated and real reasons, alternative explanations, evidence that should be there but isn't.** It reveals *what unsaid thing a conclusion is standing on*, but it doesn't judge — it marks *where to look* and hands the decision back to you. **For which tool to use when, see the table just below.**
+LARP is a **prompt-centered methodology for examining arguments**. It lays out an argument and points to places worth checking again.
 
-> **▶ How to use it now** — **nothing to install:** copy the prompt file's contents into a chatbot (ChatGPT, Claude, etc.) and add the text you want analyzed.
+It does not decide whether a conclusion is true or false. Instead, it surfaces the assumptions silently connecting evidence to conclusions, other explanations that may fit the same facts, and evidence that should exist but appears to be missing. **The judgment stays with the human.**
+
+## Start here
+
+**There is nothing to install.** Paste the relevant prompt into a chatbot such as ChatGPT or Claude, then add the text you want to examine.
+
+> **First time? Choose one starting path.**
 >
-> **First time? Pick just one file.**
-> - **"Find the anomalous arguments too"** (most cases) → [`prompts/LARP.en.md`](prompts/LARP.en.md) — for a long document the tool shows the issue list first and stops; point at what you're curious about in your own words.
-> - Just want the structure drawn quickly → [`prompts/LARP_map.en.md`](prompts/LARP_map.en.md) (for long texts, the full version outputs the structure and evidence table as the evidence→hypothesis DB)
-> - A 5-minute taste → [`prompts/LARP_lite.en.md`](prompts/LARP_lite.en.md)
-> - The other files are supporting parts — you don't need to know them at first.
-> - One check before pasting: if the text keeps its page marks (like `- 12 -`), you'll also get "open page N" guidance.
-> - One line on model choice: any model works for short texts, but **for long judgments and papers use Claude Sonnet-class or above** (GPT-4-class+) — in a direct same-judgment comparison, lightweight models (Flash/Lite/mini-class) were measured to crush 17 issues into 4 and 108 evidence rows into 8.
+> - **For most cases: examine an argument thoroughly**  
+>   → [`prompts/LARP.en.md`](prompts/LARP.en.md) + [`prompts/LARP_modules.en.md`](prompts/LARP_modules.en.md)
+>
+> - **First see how the argument is structured**  
+>   → [`prompts/LARP_map.en.md`](prompts/LARP_map.en.md)
+>
+> - **Quickly check a short text**  
+>   → [`prompts/LARP_lite.en.md`](prompts/LARP_lite.en.md)
+>
+> The other tools are there when you need them.
 
-| Tool | What it does | When (which text) |
+For long judgments, papers, and reports, use a model with strong long-context and reasoning performance. In an internal comparison on the same judgment, a lightweight model compressed 17 identified issues to 4 and 108 evidence rows to 8.
+
+If the source keeps page markers such as `- 12 -`, LARP can also make it easier to return to the relevant place in the original document.
+
+| Tool | Main role | Best used when |
 |---|---|---|
-| **[full LARP](prompts/LARP.en.md)** + [modules](prompts/LARP_modules.en.md) | shows what *unstated assumption* a claim is resting on, whether it could be explained another way, and whether any evidence that should be there is missing | to examine a claim closely (the main use) — a long document can go in whole (it shows the issue list first and stops) |
-| **[LARP-Lite](prompts/LARP_lite.en.md)** | the same check, fast, on *one screen* | a quick look at a short text |
-| [LARP-Map](prompts/LARP_map.en.md) | draws *how* a text's claims and their supporting reasons and evidence connect (it doesn't judge right or wrong) | to see how a text is put together (short/medium) |
-| [LARP-Weigh](prompts/LARP_weigh.en.md) | when there are two explanations ("fraud or a mistake?"), compares *which the evidence fits better* | to decide which of two explanations fits |
-| [LARP-Challenge](prompts/LARP_challenge.en.md) | asks the hardest reasonable questions of one claim, surfacing hidden premises, competing explanations, missing evidence, and candidate argument errors | to stress-test your own or a widely shared claim from an opposing perspective |
-| [coverage audit `tools/`](tools/) | pulls every cited piece of evidence *by code* so you can check you didn't miss any | making sure no evidence is missed in a long text *(optional · code)* |
+| **[Full LARP](prompts/LARP.en.md)** + [modules](prompts/LARP_modules.en.md) | lays out the argument, finds weak links, hidden premises, alternatives, and missing evidence, then supports deeper review | an important claim or a long document deserves close examination |
+| **[LARP-Lite](prompts/LARP_lite.en.md)** | performs the core checks in a compact form | you want a quick look at a short text |
+| [LARP-Map](prompts/LARP_map.en.md) | maps how claims, reasons, and evidence connect before asking whether they are sound | you want to understand the structure first |
+| [LARP-Weigh](prompts/LARP_weigh.en.md) | compares two already-defined explanations against the evidence | the question is “which of these two explanations fits better?” |
+| [LARP-Challenge](prompts/LARP_challenge.en.md) | stress-tests one claim with the strongest reasonable questions against it | you want to test your own claim or a widely accepted claim from the opposing side |
+| [verification tools `tools/`](tools/) | code-checks evidence coverage, quotations, and analysis tables | a long or consequential analysis needs a second layer of verification |
 
-> **You don't run them all — just what you need.** The core is the [full LARP](prompts/LARP.en.md), which flags an argument's weak points, and its one-screen condensed [LARP-Lite](prompts/LARP_lite.en.md) — a short text needs only Lite; a text worth scrutinizing, the full version. To see the *structure* first, use [LARP-Map](prompts/LARP_map.en.md); to decide between competing hypotheses, [LARP-Weigh](prompts/LARP_weigh.en.md); and add the [coverage audit](tools/) if you're worried about dropped evidence.
->
-> Step-by-step mechanics (pasting, reading the 1st/2nd pass, FAQ) are in [USAGE](USAGE.en.md); "why it matters" is in the [introduction](docs/introduction.en.md). For the full version, paste the body and the [modules](prompts/LARP_modules.en.md) *together* and run both passes (for short, simple texts, Lite is the shortcut).
+Some capabilities overlap by design. **The tools differ less in what they can eventually do than in where they begin.**
 
-> **LARP-Challenge is a claim stress test, not a rebuttal generator.** Because it deliberately asks questions unfavorable to one claim, do not take its output as a factual verdict. For consequential conclusions, apply the same criteria to the opposing claim or use [LARP-Weigh](prompts/LARP_weigh.en.md) to compare competing explanations.
+Full LARP begins with the whole argument. Map begins with structure. Weigh begins with two competing explanations. Challenge begins by putting one claim under pressure.
 
----
+For step-by-step use, first/second passes, output interpretation, and FAQs, see [USAGE](USAGE.en.md).  
+For the reasoning behind the project, see the [introduction](docs/introduction.en.md).
 
-## In one line
-
-AI can now produce plausible-sounding text without limit. Sounding smooth doesn't make something true — yet we keep letting things slide because "it reads well, so it must be right."
-
-LARP takes any piece of writing — your claim or your opponent's, a news article or a report — and **surfaces the hidden premises its argument silently leans on, and the evidence that should be there but isn't** — including where the *stated* reason and the *real* working reason diverge. (Laying the *structure* out as a single map is just one way to do that.) It doesn't judge; it hands the decision back to you.
-
-This tool is not for outsourcing your thinking to AI. It is for **returning your easily-clouded judgment to human hands.**
-
-AI produces plausible text for free, without limit — and that created new problems.
-
-- **"Well-written = correct" no longer holds.** Smoothness is free now, so trusting something because it reads well is dangerous.
-- **AI tries to take your side.** Ask it to "defend my view" and it builds a beautiful defense — hardening your blind spot. This tool does the opposite: it shows you *what your view is standing on.*
-- **AI is confidently wrong.** It sounds just as authoritative whether or not it has grounds. So "confident and well-written" is no longer evidence of being grounded.
-- **Producing got cheap; checking didn't.** Claims pour out at AI speed while human scrutiny stays slow. Meet the flood at AI speed — but keep the judgment human.
-- **What's scarce now isn't information, it's judgment.** When AI makes almost everything abundant, the one thing left is choosing what matters and being willing to be wrong.
-
-In one line: **it turns the "smoothness" AI floods us with into a mirror that reflects you back.** If smoothness is what's now cheap, the skill to grow is the eye that sees beneath it. (→ More in the [introduction](docs/introduction.en.md).)
+> **LARP-Challenge is a claim stress test, not a rebuttal generator.**  
+> It deliberately asks questions unfavorable to one claim, so its output should not be treated as a factual verdict. For consequential conclusions, apply the same standard to the opposing claim or use [LARP-Weigh](prompts/LARP_weigh.en.md) to compare competing explanations directly.
 
 ---
 
-## Why it's needed
+## In short
 
-People don't "see and then believe" — we tend to "believe and then see." Once you decide "that person is a fraud," even their honest explanations start to look like tricks. This isn't a character flaw; it's just how the human mind works. (It's called confirmation bias.)
+AI can now produce polished, plausible text at almost no cost. But **a well-written argument and a well-supported argument are not the same thing.**
 
-So good intentions alone won't make you see fairly. What you need isn't willpower — it's a **tool**: something that shines a light, from the outside, on the hidden assumptions your thinking rests on.
+Rather than immediately asking whether a text is right or wrong, LARP first asks:
 
-Here's an example.
+- What unstated premise is this conclusion relying on?
+- Could the same facts be explained another way?
+- If the claim were true, what evidence should exist?
+- Is a necessary step missing between the evidence and the conclusion?
 
-> "They took the crowdfunding pledges and used the money to pay off other debt. Therefore they meant to run off with it from the start."
+The idea is to use AI at AI speed without handing judgment over to AI.
 
-Sounds reasonable. But this quietly stands on an unwritten sentence: **"A normal creator would never spend pledged money on anything else."** While that sentence stays hidden, the argument passes as obvious. Pull it into the open and ask — is that really true? What does a creator do when the money runs dry? — and the conclusion no longer looks so certain.
+The machine can expose the structure and the places that deserve doubt. **The human still decides what matters and what to believe.**
 
-That's exactly what LARP does: **it pulls out the sentence that was secretly building the bridge, so you can question it.**
+In one sentence:
 
-**"Why not just find more evidence?"** This is the fork. In the example above, no amount of extra bank records or deposit logs will shake the conclusion while the *hidden bridge* — "a normal creator wouldn't do that" — stays in place, because a piece of evidence only takes on meaning *after* it crosses that bridge. On a faulty bridge, more evidence just makes a wrong conclusion firmer. So the first question isn't "is there more evidence?" but **"what is this conclusion silently assuming?"**
+**LARP helps you see what a plausible conclusion is standing on before you accept it.**
 
-This is the **method of Socrates**, 2,400 years old. He gave no answers; he drew out — by questioning — the premise the other person didn't know they were holding, and put it up for examination. LARP carries that dialectic into a tool — except instead of cornering one opponent, it puts the *same questions* to your own claim and your opponent's alike, and renders no verdict, leaving that to you. (Lineage: [intellectual lineage](docs/lineage.en.md).)
+---
 
-Why does this matter? As long as a hidden premise stays hidden, we mistake our own conclusion for reality itself. You can't get rid of all premises — but once you **bring them into the open**, reality can finally push back on a wrong idea and correct you. So the real divide isn't "biased or unbiased" but **"are my premises hidden (and so uncorrectable), or shown (and so correctable)?"** It matters most where results come back slowly — trials, investments, policy — because there a wrong premise hardens before reality ever corrects it.
+## Why it is needed
 
-And this isn't only a personal problem. In the US, in Korea, anywhere — when fake news and "fake analysis" run rampant and claims built so no evidence can shake them (creationism, Holocaust denial) fill the public square, a society loses the shared standard of "what counts as grounds." Democracy depends on different views meeting and being reconciled in front of the same facts; once that common floor is gone, debate turns into the shouting of rival camps. So this is a problem of knowing *and* a problem of democracy. That's exactly why this tool puts **the same questions to everyone equally**, regardless of side — not to strike one camp, but so that everyone stands on the same floor.
+People do not always form a belief only after examining the evidence. We often read evidence through a belief we already hold.
+
+Once you have decided that “this person is a fraud,” even an ordinary explanation may start to look like another trick. Good intentions alone do not remove confirmation bias.
+
+What helps is a way to bring the assumptions behind our judgment into view.
+
+Consider this example:
+
+> “They received crowdfunding money and used it to pay other debts. Therefore they intended to take the money from the start.”
+
+It sounds plausible.
+
+But an unstated sentence may be doing much of the work:
+
+> **“A legitimate creator would not use pledged money for anything else.”**
+
+Once that premise is made explicit, new questions become possible:
+
+- Is that always true?
+- How would a creator in financial distress behave?
+- What evidence distinguishes an original intent to defraud from a later financial collapse?
+
+This is the kind of hidden bridge LARP tries to expose.
+
+### “Why not just collect more evidence?”
+
+Sometimes that is not enough.
+
+More bank records or transaction logs may simply reinforce the same conclusion if the premise used to interpret them is wrong.
+
+So there are times when the first question should not be:
+
+**“Do we have more evidence?”**
+
+but:
+
+**“Why does this evidence mean this conclusion?”**
+
+This idea is closely related to the Socratic method: instead of supplying an answer, make the premise behind the answer visible enough to examine.
+
+LARP applies that move not just to someone else's argument, but to **your own reasoning and competing reasoning by the same standard**.
+
+We cannot eliminate all premises. The important difference is whether a premise stays hidden or becomes visible enough to be corrected.
+
+That matters especially in trials, investment decisions, and policy, where feedback from a mistaken assumption may arrive only after a long delay.
+
+The problem is social as well as personal. If opposing claims no longer meet in front of shared evidence and shared standards for what counts as support, public disagreement easily becomes a contest between camps.
+
+That is why LARP tries to apply **the same questions across sides rather than choosing a side for you.**
+
+→ For more, see the [introduction](docs/introduction.en.md) and [intellectual lineage](docs/lineage.en.md).
 
 ---
 
 ## What it shows you
 
-Feed in a document and the tool first gives a *plain-language summary* (everyday prose, no jargon), then lays the argument out as an **indented-tree map**. The map shows two kinds of things together.
+The full version is easiest to understand as producing four kinds of output.
 
-**What's written in the text**
-- Conclusions, claims, evidence
+### 1. An argument map
 
-**What's NOT written but is still holding the conclusion up** (surfaced by reconstruction — tagged separately in the tree)
-- Hidden premises — assumptions that quietly bridge the gap
-- Alternative explanations — other ways to read the same facts (e.g. "not fraud, but a failed attempt to juggle debts")
-- Missing evidence — things that should exist if the claim were true, but aren't in the record
+It lays out the document's:
 
-It also outputs the **evidence→hypothesis table (DB)** — every cited or mentioned piece of evidence, one per row, connected to *what it is read to mean and which conclusion it reaches*. For each item it marks whether the text answered "was this really made by that person at that time" (forgery/alteration disputes). *Before* reading the body closely, the tool writes down "the evidence that should exist if this conclusion is true," then matches that list against the table and reports the mismatches — *evidence that should exist but doesn't*, *conclusions floating without evidence*. Finally comes an opinion on whether the whole document is tilted toward its conclusion from the start.
+- conclusions
+- claims
+- reasons
+- evidence
 
-Above all — **for each ground that needs checking, it writes you a deep-research question you can paste straight into a search.** It doesn't stop at exposing the hidden premise; it hands you *where to dig* as well. (The tool writes the question; the answer and the verdict stay with deep research and with you.)
+as an indented tree showing how they connect.
+
+It also marks elements that are not explicitly written in the source but are reconstructed during analysis:
+
+- **Hidden premises** — assumptions that bridge evidence and conclusion
+- **Alternative explanations** — competing ways to explain the same facts
+- **Missing evidence** — evidence that would be expected if a claim were true but is not found in the material
+
+### 2. A table showing what each piece of evidence is doing
+
+In the full version, this is organized as the **evidence→hypothesis DB**.
+
+For each piece of evidence, it records:
+
+- what the evidence is
+- what it is being taken to mean
+- which claim or hypothesis it is being used to support
+
+Where relevant, the analysis can separately track questions about source, authenticity, forgery, or alteration.
+
+### 3. What should be there but is not
+
+Instead of merely following the document's conclusion, LARP tries to ask in advance:
+
+> “If this conclusion were true, what evidence should we expect to see?”
+
+It then compares that expectation with the material and looks for things such as:
+
+- expected evidence that is absent
+- claims floating without supporting evidence
+- evidence interpreted only in the direction of one explanation
+- evidence that does not actually distinguish between competing explanations
+
+### 4. Questions for further research
+
+Where something needs external checking, LARP generates **questions that can be used directly in search or deep research**.
+
+The point is not for LARP to invent the missing answer.
+
+It is to tell you:
+
+**“This is where the next check should happen.”**
 
 ---
 
 ## How to use it (3 steps)
 
+```text
+1. Give it the text.
+2. LARP lays out the structure and disputed points, then stops.
+3. You choose where to go deeper → it analyzes those parts in detail.
 ```
-1. Paste in the text.
-2. The tool draws a logic map, then stops.
-3. You choose where to dig deeper → it analyzes only those spots in detail.
-```
 
-**Stopping is the whole point.** The machine lays out everything worth questioning; the human decides "this is the key, this I'll believe." And the responsibility stays with the human.
+**The stop matters.**
 
-> **Long multi-issue documents — paste whole, then pick.** A long document (a judgment, a paper, a long report) can go in whole: the tool shows the list of disputed issues first and stops, and you pick the issue to dig into — in your own words. A single run still does *not* unfold *all* evidence and *all* hypotheses at once (no human could either); completeness comes from going issue by issue and stitching at the end. If your chatbot truncates long input, the fallback is pasting one issue's section: [USAGE §4](USAGE.en.md).
+The goal is not to let the model expand endlessly in every possible direction. It first makes the available paths visible, then returns the choice of what matters to the human.
 
-See [USAGE.en.md](USAGE.en.md) for details.
+### Long, multi-issue documents
+
+A long judgment, paper, or report can be provided as a whole.
+
+LARP first identifies the disputed issues and pauses. You can then choose the issue you want to examine in ordinary language.
+
+A single run is not expected to unfold every issue, every piece of evidence, and every hypothesis at once. With long documents, completeness usually comes from **working through issues one at a time and reconnecting them at the end.**
+
+If the chatbot truncates the input, the fallback is to work with one issue section at a time.
+
+→ See [USAGE §4](USAGE.en.md).
 
 ---
 
 ## What's in this repository
 
-| File | Contents |
-|---|---|
-| [`prompts/LARP.en.md`](prompts/LARP.en.md) | The tool itself — the full-version prompt you paste into a chatbot |
-| [`prompts/LARP_modules.en.md`](prompts/LARP_modules.en.md) | Extra criteria to paste alongside the body when going deep with the full version |
-| [`prompts/LARP_weigh.en.md`](prompts/LARP_weigh.en.md) | LARP-Weigh — compares two explanations against the evidence to see which fits better |
-| [`prompts/LARP_challenge.en.md`](prompts/LARP_challenge.en.md) | LARP-Challenge — a stress test that systematically asks the hardest reasonable questions of one claim |
-| [`prompts/LARP_map.en.md`](prompts/LARP_map.en.md) | LARP-Map — draws how a text's claims, reasons, and evidence connect (short/medium texts) |
-| [`prompts/LARP_lite.en.md`](prompts/LARP_lite.en.md) | Lightweight edition — a one-screen quick check of a **short text** |
-| [`prompts/LARP_verify.en.md`](prompts/LARP_verify.en.md) | Verification layer — an omission-hunt 2nd pass where a separate model finds what the first analysis *missed* |
-| [`prompts/LARP_gate0.en.md`](prompts/LARP_gate0.en.md) | Gate 0 — mechanical preprocessing *before* analysis (redaction gaps, evidence seeds), manual edition for no-code environments |
-| [`USAGE.en.md`](USAGE.en.md) | **Full-version guide** — walkthrough + reading every output (evidence→hypothesis DB·expected-evidence matching·matrix·V·three signals)·2nd pass·verification layer·FAQ |
-| [`USAGE_lite.en.md`](USAGE_lite.en.md) | **Lite guide** — a quick check of a short text (one paste-and-go) |
-| [`docs/introduction.en.md`](docs/introduction.en.md) | Introduction — why this matters |
-| [`examples/worked_example.en.md`](examples/worked_example.en.md) | A worked example (fictional case) |
-| [`examples/larp_weigh_example.en.md`](examples/larp_weigh_example.en.md) | LARP-Weigh example — weighing two explanations against the evidence (crowdfunding) |
-| [`examples/claim_check_vaccine.en.md`](examples/claim_check_vaccine.en.md) | A claim-check example — deep research → analysis → decision ("vaccines don't work") |
-| [`docs/lineage.en.md`](docs/lineage.en.md) | Lineage (Walton·Toulmin·ACH·enthymeme·Popper) and how LARP differs from existing tools |
-| [`docs/appendix_deep.en.md`](docs/appendix_deep.en.md) | Going deeper — the thinking underneath (optional) |
-| [`prompts/archive/`](prompts/archive/) | preserved past versions and absorbed editions (Map-Long, split edition) |
-| [`CHANGELOG.en.md`](CHANGELOG.en.md) | Version history |
-| [`verification/`](verification/) | Verification harness — version regression test (fixed cases + behavior rubric) |
-| [`tools/`](tools/) | **helper tools (advanced · verification)** — code checks over the analysis. The tools below · [plain-language intro](tools/README.en.md) |
-| [`tools/larp_gate0.py`](tools/larp_gate0.py) | Gate 0 code — *before* analysis: strips watermarks, anchors page numbers, scans redaction gaps, seeds the evidence list |
-| [`tools/larp_coverage_audit.py`](tools/larp_coverage_audit.py) | coverage audit — pulls every cited piece of evidence so you can check none was missed in a long text |
-| [`tools/larp_quote_audit.py`](tools/larp_quote_audit.py) | quote audit — checks that sentences the analysis presents as "source quotes" really exist in the source (catches invented quotes) |
-| [`tools/larp_card_audit.py`](tools/larp_card_audit.py) | evidence-table audit — checks for blanks, lumping, and typos |
-| [`tools/larp_matrix_audit.py`](tools/larp_matrix_audit.py) | evidence × hypothesis matrix audit — same-source double-counting, non-diagnostic-as-core, empty cells |
-| [`tools/larp_matrix_schema.en.md`](tools/larp_matrix_schema.en.md) | the matrix's data format and how to fill it · [한국어](tools/larp_matrix_schema.md) |
-| [`tools/larp_recon0_audit.py`](tools/larp_recon0_audit.py) | certainty-source ledger audit — code-checks the bookkeeping of where a conclusion's certainty came from (new evidence · restoration by rebuttal · rereading) |
+You do not need to understand every file before using LARP.
 
-> New here? Start with the [introduction](docs/introduction.en.md). The deep theory is gathered separately in the [appendix](docs/appendix_deep.en.md) — skip it if you just want to start using the tool.
+### What you need to start
+
+| File | Role |
+|---|---|
+| [`prompts/LARP.en.md`](prompts/LARP.en.md) | the full LARP prompt |
+| [`prompts/LARP_modules.en.md`](prompts/LARP_modules.en.md) | detailed criteria and modules used with the full version |
+| [`prompts/LARP_lite.en.md`](prompts/LARP_lite.en.md) | compact version for short texts |
+| [`prompts/LARP_map.en.md`](prompts/LARP_map.en.md) | maps claims, reasons, and evidence |
+| [`prompts/LARP_weigh.en.md`](prompts/LARP_weigh.en.md) | compares two competing explanations against the evidence |
+| [`prompts/LARP_challenge.en.md`](prompts/LARP_challenge.en.md) | stress-tests one claim |
+| [`USAGE.en.md`](USAGE.en.md) | full-version guide |
+| [`USAGE_lite.en.md`](USAGE_lite.en.md) | Lite guide |
+
+The corresponding Korean files use the same names without `.en`.
+
+### If you want to understand the method more deeply
+
+| File | Role |
+|---|---|
+| [`docs/introduction.en.md`](docs/introduction.en.md) | why LARP exists |
+| [`examples/worked_example.en.md`](examples/worked_example.en.md) | worked full-version example |
+| [`examples/larp_weigh_example.en.md`](examples/larp_weigh_example.en.md) | LARP-Weigh example |
+| [`examples/claim_check_vaccine.en.md`](examples/claim_check_vaccine.en.md) | research → analysis → judgment example |
+| [`docs/lineage.en.md`](docs/lineage.en.md) | Walton, Toulmin, ACH, enthymeme, Popper, and related ideas |
+| [`docs/appendix_deep.en.md`](docs/appendix_deep.en.md) | deeper theory and design notes |
+
+### Verification and development
+
+If you are new to the verification tools, start with the plain-language overview in [`tools/README.en.md`](tools/README.en.md).
+
+| File | Role |
+|---|---|
+| [`tools/README.en.md`](tools/README.en.md) | plain-language overview and guide to the verification tools |
+| [`prompts/LARP_verify.en.md`](prompts/LARP_verify.en.md) | independent second-pass omission hunt |
+| [`prompts/LARP_gate0.en.md`](prompts/LARP_gate0.en.md) | manual preprocessing for no-code environments |
+| [`verification/`](verification/) | regression tests and behavior rubrics |
+| [`tools/larp_gate0.py`](tools/larp_gate0.py) | preprocessing: watermarks, page anchors, redaction gaps, evidence seeds |
+| [`tools/larp_coverage_audit.py`](tools/larp_coverage_audit.py) | checks evidence coverage |
+| [`tools/larp_quote_audit.py`](tools/larp_quote_audit.py) | verifies quoted text against the source |
+| [`tools/larp_card_audit.py`](tools/larp_card_audit.py) | checks evidence tables for blanks and lumping |
+| [`tools/larp_matrix_audit.py`](tools/larp_matrix_audit.py) | audits the evidence × hypothesis matrix |
+| [`tools/larp_matrix_schema.en.md`](tools/larp_matrix_schema.en.md) | matrix data format and rules |
+| [`tools/larp_recon0_audit.py`](tools/larp_recon0_audit.py) | audits the ledger of where a conclusion's certainty came from |
+| [`prompts/archive/`](prompts/archive/) | preserved earlier versions |
+| [`CHANGELOG.en.md`](CHANGELOG.en.md) | version history |
+
+If you are new to the project, the **first group is enough**.
 
 ---
 
@@ -153,30 +271,51 @@ See [USAGE.en.md](USAGE.en.md) for details.
 
 | It does | It doesn't |
 |---|---|
-| Lay out the logic to reveal **hidden premises, alternatives, missing evidence** | **Decide for you** whether a conclusion is true or false |
-| Ask the **same questions** of your claim and your opponent's | Take a side or tell you "who's right" |
-| **Mark where doubt belongs**, then stop | Invent flaws or blow them out of proportion |
-| Let the **human choose** where to look deeper | Take judgment or responsibility away from the human |
-| **Write the look-it-up questions** where verification is needed | Make up facts to fill the blanks |
+| exposes **hidden premises, alternatives, and missing evidence** | **decide for you** whether a conclusion is true or false |
+| applies the **same questions** to your reasoning and competing reasoning | take a side as the goal of the analysis |
+| marks **where another look is warranted** | manufacture flaws that are not there |
+| lets the **human choose** where to go deeper | take judgment or responsibility away from the human |
+| generates **questions for further checking** | invent facts to fill gaps in the record |
 
 ---
 
 ## Using it responsibly
 
-- This tool is **not legal advice and does not replace final judgment.** Its output is a "take a look here" guide; whether to accept a conclusion is up to you.
-- Before putting documents with real case records or personal data into an external AI service, always check your organization's security rules.
-- AI can be wrong or make things up (the tool has safeguards to reduce this, but they aren't perfect). That's why the final judgment is always a human's.
+- LARP is **not legal advice and not a final decision system**.
+- Its outputs are analysis material: “look here again,” not “this is the verdict.”
+- Before sending real case records, personal data, or confidential material to an external AI service, check your organization's security rules.
+- AI can misread material or generate things that are not present in the source. LARP includes safeguards to reduce that risk, but they are not perfect.
+- The more consequential the decision, the more important it is to return to the original material and verify externally.
 
 ---
 
 ## About this project
 
-This is a **methodology tool**, not software — one prompt plus documentation, with no code to build. I'm not a developer but a practicing lawyer sharing a method for working through arguments. Suggestions, corrections, translations, and use cases are welcome via Issues or Pull requests — because the heart of this tool is finding flaws in reasoning together, not coding skill. (→ [Contributing](CONTRIBUTING.en.md))
+LARP is less a conventional software product than a **prompt-centered methodology for examining arguments, together with optional verification tools.**
+
+Its central purpose is to help people see complex reasoning more clearly by:
+
+- laying the argument out
+- exposing missing links
+- creating a place to compare competing explanations
+- identifying evidence and questions that still need checking
+
+I am not a software developer. I am a practicing lawyer sharing a method developed through work with arguments and evidence.
+
+Technical improvements, reasoning corrections, translations, new use cases, and verification results are welcome through Issues and Pull Requests.
+
+The point of the project is not the code itself. It is to **make defects in reasoning visible enough to examine and correct.**
+
+→ [Contributing](CONTRIBUTING.en.md)
 
 ## License
 
-**Author: CHAE Sooyang** · **[CC BY-NC-SA 4.0](https://creativecommons.org/licenses/by-nc-sa/4.0/)** (Attribution-NonCommercial-ShareAlike). You may share and adapt it freely with credit, for non-commercial purposes, and derivative works must use the same license. See [`LICENSE`](LICENSE) for the full text.
+**Author: CHAE Sooyang** · **[CC BY-NC-SA 4.0](https://creativecommons.org/licenses/by-nc-sa/4.0/)**
+
+You may share and adapt the work with attribution for non-commercial purposes. Derivative works must use the same license.
+
+See [`LICENSE`](LICENSE) for the full text.
 
 ---
 
-*Seeing evidence through what you already believe is something everyone already does. Correcting your beliefs to fit the evidence is a skill that has to be learned. LARP is a tool to help with that skill.*
+*Everyone already knows how to see evidence through what they believe. Learning to revise what we believe in light of evidence is the harder skill. LARP is a tool for practicing that skill.*
