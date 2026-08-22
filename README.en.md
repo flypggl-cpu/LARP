@@ -25,6 +25,9 @@ It does not decide whether a conclusion is true or false. Instead, it surfaces t
 > - **Quickly check a short text**  
 >   → [`prompts/LARP_lite.en.md`](prompts/LARP_lite.en.md)
 >
+> - **Put one claim under the hardest reasonable questions**  
+>   → [`prompts/LARP_challenge.en.md`](prompts/LARP_challenge.en.md)
+>
 > The other tools are there when you need them.
 
 For long judgments, papers, and reports, use a model with strong long-context and reasoning performance. In an internal comparison on the same judgment, a lightweight model compressed 17 identified issues to 4 and 108 evidence rows to 8.
