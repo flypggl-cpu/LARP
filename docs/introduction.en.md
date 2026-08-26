@@ -70,6 +70,8 @@ LARP turns the idea above into an actual procedure. Feed in a news article, a re
 
 Having laid this out, the tool **stops.** Where to dig deeper is the human's call. It analyzes only the spots you point to, and whatever doubt remains is left as a list: "what to check, how, and what it would mean if confirmed." **The machine lays everything out to the end; the judgment stays the human's to the end.**
 
+Sometimes it is useful to test a claim you believe from its least favorable position. **LARP-Challenge** is the companion tool for that purpose. It does not automatically write a rebuttal or help someone defeat an opponent; it is a **stress test** that applies the strongest reasonable counterquestions to one claim, surfacing hidden premises, competing explanations, and missing evidence. Its output is therefore not a verdict. For consequential decisions, apply the same test to the opposing claim or compare both explanations with LARP-Weigh, so that skepticism itself does not become another form of confirmation bias.
+
 ---
 
 *Seeing evidence through what you already believe is something everyone already does. Correcting your beliefs to fit the evidence is a skill that must be learned. The name of that skill is taking arguments apart — pulling out the assumptions working beneath the written sentences, and making them something you can question. Don't follow the name; follow the conditions.*
